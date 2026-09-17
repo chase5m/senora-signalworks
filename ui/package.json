@@ -1,6 +1,6 @@
 {
   "name": "chase-bootleg-ui",
-  "version": "0.3.11",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "author": "Chase",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@fontsource-variable/manrope": "^5.2.8",
     "@fontsource/ibm-plex-mono": "^5.2.6",
+    "@fontsource/rajdhani": "^5.3.0",
     "@phosphor-icons/react": "^2.1.10",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

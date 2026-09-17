@@ -67,9 +67,13 @@ function ChaseBootlegDomain.ChaseStationView(station, identifier)
         micLive = station.host ~= nil, listeners = station.listenerCount or 0,
         battery = math.floor(station.battery), showTitle = station.showTitle, hostName = station.hostAlias or '',
         canManage = canManage, canWithdraw = station.owner == identifier,
-        mode = station.mode or 'dj', cohostNames = {},
+        mode = station.mode or 'dj', musicVolume = station.musicVolume or 1.0, cohostNames = {},
         nowPlaying = station.cartridge and { provider = station.cartridge.provider or 'file', title = station.cartridge.title or '',
-            duration = station.cartridge.duration, startedAt = station.cartridge.startedAt } or nil
+            id = station.cartridge.id, trackId = station.cartridge.trackId,
+            cartridgeId = not station.cartridge.trackId and station.cartridge.id or nil,
+            duration = station.cartridge.duration, startedAt = station.cartridge.startedAt,
+            paused = station.cartridge.pausedAt ~= nil,
+            offsetSeconds = math.max(0, (station.cartridge.pausedAt or os.time()) - station.cartridge.startedAt) } or nil
     }
     for _, cohost in ipairs(station.cohosts or {}) do view.cohostNames[#view.cohostNames + 1] = cohost.identity.name end
     if canManage then view.vehicleNetId = station.vehicleNetId end

@@ -173,7 +173,7 @@ function ChaseBootlegServer.ChaseMonitorStation(station, elapsedSeconds)
             server.ChaseReplicate(station)
         end
     end
-    if station.cartridge and os.time() >= station.cartridge.startedAt + station.cartridge.duration then
+    if station.cartridge and not station.cartridge.pausedAt and os.time() >= station.cartridge.startedAt + station.cartridge.duration then
         local finished = station.cartridge
         station.cartridge = nil
         if station.live and station.autoplay then

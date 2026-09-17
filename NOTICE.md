@@ -1,10 +1,10 @@
 # Senora Signalworks
 
-Created by Chase. Version 0.3.11 packages the accepted 0.3.10 runtime as a free, readable source release, with a simpler configuration layout and public installation defaults.
+Created by Chase. Senora Signalworks is free to use and modify under the included license.
 
-The original code, equipment meshes, textures, carry animations and bundled electronic audio were authored for Chase. The GTA V Speedo van and game world are supplied by the game and are not included as third-party vehicle assets. Private extracted ped/vehicle reference geometry, recordings, account data and development caches are excluded.
+The original code, equipment meshes, textures, carry animations and bundled electronic audio were authored for Chase. The interface includes original generated station artwork and an in-game equipment screenshot. The GTA V Speedo van and game world are supplied by the game; their models are not distributed here. Private reference geometry, account data and development caches are excluded.
 
-React, React DOM, Scheduler and Phosphor retain their MIT terms. Manrope and IBM Plex Mono retain the SIL Open Font License. Complete notices are in [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) and `web/licenses/`. Build dependencies retain the licenses distributed by their upstream packages.
+React, React DOM, Scheduler and Phosphor retain their MIT terms. Manrope, Rajdhani and IBM Plex Mono retain the SIL Open Font License. Complete notices are in [THIRD_PARTY_NOTICES.txt](THIRD_PARTY_NOTICES.txt) and `web/licenses/`. Build dependencies retain the licenses distributed by their upstream packages.
 
 FiveM, Qbox, QBCore, ESX, ox_lib, oxmysql, pma-voice, inventory/key systems and LB Phone are separate dependencies. Their source is not distributed here. Their names identify compatibility and do not imply endorsement.
 

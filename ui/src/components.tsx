@@ -31,7 +31,35 @@ import { CaretDownIcon } from "@phosphor-icons/react/dist/csr/CaretDown";
 import { HouseSimpleIcon } from "@phosphor-icons/react/dist/csr/HouseSimple";
 import { HandGrabbingIcon } from "@phosphor-icons/react/dist/csr/HandGrabbing";
 import { ArrowLineDownIcon } from "@phosphor-icons/react/dist/csr/ArrowLineDown";
+import { PauseIcon } from "@phosphor-icons/react/dist/csr/Pause";
+import { SkipForwardIcon } from "@phosphor-icons/react/dist/csr/SkipForward";
+import { SkipBackIcon } from "@phosphor-icons/react/dist/csr/SkipBack";
+import { ArrowUpIcon } from "@phosphor-icons/react/dist/csr/ArrowUp";
+import { ArrowDownIcon } from "@phosphor-icons/react/dist/csr/ArrowDown";
+import { TrashIcon } from "@phosphor-icons/react/dist/csr/Trash";
+import { LinkIcon } from "@phosphor-icons/react/dist/csr/Link";
+import { InfoIcon } from "@phosphor-icons/react/dist/csr/Info";
+import { MusicNotesIcon } from "@phosphor-icons/react/dist/csr/MusicNotes";
+import { HeartIcon } from "@phosphor-icons/react/dist/csr/Heart";
+import { MegaphoneIcon } from "@phosphor-icons/react/dist/csr/Megaphone";
+import { FloppyDiskIcon } from "@phosphor-icons/react/dist/csr/FloppyDisk";
+import { UserPlusIcon } from "@phosphor-icons/react/dist/csr/UserPlus";
+import { CompassIcon } from "@phosphor-icons/react/dist/csr/Compass";
 const chaseIcons = {
+  pause: PauseIcon,
+  next: SkipForwardIcon,
+  previous: SkipBackIcon,
+  up: ArrowUpIcon,
+  down: ArrowDownIcon,
+  trash: TrashIcon,
+  link: LinkIcon,
+  info: InfoIcon,
+  music: MusicNotesIcon,
+  heart: HeartIcon,
+  advert: MegaphoneIcon,
+  save: FloppyDiskIcon,
+  addUser: UserPlusIcon,
+  compass: CompassIcon,
   radio: RadioIcon,
   studio: SlidersHorizontalIcon,
   scan: CrosshairIcon,

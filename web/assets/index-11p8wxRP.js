@@ -12257,14 +12257,14 @@ function requireClient() {
 }
 var clientExports = requireClient();
 const ReactDOM = getDefaultExportFromCjs(clientExports);
-const o$9 = reactExports.createContext({
+const o$d = reactExports.createContext({
   color: "currentColor",
   size: "1em",
   weight: "regular",
   mirrored: false
 });
-const p = reactExports.forwardRef((s, a2) => {
-  const { alt: n, color: r2, size: t2, weight: o2, mirrored: c, children: i, weights: m, ...x } = s, { color: d = "currentColor", size: l2, weight: f = "regular", mirrored: g = false, ...w } = reactExports.useContext(o$9);
+const p$1 = reactExports.forwardRef((s2, a2) => {
+  const { alt: n, color: r2, size: t2, weight: o2, mirrored: c, children: i, weights: m, ...x } = s2, { color: d = "currentColor", size: l2, weight: f = "regular", mirrored: g = false, ...w } = reactExports.useContext(o$d);
   return reactExports.createElement("svg", {
     ref: a2,
     xmlns: "http://www.w3.org/2000/svg",
@@ -12277,8 +12277,8 @@ const p = reactExports.forwardRef((s, a2) => {
     ...x
   }, !!n && reactExports.createElement("title", null, n), i, m.get(o2 != null ? o2 : f));
 });
-p.displayName = "IconBase";
-const e$o =  new Map([
+p$1.displayName = "IconBase";
+const e$x =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M160,172a36,36,0,1,0-36-36A36,36,0,0,0,160,172Zm0-48a12,12,0,1,1-12,12A12,12,0,0,1,160,124Zm56-64H113.76l81.69-24.5a12,12,0,0,0-6.9-23l-160,48A12,12,0,0,0,20,72V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V80A20,20,0,0,0,216,60Zm-4,128H44V84H212ZM60,116a12,12,0,0,1,12-12H96a12,12,0,0,1,0,24H72A12,12,0,0,1,60,116Zm0,40a12,12,0,0,1,12-12H96a12,12,0,0,1,0,24H72A12,12,0,0,1,60,156Z" }))
@@ -12307,9 +12307,9 @@ const e$o =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M100,168a4,4,0,0,1-4,4H64a4,4,0,0,1,0-8H96A4,4,0,0,1,100,168Zm-4-36H64a4,4,0,0,0,0,8H96a4,4,0,0,0,0-8ZM228,80V192a12,12,0,0,1-12,12H40a12,12,0,0,1-12-12V72a4,4,0,0,1,2.85-3.81l160-48a4,4,0,0,1,2.3,7.66L59.25,68H216A12,12,0,0,1,228,80Zm-8,0a4,4,0,0,0-4-4H36V192a4,4,0,0,0,4,4H216a4,4,0,0,0,4-4Zm-24,56a36,36,0,1,1-36-36A36,36,0,0,1,196,136Zm-8,0a28,28,0,1,0-28,28A28,28,0,0,0,188,136ZM96,100H64a4,4,0,0,0,0,8H96a4,4,0,0,0,0-8Z" }))
   ]
 ]);
-const a$g = reactExports.forwardRef((e2, r2) => reactExports.createElement(p, { ref: r2, ...e2, weights: e$o }));
-a$g.displayName = "RadioIcon";
-const e$n =  new Map([
+const a$p = reactExports.forwardRef((e2, r2) => reactExports.createElement(p$1, { ref: r2, ...e2, weights: e$x }));
+a$p.displayName = "RadioIcon";
+const e$w =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M40,92H70.06a36,36,0,0,0,67.88,0H216a12,12,0,0,0,0-24H137.94a36,36,0,0,0-67.88,0H40a12,12,0,0,0,0,24Zm64-24A12,12,0,1,1,92,80,12,12,0,0,1,104,68Zm112,96H201.94a36,36,0,0,0-67.88,0H40a12,12,0,0,0,0,24h94.06a36,36,0,0,0,67.88,0H216a12,12,0,0,0,0-24Zm-48,24a12,12,0,1,1,12-12A12,12,0,0,1,168,188Z" }))
@@ -12338,9 +12338,9 @@ const e$n =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M40,84H76.29a28,28,0,0,0,55.42,0H216a4,4,0,0,0,0-8H131.71a28,28,0,0,0-55.42,0H40a4,4,0,0,0,0,8Zm64-24A20,20,0,1,1,84,80,20,20,0,0,1,104,60ZM216,172H195.71a28,28,0,0,0-55.42,0H40a4,4,0,0,0,0,8H140.29a28,28,0,0,0,55.42,0H216a4,4,0,0,0,0-8Zm-48,24a20,20,0,1,1,20-20A20,20,0,0,1,168,196Z" }))
   ]
 ]);
-const r$5 = reactExports.forwardRef((e2, t2) => reactExports.createElement(p, { ref: t2, ...e2, weights: e$n }));
-r$5.displayName = "SlidersHorizontalIcon";
-const e$m =  new Map([
+const r$9 = reactExports.forwardRef((e2, t2) => reactExports.createElement(p$1, { ref: t2, ...e2, weights: e$w }));
+r$9.displayName = "SlidersHorizontalIcon";
+const e$v =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M232,116h-4.72A100.21,100.21,0,0,0,140,28.72V24a12,12,0,0,0-24,0v4.72A100.21,100.21,0,0,0,28.72,116H24a12,12,0,0,0,0,24h4.72A100.21,100.21,0,0,0,116,227.28V232a12,12,0,0,0,24,0v-4.72A100.21,100.21,0,0,0,227.28,140H232a12,12,0,0,0,0-24Zm-92,87v-3a12,12,0,0,0-24,0v3a76.15,76.15,0,0,1-63-63h3a12,12,0,0,0,0-24H53a76.15,76.15,0,0,1,63-63v3a12,12,0,0,0,24,0V53a76.15,76.15,0,0,1,63,63h-3a12,12,0,0,0,0,24h3A76.15,76.15,0,0,1,140,203ZM128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Z" }))
@@ -12366,9 +12366,9 @@ const e$m =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M232,124H219.91A92.13,92.13,0,0,0,132,36.09V24a4,4,0,0,0-8,0V36.09A92.13,92.13,0,0,0,36.09,124H24a4,4,0,0,0,0,8H36.09A92.13,92.13,0,0,0,124,219.91V232a4,4,0,0,0,8,0V219.91A92.13,92.13,0,0,0,219.91,132H232a4,4,0,0,0,0-8ZM132,211.9V200a4,4,0,0,0-8,0v11.9A84.11,84.11,0,0,1,44.1,132H56a4,4,0,0,0,0-8H44.1A84.11,84.11,0,0,1,124,44.1V56a4,4,0,0,0,8,0V44.1A84.11,84.11,0,0,1,211.9,124H200a4,4,0,0,0,0,8h11.9A84.11,84.11,0,0,1,132,211.9ZM128,92a36,36,0,1,0,36,36A36,36,0,0,0,128,92Zm0,64a28,28,0,1,1,28-28A28,28,0,0,1,128,156Z" }))
   ]
 ]);
-const r$4 = reactExports.forwardRef((s, a2) => reactExports.createElement(p, { ref: a2, ...s, weights: e$m }));
-r$4.displayName = "CrosshairIcon";
-const a$f =  new Map([
+const r$8 = reactExports.forwardRef((s2, a2) => reactExports.createElement(p$1, { ref: a2, ...s2, weights: e$v }));
+r$8.displayName = "CrosshairIcon";
+const a$o =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z" }))
@@ -12394,9 +12394,9 @@ const a$f =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M218.83,130.83l-72,72a4,4,0,0,1-5.66-5.66L206.34,132H40a4,4,0,0,1,0-8H206.34L141.17,58.83a4,4,0,0,1,5.66-5.66l72,72A4,4,0,0,1,218.83,130.83Z" }))
   ]
 ]);
-const r$3 = reactExports.forwardRef((t2, e2) => reactExports.createElement(p, { ref: e2, ...t2, weights: a$f }));
-r$3.displayName = "ArrowRightIcon";
-const a$e =  new Map([
+const r$7 = reactExports.forwardRef((t2, e2) => reactExports.createElement(p$1, { ref: e2, ...t2, weights: a$o }));
+r$7.displayName = "ArrowRightIcon";
+const a$n =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z" }))
@@ -12425,9 +12425,9 @@ const a$e =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M202.83,197.17a4,4,0,0,1-5.66,5.66L128,133.66,58.83,202.83a4,4,0,0,1-5.66-5.66L122.34,128,53.17,58.83a4,4,0,0,1,5.66-5.66L128,122.34l69.17-69.17a4,4,0,1,1,5.66,5.66L133.66,128Z" }))
   ]
 ]);
-const e$l = reactExports.forwardRef((r2, t2) => reactExports.createElement(p, { ref: t2, ...r2, weights: a$e }));
-e$l.displayName = "XIcon";
-const a$d =  new Map([
+const e$u = reactExports.forwardRef((r2, t2) => reactExports.createElement(p$1, { ref: t2, ...r2, weights: a$n }));
+e$u.displayName = "XIcon";
+const a$m =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M234.49,111.07,90.41,22.94A20,20,0,0,0,60,39.87V216.13a20,20,0,0,0,30.41,16.93l144.08-88.13a19.82,19.82,0,0,0,0-33.86ZM84,208.85V47.15L216.16,128Z" }))
@@ -12456,9 +12456,9 @@ const a$d =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M230.32,117.9,86.24,29.79a11.91,11.91,0,0,0-12.17-.23A11.71,11.71,0,0,0,68,39.89V216.11a11.71,11.71,0,0,0,6.07,10.33,11.91,11.91,0,0,0,12.17-.23L230.32,138.1a11.82,11.82,0,0,0,0-20.2Zm-4.18,13.37L82.06,219.39a4,4,0,0,1-4.07.07,3.77,3.77,0,0,1-2-3.35V39.89a3.77,3.77,0,0,1,2-3.35,4,4,0,0,1,4.07.07l144.08,88.12a3.8,3.8,0,0,1,0,6.54Z" }))
   ]
 ]);
-const a$c = reactExports.forwardRef((e2, r2) => reactExports.createElement(p, { ref: r2, ...e2, weights: a$d }));
-a$c.displayName = "PlayIcon";
-const a$b =  new Map([
+const a$l = reactExports.forwardRef((e2, r2) => reactExports.createElement(p$1, { ref: r2, ...e2, weights: a$m }));
+a$l.displayName = "PlayIcon";
+const a$k =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,36H56A20,20,0,0,0,36,56V200a20,20,0,0,0,20,20H200a20,20,0,0,0,20-20V56A20,20,0,0,0,200,36Zm-4,160H60V60H196Z" }))
@@ -12487,9 +12487,9 @@ const a$b =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,44H56A12,12,0,0,0,44,56V200a12,12,0,0,0,12,12H200a12,12,0,0,0,12-12V56A12,12,0,0,0,200,44Zm4,156a4,4,0,0,1-4,4H56a4,4,0,0,1-4-4V56a4,4,0,0,1,4-4H200a4,4,0,0,1,4,4Z" }))
   ]
 ]);
-const t$3 = reactExports.forwardRef((e2, r2) => reactExports.createElement(p, { ref: r2, ...e2, weights: a$b }));
+const t$3 = reactExports.forwardRef((e2, r2) => reactExports.createElement(p$1, { ref: r2, ...e2, weights: a$k }));
 t$3.displayName = "StopIcon";
-const e$k =  new Map([
+const e$t =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,180a52.06,52.06,0,0,0,52-52V64A52,52,0,0,0,76,64v64A52.06,52.06,0,0,0,128,180ZM100,64a28,28,0,0,1,56,0v64a28,28,0,0,1-56,0Zm40,155.22V240a12,12,0,0,1-24,0V219.22A92.14,92.14,0,0,1,36,128a12,12,0,0,1,24,0,68,68,0,0,0,136,0,12,12,0,0,1,24,0A92.14,92.14,0,0,1,140,219.22Z" }))
@@ -12518,9 +12518,9 @@ const e$k =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,172a44.05,44.05,0,0,0,44-44V64a44,44,0,0,0-88,0v64A44.05,44.05,0,0,0,128,172ZM92,64a36,36,0,0,1,72,0v64a36,36,0,0,1-72,0Zm40,139.89V240a4,4,0,0,1-8,0V203.89A76.09,76.09,0,0,1,52,128a4,4,0,0,1,8,0,68,68,0,0,0,136,0,4,4,0,0,1,8,0A76.09,76.09,0,0,1,132,203.89Z" }))
   ]
 ]);
-const e$j = reactExports.forwardRef((r2, c) => reactExports.createElement(p, { ref: c, ...r2, weights: e$k }));
-e$j.displayName = "MicrophoneIcon";
-const e$i =  new Map([
+const e$s = reactExports.forwardRef((r2, c) => reactExports.createElement(p$1, { ref: c, ...r2, weights: e$t }));
+e$s.displayName = "MicrophoneIcon";
+const e$r =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M172,72V200a12,12,0,0,1-24,0V72a12,12,0,0,1,24,0Zm28-52a12,12,0,0,0-12,12V200a12,12,0,0,0,24,0V32A12,12,0,0,0,200,20Zm-80,80a12,12,0,0,0-12,12v88a12,12,0,0,0,24,0V112A12,12,0,0,0,120,100ZM80,140a12,12,0,0,0-12,12v48a12,12,0,0,0,24,0V152A12,12,0,0,0,80,140ZM40,180a12,12,0,0,0-12,12v8a12,12,0,0,0,24,0v-8A12,12,0,0,0,40,180Z" }))
@@ -12549,9 +12549,9 @@ const e$i =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M164,72V200a4,4,0,0,1-8,0V72a4,4,0,0,1,8,0Zm36-44a4,4,0,0,0-4,4V200a4,4,0,0,0,8,0V32A4,4,0,0,0,200,28Zm-80,80a4,4,0,0,0-4,4v88a4,4,0,0,0,8,0V112A4,4,0,0,0,120,108ZM80,148a4,4,0,0,0-4,4v48a4,4,0,0,0,8,0V152A4,4,0,0,0,80,148ZM40,188a4,4,0,0,0-4,4v8a4,4,0,0,0,8,0v-8A4,4,0,0,0,40,188Z" }))
   ]
 ]);
-const e$h = reactExports.forwardRef((o2, a2) => reactExports.createElement(p, { ref: a2, ...o2, weights: e$i }));
-e$h.displayName = "CellSignalFullIcon";
-const e$g =  new Map([
+const e$q = reactExports.forwardRef((o2, a2) => reactExports.createElement(p$1, { ref: a2, ...o2, weights: e$r }));
+e$q.displayName = "CellSignalFullIcon";
+const e$p =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M157.27,21.22a12,12,0,0,0-12.64,1.31L75.88,76H32A20,20,0,0,0,12,96v64a20,20,0,0,0,20,20H75.88l68.75,53.47A12,12,0,0,0,164,224V32A12,12,0,0,0,157.27,21.22ZM36,100H68v56H36Zm104,99.46L92,162.13V93.87l48-37.33ZM212,128a44,44,0,0,1-11,29.11,12,12,0,1,1-18-15.88,20,20,0,0,0,0-26.43,12,12,0,0,1,18-15.86A43.94,43.94,0,0,1,212,128Zm40,0a83.87,83.87,0,0,1-21.39,56,12,12,0,0,1-17.89-16,60,60,0,0,0,0-80,12,12,0,1,1,17.88-16A83.87,83.87,0,0,1,252,128Z" }))
@@ -12577,9 +12577,9 @@ const e$g =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M153.76,28.41a4,4,0,0,0-4.22.43L78.63,84H32A12,12,0,0,0,20,96v64a12,12,0,0,0,12,12H78.63l70.91,55.16A4.07,4.07,0,0,0,152,228a3.92,3.92,0,0,0,1.76-.41A4,4,0,0,0,156,224V32A4,4,0,0,0,153.76,28.41ZM28,160V96a4,4,0,0,1,4-4H76v72H32A4,4,0,0,1,28,160Zm120,55.82L84,166V90l64-49.78Zm47-111.61a36,36,0,0,1,0,47.59,4,4,0,1,1-6-5.3,28,28,0,0,0,0-37,4,4,0,0,1,6-5.28ZM244,128a75.88,75.88,0,0,1-19.35,50.67,4,4,0,0,1-6-5.34,68,68,0,0,0,0-90.66,4,4,0,0,1,6-5.34A75.88,75.88,0,0,1,244,128Z" }))
   ]
 ]);
-const o$8 = reactExports.forwardRef((r2, a2) => reactExports.createElement(p, { ref: a2, ...r2, weights: e$g }));
-o$8.displayName = "SpeakerHighIcon";
-const a$a =  new Map([
+const o$c = reactExports.forwardRef((r2, a2) => reactExports.createElement(p$1, { ref: a2, ...r2, weights: e$p }));
+o$c.displayName = "SpeakerHighIcon";
+const a$j =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M125.18,156.94a64,64,0,1,0-82.36,0,100.23,100.23,0,0,0-39.49,32,12,12,0,0,0,19.35,14.2,76,76,0,0,1,122.64,0,12,12,0,0,0,19.36-14.2A100.33,100.33,0,0,0,125.18,156.94ZM44,108a40,40,0,1,1,40,40A40,40,0,0,1,44,108Zm206.1,97.67a12,12,0,0,1-16.78-2.57A76.31,76.31,0,0,0,172,172a12,12,0,0,1,0-24,40,40,0,1,0-10.3-78.67,12,12,0,1,1-6.16-23.19,64,64,0,0,1,57.64,110.8,100.23,100.23,0,0,1,39.49,32A12,12,0,0,1,250.1,205.67Z" }))
@@ -12605,9 +12605,9 @@ const a$a =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M107.19,159a56,56,0,1,0-46.38,0A91.83,91.83,0,0,0,6.88,197.81a4,4,0,1,0,6.7,4.37,84,84,0,0,1,140.84,0,4,4,0,1,0,6.7-4.37A91.83,91.83,0,0,0,107.19,159ZM36,108a48,48,0,1,1,48,48A48.05,48.05,0,0,1,36,108Zm212,95.35a4,4,0,0,1-5.53-1.17A83.81,83.81,0,0,0,172,164a4,4,0,0,1,0-8,48,48,0,1,0-17.82-92.58,4,4,0,1,1-3-7.43,56,56,0,0,1,44,103,91.83,91.83,0,0,1,53.93,38.86A4,4,0,0,1,248,203.35Z" }))
   ]
 ]);
-const o$7 = reactExports.forwardRef((r2, s) => reactExports.createElement(p, { ref: s, ...r2, weights: a$a }));
-o$7.displayName = "UsersIcon";
-const a$9 =  new Map([
+const o$b = reactExports.forwardRef((r2, s2) => reactExports.createElement(p$1, { ref: s2, ...r2, weights: a$j }));
+o$b.displayName = "UsersIcon";
+const a$i =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z" }))
@@ -12633,9 +12633,9 @@ const a$9 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M211.89,119.09a4,4,0,0,0-2.49-2.84l-60.81-22.8,15.33-76.67a4,4,0,0,0-6.84-3.51l-112,120a4,4,0,0,0-1,3.64,4,4,0,0,0,2.49,2.84l60.81,22.8L92.08,239.22a4,4,0,0,0,6.84,3.51l112-120A4,4,0,0,0,211.89,119.09ZM102.68,227l13.24-66.2a4,4,0,0,0-2.52-4.53L55,134.36,153.32,29l-13.24,66.2a4,4,0,0,0,2.52,4.53L201,121.64Z" }))
   ]
 ]);
-const t$2 = reactExports.forwardRef((n, i) => reactExports.createElement(p, { ref: i, ...n, weights: a$9 }));
+const t$2 = reactExports.forwardRef((n, i) => reactExports.createElement(p$1, { ref: i, ...n, weights: a$i }));
 t$2.displayName = "LightningIcon";
-const e$f =  new Map([
+const e$o =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M253.11,104.18,207.54,51.09A19.94,19.94,0,0,0,192.26,44H32A20,20,0,0,0,12,64V176a20,20,0,0,0,20,20H46.06a36,36,0,0,0,67.88,0h40.12a36,36,0,0,0,67.88,0H236a20,20,0,0,0,20-20V112A12.05,12.05,0,0,0,253.11,104.18ZM217.89,100H176V68h14.42ZM104,100V68h48v32ZM80,68v32H36V68Zm0,128a12,12,0,1,1,12-12A12,12,0,0,1,80,196Zm108,0a12,12,0,1,1,12-12A12,12,0,0,1,188,196Zm33.94-24a36,36,0,0,0-67.88,0H113.94a36,36,0,0,0-67.88,0H36V124H232v48Z" }))
@@ -12664,9 +12664,9 @@ const e$f =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M251,109.4,205.47,56.3a12,12,0,0,0-9.21-4.3H32A12,12,0,0,0,20,64V176a12,12,0,0,0,12,12H52.29a28,28,0,0,0,55.42,0h56.58a28,28,0,0,0,55.42,0H240a12,12,0,0,0,12-12V112A4,4,0,0,0,251,109.4ZM199.36,61.47,239.3,108H172V60h24.26A4,4,0,0,1,199.36,61.47ZM100,108V60h64v48ZM32,60H92v48H28V64A4,4,0,0,1,32,60ZM80,204a20,20,0,1,1,20-20A20,20,0,0,1,80,204Zm112,0a20,20,0,1,1,20-20A20,20,0,0,1,192,204Zm48-24H219.71a28,28,0,0,0-55.42,0H107.71a28,28,0,0,0-55.42,0H32a4,4,0,0,1-4-4V116H244v60A4,4,0,0,1,240,180Z" }))
   ]
 ]);
-const a$8 = reactExports.forwardRef((e2, r2) => reactExports.createElement(p, { ref: r2, ...e2, weights: e$f }));
-a$8.displayName = "VanIcon";
-const e$e =  new Map([
+const a$h = reactExports.forwardRef((e2, r2) => reactExports.createElement(p$1, { ref: r2, ...e2, weights: e$o }));
+a$h.displayName = "VanIcon";
+const e$n =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M196,136a16,16,0,1,1-16-16A16,16,0,0,1,196,136Zm40-36v80a32,32,0,0,1-32,32H60a32,32,0,0,1-32-32V60.92A32,32,0,0,1,60,28H192a12,12,0,0,1,0,24H60a8,8,0,0,0-8,8.26v.08A8.32,8.32,0,0,0,60.48,68H204A32,32,0,0,1,236,100Zm-24,0a8,8,0,0,0-8-8H60.48A33.72,33.72,0,0,1,52,90.92V180a8,8,0,0,0,8,8H204a8,8,0,0,0,8-8Z" }))
@@ -12695,9 +12695,9 @@ const e$e =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216,68H56a12,12,0,0,1,0-24H192a4,4,0,0,0,0-8H56A20,20,0,0,0,36,56V184a20,20,0,0,0,20,20H216a12,12,0,0,0,12-12V80A12,12,0,0,0,216,68Zm4,124a4,4,0,0,1-4,4H56a12,12,0,0,1-12-12V72a19.86,19.86,0,0,0,12,4H216a4,4,0,0,1,4,4Zm-32-60a8,8,0,1,1-8-8A8,8,0,0,1,188,132Z" }))
   ]
 ]);
-const o$6 = reactExports.forwardRef((t2, a2) => reactExports.createElement(p, { ref: a2, ...t2, weights: e$e }));
-o$6.displayName = "WalletIcon";
-const e$d =  new Map([
+const o$a = reactExports.forwardRef((t2, a2) => reactExports.createElement(p$1, { ref: a2, ...t2, weights: e$n }));
+o$a.displayName = "WalletIcon";
+const e$m =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M224,44H32A20,20,0,0,0,12,64V192a20,20,0,0,0,20,20H224a20,20,0,0,0,20-20V64A20,20,0,0,0,224,44Zm-4,144H183l-12.6-16.8A8,8,0,0,0,164,168H92a8,8,0,0,0-6.4,3.2L73,188H36V68H220ZM82,152h92a34,34,0,0,0,0-68H82a34,34,0,0,0,0,68Zm0-44a10,10,0,1,1-10,10A10,10,0,0,1,82,108Zm102,10a10,10,0,1,1-10-10A10,10,0,0,1,184,118Zm-42.5,10h-27a34.08,34.08,0,0,0,0-20h27a34.08,34.08,0,0,0,0,20Z" }))
@@ -12726,9 +12726,9 @@ const e$d =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M224,52H32A12,12,0,0,0,20,64V192a12,12,0,0,0,12,12H224a12,12,0,0,0,12-12V64A12,12,0,0,0,224,52ZM72,196l18-24h76l18,24Zm156-4a4,4,0,0,1-4,4H194l-22.8-30.4A4,4,0,0,0,168,164H88a4,4,0,0,0-3.2,1.6L62,196H32a4,4,0,0,1-4-4V64a4,4,0,0,1,4-4H224a4,4,0,0,1,4,4ZM176,84H80a28,28,0,0,0,0,56h96a28,28,0,0,0,0-56ZM60,112a20,20,0,1,1,20,20A20,20,0,0,1,60,112Zm39.57,20a27.94,27.94,0,0,0,0-40h56.86a27.94,27.94,0,0,0,0,40ZM176,132a20,20,0,1,1,20-20A20,20,0,0,1,176,132Z" }))
   ]
 ]);
-const t$1 = reactExports.forwardRef((a2, o2) => reactExports.createElement(p, { ref: o2, ...a2, weights: e$d }));
+const t$1 = reactExports.forwardRef((a2, o2) => reactExports.createElement(p$1, { ref: o2, ...a2, weights: e$m }));
 t$1.displayName = "CassetteTapeIcon";
-const a$7 =  new Map([
+const a$g =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" }))
@@ -12757,9 +12757,9 @@ const a$7 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M220,128a4,4,0,0,1-4,4H132v84a4,4,0,0,1-8,0V132H40a4,4,0,0,1,0-8h84V40a4,4,0,0,1,8,0v84h84A4,4,0,0,1,220,128Z" }))
   ]
 ]);
-const e$c = reactExports.forwardRef((r2, s) => reactExports.createElement(p, { ref: s, ...r2, weights: a$7 }));
-e$c.displayName = "PlusIcon";
-const a$6 =  new Map([
+const e$l = reactExports.forwardRef((r2, s2) => reactExports.createElement(p$1, { ref: s2, ...r2, weights: a$g }));
+e$l.displayName = "PlusIcon";
+const a$f =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z" }))
@@ -12788,9 +12788,9 @@ const a$6 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M220,128a4,4,0,0,1-4,4H40a4,4,0,0,1,0-8H216A4,4,0,0,1,220,128Z" }))
   ]
 ]);
-const e$b = reactExports.forwardRef((r2, s) => reactExports.createElement(p, { ref: s, ...r2, weights: a$6 }));
-e$b.displayName = "MinusIcon";
-const a$5 =  new Map([
+const e$k = reactExports.forwardRef((r2, s2) => reactExports.createElement(p$1, { ref: s2, ...r2, weights: a$f }));
+e$k.displayName = "MinusIcon";
+const a$e =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z" }))
@@ -12819,9 +12819,9 @@ const a$5 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M226.83,74.83l-128,128a4,4,0,0,1-5.66,0l-56-56a4,4,0,0,1,5.66-5.66L96,194.34,221.17,69.17a4,4,0,1,1,5.66,5.66Z" }))
   ]
 ]);
-const o$5 = reactExports.forwardRef((c, r2) => reactExports.createElement(p, { ref: r2, ...c, weights: a$5 }));
-o$5.displayName = "CheckIcon";
-const a$4 =  new Map([
+const o$9 = reactExports.forwardRef((c, r2) => reactExports.createElement(p$1, { ref: r2, ...c, weights: a$e }));
+o$9.displayName = "CheckIcon";
+const a$d =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M244,56v48a12,12,0,0,1-12,12H184a12,12,0,1,1,0-24H201.1l-19-17.38c-.13-.12-.26-.24-.38-.37A76,76,0,1,0,127,204h1a75.53,75.53,0,0,0,52.15-20.72,12,12,0,0,1,16.49,17.45A99.45,99.45,0,0,1,128,228h-1.37A100,100,0,1,1,198.51,57.06L220,76.72V56a12,12,0,0,1,24,0Z" }))
@@ -12847,9 +12847,9 @@ const a$4 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M236,56v48a4,4,0,0,1-4,4H184a4,4,0,0,1,0-8h37.7L187.53,68.69l-.13-.12a84,84,0,1,0-1.75,120.51,4,4,0,0,1,5.5,5.82A91.43,91.43,0,0,1,128,220h-1.26A92,92,0,1,1,193,62.84l35,32.05V56a4,4,0,1,1,8,0Z" }))
   ]
 ]);
-const r$2 = reactExports.forwardRef((e2, c) => reactExports.createElement(p, { ref: c, ...e2, weights: a$4 }));
-r$2.displayName = "ArrowClockwiseIcon";
-const e$a =  new Map([
+const r$6 = reactExports.forwardRef((e2, c) => reactExports.createElement(p$1, { ref: c, ...e2, weights: a$d }));
+r$6.displayName = "ArrowClockwiseIcon";
+const e$j =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M204.73,51.85A108.07,108.07,0,0,0,20,128v56a28,28,0,0,0,28,28H64a28,28,0,0,0,28-28V144a28,28,0,0,0-28-28H44.84A84.05,84.05,0,0,1,128,44h.64a83.7,83.7,0,0,1,82.52,72H192a28,28,0,0,0-28,28v40a28,28,0,0,0,28,28h16a28,28,0,0,0,28-28V128A107.34,107.34,0,0,0,204.73,51.85ZM64,140a4,4,0,0,1,4,4v40a4,4,0,0,1-4,4H48a4,4,0,0,1-4-4V140Zm148,44a4,4,0,0,1-4,4H192a4,4,0,0,1-4-4V144a4,4,0,0,1,4-4h20Z" }))
@@ -12878,9 +12878,9 @@ const e$a =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M199.05,57.48A100.07,100.07,0,0,0,28,128v56a20,20,0,0,0,20,20H64a20,20,0,0,0,20-20V144a20,20,0,0,0-20-20H36.08A92,92,0,0,1,128,36h.7a91.75,91.75,0,0,1,91.22,88H192a20,20,0,0,0-20,20v40a20,20,0,0,0,20,20h16a20,20,0,0,0,20-20V128A99.43,99.43,0,0,0,199.05,57.48ZM64,132a12,12,0,0,1,12,12v40a12,12,0,0,1-12,12H48a12,12,0,0,1-12-12V132Zm156,52a12,12,0,0,1-12,12H192a12,12,0,0,1-12-12V144a12,12,0,0,1,12-12h28Z" }))
   ]
 ]);
-const o$4 = reactExports.forwardRef((a2, r2) => reactExports.createElement(p, { ref: r2, ...a2, weights: e$a }));
-o$4.displayName = "HeadphonesIcon";
-const e$9 =  new Map([
+const o$8 = reactExports.forwardRef((a2, r2) => reactExports.createElement(p$1, { ref: r2, ...a2, weights: e$j }));
+o$8.displayName = "HeadphonesIcon";
+const e$i =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216,44H40A20,20,0,0,0,20,64V224A19.82,19.82,0,0,0,31.56,242.1a20.14,20.14,0,0,0,8.49,1.9,19.91,19.91,0,0,0,12.82-4.72l.12-.11L84.47,212H216a20,20,0,0,0,20-20V64A20,20,0,0,0,216,44Zm-4,144H80a11.93,11.93,0,0,0-7.84,2.92L44,215.23V68H212ZM84,108A12,12,0,0,1,96,96h64a12,12,0,1,1,0,24H96A12,12,0,0,1,84,108Zm0,40a12,12,0,0,1,12-12h64a12,12,0,0,1,0,24H96A12,12,0,0,1,84,148Z" }))
@@ -12909,9 +12909,9 @@ const e$9 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216,52H40A12,12,0,0,0,28,64V224a11.89,11.89,0,0,0,6.93,10.88A12.17,12.17,0,0,0,40,236a11.89,11.89,0,0,0,7.69-2.83l0,0L81.49,204H216a12,12,0,0,0,12-12V64A12,12,0,0,0,216,52Zm4,140a4,4,0,0,1-4,4H80a4,4,0,0,0-2.62,1L42.56,227.06A4,4,0,0,1,36,224V64a4,4,0,0,1,4-4H216a4,4,0,0,1,4,4Zm-56-80a4,4,0,0,1-4,4H96a4,4,0,0,1,0-8h64A4,4,0,0,1,164,112Zm0,32a4,4,0,0,1-4,4H96a4,4,0,0,1,0-8h64A4,4,0,0,1,164,144Z" }))
   ]
 ]);
-const e$8 = reactExports.forwardRef((o2, a2) => reactExports.createElement(p, { ref: a2, ...o2, weights: e$9 }));
-e$8.displayName = "ChatTextIcon";
-const a$3 =  new Map([
+const e$h = reactExports.forwardRef((o2, a2) => reactExports.createElement(p$1, { ref: a2, ...o2, weights: e$i }));
+e$h.displayName = "ChatTextIcon";
+const a$c =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M232.49,215.51,185,168a92.12,92.12,0,1,0-17,17l47.53,47.54a12,12,0,0,0,17-17ZM44,112a68,68,0,1,1,68,68A68.07,68.07,0,0,1,44,112Z" }))
@@ -12937,8 +12937,8 @@ const a$3 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M226.83,221.17l-52.7-52.7a84.1,84.1,0,1,0-5.66,5.66l52.7,52.7a4,4,0,0,0,5.66-5.66ZM36,112a76,76,0,1,1,76,76A76.08,76.08,0,0,1,36,112Z" }))
   ]
 ]);
-const o$3 = reactExports.forwardRef((s, n) => reactExports.createElement(p, { ref: n, ...s, weights: a$3 }));
-o$3.displayName = "MagnifyingGlassIcon";
+const o$7 = reactExports.forwardRef((s2, n) => reactExports.createElement(p$1, { ref: n, ...s2, weights: a$c }));
+o$7.displayName = "MagnifyingGlassIcon";
 const l =  new Map([
   [
     "bold",
@@ -12968,9 +12968,9 @@ const l =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,80a36,36,0,1,1,36-36A36,36,0,0,1,128,164Zm106-56a4,4,0,0,0-2-2.7l-30.89-17.6q-.47-.82-1-1.62L200.1,51.2a3.94,3.94,0,0,0-1.42-3,107.8,107.8,0,0,0-35.41-19.94,4,4,0,0,0-3.23.29L129,45.87h-2l-31-17.36a4,4,0,0,0-3.23-.3,108.05,108.05,0,0,0-35.39,20,4,4,0,0,0-1.41,3l-.16,34.9-1,1.62L23.9,105.3A4,4,0,0,0,22,108a102.76,102.76,0,0,0,0,40,4,4,0,0,0,1.95,2.7l30.89,17.6q.47.83,1,1.62l.12,34.87a3.94,3.94,0,0,0,1.42,3,107.8,107.8,0,0,0,35.41,19.94,4,4,0,0,0,3.23-.29L127,210.13h2l31,17.36a4,4,0,0,0,3.23.3,108.05,108.05,0,0,0,35.39-20,4,4,0,0,0,1.41-3l.16-34.9,1-1.62L232.1,150.7a4,4,0,0,0,2-2.71A102.76,102.76,0,0,0,234,108Zm-7.48,36.67L196.3,161.84a4,4,0,0,0-1.51,1.53c-.61,1.09-1.25,2.17-1.91,3.24a3.92,3.92,0,0,0-.61,2.1l-.16,34.15a99.8,99.8,0,0,1-29.7,16.77l-30.4-17a4.06,4.06,0,0,0-2-.51H130c-1.28,0-2.57,0-3.84,0a4.1,4.1,0,0,0-2.05.51l-30.45,17A100.23,100.23,0,0,1,63.89,202.9l-.12-34.12a3.93,3.93,0,0,0-.61-2.11c-.66-1-1.3-2.14-1.91-3.23a4,4,0,0,0-1.51-1.53L29.49,144.68a94.78,94.78,0,0,1,0-33.34L59.7,94.16a4,4,0,0,0,1.51-1.53c.61-1.09,1.25-2.17,1.91-3.23a4,4,0,0,0,.61-2.11l.16-34.15a99.8,99.8,0,0,1,29.7-16.77l30.4,17a4.1,4.1,0,0,0,2.05.51c1.28,0,2.57,0,3.84,0a4,4,0,0,0,2.05-.51l30.45-17A100.23,100.23,0,0,1,192.11,53.1l.12,34.12a3.93,3.93,0,0,0,.61,2.11c.66,1,1.3,2.14,1.91,3.23a4,4,0,0,0,1.51,1.53l30.25,17.23A94.78,94.78,0,0,1,226.54,144.66Z" }))
   ]
 ]);
-const o$2 = reactExports.forwardRef((r2, a2) => reactExports.createElement(p, { ref: a2, ...r2, weights: l }));
-o$2.displayName = "GearSixIcon";
-const e$7 =  new Map([
+const o$6 = reactExports.forwardRef((r2, a2) => reactExports.createElement(p$1, { ref: a2, ...r2, weights: l }));
+o$6.displayName = "GearSixIcon";
+const e$g =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,84a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,84Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,148Zm77.39,12.7A83.94,83.94,0,0,1,190.61,184a12,12,0,0,1-17.89-16,59.92,59.92,0,0,0,0-80,12,12,0,0,1,17.89-16,84.07,84.07,0,0,1,14.78,88.7ZM83.28,168a12,12,0,0,1-17.89,16,83.94,83.94,0,0,1,0-112A12,12,0,0,1,83.28,88a59.92,59.92,0,0,0,0,80ZM252,128a123.63,123.63,0,0,1-35.43,86.78A12,12,0,1,1,199.43,198a99.88,99.88,0,0,0,0-140,12,12,0,0,1,17.14-16.8A123.63,123.63,0,0,1,252,128ZM56.57,198a12,12,0,0,1-17.14,16.8,123.89,123.89,0,0,1,0-173.56A12,12,0,0,1,56.57,58a99.88,99.88,0,0,0,0,140Z" }))
@@ -12996,9 +12996,9 @@ const e$7 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,92a36,36,0,1,0,36,36A36,36,0,0,0,128,92Zm0,64a28,28,0,1,1,28-28A28,28,0,0,1,128,156Zm76-28a75.74,75.74,0,0,1-19.35,50.67,4,4,0,0,1-6-5.34,67.92,67.92,0,0,0,0-90.66,4,4,0,0,1,6-5.34A75.74,75.74,0,0,1,204,128ZM65.34,101.53a67.92,67.92,0,0,0,12,71.8,4,4,0,0,1-6,5.34,75.93,75.93,0,0,1,0-101.34,4,4,0,1,1,6,5.34A68,68,0,0,0,65.34,101.53ZM244,128a115.68,115.68,0,0,1-33.14,81.18,4,4,0,0,1-5.72-5.6,107.89,107.89,0,0,0,0-151.16,4,4,0,0,1,5.72-5.6A115.68,115.68,0,0,1,244,128ZM50.86,203.58a4,4,0,0,1-5.72,5.6,115.91,115.91,0,0,1,0-162.36,4,4,0,1,1,5.72,5.6,107.89,107.89,0,0,0,0,151.16Z" }))
   ]
 ]);
-const a$2 = reactExports.forwardRef((r2, t2) => reactExports.createElement(p, { ref: t2, ...r2, weights: e$7 }));
-a$2.displayName = "BroadcastIcon";
-const a$1 =  new Map([
+const a$b = reactExports.forwardRef((r2, t2) => reactExports.createElement(p$1, { ref: t2, ...r2, weights: e$g }));
+a$b.displayName = "BroadcastIcon";
+const a$a =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M238.7,102.46,62.81,37.21l-.25-.09A20,20,0,0,0,37.12,62.56l.09.25L102.46,238.7A20,20,0,0,0,121.3,252h.35a20,20,0,0,0,18.77-14.12l.09-.29,21.23-75.85,75.85-21.23.29-.09a20,20,0,0,0,.82-38Zm-89.93,38a12,12,0,0,0-8.32,8.32l-19.68,70.29L62.8,62.8l156.26,58Z" }))
@@ -13027,9 +13027,9 @@ const a$1 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M236,110,59.93,44.67A12,12,0,0,0,44.69,60L110,235.93A11.83,11.83,0,0,0,121.28,244h.22a11.82,11.82,0,0,0,11.26-8.47l0-.1,22.45-80.19,80.19-22.44.1,0A12,12,0,0,0,236,110Zm-2.79,15.12-82.3,23a4,4,0,0,0-2.78,2.77l-23,82.3a3.88,3.88,0,0,1-3.74,2.78,4,4,0,0,1-3.88-2.77L52.22,57.32a3.93,3.93,0,0,1,1-4.14A4,4,0,0,1,56,52a3.86,3.86,0,0,1,1.25.21l176.08,65.32a4,4,0,0,1-.09,7.59Z" }))
   ]
 ]);
-const r$1 = reactExports.forwardRef((a2, t2) => reactExports.createElement(p, { ref: t2, ...a2, weights: a$1 }));
-r$1.displayName = "NavigationArrowIcon";
-const e$6 =  new Map([
+const r$5 = reactExports.forwardRef((a2, t2) => reactExports.createElement(p$1, { ref: t2, ...a2, weights: a$a }));
+r$5.displayName = "NavigationArrowIcon";
+const e$f =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M224,154.8l-47.09-21.11-.18-.08a19.94,19.94,0,0,0-19,1.75,13.08,13.08,0,0,0-1.12.84l-22.31,19c-13-7.05-26.43-20.37-33.49-33.21l19.06-22.66a11.76,11.76,0,0,0,.85-1.15,20,20,0,0,0,1.66-18.83,1.42,1.42,0,0,1-.08-.18L101.2,32A20.06,20.06,0,0,0,80.42,20.15,60.27,60.27,0,0,0,28,80c0,81.61,66.39,148,148,148a60.27,60.27,0,0,0,59.85-52.42A20.06,20.06,0,0,0,224,154.8ZM176,204A124.15,124.15,0,0,1,52,80,36.29,36.29,0,0,1,80.48,44.46l18.82,42L80.14,109.28a12,12,0,0,0-.86,1.16A20,20,0,0,0,78,130.08c9.42,19.28,28.83,38.56,48.31,48A20,20,0,0,0,146,176.63a11.63,11.63,0,0,0,1.11-.85l22.43-19.07,42,18.81A36.29,36.29,0,0,1,176,204Z" }))
@@ -13058,9 +13058,9 @@ const e$6 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M220.78,162.13,173.56,141A12,12,0,0,0,162.18,142a3.37,3.37,0,0,0-.38.28L137,163.42a3.93,3.93,0,0,1-3.7.21c-16.24-7.84-33.05-24.52-40.89-40.57a3.9,3.9,0,0,1,.18-3.69l21.2-25.21c.1-.12.19-.25.28-.38a12,12,0,0,0,1-11.36L93.9,35.28a12,12,0,0,0-12.48-7.19A52.25,52.25,0,0,0,36,80c0,77.2,62.8,140,140,140a52.25,52.25,0,0,0,51.91-45.42A12,12,0,0,0,220.78,162.13ZM220,173.58A44.23,44.23,0,0,1,176,212C103.22,212,44,152.78,44,80A44.23,44.23,0,0,1,82.42,36a3.87,3.87,0,0,1,.48,0,4,4,0,0,1,3.67,2.49l21.11,47.14a4,4,0,0,1-.23,3.6l-21.19,25.2c-.1.13-.2.25-.29.39a12,12,0,0,0-.78,11.75c8.69,17.79,26.61,35.58,44.6,44.27a12,12,0,0,0,11.79-.87l.37-.28,24.83-21.12a3.93,3.93,0,0,1,3.57-.27l47.21,21.16A4,4,0,0,1,220,173.58Z" }))
   ]
 ]);
-const e$5 = reactExports.forwardRef((r2, t2) => reactExports.createElement(p, { ref: t2, ...r2, weights: e$6 }));
-e$5.displayName = "PhoneIcon";
-const e$4 =  new Map([
+const e$e = reactExports.forwardRef((r2, t2) => reactExports.createElement(p$1, { ref: t2, ...r2, weights: e$f }));
+e$e.displayName = "PhoneIcon";
+const e$d =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M76,64A12,12,0,0,1,88,52H216a12,12,0,0,1,0,24H88A12,12,0,0,1,76,64Zm140,52H88a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Zm0,64H88a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24ZM44,112a16,16,0,1,0,16,16A16,16,0,0,0,44,112Zm0-64A16,16,0,1,0,60,64,16,16,0,0,0,44,48Zm0,128a16,16,0,1,0,16,16A16,16,0,0,0,44,176Z" }))
@@ -13086,8 +13086,8 @@ const e$4 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M84,64a4,4,0,0,1,4-4H216a4,4,0,0,1,0,8H88A4,4,0,0,1,84,64Zm132,60H88a4,4,0,0,0,0,8H216a4,4,0,0,0,0-8Zm0,64H88a4,4,0,0,0,0,8H216a4,4,0,0,0,0-8ZM44,120a8,8,0,1,0,8,8A8,8,0,0,0,44,120Zm0-64a8,8,0,1,0,8,8A8,8,0,0,0,44,56Zm0,128a8,8,0,1,0,8,8A8,8,0,0,0,44,184Z" }))
   ]
 ]);
-const e$3 = reactExports.forwardRef((o2, s) => reactExports.createElement(p, { ref: s, ...o2, weights: e$4 }));
-e$3.displayName = "ListBulletsIcon";
+const e$c = reactExports.forwardRef((o2, s2) => reactExports.createElement(p$1, { ref: s2, ...o2, weights: e$d }));
+e$c.displayName = "ListBulletsIcon";
 const t =  new Map([
   [
     "bold",
@@ -13114,9 +13114,9 @@ const t =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M210.83,98.83l-80,80a4,4,0,0,1-5.66,0l-80-80a4,4,0,0,1,5.66-5.66L128,170.34l77.17-77.17a4,4,0,1,1,5.66,5.66Z" }))
   ]
 ]);
-const e$2 = reactExports.forwardRef((r2, t$12) => reactExports.createElement(p, { ref: t$12, ...r2, weights: t }));
-e$2.displayName = "CaretDownIcon";
-const a =  new Map([
+const e$b = reactExports.forwardRef((r2, t$12) => reactExports.createElement(p$1, { ref: t$12, ...r2, weights: t }));
+e$b.displayName = "CaretDownIcon";
+const a$9 =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M222.14,105.85l-80-80a20,20,0,0,0-28.28,0l-80,80A19.86,19.86,0,0,0,28,120v96a12,12,0,0,0,12,12H216a12,12,0,0,0,12-12V120A19.86,19.86,0,0,0,222.14,105.85ZM204,204H52V121.65l76-76,76,76Z" }))
@@ -13145,9 +13145,9 @@ const a =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216.49,111.51l-80-80a12,12,0,0,0-17,0l-80,80A12,12,0,0,0,36,120v96a4,4,0,0,0,4,4H216a4,4,0,0,0,4-4V120A12,12,0,0,0,216.49,111.51ZM212,212H44V120a4,4,0,0,1,1.17-2.83l80-80a4,4,0,0,1,5.66,0l80,80A4,4,0,0,1,212,120Z" }))
   ]
 ]);
-const o$1 = reactExports.forwardRef((m, r2) => reactExports.createElement(p, { ref: r2, ...m, weights: a }));
-o$1.displayName = "HouseSimpleIcon";
-const e$1 =  new Map([
+const o$5 = reactExports.forwardRef((m, r2) => reactExports.createElement(p$1, { ref: r2, ...m, weights: a$9 }));
+o$5.displayName = "HouseSimpleIcon";
+const e$a =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M188,76a31.85,31.85,0,0,0-11.21,2,32,32,0,0,0-48.79-11A32,32,0,0,0,76,92v16H68a32,32,0,0,0-32,32v12a92,92,0,0,0,184,0V108A32,32,0,0,0,188,76Zm8,76a68,68,0,0,1-136,0V140a8,8,0,0,1,8-8h8v20a12,12,0,0,0,24,0V92a8,8,0,0,1,16,0v28a12,12,0,0,0,24,0V92a8,8,0,0,1,16,0v28a12,12,0,0,0,24,0V108a8,8,0,0,1,16,0Z" }))
@@ -13176,9 +13176,9 @@ const e$1 =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M188,84a23.87,23.87,0,0,0-16.07,6.2A24,24,0,0,0,128,78.75,24,24,0,0,0,84,92v24H68a24,24,0,0,0-24,24v12a84,84,0,0,0,168,0V108A24,24,0,0,0,188,84Zm16,68a76,76,0,0,1-152,0V140a16,16,0,0,1,16-16H84v28a4,4,0,0,0,8,0V92a16,16,0,0,1,32,0v28a4,4,0,0,0,8,0V92a16,16,0,0,1,32,0v28a4,4,0,0,0,8,0V108a16,16,0,0,1,32,0Z" }))
   ]
 ]);
-const o = reactExports.forwardRef((r2, n) => reactExports.createElement(p, { ref: n, ...r2, weights: e$1 }));
-o.displayName = "HandGrabbingIcon";
-const e =  new Map([
+const o$4 = reactExports.forwardRef((r2, n) => reactExports.createElement(p$1, { ref: n, ...r2, weights: e$a }));
+o$4.displayName = "HandGrabbingIcon";
+const e$9 =  new Map([
   [
     "bold",
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M47.51,112.49a12,12,0,0,1,17-17L116,147V32a12,12,0,0,1,24,0V147l51.51-51.52a12,12,0,0,1,17,17l-72,72a12,12,0,0,1-17,0ZM216,204H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z" }))
@@ -13204,43 +13204,476 @@ const e =  new Map([
     reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M53.17,114.83a4,4,0,0,1,5.66-5.66L124,174.34V32a4,4,0,0,1,8,0V174.34l65.17-65.17a4,4,0,1,1,5.66,5.66l-72,72a4,4,0,0,1-5.66,0ZM216,212H40a4,4,0,0,0,0,8H216a4,4,0,0,0,0-8Z" }))
   ]
 ]);
-const r = reactExports.forwardRef((e$12, n) => reactExports.createElement(p, { ref: n, ...e$12, weights: e }));
-r.displayName = "ArrowLineDownIcon";
+const r$4 = reactExports.forwardRef((e2, n) => reactExports.createElement(p$1, { ref: n, ...e2, weights: e$9 }));
+r$4.displayName = "ArrowLineDownIcon";
+const e$8 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,28H160a20,20,0,0,0-20,20V208a20,20,0,0,0,20,20h40a20,20,0,0,0,20-20V48A20,20,0,0,0,200,28Zm-4,176H164V52h32ZM96,28H56A20,20,0,0,0,36,48V208a20,20,0,0,0,20,20H96a20,20,0,0,0,20-20V48A20,20,0,0,0,96,28ZM92,204H60V52H92Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", {
+      d: "M208,48V208a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8h40A8,8,0,0,1,208,48ZM96,40H56a8,8,0,0,0-8,8V208a8,8,0,0,0,8,8H96a8,8,0,0,0,8-8V48A8,8,0,0,0,96,40Z",
+      opacity: "0.2"
+    }), reactExports.createElement("path", { d: "M200,32H160a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16h40a16,16,0,0,0,16-16V48A16,16,0,0,0,200,32Zm0,176H160V48h40ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Zm0,176H56V48H96Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216,48V208a16,16,0,0,1-16,16H160a16,16,0,0,1-16-16V48a16,16,0,0,1,16-16h40A16,16,0,0,1,216,48ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,34H160a14,14,0,0,0-14,14V208a14,14,0,0,0,14,14h40a14,14,0,0,0,14-14V48A14,14,0,0,0,200,34Zm2,174a2,2,0,0,1-2,2H160a2,2,0,0,1-2-2V48a2,2,0,0,1,2-2h40a2,2,0,0,1,2,2ZM96,34H56A14,14,0,0,0,42,48V208a14,14,0,0,0,14,14H96a14,14,0,0,0,14-14V48A14,14,0,0,0,96,34Zm2,174a2,2,0,0,1-2,2H56a2,2,0,0,1-2-2V48a2,2,0,0,1,2-2H96a2,2,0,0,1,2,2Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,32H160a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16h40a16,16,0,0,0,16-16V48A16,16,0,0,0,200,32Zm0,176H160V48h40ZM96,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V48A16,16,0,0,0,96,32Zm0,176H56V48H96Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,36H160a12,12,0,0,0-12,12V208a12,12,0,0,0,12,12h40a12,12,0,0,0,12-12V48A12,12,0,0,0,200,36Zm4,172a4,4,0,0,1-4,4H160a4,4,0,0,1-4-4V48a4,4,0,0,1,4-4h40a4,4,0,0,1,4,4ZM96,36H56A12,12,0,0,0,44,48V208a12,12,0,0,0,12,12H96a12,12,0,0,0,12-12V48A12,12,0,0,0,96,36Zm4,172a4,4,0,0,1-4,4H56a4,4,0,0,1-4-4V48a4,4,0,0,1,4-4H96a4,4,0,0,1,4,4Z" }))
+  ]
+]);
+const o$3 = reactExports.forwardRef((a2, r2) => reactExports.createElement(p$1, { ref: r2, ...a2, weights: e$8 }));
+o$3.displayName = "PauseIcon";
+const a$8 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,28a12,12,0,0,0-12,12v62l-113.45-71A20,20,0,0,0,44,47.88V208.12A20,20,0,0,0,74.55,225L188,154v62a12,12,0,0,0,24,0V40A12,12,0,0,0,200,28ZM68,200.73V55.27L184.3,128Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", {
+      d: "M196.3,134.65,68.19,214.77A8,8,0,0,1,56,208.12V47.88a8,8,0,0,1,12.19-6.65L196.3,121.35A7.83,7.83,0,0,1,196.3,134.65Z",
+      opacity: "0.2"
+    }), reactExports.createElement("path", { d: "M200,32a8,8,0,0,0-8,8v69.23L72.43,34.45A15.95,15.95,0,0,0,48,47.88V208.12a16,16,0,0,0,24.43,13.43L192,146.77V216a8,8,0,0,0,16,0V40A8,8,0,0,0,200,32ZM64,207.93V48.05l127.84,80Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M208,40V216a8,8,0,0,1-16,0V146.77L72.43,221.55A15.95,15.95,0,0,1,48,208.12V47.88A15.95,15.95,0,0,1,72.43,34.45L192,109.23V40a8,8,0,0,1,16,0Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,34a6,6,0,0,0-6,6v72.84L71.37,36.14a14,14,0,0,0-14.21-.37A13.69,13.69,0,0,0,50,47.88V208.12a13.69,13.69,0,0,0,7.16,12.11,14,14,0,0,0,14.21-.37L194,143.17V216a6,6,0,0,0,12,0V40A6,6,0,0,0,200,34Zm-6.88,95.56L65,209.69a2,2,0,0,1-2,.05,1.79,1.79,0,0,1-1-1.62V47.88a1.79,1.79,0,0,1,1-1.62A2.1,2.1,0,0,1,64,46a2,2,0,0,1,1,.31l128.12,80.13a1.82,1.82,0,0,1,0,3.12Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,32a8,8,0,0,0-8,8v69.23L72.43,34.45A15.95,15.95,0,0,0,48,47.88V208.12a16,16,0,0,0,24.43,13.43L192,146.77V216a8,8,0,0,0,16,0V40A8,8,0,0,0,200,32ZM64,207.93V48.05l127.84,80Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,36a4,4,0,0,0-4,4v76.44L70.31,37.84a12,12,0,0,0-12.18-.32A11.69,11.69,0,0,0,52,47.88V208.12a11.69,11.69,0,0,0,6.13,10.36,12,12,0,0,0,12.18-.32L196,139.56V216a4,4,0,0,0,8,0V40A4,4,0,0,0,200,36Zm-5.82,95.26L66.06,211.38a4,4,0,0,1-4.06.11,3.8,3.8,0,0,1-2-3.37V47.88a3.8,3.8,0,0,1,2-3.37A4,4,0,0,1,64,44a4,4,0,0,1,2.11.62l128.12,80.12a3.83,3.83,0,0,1,0,6.52Z" }))
+  ]
+]);
+const r$3 = reactExports.forwardRef((a2, e2) => reactExports.createElement(p$1, { ref: e2, ...a2, weights: a$8 }));
+r$3.displayName = "SkipForwardIcon";
+const a$7 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M201.75,30.52a20,20,0,0,0-20.3.53L68,102V40a12,12,0,0,0-24,0V216a12,12,0,0,0,24,0V154l113.45,71A20,20,0,0,0,212,208.12V47.88A19.86,19.86,0,0,0,201.75,30.52ZM188,200.73,71.7,128,188,55.27Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", {
+      d: "M200,47.88V208.12a8,8,0,0,1-12.19,6.65L59.7,134.65a7.83,7.83,0,0,1,0-13.3L187.81,41.23A8,8,0,0,1,200,47.88Z",
+      opacity: "0.2"
+    }), reactExports.createElement("path", { d: "M199.81,34a16,16,0,0,0-16.24.43L64,109.23V40a8,8,0,0,0-16,0V216a8,8,0,0,0,16,0V146.77l119.57,74.78A15.95,15.95,0,0,0,208,208.12V47.88A15.86,15.86,0,0,0,199.81,34ZM192,208,64.16,128,192,48.07Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M208,47.88V208.12a16,16,0,0,1-24.43,13.43L64,146.77V216a8,8,0,0,1-16,0V40a8,8,0,0,1,16,0v69.23L183.57,34.45A15.95,15.95,0,0,1,208,47.88Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M198.84,35.77a14,14,0,0,0-14.21.37L62,112.83V40a6,6,0,0,0-12,0V216a6,6,0,0,0,12,0V143.16l122.63,76.7a14,14,0,0,0,14.21.37A13.69,13.69,0,0,0,206,208.12V47.88A13.69,13.69,0,0,0,198.84,35.77ZM194,208.12a1.79,1.79,0,0,1-1,1.62,2,2,0,0,1-2-.05L62.88,129.56a1.82,1.82,0,0,1,0-3.12L191,46.31a2,2,0,0,1,1-.31,2.1,2.1,0,0,1,1,.26,1.79,1.79,0,0,1,1,1.62Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M199.81,34a16,16,0,0,0-16.24.43L64,109.23V40a8,8,0,0,0-16,0V216a8,8,0,0,0,16,0V146.77l119.57,74.78A15.95,15.95,0,0,0,208,208.12V47.88A15.86,15.86,0,0,0,199.81,34ZM192,208,64.16,128,192,48.07Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M197.87,37.52a12,12,0,0,0-12.18.32L60,116.44V40a4,4,0,0,0-8,0V216a4,4,0,0,0,8,0V139.56l125.69,78.6a12,12,0,0,0,12.18.32A11.69,11.69,0,0,0,204,208.12V47.88A11.69,11.69,0,0,0,197.87,37.52ZM196,208.12a3.8,3.8,0,0,1-2,3.37,4,4,0,0,1-4.06-.11L61.82,131.26a3.83,3.83,0,0,1,0-6.52L189.94,44.62a4,4,0,0,1,2.11-.62,4,4,0,0,1,1.95.51,3.8,3.8,0,0,1,2,3.37Z" }))
+  ]
+]);
+const a$6 = reactExports.forwardRef((c, e2) => reactExports.createElement(p$1, { ref: e2, ...c, weights: a$7 }));
+a$6.displayName = "SkipBackIcon";
+const a$5 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M208.49,120.49a12,12,0,0,1-17,0L140,69V216a12,12,0,0,1-24,0V69L64.49,120.49a12,12,0,0,1-17-17l72-72a12,12,0,0,1,17,0l72,72A12,12,0,0,1,208.49,120.49Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,112H56l72-72Z", opacity: "0.2" }), reactExports.createElement("path", { d: "M205.66,106.34l-72-72a8,8,0,0,0-11.32,0l-72,72A8,8,0,0,0,56,120h64v96a8,8,0,0,0,16,0V120h64a8,8,0,0,0,5.66-13.66ZM75.31,104,128,51.31,180.69,104Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M207.39,115.06A8,8,0,0,1,200,120H136v96a8,8,0,0,1-16,0V120H56a8,8,0,0,1-5.66-13.66l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,207.39,115.06Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M204.24,116.24a6,6,0,0,1-8.48,0L134,54.49V216a6,6,0,0,1-12,0V54.49L60.24,116.24a6,6,0,0,1-8.48-8.48l72-72a6,6,0,0,1,8.48,0l72,72A6,6,0,0,1,204.24,116.24Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M202.83,114.83a4,4,0,0,1-5.66,0L132,49.66V216a4,4,0,0,1-8,0V49.66L58.83,114.83a4,4,0,0,1-5.66-5.66l72-72a4,4,0,0,1,5.66,0l72,72A4,4,0,0,1,202.83,114.83Z" }))
+  ]
+]);
+const r$2 = reactExports.forwardRef((e2, t2) => reactExports.createElement(p$1, { ref: t2, ...e2, weights: a$5 }));
+r$2.displayName = "ArrowUpIcon";
+const a$4 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M208.49,152.49l-72,72a12,12,0,0,1-17,0l-72-72a12,12,0,0,1,17-17L116,187V40a12,12,0,0,1,24,0V187l51.51-51.52a12,12,0,0,1,17,17Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,144l-72,72L56,144Z", opacity: "0.2" }), reactExports.createElement("path", { d: "M207.39,140.94A8,8,0,0,0,200,136H136V40a8,8,0,0,0-16,0v96H56a8,8,0,0,0-5.66,13.66l72,72a8,8,0,0,0,11.32,0l72-72A8,8,0,0,0,207.39,140.94ZM128,204.69,75.31,152H180.69Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72A8,8,0,0,1,56,136h64V40a8,8,0,0,1,16,0v96h64a8,8,0,0,1,5.66,13.66Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M204.24,148.24l-72,72a6,6,0,0,1-8.48,0l-72-72a6,6,0,0,1,8.48-8.48L122,201.51V40a6,6,0,0,1,12,0V201.51l61.76-61.75a6,6,0,0,1,8.48,8.48Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M205.66,149.66l-72,72a8,8,0,0,1-11.32,0l-72-72a8,8,0,0,1,11.32-11.32L120,196.69V40a8,8,0,0,1,16,0V196.69l58.34-58.35a8,8,0,0,1,11.32,11.32Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M202.83,146.83l-72,72a4,4,0,0,1-5.66,0l-72-72a4,4,0,0,1,5.66-5.66L124,206.34V40a4,4,0,0,1,8,0V206.34l65.17-65.17a4,4,0,0,1,5.66,5.66Z" }))
+  ]
+]);
+const r$1 = reactExports.forwardRef((e2, t2) => reactExports.createElement(p$1, { ref: t2, ...e2, weights: a$4 }));
+r$1.displayName = "ArrowDownIcon";
+const e$7 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216,48H180V36A28,28,0,0,0,152,8H104A28,28,0,0,0,76,36V48H40a12,12,0,0,0,0,24h4V208a20,20,0,0,0,20,20H192a20,20,0,0,0,20-20V72h4a12,12,0,0,0,0-24ZM100,36a4,4,0,0,1,4-4h48a4,4,0,0,1,4,4V48H100Zm88,168H68V72H188ZM116,104v64a12,12,0,0,1-24,0V104a12,12,0,0,1,24,0Zm48,0v64a12,12,0,0,1-24,0V104a12,12,0,0,1,24,0Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,56V208a8,8,0,0,1-8,8H64a8,8,0,0,1-8-8V56Z", opacity: "0.2" }), reactExports.createElement("path", { d: "M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM112,168a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm0-120H96V40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216,50H174V40a22,22,0,0,0-22-22H104A22,22,0,0,0,82,40V50H40a6,6,0,0,0,0,12H50V208a14,14,0,0,0,14,14H192a14,14,0,0,0,14-14V62h10a6,6,0,0,0,0-12ZM94,40a10,10,0,0,1,10-10h48a10,10,0,0,1,10,10V50H94ZM194,208a2,2,0,0,1-2,2H64a2,2,0,0,1-2-2V62H194ZM110,104v64a6,6,0,0,1-12,0V104a6,6,0,0,1,12,0Zm48,0v64a6,6,0,0,1-12,0V104a6,6,0,0,1,12,0Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216,52H172V40a20,20,0,0,0-20-20H104A20,20,0,0,0,84,40V52H40a4,4,0,0,0,0,8H52V208a12,12,0,0,0,12,12H192a12,12,0,0,0,12-12V60h12a4,4,0,0,0,0-8ZM92,40a12,12,0,0,1,12-12h48a12,12,0,0,1,12,12V52H92ZM196,208a4,4,0,0,1-4,4H64a4,4,0,0,1-4-4V60H196ZM108,104v64a4,4,0,0,1-8,0V104a4,4,0,0,1,8,0Zm48,0v64a4,4,0,0,1-8,0V104a4,4,0,0,1,8,0Z" }))
+  ]
+]);
+const r = reactExports.forwardRef((a2, e2) => reactExports.createElement(p$1, { ref: e2, ...a2, weights: e$7 }));
+r.displayName = "TrashIcon";
+const e$6 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M117.18,188.74a12,12,0,0,1,0,17l-5.12,5.12A58.26,58.26,0,0,1,70.6,228h0A58.62,58.62,0,0,1,29.14,127.92L63.89,93.17a58.64,58.64,0,0,1,98.56,28.11,12,12,0,1,1-23.37,5.44,34.65,34.65,0,0,0-58.22-16.58L46.11,144.89A34.62,34.62,0,0,0,70.57,204h0a34.41,34.41,0,0,0,24.49-10.14l5.11-5.12A12,12,0,0,1,117.18,188.74ZM226.83,45.17a58.65,58.65,0,0,0-82.93,0l-5.11,5.11a12,12,0,0,0,17,17l5.12-5.12a34.63,34.63,0,1,1,49,49L175.1,145.86A34.39,34.39,0,0,1,150.61,156h0a34.63,34.63,0,0,1-33.69-26.72,12,12,0,0,0-23.38,5.44A58.64,58.64,0,0,0,150.56,180h.05a58.28,58.28,0,0,0,41.47-17.17l34.75-34.75a58.62,58.62,0,0,0,0-82.91Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", {
+      d: "M218.34,119.6,183.6,154.34a46.58,46.58,0,0,1-44.31,12.26c-.31.34-.62.67-.95,1L103.6,202.34A46.63,46.63,0,1,1,37.66,136.4L72.4,101.66A46.6,46.6,0,0,1,116.71,89.4c.31-.34.62-.67,1-1L152.4,53.66a46.63,46.63,0,0,1,65.94,65.94Z",
+      opacity: "0.2"
+    }), reactExports.createElement("path", { d: "M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,7.78,8.22H152a8,8,0,0,0,8-7.78A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM115.7,192.49a43.31,43.31,0,0,1-55-66.43l25.37-25.37a43.35,43.35,0,0,1,61.25,0,42.9,42.9,0,0,1,9.95,15.43,8,8,0,1,1-15,5.6A27.33,27.33,0,0,0,97.37,112L72,137.37a27.32,27.32,0,0,0,34.68,41.91,8,8,0,1,1,9,13.21Zm79.61-62.55-25.37,25.37A43,43,0,0,1,139.32,168h0a43.35,43.35,0,0,1-40.53-28.12,8,8,0,1,1,15-5.6A27.35,27.35,0,0,0,139.28,152h0a27.14,27.14,0,0,0,19.32-8L184,118.63a27.32,27.32,0,0,0-34.68-41.91,8,8,0,1,1-9-13.21,43.32,43.32,0,0,1,55,66.43Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M238,88.18a52.42,52.42,0,0,1-15.4,35.66l-34.75,34.75A52.28,52.28,0,0,1,150.62,174h-.05A52.63,52.63,0,0,1,98,119.9a6,6,0,0,1,6-5.84h.17a6,6,0,0,1,5.83,6.16A40.62,40.62,0,0,0,150.58,162h0a40.4,40.4,0,0,0,28.73-11.9l34.75-34.74A40.63,40.63,0,0,0,156.63,57.9l-11,11a6,6,0,0,1-8.49-8.49l11-11a52.62,52.62,0,0,1,74.43,0A52.83,52.83,0,0,1,238,88.18Zm-127.62,98.9-11,11A40.36,40.36,0,0,1,70.6,210h0a40.63,40.63,0,0,1-28.7-69.36L76.62,105.9A40.63,40.63,0,0,1,146,135.77a6,6,0,0,0,5.83,6.16H152a6,6,0,0,0,6-5.84A52.63,52.63,0,0,0,68.14,97.42L33.38,132.16A52.63,52.63,0,0,0,70.56,222h0a52.26,52.26,0,0,0,37.22-15.42l11-11a6,6,0,1,0-8.49-8.48Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M236,88.12a50.44,50.44,0,0,1-14.81,34.31l-34.75,34.74A50.33,50.33,0,0,1,150.62,172h-.05A50.63,50.63,0,0,1,100,120a4,4,0,0,1,4-3.89h.11a4,4,0,0,1,3.89,4.11A42.64,42.64,0,0,0,150.58,164h0a42.32,42.32,0,0,0,30.14-12.49l34.75-34.74a42.63,42.63,0,1,0-60.29-60.28l-11,11a4,4,0,0,1-5.66-5.65l11-11A50.64,50.64,0,0,1,236,88.12ZM111.78,188.49l-11,11A42.33,42.33,0,0,1,70.6,212h0a42.63,42.63,0,0,1-30.11-72.77l34.75-34.74A42.63,42.63,0,0,1,148,135.82a4,4,0,0,0,8,.23A50.64,50.64,0,0,0,69.55,98.83L34.8,133.57A50.63,50.63,0,0,0,70.56,220h0a50.33,50.33,0,0,0,35.81-14.83l11-11a4,4,0,1,0-5.65-5.66Z" }))
+  ]
+]);
+const e$5 = reactExports.forwardRef((r2, t2) => reactExports.createElement(p$1, { ref: t2, ...r2, weights: e$6 }));
+e$5.displayName = "LinkIcon";
+const a$3 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M108,84a16,16,0,1,1,16,16A16,16,0,0,1,108,84Zm128,44A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Zm-72,36.68V132a20,20,0,0,0-20-20,12,12,0,0,0-4,23.32V168a20,20,0,0,0,20,20,12,12,0,0,0,4-23.32Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z", opacity: "0.2" }), reactExports.createElement("path", { d: "M144,176a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176Zm88-48A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128ZM124,96a12,12,0,1,0-12-12A12,12,0,0,0,124,96Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm-4,48a12,12,0,1,1-12,12A12,12,0,0,1,124,72Zm12,112a16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40a8,8,0,0,1,0,16Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M142,176a6,6,0,0,1-6,6,14,14,0,0,1-14-14V128a2,2,0,0,0-2-2,6,6,0,0,1,0-12,14,14,0,0,1,14,14v40a2,2,0,0,0,2,2A6,6,0,0,1,142,176ZM124,94a10,10,0,1,0-10-10A10,10,0,0,0,124,94Zm106,34A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M140,176a4,4,0,0,1-4,4,12,12,0,0,1-12-12V128a4,4,0,0,0-4-4,4,4,0,0,1,0-8,12,12,0,0,1,12,12v40a4,4,0,0,0,4,4A4,4,0,0,1,140,176ZM124,92a8,8,0,1,0-8-8A8,8,0,0,0,124,92Zm104,36A100,100,0,1,1,128,28,100.11,100.11,0,0,1,228,128Zm-8,0a92,92,0,1,0-92,92A92.1,92.1,0,0,0,220,128Z" }))
+  ]
+]);
+const e$4 = reactExports.forwardRef((r2, t2) => reactExports.createElement(p$1, { ref: t2, ...r2, weights: a$3 }));
+e$4.displayName = "InfoIcon";
+const a$2 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M215.38,14.54a12,12,0,0,0-10.29-2.18l-128,32A12,12,0,0,0,68,56V159.35A40,40,0,1,0,92,196V113.37l104-26v40A40,40,0,1,0,220,164V24A12,12,0,0,0,215.38,14.54ZM52,212a16,16,0,1,1,16-16A16,16,0,0,1,52,212ZM92,88.63V65.37l104-26V62.63ZM180,180a16,16,0,1,1,16-16A16,16,0,0,1,180,180Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", {
+      d: "M208,164a28,28,0,1,1-28-28A28,28,0,0,1,208,164ZM52,168a28,28,0,1,0,28,28A28,28,0,0,0,52,168Z",
+      opacity: "0.2"
+    }), reactExports.createElement("path", { d: "M212.92,17.69a8,8,0,0,0-6.86-1.45l-128,32A8,8,0,0,0,72,56V166.08A36,36,0,1,0,88,196V110.25l112-28v51.83A36,36,0,1,0,216,164V24A8,8,0,0,0,212.92,17.69ZM52,216a20,20,0,1,1,20-20A20,20,0,0,1,52,216ZM88,93.75V62.25l112-28v31.5ZM180,184a20,20,0,1,1,20-20A20,20,0,0,1,180,184Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M212.92,17.71a7.89,7.89,0,0,0-6.86-1.46l-128,32A8,8,0,0,0,72,56V166.1A36,36,0,1,0,88,196V102.25l112-28V134.1A36,36,0,1,0,216,164V24A8,8,0,0,0,212.92,17.71Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M211.69,19.27a6,6,0,0,0-5.15-1.09l-128,32A6,6,0,0,0,74,56V170.11A34,34,0,1,0,86,196V108.68l116-29v58.43A34,34,0,1,0,214,164V24A6,6,0,0,0,211.69,19.27ZM52,218a22,22,0,1,1,22-22A22,22,0,0,1,52,218ZM86,96.32V60.68l116-29V67.32ZM180,186a22,22,0,1,1,22-22A22,22,0,0,1,180,186Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M212.92,17.69a8,8,0,0,0-6.86-1.45l-128,32A8,8,0,0,0,72,56V166.08A36,36,0,1,0,88,196V110.25l112-28v51.83A36,36,0,1,0,216,164V24A8,8,0,0,0,212.92,17.69ZM52,216a20,20,0,1,1,20-20A20,20,0,0,1,52,216ZM88,93.75V62.25l112-28v31.5ZM180,184a20,20,0,1,1,20-20A20,20,0,0,1,180,184Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M210.46,20.85a4,4,0,0,0-3.43-.73l-128,32A4,4,0,0,0,76,56V174.87A32,32,0,1,0,84,196V107.12l120-30v65.75A32,32,0,1,0,212,164V24A4,4,0,0,0,210.46,20.85ZM52,220a24,24,0,1,1,24-24A24,24,0,0,1,52,220Zm128-32a24,24,0,1,1,24-24A24,24,0,0,1,180,188ZM84,98.88V59.12l120-30V68.88Z" }))
+  ]
+]);
+const e$3 = reactExports.forwardRef((s2, t2) => reactExports.createElement(p$1, { ref: t2, ...s2, weights: a$2 }));
+e$3.displayName = "MusicNotesIcon";
+const a$1 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M178,36c-20.09,0-37.92,7.93-50,21.56C115.92,43.93,98.09,36,78,36a66.08,66.08,0,0,0-66,66c0,72.34,105.81,130.14,110.31,132.57a12,12,0,0,0,11.38,0C138.19,232.14,244,174.34,244,102A66.08,66.08,0,0,0,178,36Zm-5.49,142.36A328.69,328.69,0,0,1,128,210.16a328.69,328.69,0,0,1-44.51-31.8C61.82,159.77,36,131.42,36,102A42,42,0,0,1,78,60c17.8,0,32.7,9.4,38.89,24.54a12,12,0,0,0,22.22,0C145.3,69.4,160.2,60,178,60a42,42,0,0,1,42,42C220,131.42,194.18,159.77,172.51,178.36Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", {
+      d: "M232,102c0,66-104,122-104,122S24,168,24,102A54,54,0,0,1,78,48c22.59,0,41.94,12.31,50,32,8.06-19.69,27.41-32,50-32A54,54,0,0,1,232,102Z",
+      opacity: "0.2"
+    }), reactExports.createElement("path", { d: "M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M240,102c0,70-103.79,126.66-108.21,129a8,8,0,0,1-7.58,0C119.79,228.66,16,172,16,102A62.07,62.07,0,0,1,78,40c20.65,0,38.73,8.88,50,23.89C139.27,48.88,157.35,40,178,40A62.07,62.07,0,0,1,240,102Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M178,42c-21,0-39.26,9.47-50,25.34C117.26,51.47,99,42,78,42a60.07,60.07,0,0,0-60,60c0,29.2,18.2,59.59,54.1,90.31a334.68,334.68,0,0,0,53.06,37,6,6,0,0,0,5.68,0,334.68,334.68,0,0,0,53.06-37C219.8,161.59,238,131.2,238,102A60.07,60.07,0,0,0,178,42ZM128,217.11C111.59,207.64,30,157.72,30,102A48.05,48.05,0,0,1,78,54c20.28,0,37.31,10.83,44.45,28.27a6,6,0,0,0,11.1,0C140.69,64.83,157.72,54,178,54a48.05,48.05,0,0,1,48,48C226,157.72,144.41,207.64,128,217.11Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M178,44c-21.44,0-39.92,10.19-50,27.07C117.92,54.19,99.44,44,78,44a58.07,58.07,0,0,0-58,58c0,28.59,18,58.47,53.4,88.79a333.81,333.81,0,0,0,52.7,36.73,4,4,0,0,0,3.8,0,333.81,333.81,0,0,0,52.7-36.73C218,160.47,236,130.59,236,102A58.07,58.07,0,0,0,178,44ZM128,219.42c-14-8-100-59.35-100-117.42A50.06,50.06,0,0,1,78,52c21.11,0,38.85,11.31,46.3,29.51a4,4,0,0,0,7.4,0C139.15,63.31,156.89,52,178,52a50.06,50.06,0,0,1,50,50C228,160,142,211.46,128,219.42Z" }))
+  ]
+]);
+const o$2 = reactExports.forwardRef((r2, t2) => reactExports.createElement(p$1, { ref: t2, ...r2, weights: a$1 }));
+o$2.displayName = "HeartIcon";
+const e$2 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M252,120a52.06,52.06,0,0,0-52-52H160.32c-3.44-.21-52.6-4-99.46-43.3A20,20,0,0,0,28,40V200a19.8,19.8,0,0,0,11.54,18.12,19.86,19.86,0,0,0,21.32-2.81A192.92,192.92,0,0,1,144,174.47v26.2a20,20,0,0,0,8.9,16.64,11.35,11.35,0,0,0,1.39.8l14.44,7.06A20,20,0,0,0,198.37,213l11.09-41.82A52.07,52.07,0,0,0,252,120ZM52,191.63V48.4c36.17,28.07,72.17,38.1,92,41.66V150C124.17,153.52,88.17,163.55,52,191.63ZM176.39,202.2,168,198.1V172h16.4ZM200,148H168V92h32a28,28,0,1,1,0,56Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", {
+      d: "M240,120a40,40,0,0,1-40,40H160V80h40A40,40,0,0,1,240,120Z",
+      opacity: "0.2"
+    }), reactExports.createElement("path", { d: "M248,120a48.05,48.05,0,0,0-48-48H160.2c-2.91-.17-53.62-3.74-101.91-44.24A16,16,0,0,0,32,40V200a16,16,0,0,0,26.29,12.25c37.77-31.68,77-40.76,93.71-43.3v31.72A16,16,0,0,0,159.12,214l11,7.33A16,16,0,0,0,194.5,212l11.77-44.36A48.07,48.07,0,0,0,248,120ZM48,199.93V40h0c42.81,35.91,86.63,45,104,47.24v65.48C134.65,155,90.84,164.07,48,199.93Zm131,8,0,.11-11-7.33V168h21.6ZM200,152H168V88h32a32,32,0,1,1,0,64Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,72H160.2c-2.91-.17-53.62-3.74-101.91-44.24A16,16,0,0,0,32,40V200a16,16,0,0,0,26.29,12.25c37.77-31.68,77-40.76,93.71-43.3v31.72A16,16,0,0,0,159.12,214l11,7.33A16,16,0,0,0,194.5,212l11.77-44.36A48,48,0,0,0,200,72ZM179,207.89l0,.11-11-7.33V168h21.6ZM200,152H168V88h32a32,32,0,1,1,0,64Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M246,120a46.05,46.05,0,0,0-46-46H160.15c-2.58-.15-54.1-3.57-103.15-44.71A14,14,0,0,0,34,40V200a13.85,13.85,0,0,0,8.07,12.68A14.16,14.16,0,0,0,48,214a13.9,13.9,0,0,0,9-3.3c40-33.52,81.57-42,97-44.07v34a14,14,0,0,0,6.23,11.65l11,7.33a14,14,0,0,0,21.32-8.17l12.13-45.71A46.07,46.07,0,0,0,246,120ZM49.29,201.52A2,2,0,0,1,46,200V40a1.9,1.9,0,0,1,1.15-1.8A2.08,2.08,0,0,1,48,38a1.91,1.91,0,0,1,1.26.48c44,36.92,89,45.19,104.71,47v69C138.29,156.33,93.3,164.61,49.29,201.52Zm131.64,7a2,2,0,0,1-3.05,1.18l-11-7.33a2,2,0,0,1-.89-1.67V166h26.2ZM200,154H166V86h34a34,34,0,1,1,0,68Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M248,120a48.05,48.05,0,0,0-48-48H160.2c-2.91-.17-53.62-3.74-101.91-44.24A16,16,0,0,0,32,40V200a16,16,0,0,0,26.29,12.25c37.77-31.68,77-40.76,93.71-43.3v31.72A16,16,0,0,0,159.12,214l11,7.33A16,16,0,0,0,194.5,212l11.77-44.36A48.07,48.07,0,0,0,248,120ZM48,199.93V40h0c42.81,35.91,86.63,45,104,47.24v65.48C134.65,155,90.84,164.07,48,199.93Zm131,8,0,.11-11-7.33V168h21.6ZM200,152H168V88h32a32,32,0,1,1,0,64Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M200,76H160.1c-2.19-.11-54.55-3.38-104.38-45.17A12,12,0,0,0,36,40V200a11.88,11.88,0,0,0,6.92,10.87A12.18,12.18,0,0,0,48,212a11.93,11.93,0,0,0,7.69-2.83c42.46-35.62,86.76-43.25,100.28-44.8v36.29a12,12,0,0,0,5.34,10l11,7.33a12,12,0,0,0,18.28-7l12.49-47.09A44,44,0,0,0,200,76Zm-44,80.3c-13.53,1.35-60,8.62-105.42,46.75A4,4,0,0,1,44,200V40a4,4,0,0,1,2.3-3.62A4.32,4.32,0,0,1,48.05,36a3.88,3.88,0,0,1,2.53,1C96,75.09,142.47,82.36,156,83.71ZM182.87,209a4,4,0,0,1-6.1,2.36l-11-7.33a4,4,0,0,1-1.78-3.33V164h30.8ZM200,156H164V84h36a36,36,0,0,1,0,72Z" }))
+  ]
+]);
+const o$1 = reactExports.forwardRef((a2, r2) => reactExports.createElement(p$1, { ref: r2, ...a2, weights: e$2 }));
+o$1.displayName = "MegaphoneIcon";
+const e$1 =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M222.14,69.17,186.83,33.86A19.86,19.86,0,0,0,172.69,28H48A20,20,0,0,0,28,48V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V83.31A19.86,19.86,0,0,0,222.14,69.17ZM164,204H92V160h72Zm40,0H188V156a20,20,0,0,0-20-20H88a20,20,0,0,0-20,20v48H52V52H171l33,33ZM164,84a12,12,0,0,1-12,12H96a12,12,0,0,1,0-24h56A12,12,0,0,1,164,84Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", {
+      d: "M216,83.31V208a8,8,0,0,1-8,8H176V152a8,8,0,0,0-8-8H88a8,8,0,0,0-8,8v64H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H172.69a8,8,0,0,1,5.65,2.34l35.32,35.32A8,8,0,0,1,216,83.31Z",
+      opacity: "0.2"
+    }), reactExports.createElement("path", { d: "M219.31,72,184,36.69A15.86,15.86,0,0,0,172.69,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V83.31A15.86,15.86,0,0,0,219.31,72ZM168,208H88V152h80Zm40,0H184V152a16,16,0,0,0-16-16H88a16,16,0,0,0-16,16v56H48V48H172.69L208,83.31ZM160,72a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h56A8,8,0,0,1,160,72Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M219.31,72,184,36.69A15.86,15.86,0,0,0,172.69,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V83.31A15.86,15.86,0,0,0,219.31,72ZM208,208H184V152a16,16,0,0,0-16-16H88a16,16,0,0,0-16,16v56H48V48H172.69L208,83.31ZM160,72a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h56A8,8,0,0,1,160,72Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M217.9,73.42,182.58,38.1a13.9,13.9,0,0,0-9.89-4.1H48A14,14,0,0,0,34,48V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V83.31A13.9,13.9,0,0,0,217.9,73.42ZM170,210H86V152a2,2,0,0,1,2-2h80a2,2,0,0,1,2,2Zm40-2a2,2,0,0,1-2,2H182V152a14,14,0,0,0-14-14H88a14,14,0,0,0-14,14v58H48a2,2,0,0,1-2-2V48a2,2,0,0,1,2-2H172.69a2,2,0,0,1,1.41.58L209.42,81.9a2,2,0,0,1,.58,1.41ZM158,72a6,6,0,0,1-6,6H96a6,6,0,0,1,0-12h56A6,6,0,0,1,158,72Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M219.31,72,184,36.69A15.86,15.86,0,0,0,172.69,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V83.31A15.86,15.86,0,0,0,219.31,72ZM168,208H88V152h80Zm40,0H184V152a16,16,0,0,0-16-16H88a16,16,0,0,0-16,16v56H48V48H172.69L208,83.31ZM160,72a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h56A8,8,0,0,1,160,72Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M216.49,74.83,181.17,39.51A11.93,11.93,0,0,0,172.69,36H48A12,12,0,0,0,36,48V208a12,12,0,0,0,12,12H208a12,12,0,0,0,12-12V83.31A11.93,11.93,0,0,0,216.49,74.83ZM172,212H84V152a4,4,0,0,1,4-4h80a4,4,0,0,1,4,4Zm40-4a4,4,0,0,1-4,4H180V152a12,12,0,0,0-12-12H88a12,12,0,0,0-12,12v60H48a4,4,0,0,1-4-4V48a4,4,0,0,1,4-4H172.69a4,4,0,0,1,2.82,1.17l35.32,35.32A4,4,0,0,1,212,83.31ZM156,72a4,4,0,0,1-4,4H96a4,4,0,0,1,0-8h56A4,4,0,0,1,156,72Z" }))
+  ]
+]);
+const p = reactExports.forwardRef((e2, r2) => reactExports.createElement(p$1, { ref: r2, ...e2, weights: e$1 }));
+p.displayName = "FloppyDiskIcon";
+const e =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M256,136a12,12,0,0,1-12,12h-8v8a12,12,0,0,1-24,0v-8h-8a12,12,0,0,1,0-24h8v-8a12,12,0,0,1,24,0v8h8A12,12,0,0,1,256,136Zm-54.81,56.28a12,12,0,1,1-18.38,15.44C169.12,191.42,145,172,108,172c-28.89,0-55.46,12.68-74.81,35.72a12,12,0,0,1-18.38-15.44A124.08,124.08,0,0,1,63.5,156.53a72,72,0,1,1,89,0A124,124,0,0,1,201.19,192.28ZM108,148a48,48,0,1,0-48-48A48.05,48.05,0,0,0,108,148Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M168,100a60,60,0,1,1-60-60A60,60,0,0,1,168,100Z", opacity: "0.2" }), reactExports.createElement("path", { d: "M256,136a8,8,0,0,1-8,8H232v16a8,8,0,0,1-16,0V144H200a8,8,0,0,1,0-16h16V112a8,8,0,0,1,16,0v16h16A8,8,0,0,1,256,136Zm-57.87,58.85a8,8,0,0,1-12.26,10.3C165.75,181.19,138.09,168,108,168s-57.75,13.19-77.87,37.15a8,8,0,0,1-12.25-10.3c14.94-17.78,33.52-30.41,54.17-37.17a68,68,0,1,1,71.9,0C164.6,164.44,183.18,177.07,198.13,194.85ZM108,152a52,52,0,1,0-52-52A52.06,52.06,0,0,0,108,152Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M256,136a8,8,0,0,1-8,8H232v16a8,8,0,0,1-16,0V144H200a8,8,0,0,1,0-16h16V112a8,8,0,0,1,16,0v16h16A8,8,0,0,1,256,136ZM144,157.68a68,68,0,1,0-71.9,0c-20.65,6.76-39.23,19.39-54.17,37.17A8,8,0,0,0,24,208H192a8,8,0,0,0,6.13-13.15C183.18,177.07,164.6,164.44,144,157.68Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M254,136a6,6,0,0,1-6,6H230v18a6,6,0,0,1-12,0V142H200a6,6,0,0,1,0-12h18V112a6,6,0,0,1,12,0v18h18A6,6,0,0,1,254,136Zm-57.41,60.14a6,6,0,1,1-9.18,7.72C166.9,179.45,138.69,166,108,166s-58.89,13.45-79.41,37.86a6,6,0,0,1-9.18-7.72C35.14,177.41,55,164.48,77,158.25a66,66,0,1,1,62,0C161,164.48,180.86,177.41,196.59,196.14ZM108,154a54,54,0,1,0-54-54A54.06,54.06,0,0,0,108,154Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M256,136a8,8,0,0,1-8,8H232v16a8,8,0,0,1-16,0V144H200a8,8,0,0,1,0-16h16V112a8,8,0,0,1,16,0v16h16A8,8,0,0,1,256,136Zm-57.87,58.85a8,8,0,0,1-12.26,10.3C165.75,181.19,138.09,168,108,168s-57.75,13.19-77.87,37.15a8,8,0,0,1-12.25-10.3c14.94-17.78,33.52-30.41,54.17-37.17a68,68,0,1,1,71.9,0C164.6,164.44,183.18,177.07,198.13,194.85ZM108,152a52,52,0,1,0-52-52A52.06,52.06,0,0,0,108,152Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M252,136a4,4,0,0,1-4,4H228v20a4,4,0,0,1-8,0V140H200a4,4,0,0,1,0-8h20V112a4,4,0,0,1,8,0v20h20A4,4,0,0,1,252,136Zm-56.94,61.43a4,4,0,0,1-6.12,5.14C168,177.7,139.3,164,108,164s-60,13.7-80.94,38.57a4,4,0,1,1-6.12-5.14c16.71-19.9,38.13-33.13,61.89-38.59a64,64,0,1,1,50.34,0C156.93,164.3,178.35,177.53,195.06,197.43ZM108,156a56,56,0,1,0-56-56A56.06,56.06,0,0,0,108,156Z" }))
+  ]
+]);
+const o = reactExports.forwardRef((r2, s2) => reactExports.createElement(p$1, { ref: s2, ...r2, weights: e }));
+o.displayName = "UserPlusIcon";
+const a =  new Map([
+  [
+    "bold",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212ZM163.27,77l-56,24a12,12,0,0,0-6.3,6.3l-24,56A12,12,0,0,0,92.73,179l56-24a12,12,0,0,0,6.3-6.3l24-56A12,12,0,0,0,163.27,77Zm-28.41,57.89-24,10.29,10.29-24,24-10.29Z" }))
+  ],
+  [
+    "duotone",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", {
+      d: "M128,32a96,96,0,1,0,96,96A96,96,0,0,0,128,32Zm16,112L80,176l32-64,64-32Z",
+      opacity: "0.2"
+    }), reactExports.createElement("path", { d: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z" }))
+  ],
+  [
+    "fill",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm51.58,57.79-32,64a4.08,4.08,0,0,1-1.79,1.79l-64,32a4,4,0,0,1-5.37-5.37l32-64a4.08,4.08,0,0,1,1.79-1.79l64-32A4,4,0,0,1,179.58,81.79Z" }))
+  ],
+  [
+    "light",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218ZM173.32,74.63l-64,32a6,6,0,0,0-2.69,2.69l-32,64A6,6,0,0,0,80,182a6.06,6.06,0,0,0,2.68-.63l64-32a6,6,0,0,0,2.69-2.69l32-64a6,6,0,0,0-8.05-8.05Zm-33.79,64.9L93.42,162.58l23-46.11,46.11-23Z" }))
+  ],
+  [
+    "regular",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z" }))
+  ],
+  [
+    "thin",
+    reactExports.createElement(reactExports.Fragment, null, reactExports.createElement("path", { d: "M128,28A100,100,0,1,0,228,128,100.11,100.11,0,0,0,128,28Zm0,192a92,92,0,1,1,92-92A92.1,92.1,0,0,1,128,220ZM174.21,76.42l-64,32a4.08,4.08,0,0,0-1.79,1.79l-32,64A4,4,0,0,0,80,180a4.05,4.05,0,0,0,1.79-.42l64-32a4.08,4.08,0,0,0,1.79-1.79l32-64a4,4,0,0,0-5.37-5.37ZM141,141l-52.08,26L115,115l52.08-26Z" }))
+  ]
+]);
+const s = reactExports.forwardRef((a$12, m) => reactExports.createElement(p$1, { ref: m, ...a$12, weights: a }));
+s.displayName = "CompassIcon";
 const chaseIcons = {
-  radio: a$g,
-  studio: r$5,
-  scan: r$4,
-  arrow: r$3,
-  close: e$l,
-  play: a$c,
+  pause: o$3,
+  next: r$3,
+  previous: a$6,
+  up: r$2,
+  down: r$1,
+  trash: r,
+  link: e$5,
+  info: e$4,
+  music: e$3,
+  heart: o$2,
+  advert: o$1,
+  save: p,
+  addUser: o,
+  compass: s,
+  radio: a$p,
+  studio: r$9,
+  scan: r$8,
+  arrow: r$7,
+  close: e$u,
+  play: a$l,
   stop: t$3,
-  mic: e$j,
-  signal: e$h,
-  volume: o$8,
-  users: o$7,
+  mic: e$s,
+  signal: e$q,
+  volume: o$c,
+  users: o$b,
   bolt: t$2,
-  van: a$8,
-  money: o$6,
+  van: a$h,
+  money: o$a,
   cassette: t$1,
-  plus: e$c,
-  minus: e$b,
-  check: o$5,
-  refresh: r$2,
-  headphones: o$4,
-  message: e$8,
-  search: o$3,
-  settings: o$2,
-  broadcast: a$2,
-  direction: r$1,
-  phone: e$5,
-  directory: e$3,
-  caret: e$2,
-  home: o$1,
-  hand: o,
-  place: r
+  plus: e$l,
+  minus: e$k,
+  check: o$9,
+  refresh: r$6,
+  headphones: o$8,
+  message: e$h,
+  search: o$7,
+  settings: o$6,
+  broadcast: a$b,
+  direction: r$5,
+  phone: e$e,
+  directory: e$c,
+  caret: e$b,
+  home: o$5,
+  hand: o$4,
+  place: r$4
 };
 function ChaseIcon({ name, size = 20 }) {
-  const ChaseGlyph = chaseIcons[name] || a$g;
+  const ChaseGlyph = chaseIcons[name] || a$p;
   return jsxRuntimeExports.jsx(ChaseGlyph, { size, weight: "regular", "aria-hidden": "true" });
 }
 function ChaseEmpty({ icon = "radio", title, children }) {
@@ -13337,6 +13770,583 @@ function ChaseDialog({ title, description, icon = "radio", close, children }) {
       children
     ]
   }) });
+}
+const scriptRel = "modulepreload";
+const assetsURL = function(dep, importerUrl) {
+  return new URL(dep, importerUrl).href;
+};
+const seen = {};
+const __vitePreload = function preload(baseModule, deps, importerUrl) {
+  let promise = Promise.resolve();
+  if (deps && deps.length > 0) {
+    let allSettled = function(promises$2) {
+      return Promise.all(promises$2.map((p2) => Promise.resolve(p2).then((value$1) => ({
+        status: "fulfilled",
+        value: value$1
+      }), (reason) => ({
+        status: "rejected",
+        reason
+      }))));
+    };
+    const links = document.getElementsByTagName("link");
+    const cspNonceMeta = document.querySelector("meta[property=csp-nonce]");
+    const cspNonce = cspNonceMeta?.nonce || cspNonceMeta?.getAttribute("nonce");
+    promise = allSettled(deps.map((dep) => {
+      dep = assetsURL(dep, importerUrl);
+      if (dep in seen)
+        return;
+      seen[dep] = true;
+      const isCss = dep.endsWith(".css");
+      const cssSelector = isCss ? '[rel="stylesheet"]' : "";
+      if (!!importerUrl)
+        for (let i$1 = links.length - 1; i$1 >= 0; i$1--) {
+          const link$1 = links[i$1];
+          if (link$1.href === dep && (!isCss || link$1.rel === "stylesheet"))
+            return;
+        }
+      else if (document.querySelector(`link[href="${dep}"]${cssSelector}`))
+        return;
+      const link = document.createElement("link");
+      link.rel = isCss ? "stylesheet" : scriptRel;
+      if (!isCss)
+        link.as = "script";
+      link.crossOrigin = "";
+      link.href = dep;
+      if (cspNonce)
+        link.setAttribute("nonce", cspNonce);
+      document.head.appendChild(link);
+      if (isCss)
+        return new Promise((res, rej) => {
+          link.addEventListener("load", res);
+          link.addEventListener("error", () => rej(new Error(`Unable to preload CSS for ${dep}`)));
+        });
+    }));
+  }
+  function handlePreloadError(err$2) {
+    const e$12 = new Event("vite:preloadError", { cancelable: true });
+    e$12.payload = err$2;
+    window.dispatchEvent(e$12);
+    if (!e$12.defaultPrevented)
+      throw err$2;
+  }
+  return promise.then((res) => {
+    for (const item of res || []) {
+      if (item.status !== "rejected")
+        continue;
+      handlePreloadError(item.reason);
+    }
+    return baseModule().catch(handlePreloadError);
+  });
+};
+const chasePreview = new URLSearchParams(window.location.search).get("preview") === "1" && !window.GetParentResourceName;
+const chasePhone = new URLSearchParams(window.location.search).get("phone") === "1";
+function ChaseNormalizeList(chaseValue) {
+  if (Array.isArray(chaseValue))
+    return chaseValue;
+  if (chaseValue && typeof chaseValue === "object" && Object.keys(chaseValue).length === 0)
+    return [];
+  throw new Error("The station returned an invalid list. Refresh to reconnect.");
+}
+function ChaseNormalizeStation(station) {
+  return {
+    ...station,
+    cohostNames: station.cohostNames === void 0 ? [] : ChaseNormalizeList(station.cohostNames),
+    queue: station.queue === void 0 ? void 0 : ChaseNormalizeList(station.queue),
+    nowPlaying: station.nowPlaying ?? null
+  };
+}
+function ChaseNormalizeCall(value) {
+  const chaseCall = value;
+  if (chaseCall && typeof chaseCall === "object" && (chaseCall.state === "ringing" || chaseCall.state === "onair"))
+    return {
+      state: chaseCall.state,
+      stationId: Number.isFinite(chaseCall.stationId) ? chaseCall.stationId : void 0,
+      stationName: typeof chaseCall.stationName === "string" ? chaseCall.stationName : void 0
+    };
+  return { state: "idle" };
+}
+function ChaseNormalizeSnapshot(value) {
+  if (!value || typeof value !== "object")
+    throw new Error("The station returned incomplete data. Refresh to reconnect.");
+  const chaseCandidate = value;
+  if (!chaseCandidate.viewer || !chaseCandidate.config || !Number.isFinite(chaseCandidate.config.frequencyMin) || !Number.isFinite(chaseCandidate.config.frequencyMax))
+    throw new Error("The station returned incomplete data. Refresh to reconnect.");
+  return {
+    ...chaseCandidate,
+    viewer: {
+      ...chaseCandidate.viewer,
+      call: ChaseNormalizeCall(chaseCandidate.viewer.call)
+    },
+    stations: ChaseNormalizeList(chaseCandidate.stations).map(ChaseNormalizeStation),
+    requests: ChaseNormalizeList(chaseCandidate.requests),
+    crew: ChaseNormalizeList(chaseCandidate.crew),
+    cartridges: ChaseNormalizeList(chaseCandidate.cartridges),
+    mine: chaseCandidate.mine ? ChaseNormalizeStation(chaseCandidate.mine) : null,
+    tunedStationId: chaseCandidate.tunedStationId ?? null,
+    config: {
+      ...chaseCandidate.config,
+      powerModes: ChaseNormalizeList(chaseCandidate.config.powerModes)
+    },
+    devices: chaseCandidate.devices ? {
+      ...chaseCandidate.devices,
+      shop: chaseCandidate.devices.shop === void 0 ? [] : ChaseNormalizeList(chaseCandidate.devices.shop),
+      tunedStationId: chaseCandidate.devices.tunedStationId ?? null,
+      placedNearby: chaseCandidate.devices.placedNearby === void 0 ? [] : ChaseNormalizeList(chaseCandidate.devices.placedNearby).filter((chasePlaced) => Number.isInteger(chasePlaced.netId)),
+      canPlace: chaseCandidate.devices.canPlace === true
+    } : void 0
+  };
+}
+async function ChasePost(endpoint, data = {}) {
+  if (chasePreview) {
+    const chaseDemo = await __vitePreload(() => import("./preview-B1WS_ltq.js"), true ? [] : void 0, import.meta.url);
+    return chaseDemo.ChasePreviewPost(endpoint, data);
+  }
+  const chasePhoneResource = new URLSearchParams(window.location.search).get("resource");
+  const chaseResource = chasePhone && chasePhoneResource === "chase_bootleg" ? "chase_bootleg" : window.GetParentResourceName?.();
+  if (!chaseResource)
+    throw new Error("Open Senora Signalworks from your in-game receiver.");
+  const chaseController = new AbortController();
+  const chaseTimeout = window.setTimeout(() => chaseController.abort(), 12e3);
+  try {
+    const chaseResponse = await fetch(`https://${chaseResource}/chase_bootleg:${endpoint}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=UTF-8" },
+      body: JSON.stringify(data),
+      signal: chaseController.signal
+    });
+    if (!chaseResponse.ok)
+      throw new Error("The radio could not reach the server. Try again.");
+    const chaseResult = await chaseResponse.json();
+    if (!chaseResult || typeof chaseResult !== "object" || typeof chaseResult.ok !== "boolean")
+      throw new Error("The server returned an unreadable response. Refresh to reconnect.");
+    if (chaseResult.ok !== true)
+      throw new Error(chaseResult.error?.message || "The server could not complete that action.");
+    return chaseResult.data;
+  } catch (chaseError) {
+    if (chaseError instanceof DOMException && chaseError.name === "AbortError")
+      throw new Error("The server took too long to respond. Refresh before trying again.");
+    throw chaseError;
+  } finally {
+    window.clearTimeout(chaseTimeout);
+  }
+}
+function ChaseFrequency(value) {
+  return (value / 10).toFixed(1);
+}
+function ChaseMoney(value, currency) {
+  return `${currency}${new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(value)}`;
+}
+function ChaseClock(seconds) {
+  const chaseWhole = Math.max(0, Math.floor(seconds));
+  return `${Math.floor(chaseWhole / 60)}:${(chaseWhole % 60).toString().padStart(2, "0")}`;
+}
+function ChaseNormalizePlaced(value) {
+  if (!value || typeof value !== "object")
+    return null;
+  const chasePlaced = value;
+  if (!Number.isInteger(chasePlaced.netId) || Number(chasePlaced.netId) < 1)
+    return null;
+  return {
+    netId: Number(chasePlaced.netId),
+    stationId: Number.isFinite(chasePlaced.stationId) ? Number(chasePlaced.stationId) : null,
+    frequency: Number.isFinite(chasePlaced.frequency) ? Number(chasePlaced.frequency) : null,
+    label: typeof chasePlaced.label === "string" && chasePlaced.label.trim() ? chasePlaced.label : "No station selected",
+    ownerName: typeof chasePlaced.ownerName === "string" && chasePlaced.ownerName.trim() ? chasePlaced.ownerName : void 0,
+    quality: Number.isFinite(chasePlaced.quality) ? Math.max(0, Math.min(1, Number(chasePlaced.quality))) : null
+  };
+}
+function ChaseError(value) {
+  return value instanceof Error ? value.message : "Something interrupted the connection. Please try again.";
+}
+const chaseLoadTimeout = 15e3;
+const chaseYouTubePatterns = [
+  /^https:\/\/(www\.|music\.)?youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})/,
+  /^https:\/\/youtu\.be\/([A-Za-z0-9_-]{11})/,
+  /^https:\/\/(www\.)?youtube\.com\/shorts\/([A-Za-z0-9_-]{11})/
+];
+const chaseSoundCloudPatterns = [
+  /^https:\/\/(www\.|m\.)?soundcloud\.com\/[A-Za-z0-9_-]+\/[A-Za-z0-9_-]+(\?[^\s]*)?$/,
+  /^https:\/\/on\.soundcloud\.com\/[A-Za-z0-9]+/
+];
+const chaseScripts =  new Map();
+let chaseYouTubeReady = null;
+let chaseSoundCloudReady = null;
+function ChaseCleanTitle(value, fallback) {
+  const chaseStrip = (text) => text.replace(/[<>\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim();
+  const chaseSource = chaseStrip(value || "") || chaseStrip(fallback);
+  return Array.from(chaseSource).slice(0, 120).join("").trim() || "Track";
+}
+function ChaseVideoId(url) {
+  for (const chasePattern of chaseYouTubePatterns) {
+    const chaseMatch = chasePattern.exec(url);
+    if (chaseMatch)
+      return chaseMatch[chaseMatch.length - 1];
+  }
+  return null;
+}
+function ChaseDetectProvider(url) {
+  if (ChaseVideoId(url))
+    return "youtube";
+  if (chaseSoundCloudPatterns.some((chasePattern) => chasePattern.test(url)))
+    return "soundcloud";
+  return null;
+}
+function ChaseWithTimeout(promise, message, milliseconds = chaseLoadTimeout) {
+  let chaseTimer;
+  return Promise.race([
+    promise,
+    new Promise((_, chaseReject) => {
+      chaseTimer = window.setTimeout(() => chaseReject(new Error(message)), milliseconds);
+    })
+  ]).finally(() => window.clearTimeout(chaseTimer));
+}
+function ChaseLoadScript(src) {
+  let chasePending = chaseScripts.get(src);
+  if (!chasePending) {
+    chasePending = new Promise((chaseResolve, chaseReject) => {
+      const chaseScript = document.createElement("script");
+      chaseScript.src = src;
+      chaseScript.async = true;
+      chaseScript.onload = () => chaseResolve();
+      chaseScript.onerror = () => {
+        chaseScripts.delete(src);
+        chaseReject(new Error("The player library could not be loaded."));
+      };
+      document.head.appendChild(chaseScript);
+    });
+    chaseScripts.set(src, chasePending);
+  }
+  return chasePending;
+}
+function ChaseAwaitGlobal(read, message) {
+  return ChaseWithTimeout(new Promise((chaseResolve) => {
+    const chaseTimer = window.setInterval(() => {
+      const chaseValue = read();
+      if (chaseValue) {
+        window.clearInterval(chaseTimer);
+        chaseResolve(chaseValue);
+      }
+    }, 100);
+  }), message);
+}
+function ChaseLoadYouTube() {
+  chaseYouTubeReady || (chaseYouTubeReady = (async () => {
+    if (window.YT?.Player)
+      return window.YT;
+    const chasePrevious = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => chasePrevious?.();
+    await ChaseLoadScript("https://www.youtube.com/iframe_api");
+    return ChaseAwaitGlobal(() => window.YT?.Player ? window.YT : void 0, "The YouTube player did not respond.");
+  })().catch((chaseFailure) => {
+    chaseYouTubeReady = null;
+    throw chaseFailure;
+  }));
+  return chaseYouTubeReady;
+}
+function ChaseLoadSoundCloud() {
+  chaseSoundCloudReady || (chaseSoundCloudReady = (async () => {
+    if (window.SC?.Widget)
+      return window.SC;
+    await ChaseLoadScript("https://w.soundcloud.com/player/api.js");
+    return ChaseAwaitGlobal(() => window.SC?.Widget ? window.SC : void 0, "The SoundCloud player did not respond.");
+  })().catch((chaseFailure) => {
+    chaseSoundCloudReady = null;
+    throw chaseFailure;
+  }));
+  return chaseSoundCloudReady;
+}
+function ChaseHiddenHost() {
+  const chaseHost = document.createElement("div");
+  chaseHost.className = "chase-hidden-player";
+  chaseHost.setAttribute("aria-hidden", "true");
+  document.body.appendChild(chaseHost);
+  return chaseHost;
+}
+function ChaseYouTubeMessage(code) {
+  if (code === 100)
+    return "This video is unavailable.";
+  if (code === 101 || code === 150)
+    return "This video does not allow embedded playback.";
+  return "The YouTube player failed to play this video.";
+}
+function ChaseYouTubeEmbed(host, videoId, events) {
+  return ChaseLoadYouTube().then((chaseNamespace) => {
+    const chaseTarget = document.createElement("div");
+    host.appendChild(chaseTarget);
+    const chaseVars = {
+      autoplay: 0,
+      controls: 0,
+      disablekb: 1,
+      enablejsapi: 1,
+      playsinline: 1,
+      rel: 0
+    };
+    if (window.location.protocol === "https:")
+      chaseVars.origin = window.location.origin;
+    return new chaseNamespace.Player(chaseTarget, {
+      width: "1",
+      height: "1",
+      videoId,
+      playerVars: chaseVars,
+      events: {
+        onReady: (chaseEvent) => events.onReady(chaseEvent.target),
+        onStateChange: (chaseEvent) => events.onState?.(chaseEvent.data, chaseEvent.target),
+        onError: (chaseEvent) => events.onError(ChaseYouTubeMessage(chaseEvent.data))
+      }
+    });
+  });
+}
+function ChaseSoundCloudEmbed(host, url, events) {
+  return ChaseLoadSoundCloud().then((chaseNamespace) => {
+    const chaseFrame = document.createElement("iframe");
+    chaseFrame.width = "1";
+    chaseFrame.height = "1";
+    chaseFrame.allow = "autoplay";
+    chaseFrame.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&auto_play=false`;
+    host.appendChild(chaseFrame);
+    const chaseWidget = chaseNamespace.Widget(chaseFrame);
+    chaseWidget.bind(chaseNamespace.Widget.Events.READY, () => events.onReady(chaseWidget));
+    chaseWidget.bind(chaseNamespace.Widget.Events.PLAY, () => events.onPlay?.());
+    chaseWidget.bind(chaseNamespace.Widget.Events.FINISH, () => events.onFinish?.());
+    chaseWidget.bind(chaseNamespace.Widget.Events.ERROR, () => events.onError("The SoundCloud player failed to play this track."));
+    return chaseWidget;
+  });
+}
+function ChaseCreatePlayer(options) {
+  const chaseHost = ChaseHiddenHost();
+  let chaseDestroyed = false;
+  let chaseVolume = 1;
+  let chaseOffset = 0;
+  let chaseWantPlay = false;
+  let chaseBackend = null;
+  let chaseTeardown = null;
+  const chaseReadyTimer = window.setTimeout(() => {
+    if (!chaseBackend)
+      ChaseFail("The track player did not respond.");
+  }, chaseLoadTimeout);
+  function ChaseFail(message) {
+    if (!chaseDestroyed)
+      options.onError?.(message);
+  }
+  function ChaseAttach(backend, teardown) {
+    window.clearTimeout(chaseReadyTimer);
+    if (chaseDestroyed) {
+      teardown();
+      return;
+    }
+    chaseBackend = backend;
+    chaseTeardown = teardown;
+    backend.setVolume(chaseVolume);
+    backend.seek(chaseOffset);
+    if (chaseWantPlay)
+      backend.play();
+  }
+  const chaseSetup = options.provider === "youtube" ? (() => {
+    const chaseVideoId = ChaseVideoId(options.url);
+    if (!chaseVideoId)
+      return Promise.reject(new Error("The YouTube link is invalid."));
+    return ChaseYouTubeEmbed(chaseHost, chaseVideoId, {
+      onReady: (chasePlayer) => ChaseAttach({
+        setVolume: (chaseFraction) => chasePlayer.setVolume(Math.round(chaseFraction * 100)),
+        seek: (chaseSeconds) => chasePlayer.seekTo(chaseSeconds, true),
+        play: () => chasePlayer.playVideo(),
+        pause: () => chasePlayer.pauseVideo(),
+        destroy: () => chasePlayer.destroy()
+      }, () => chasePlayer.destroy()),
+      onState: (chaseState) => {
+        if (chaseDestroyed)
+          return;
+        if (chaseState === window.YT?.PlayerState.PLAYING)
+          options.onPlaying?.();
+        if (chaseState === window.YT?.PlayerState.ENDED)
+          options.onEnded?.();
+      },
+      onError: ChaseFail
+    });
+  })() : ChaseSoundCloudEmbed(chaseHost, options.url, {
+    onReady: (chaseWidget) => ChaseAttach({
+      setVolume: (chaseFraction) => chaseWidget.setVolume(Math.round(chaseFraction * 100)),
+      seek: (chaseSeconds) => chaseWidget.seekTo(Math.round(chaseSeconds * 1e3)),
+      play: () => chaseWidget.play(),
+      pause: () => chaseWidget.pause(),
+      destroy: () => chaseWidget.pause()
+    }, () => chaseWidget.pause()),
+    onPlay: () => {
+      if (!chaseDestroyed)
+        options.onPlaying?.();
+    },
+    onFinish: () => {
+      if (!chaseDestroyed)
+        options.onEnded?.();
+    },
+    onError: ChaseFail
+  });
+  ChaseWithTimeout(chaseSetup, "The track player did not load in time.").catch((chaseFailure) => ChaseFail(chaseFailure instanceof Error ? chaseFailure.message : "The track player could not be started."));
+  return {
+    setVolume(fraction) {
+      chaseVolume = Math.max(0, Math.min(1, fraction));
+      chaseBackend?.setVolume(chaseVolume);
+    },
+    seek(seconds) {
+      chaseOffset = Math.max(0, seconds);
+      chaseBackend?.seek(chaseOffset);
+    },
+    play() {
+      chaseWantPlay = true;
+      chaseBackend?.play();
+    },
+    pause() {
+      chaseWantPlay = false;
+      chaseBackend?.pause();
+    },
+    destroy() {
+      if (chaseDestroyed)
+        return;
+      chaseDestroyed = true;
+      window.clearTimeout(chaseReadyTimer);
+      try {
+        chaseTeardown?.();
+      } catch {
+        chaseTeardown = null;
+      }
+      chaseBackend = null;
+      chaseHost.remove();
+    }
+  };
+}
+function ChaseProbeYouTube(host, url, release) {
+  const chaseVideoId = ChaseVideoId(url);
+  if (!chaseVideoId)
+    return Promise.reject(new Error("The YouTube link is invalid."));
+  return new Promise((chaseResolve, chaseReject) => {
+    let chasePoll;
+    let chaseSettled = false;
+    let chaseProbe = null;
+    release(() => {
+      chaseSettled = true;
+      window.clearInterval(chasePoll);
+      chaseProbe?.destroy();
+      chaseProbe = null;
+    });
+    function ChaseFinish(player) {
+      const chaseDuration = player.getDuration();
+      if (!(chaseDuration > 0))
+        return false;
+      chaseSettled = true;
+      window.clearInterval(chasePoll);
+      const chaseTitle = player.getVideoData().title?.trim();
+      chaseResolve({
+        provider: "youtube",
+        title: ChaseCleanTitle(chaseTitle, url),
+        duration: Math.round(chaseDuration)
+      });
+      return true;
+    }
+    ChaseYouTubeEmbed(host, chaseVideoId, {
+      onReady: (chasePlayer) => {
+        if (chaseSettled) {
+          chasePlayer.destroy();
+          return;
+        }
+        chaseProbe = chasePlayer;
+        if (ChaseFinish(chasePlayer))
+          return;
+        chasePlayer.mute();
+        chasePlayer.playVideo();
+        chasePoll = window.setInterval(() => {
+          if (!chaseSettled)
+            ChaseFinish(chasePlayer);
+        }, 250);
+      },
+      onError: (chaseMessage) => {
+        window.clearInterval(chasePoll);
+        if (!chaseSettled)
+          chaseReject(new Error(chaseMessage));
+      }
+    }).catch(chaseReject);
+  });
+}
+function ChaseProbeSoundCloud(host, url) {
+  return new Promise((chaseResolve, chaseReject) => {
+    ChaseSoundCloudEmbed(host, url, {
+      onReady: (chaseWidget) => chaseWidget.getCurrentSound((chaseSound) => chaseWidget.getDuration((chaseMilliseconds) => {
+        const chaseDuration = Math.round((chaseMilliseconds || chaseSound?.duration || 0) / 1e3);
+        if (!(chaseDuration > 0)) {
+          chaseReject(new Error("This track has no playable duration."));
+          return;
+        }
+        chaseResolve({
+          provider: "soundcloud",
+          title: ChaseCleanTitle(chaseSound?.title, url),
+          duration: chaseDuration
+        });
+      })),
+      onError: (chaseMessage) => chaseReject(new Error(chaseMessage))
+    }).catch(chaseReject);
+  });
+}
+async function ChaseResolveTrack(url) {
+  const chaseProvider = ChaseDetectProvider(url.trim());
+  if (!chaseProvider)
+    throw new Error("Enter a YouTube or SoundCloud track link.");
+  const chaseHost = ChaseHiddenHost();
+  const chaseCleanups = [];
+  try {
+    return await ChaseWithTimeout(chaseProvider === "youtube" ? ChaseProbeYouTube(chaseHost, url.trim(), (chaseCleanup) => chaseCleanups.push(chaseCleanup)) : ChaseProbeSoundCloud(chaseHost, url.trim()), "The link took too long to load. Check it and try again.");
+  } finally {
+    chaseCleanups.forEach((chaseCleanup) => chaseCleanup());
+    chaseHost.remove();
+  }
+}
+function ChaseStationArt({ station, className = "" }) {
+  return jsxRuntimeExports.jsx("img", {
+    className: `chase-station-art ${className}`,
+    src: "images/senora-station.png",
+    alt: station ? `${station.name} · Senora Signalworks` : "Senora Signalworks"
+  });
+}
+function ChaseTrackArt({ track, className = "" }) {
+  const chaseUrl = track && "url" in track ? track.url : "";
+  const chaseVideo = chaseUrl && !chasePreview ? ChaseVideoId(chaseUrl) : null;
+  const chaseSource = chaseVideo ? `https://i.ytimg.com/vi/${chaseVideo}/hqdefault.jpg` : "images/senora-track.png";
+  const [chaseFailed, chaseSetFailed] = reactExports.useState(false);
+  reactExports.useEffect(() => chaseSetFailed(false), [chaseSource]);
+  return jsxRuntimeExports.jsx("img", {
+    className: `chase-track-art ${className}`,
+    src: chaseFailed ? "images/senora-track.png" : chaseSource,
+    alt: "",
+    onError: () => chaseSetFailed(true)
+  });
+}
+function ChaseMeter({ value, max = 1, label = "Level" }) {
+  const chaseRatio = value === null || !Number.isFinite(value) ? 0 : Math.max(0, Math.min(1, value / Math.max(max, 1)));
+  return jsxRuntimeExports.jsx("meter", {
+    className: "chase-equipment-meter",
+    min: 0,
+    max,
+    value: chaseRatio * max,
+    "aria-label": label
+  });
+}
+function ChaseReceptionLabel(value) {
+  return value === null ? "Not tuned" : value >= 0.66 ? "Strong" : value >= 0.33 ? "Moderate" : value > 0 ? "Weak" : "No signal";
+}
+function ChaseProgress({ playing }) {
+  const [chaseTick, chaseSetTick] = reactExports.useState(Date.now());
+  reactExports.useEffect(() => {
+    const chaseInterval = window.setInterval(() => chaseSetTick(Date.now()), 500);
+    return () => window.clearInterval(chaseInterval);
+  }, []);
+  const chaseElapsed = playing ? Math.max(0, Math.min(playing.duration, playing.paused ? playing.offsetSeconds || 0 : chaseTick / 1e3 - playing.startedAt)) : 0;
+  return jsxRuntimeExports.jsxs("div", { className: "chase-playback-progress", children: [
+    jsxRuntimeExports.jsx("time", { children: ChaseClock(chaseElapsed) }),
+    jsxRuntimeExports.jsx("progress", {
+      "aria-label": "Playback progress",
+      value: chaseElapsed,
+      max: playing?.duration || 1
+    }),
+    jsxRuntimeExports.jsx("time", { children: ChaseClock(playing?.duration || 0) })
+  ] });
 }
 function ChaseNormalizeIncomingCall(value) {
   if (!value || typeof value !== "object")
@@ -13475,193 +14485,6 @@ function ChaseCallControls({ snapshot, station, action, busy, placed }) {
       ]
     })
   ] });
-}
-const scriptRel = "modulepreload";
-const assetsURL = function(dep, importerUrl) {
-  return new URL(dep, importerUrl).href;
-};
-const seen = {};
-const __vitePreload = function preload(baseModule, deps, importerUrl) {
-  let promise = Promise.resolve();
-  if (deps && deps.length > 0) {
-    let allSettled = function(promises$2) {
-      return Promise.all(promises$2.map((p2) => Promise.resolve(p2).then((value$1) => ({
-        status: "fulfilled",
-        value: value$1
-      }), (reason) => ({
-        status: "rejected",
-        reason
-      }))));
-    };
-    const links = document.getElementsByTagName("link");
-    const cspNonceMeta = document.querySelector("meta[property=csp-nonce]");
-    const cspNonce = cspNonceMeta?.nonce || cspNonceMeta?.getAttribute("nonce");
-    promise = allSettled(deps.map((dep) => {
-      dep = assetsURL(dep, importerUrl);
-      if (dep in seen)
-        return;
-      seen[dep] = true;
-      const isCss = dep.endsWith(".css");
-      const cssSelector = isCss ? '[rel="stylesheet"]' : "";
-      if (!!importerUrl)
-        for (let i$1 = links.length - 1; i$1 >= 0; i$1--) {
-          const link$1 = links[i$1];
-          if (link$1.href === dep && (!isCss || link$1.rel === "stylesheet"))
-            return;
-        }
-      else if (document.querySelector(`link[href="${dep}"]${cssSelector}`))
-        return;
-      const link = document.createElement("link");
-      link.rel = isCss ? "stylesheet" : scriptRel;
-      if (!isCss)
-        link.as = "script";
-      link.crossOrigin = "";
-      link.href = dep;
-      if (cspNonce)
-        link.setAttribute("nonce", cspNonce);
-      document.head.appendChild(link);
-      if (isCss)
-        return new Promise((res, rej) => {
-          link.addEventListener("load", res);
-          link.addEventListener("error", () => rej(new Error(`Unable to preload CSS for ${dep}`)));
-        });
-    }));
-  }
-  function handlePreloadError(err$2) {
-    const e$12 = new Event("vite:preloadError", { cancelable: true });
-    e$12.payload = err$2;
-    window.dispatchEvent(e$12);
-    if (!e$12.defaultPrevented)
-      throw err$2;
-  }
-  return promise.then((res) => {
-    for (const item of res || []) {
-      if (item.status !== "rejected")
-        continue;
-      handlePreloadError(item.reason);
-    }
-    return baseModule().catch(handlePreloadError);
-  });
-};
-const chasePreview = new URLSearchParams(window.location.search).get("preview") === "1" && !window.GetParentResourceName;
-const chasePhone = new URLSearchParams(window.location.search).get("phone") === "1";
-function ChaseNormalizeList(chaseValue) {
-  if (Array.isArray(chaseValue))
-    return chaseValue;
-  if (chaseValue && typeof chaseValue === "object" && Object.keys(chaseValue).length === 0)
-    return [];
-  throw new Error("The station returned an invalid list. Refresh to reconnect.");
-}
-function ChaseNormalizeStation(station) {
-  return {
-    ...station,
-    cohostNames: station.cohostNames === void 0 ? [] : ChaseNormalizeList(station.cohostNames),
-    queue: station.queue === void 0 ? void 0 : ChaseNormalizeList(station.queue),
-    nowPlaying: station.nowPlaying ?? null
-  };
-}
-function ChaseNormalizeCall(value) {
-  const chaseCall = value;
-  if (chaseCall && typeof chaseCall === "object" && (chaseCall.state === "ringing" || chaseCall.state === "onair"))
-    return {
-      state: chaseCall.state,
-      stationId: Number.isFinite(chaseCall.stationId) ? chaseCall.stationId : void 0,
-      stationName: typeof chaseCall.stationName === "string" ? chaseCall.stationName : void 0
-    };
-  return { state: "idle" };
-}
-function ChaseNormalizeSnapshot(value) {
-  if (!value || typeof value !== "object")
-    throw new Error("The station returned incomplete data. Refresh to reconnect.");
-  const chaseCandidate = value;
-  if (!chaseCandidate.viewer || !chaseCandidate.config || !Number.isFinite(chaseCandidate.config.frequencyMin) || !Number.isFinite(chaseCandidate.config.frequencyMax))
-    throw new Error("The station returned incomplete data. Refresh to reconnect.");
-  return {
-    ...chaseCandidate,
-    viewer: {
-      ...chaseCandidate.viewer,
-      call: ChaseNormalizeCall(chaseCandidate.viewer.call)
-    },
-    stations: ChaseNormalizeList(chaseCandidate.stations).map(ChaseNormalizeStation),
-    requests: ChaseNormalizeList(chaseCandidate.requests),
-    crew: ChaseNormalizeList(chaseCandidate.crew),
-    cartridges: ChaseNormalizeList(chaseCandidate.cartridges),
-    mine: chaseCandidate.mine ? ChaseNormalizeStation(chaseCandidate.mine) : null,
-    tunedStationId: chaseCandidate.tunedStationId ?? null,
-    config: {
-      ...chaseCandidate.config,
-      powerModes: ChaseNormalizeList(chaseCandidate.config.powerModes)
-    },
-    devices: chaseCandidate.devices ? {
-      ...chaseCandidate.devices,
-      shop: chaseCandidate.devices.shop === void 0 ? [] : ChaseNormalizeList(chaseCandidate.devices.shop),
-      tunedStationId: chaseCandidate.devices.tunedStationId ?? null,
-      placedNearby: chaseCandidate.devices.placedNearby === void 0 ? [] : ChaseNormalizeList(chaseCandidate.devices.placedNearby).filter((chasePlaced) => Number.isInteger(chasePlaced.netId)),
-      canPlace: chaseCandidate.devices.canPlace === true
-    } : void 0
-  };
-}
-async function ChasePost(endpoint, data = {}) {
-  if (chasePreview) {
-    const chaseDemo = await __vitePreload(() => import("./preview-BDzCaSMY.js"), true ? [] : void 0, import.meta.url);
-    return chaseDemo.ChasePreviewPost(endpoint, data);
-  }
-  const chasePhoneResource = new URLSearchParams(window.location.search).get("resource");
-  const chaseResource = chasePhone && chasePhoneResource === "chase_bootleg" ? "chase_bootleg" : window.GetParentResourceName?.();
-  if (!chaseResource)
-    throw new Error("Open Senora Signalworks from your in-game receiver.");
-  const chaseController = new AbortController();
-  const chaseTimeout = window.setTimeout(() => chaseController.abort(), 12e3);
-  try {
-    const chaseResponse = await fetch(`https://${chaseResource}/chase_bootleg:${endpoint}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=UTF-8" },
-      body: JSON.stringify(data),
-      signal: chaseController.signal
-    });
-    if (!chaseResponse.ok)
-      throw new Error("The radio could not reach the server. Try again.");
-    const chaseResult = await chaseResponse.json();
-    if (!chaseResult || typeof chaseResult !== "object" || typeof chaseResult.ok !== "boolean")
-      throw new Error("The server returned an unreadable response. Refresh to reconnect.");
-    if (chaseResult.ok !== true)
-      throw new Error(chaseResult.error?.message || "The server could not complete that action.");
-    return chaseResult.data;
-  } catch (chaseError) {
-    if (chaseError instanceof DOMException && chaseError.name === "AbortError")
-      throw new Error("The server took too long to respond. Refresh before trying again.");
-    throw chaseError;
-  } finally {
-    window.clearTimeout(chaseTimeout);
-  }
-}
-function ChaseFrequency(value) {
-  return (value / 10).toFixed(1);
-}
-function ChaseMoney(value, currency) {
-  return `${currency}${new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(value)}`;
-}
-function ChaseClock(seconds) {
-  const chaseWhole = Math.max(0, Math.floor(seconds));
-  return `${Math.floor(chaseWhole / 60)}:${(chaseWhole % 60).toString().padStart(2, "0")}`;
-}
-function ChaseNormalizePlaced(value) {
-  if (!value || typeof value !== "object")
-    return null;
-  const chasePlaced = value;
-  if (!Number.isInteger(chasePlaced.netId) || Number(chasePlaced.netId) < 1)
-    return null;
-  return {
-    netId: Number(chasePlaced.netId),
-    stationId: Number.isFinite(chasePlaced.stationId) ? Number(chasePlaced.stationId) : null,
-    frequency: Number.isFinite(chasePlaced.frequency) ? Number(chasePlaced.frequency) : null,
-    label: typeof chasePlaced.label === "string" && chasePlaced.label.trim() ? chasePlaced.label : "No station selected",
-    ownerName: typeof chasePlaced.ownerName === "string" && chasePlaced.ownerName.trim() ? chasePlaced.ownerName : void 0,
-    quality: Number.isFinite(chasePlaced.quality) ? Math.max(0, Math.min(1, Number(chasePlaced.quality))) : null
-  };
-}
-function ChaseError(value) {
-  return value instanceof Error ? value.message : "Something interrupted the connection. Please try again.";
 }
 const chaseDeviceLabels = {
   vehicle: "SSW Dash Receiver",
@@ -13898,672 +14721,346 @@ function ChaseTuneForm({ snapshot, frequency, setFrequency, action, busy, label 
     ]
   });
 }
-function ChaseRequestDialog({ snapshot, station, action, busy, close }) {
+function ChaseRequestForm({ snapshot, station, action, busy, onSent, initialKind = "song" }) {
+  const [chaseKind, chaseSetKind] = reactExports.useState(snapshot.config.music?.enabled === false ? "message" : initialKind);
   const [chaseMessage, chaseSetMessage] = reactExports.useState("");
-  const [chaseKind, chaseSetKind] = reactExports.useState("request");
+  const [chaseUrl, chaseSetUrl] = reactExports.useState("");
+  const [chaseError, chaseSetError] = reactExports.useState("");
+  const chaseLimit = Math.min(snapshot.config.requestMaxLength, 240);
+  const chaseRemaining = Math.max(0, chaseLimit - (chaseKind === "song" ? Array.from(chaseUrl.trim()).length + 1 : 0));
   async function ChaseSendRequest(event) {
     event.preventDefault();
-    if (await action("request", {
+    chaseSetError("");
+    const chaseProvider = ChaseDetectProvider(chaseUrl.trim());
+    if (chaseKind === "song" && (!chaseProvider || snapshot.config.music?.enabled === false || snapshot.config.music?.providers?.[chaseProvider] === false)) {
+      chaseSetError("Enter a supported YouTube or SoundCloud track link.");
+      return;
+    }
+    if (Array.from(chaseMessage.trim()).length > chaseRemaining) {
+      chaseSetError("Shorten your message to fit the station's request limit.");
+      return;
+    }
+    const chaseSent = await action("request", {
       stationId: station.id,
       kind: chaseKind,
+      url: chaseKind === "song" ? chaseUrl.trim() : void 0,
       message: chaseMessage.trim()
-    }, "Your message has been sent to the studio.")) {
+    }, "Your message has been sent to the studio.");
+    if (chaseSent) {
       chaseSetMessage("");
-      close();
+      chaseSetUrl("");
+      onSent?.();
     }
   }
+  return jsxRuntimeExports.jsxs("form", { className: "chase-request-form", onSubmit: ChaseSendRequest, children: [
+    jsxRuntimeExports.jsx("div", { className: "chase-request-kinds", "aria-label": "Message type", children: [
+      { id: "song", label: "Song request", icon: "music" },
+      { id: "message", label: "Message", icon: "message" },
+      { id: "advertisement", label: "Advertisement", icon: "advert" }
+    ].map((chaseItem) => jsxRuntimeExports.jsxs("button", {
+      type: "button",
+      disabled: chaseItem.id === "song" && snapshot.config.music?.enabled === false,
+      "aria-pressed": chaseKind === chaseItem.id,
+      className: `chase-button ${chaseKind === chaseItem.id ? "chase-primary" : "chase-secondary"}`,
+      onClick: () => chaseSetKind(chaseItem.id),
+      children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: chaseItem.icon }),
+        chaseItem.label
+      ]
+    }, chaseItem.id)) }),
+    chaseKind === "song" && jsxRuntimeExports.jsxs("label", { children: [
+      "Track link",
+      jsxRuntimeExports.jsxs("div", { className: "chase-track-link", children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "link" }),
+        jsxRuntimeExports.jsx("input", {
+          type: "url",
+          placeholder: "YouTube or SoundCloud link",
+          value: chaseUrl,
+          onChange: (chaseEvent) => chaseSetUrl(chaseEvent.target.value),
+          maxLength: chaseLimit - 1,
+          required: true
+        })
+      ] })
+    ] }),
+    jsxRuntimeExports.jsxs("label", { children: [
+      "Message",
+      chaseKind === "song" ? " (optional)" : "",
+      jsxRuntimeExports.jsx("textarea", {
+        value: chaseMessage,
+        onChange: (chaseEvent) => chaseSetMessage(Array.from(chaseEvent.target.value).slice(0, chaseRemaining).join("")),
+        placeholder: chaseKind === "advertisement" ? "Tell the station about your business or event…" : "Send a message to the crew…",
+        rows: 4,
+        minLength: chaseKind === "song" ? void 0 : 3,
+        required: chaseKind !== "song"
+      })
+    ] }),
+    jsxRuntimeExports.jsxs("span", { className: "chase-form-count", children: [
+      Array.from(chaseMessage).length,
+      " / ",
+      chaseRemaining
+    ] }),
+    chaseError && jsxRuntimeExports.jsx("p", { className: "chase-form-error", role: "alert", children: chaseError }),
+    jsxRuntimeExports.jsxs("button", {
+      className: "chase-button chase-primary chase-full",
+      disabled: busy || (chaseKind === "song" ? !chaseUrl.trim() : chaseMessage.trim().length < 3),
+      children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: chaseKind === "song" ? "music" : "message" }),
+        chaseKind === "song" ? "Send request" : "Send message"
+      ]
+    }),
+    jsxRuntimeExports.jsxs("p", { className: "chase-form-note", children: [
+      jsxRuntimeExports.jsx(ChaseIcon, { name: "info", size: 18 }),
+      "Requests are reviewed by the station crew."
+    ] })
+  ] });
+}
+function ChaseRequestDialog({ snapshot, station, action, busy, close }) {
   return jsxRuntimeExports.jsx(ChaseDialog, {
     title: "Message studio",
     description: station.name,
     icon: "message",
     close,
-    children: jsxRuntimeExports.jsxs("form", { onSubmit: ChaseSendRequest, children: [
-      jsxRuntimeExports.jsxs("div", { className: "chase-modal-body", children: [
-        jsxRuntimeExports.jsxs("label", { children: [
-          "Message type",
-          jsxRuntimeExports.jsxs("select", {
-            "aria-label": "Message type",
-            value: chaseKind,
-            onChange: (chaseEvent) => chaseSetKind(chaseEvent.target.value),
-            children: [
-              jsxRuntimeExports.jsx("option", { value: "request", children: "Request" }),
-              jsxRuntimeExports.jsx("option", { value: "advertisement", children: "Advertisement" })
-            ]
-          })
-        ] }),
-        jsxRuntimeExports.jsxs("label", { htmlFor: "chase-request-message", children: [
-          "Message to the studio",
-          jsxRuntimeExports.jsx("textarea", {
-            id: "chase-request-message",
-            value: chaseMessage,
-            onChange: (chaseEvent) => chaseSetMessage(chaseEvent.target.value),
-            placeholder: "Write a request or advertisement…",
-            maxLength: snapshot.config.requestMaxLength,
-            rows: 4,
-            required: true
-          })
-        ] }),
-        jsxRuntimeExports.jsxs("span", { className: "chase-field-hint", children: [
-          chaseMessage.length,
-          "/",
-          snapshot.config.requestMaxLength,
-          " characters"
-        ] })
-      ] }),
-      jsxRuntimeExports.jsxs("footer", { className: "chase-modal-footer", children: [
-        jsxRuntimeExports.jsx("button", {
-          type: "button",
-          className: "chase-button chase-secondary",
-          onClick: close,
-          children: "Cancel"
-        }),
-        jsxRuntimeExports.jsxs("button", {
-          className: "chase-button chase-primary",
-          disabled: busy || !chaseMessage.trim(),
-          children: [
-            jsxRuntimeExports.jsx(ChaseIcon, { name: "arrow", size: 18 }),
-            "Send message"
-          ]
-        })
-      ] })
-    ] })
+    children: jsxRuntimeExports.jsx("div", { className: "chase-modal-body", children: jsxRuntimeExports.jsx(ChaseRequestForm, {
+      snapshot,
+      station,
+      action,
+      busy,
+      onSent: close
+    }) })
   });
 }
-function ChaseTipDialog({ snapshot, station, action, busy, close }) {
-  const [chaseTip, chaseSetTip] = reactExports.useState("100");
+function ChaseTipForm({ snapshot, station, action, busy, onSent }) {
+  const [chaseAmount, chaseSetAmount] = reactExports.useState(String(Math.min(100, snapshot.config.maxTip)));
+  const chaseOwn = station.canManage || station.id === snapshot.mine?.id;
   async function ChaseSendTip(event) {
     event.preventDefault();
-    if (await action("tip", { stationId: station.id, amount: Number(chaseTip) }, "Your tip has been delivered."))
-      close();
+    if (chaseOwn)
+      return;
+    if (await action("tip", { stationId: station.id, amount: Number(chaseAmount) }, "Your tip has been delivered."))
+      onSent?.();
   }
+  return jsxRuntimeExports.jsxs("form", { className: "chase-tip-form", onSubmit: ChaseSendTip, children: [
+    jsxRuntimeExports.jsx("h3", { children: "Support this station" }),
+    jsxRuntimeExports.jsx("p", { children: chaseOwn ? "You cannot tip a station you own or operate." : `Help keep ${station.name} on the air.` }),
+    jsxRuntimeExports.jsxs("div", { className: "chase-tip-actions", children: [
+      [50, 100].filter((chaseValue) => chaseValue <= snapshot.config.maxTip).map((chaseValue) => jsxRuntimeExports.jsx("button", {
+        type: "button",
+        className: `chase-button chase-secondary ${Number(chaseAmount) === chaseValue ? "chase-selected" : ""}`,
+        onClick: () => chaseSetAmount(String(chaseValue)),
+        disabled: busy || chaseOwn,
+        children: ChaseMoney(chaseValue, snapshot.config.currency)
+      }, chaseValue)),
+      jsxRuntimeExports.jsx("input", {
+        "aria-label": "Tip amount",
+        type: "number",
+        placeholder: "Custom amount",
+        min: 1,
+        max: snapshot.config.maxTip,
+        step: 1,
+        value: chaseAmount,
+        onChange: (chaseEvent) => chaseSetAmount(chaseEvent.target.value),
+        disabled: chaseOwn,
+        required: true
+      }),
+      jsxRuntimeExports.jsxs("button", {
+        className: "chase-button chase-primary",
+        disabled: busy || chaseOwn || !chaseAmount,
+        children: [
+          jsxRuntimeExports.jsx(ChaseIcon, { name: "heart" }),
+          "Send tip"
+        ]
+      })
+    ] }),
+    jsxRuntimeExports.jsxs("span", { className: "chase-caption", children: [
+      "Up to ",
+      ChaseMoney(snapshot.config.maxTip, snapshot.config.currency),
+      " per tip."
+    ] })
+  ] });
+}
+function ChaseTipDialog({ snapshot, station, action, busy, close }) {
   return jsxRuntimeExports.jsx(ChaseDialog, {
     title: "Support station",
     description: station.name,
-    icon: "money",
+    icon: "heart",
     close,
-    children: jsxRuntimeExports.jsxs("form", { onSubmit: ChaseSendTip, children: [
-      jsxRuntimeExports.jsxs("div", { className: "chase-modal-body", children: [
-        jsxRuntimeExports.jsxs("label", { htmlFor: "chase-tip", children: [
-          "Support this station",
-          jsxRuntimeExports.jsxs("div", { className: "chase-input-action", children: [
-            jsxRuntimeExports.jsx("span", { children: snapshot.config.currency }),
-            jsxRuntimeExports.jsx("input", {
-              id: "chase-tip",
-              type: "number",
-              min: "1",
-              max: snapshot.config.maxTip,
-              step: "1",
-              required: true,
-              value: chaseTip,
-              onChange: (chaseEvent) => chaseSetTip(chaseEvent.target.value)
-            })
-          ] })
-        ] }),
-        jsxRuntimeExports.jsxs("p", { className: "chase-field-hint", children: [
-          "Maximum",
-          " ",
-          ChaseMoney(snapshot.config.maxTip, snapshot.config.currency),
-          " per tip."
-        ] })
-      ] }),
-      jsxRuntimeExports.jsxs("footer", { className: "chase-modal-footer", children: [
-        jsxRuntimeExports.jsx("button", {
-          type: "button",
-          className: "chase-button chase-secondary",
-          onClick: close,
-          children: "Cancel"
-        }),
-        jsxRuntimeExports.jsxs("button", { className: "chase-button chase-primary", disabled: busy, children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "check", size: 18 }),
-          "Send tip"
-        ] })
-      ] })
-    ] })
+    children: jsxRuntimeExports.jsx("div", { className: "chase-modal-body", children: jsxRuntimeExports.jsx(ChaseTipForm, {
+      snapshot,
+      station,
+      action,
+      busy,
+      onSent: close
+    }) })
   });
 }
 function ChaseListen({ snapshot, action, busy, quality }) {
-  const [chaseFrequency, chaseSetFrequency] = reactExports.useState(snapshot.stations.find((chaseStation) => chaseStation.id === snapshot.tunedStationId)?.frequency ?? snapshot.config.frequencyMin);
-  const chaseTunedIdRef = reactExports.useRef(snapshot.tunedStationId);
+  const [chaseFrequency, chaseSetFrequency] = reactExports.useState(snapshot.stations.find((chaseStation) => chaseStation.id === snapshot.tunedStationId)?.frequency || 987);
   const [chaseSelectedId, chaseSetSelectedId] = reactExports.useState(snapshot.tunedStationId ?? snapshot.stations[0]?.id ?? null);
   const [chaseFilter, chaseSetFilter] = reactExports.useState("all");
   const [chaseSearch, chaseSetSearch] = reactExports.useState("");
   const [chaseDialog, chaseSetDialog] = reactExports.useState(null);
   const chaseSelected = snapshot.stations.find((chaseStation) => chaseStation.id === chaseSelectedId);
+  const chaseTuned = chaseSelected?.id === snapshot.tunedStationId;
+  const chaseOwn = chaseSelected?.canManage || chaseSelected?.id === snapshot.mine?.id;
   const chaseStations = snapshot.stations.filter((chaseStation) => (chaseFilter === "all" || chaseStation.live) && `${chaseStation.name} ${ChaseFrequency(chaseStation.frequency)}`.toLowerCase().includes(chaseSearch.toLowerCase()));
-  const chaseTuned = Boolean(chaseSelected && snapshot.tunedStationId === chaseSelected.id);
   reactExports.useEffect(() => {
-    if (chaseTunedIdRef.current === snapshot.tunedStationId)
-      return;
-    chaseTunedIdRef.current = snapshot.tunedStationId;
     const chaseStation = snapshot.stations.find((chaseItem) => chaseItem.id === snapshot.tunedStationId);
     if (chaseStation) {
       chaseSetSelectedId(chaseStation.id);
       chaseSetFrequency(chaseStation.frequency);
     }
-  }, [snapshot.tunedStationId, snapshot.stations]);
-  return jsxRuntimeExports.jsxs("div", { className: "chase-listen-layout", children: [
-    jsxRuntimeExports.jsxs("section", { className: "chase-tuner chase-card", children: [
-      jsxRuntimeExports.jsxs("div", { className: "chase-panel-heading", children: [
-        jsxRuntimeExports.jsxs("div", { children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "radio" }),
-          jsxRuntimeExports.jsx("h2", { children: "Manual tuning" })
+  }, [snapshot.tunedStationId]);
+  return jsxRuntimeExports.jsxs("div", { className: "chase-discover", children: [
+    jsxRuntimeExports.jsxs("div", { className: "chase-discover-columns", children: [
+      jsxRuntimeExports.jsxs("section", { className: "chase-discover-directory", children: [
+        jsxRuntimeExports.jsxs("div", { className: "chase-section-intro", children: [
+          jsxRuntimeExports.jsx("h1", { children: "Find your frequency" }),
+          jsxRuntimeExports.jsx("p", { children: "Live stations across San Andreas." })
         ] }),
-        jsxRuntimeExports.jsx(ChaseSignal, { quality })
-      ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-tuner-body", children: [
-        jsxRuntimeExports.jsxs("div", { className: "chase-frequency-display", children: [
-          jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "FREQUENCY" }),
-          jsxRuntimeExports.jsxs("div", { children: [
-            jsxRuntimeExports.jsx("strong", { children: ChaseFrequency(chaseFrequency) }),
-            jsxRuntimeExports.jsx("span", { children: "MHz" })
-          ] })
-        ] }),
-        jsxRuntimeExports.jsx(ChaseTuneForm, {
-          snapshot,
-          frequency: chaseFrequency,
-          setFrequency: chaseSetFrequency,
-          action,
-          busy
-        })
-      ] }),
-      jsxRuntimeExports.jsx(ChaseDeviceControls, { snapshot, action, busy }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-tuner-footer", children: [
-        jsxRuntimeExports.jsxs("span", { children: [
-          ChaseFrequency(snapshot.config.frequencyMin),
-          " –",
-          " ",
-          ChaseFrequency(snapshot.config.frequencyMax),
-          " MHz"
-        ] }),
-        jsxRuntimeExports.jsx("span", { children: "Public and unlisted stations" })
-      ] })
-    ] }),
-    jsxRuntimeExports.jsxs("section", { className: "chase-directory chase-card", children: [
-      jsxRuntimeExports.jsxs("div", { className: "chase-section-heading", children: [
-        jsxRuntimeExports.jsxs("div", { children: [
-          jsxRuntimeExports.jsxs("h2", { children: [
-            "Station directory",
-            " ",
-            jsxRuntimeExports.jsx("span", { className: "chase-count-pill", children: snapshot.stations.length })
+        jsxRuntimeExports.jsxs("div", { className: "chase-discover-search", children: [
+          jsxRuntimeExports.jsxs("label", { className: "chase-search", children: [
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "search" }),
+            jsxRuntimeExports.jsx("input", {
+              "aria-label": "Search stations",
+              placeholder: "Search station name or frequency…",
+              value: chaseSearch,
+              onChange: (chaseEvent) => chaseSetSearch(chaseEvent.target.value)
+            })
           ] }),
-          jsxRuntimeExports.jsx("p", { children: "Public broadcasts available in the city." })
-        ] }),
-        jsxRuntimeExports.jsxs("div", { className: "chase-segmented", "aria-label": "Filter stations", children: [
           jsxRuntimeExports.jsx("button", {
-            className: chaseFilter === "all" ? "chase-selected" : "",
+            className: `chase-button ${chaseFilter === "live" ? "chase-primary" : "chase-secondary"}`,
+            "aria-pressed": chaseFilter === "live",
+            onClick: () => chaseSetFilter("live"),
+            children: "Live now"
+          }),
+          jsxRuntimeExports.jsx("button", {
+            className: `chase-button ${chaseFilter === "all" ? "chase-primary" : "chase-secondary"}`,
             "aria-pressed": chaseFilter === "all",
             onClick: () => chaseSetFilter("all"),
             children: "All stations"
-          }),
-          jsxRuntimeExports.jsx("button", {
-            className: chaseFilter === "live" ? "chase-selected" : "",
-            "aria-pressed": chaseFilter === "live",
-            onClick: () => chaseSetFilter("live"),
-            children: "On air"
           })
-        ] })
-      ] }),
-      jsxRuntimeExports.jsxs("label", { className: "chase-search", children: [
-        jsxRuntimeExports.jsx(ChaseIcon, { name: "search", size: 19 }),
-        jsxRuntimeExports.jsx("input", {
-          "aria-label": "Search stations",
-          placeholder: "Search name or frequency",
-          value: chaseSearch,
-          onChange: (chaseEvent) => chaseSetSearch(chaseEvent.target.value)
-        })
-      ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-table-heading", children: [
-        jsxRuntimeExports.jsx("span", { children: "Station" }),
-        jsxRuntimeExports.jsx("span", { children: "Frequency" }),
-        jsxRuntimeExports.jsx("span", { children: "Status" })
-      ] }),
-      jsxRuntimeExports.jsx("div", { className: "chase-station-list", children: chaseStations.length ? chaseStations.map((chaseStation) => jsxRuntimeExports.jsxs("button", {
-        className: `chase-station-row ${chaseSelected?.id === chaseStation.id ? "chase-station-selected" : ""}`,
-        onClick: () => {
-          chaseSetSelectedId(chaseStation.id);
-          chaseSetFrequency(chaseStation.frequency);
-        },
-        "aria-pressed": chaseSelected?.id === chaseStation.id,
-        children: [
-          jsxRuntimeExports.jsx("span", { className: "chase-station-symbol", children: jsxRuntimeExports.jsx(ChaseIcon, {
-            name: chaseStation.live ? "broadcast" : "radio",
-            size: 22
-          }) }),
-          jsxRuntimeExports.jsxs("span", { className: "chase-station-text", children: [
-            jsxRuntimeExports.jsx("strong", { children: chaseStation.name }),
-            jsxRuntimeExports.jsx("span", { children: chaseStation.showTitle || chaseStation.tagline || "No show scheduled" })
-          ] }),
-          jsxRuntimeExports.jsxs("span", { className: "chase-row-frequency", children: [
-            ChaseFrequency(chaseStation.frequency),
-            jsxRuntimeExports.jsx("small", { children: "FM" })
-          ] }),
-          jsxRuntimeExports.jsx(ChaseStatus, { live: chaseStation.live, children: chaseStation.live ? "ON AIR" : "OFF AIR" }),
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "arrow", size: 17 })
-        ]
-      }, chaseStation.id)) : jsxRuntimeExports.jsx(ChaseEmpty, { title: "No stations found", children: "Try another search or tune to a frequency directly." }) })
-    ] }),
-    jsxRuntimeExports.jsx("aside", { className: "chase-now-playing chase-card", children: chaseSelected ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-      jsxRuntimeExports.jsxs("div", { className: "chase-panel-heading", children: [
-        jsxRuntimeExports.jsxs("div", { children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "headphones" }),
-          jsxRuntimeExports.jsx("h2", { children: "Station details" })
         ] }),
-        jsxRuntimeExports.jsx(ChaseStatus, { live: chaseSelected.live, children: chaseSelected.live ? "ON AIR" : "OFF AIR" })
-      ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-selected-frequency", children: [
-        jsxRuntimeExports.jsx("strong", { children: ChaseFrequency(chaseSelected.frequency) }),
-        jsxRuntimeExports.jsx("span", { children: "FM" }),
-        jsxRuntimeExports.jsx("span", { className: "chase-count-pill", children: chaseTuned ? "CONNECTED" : "SELECTED" })
-      ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-selected-show", children: [
-        jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "CURRENT SHOW" }),
-        jsxRuntimeExports.jsx("h2", { children: chaseSelected.showTitle || chaseSelected.name }),
-        jsxRuntimeExports.jsx("p", { children: chaseSelected.tagline || "No station description." })
-      ] }),
-      jsxRuntimeExports.jsxs("dl", { className: "chase-detail-list", children: [
-        jsxRuntimeExports.jsxs("div", { children: [
-          jsxRuntimeExports.jsx("dt", { children: "Station" }),
-          jsxRuntimeExports.jsx("dd", { children: chaseSelected.name })
-        ] }),
-        jsxRuntimeExports.jsxs("div", { children: [
-          jsxRuntimeExports.jsx("dt", { children: "Host" }),
-          jsxRuntimeExports.jsxs("dd", { children: [
-            chaseSelected.hostName || "No host",
-            chaseSelected.cohostNames.length ? ` +${chaseSelected.cohostNames.length} co-host${chaseSelected.cohostNames.length === 1 ? "" : "s"}` : ""
-          ] })
-        ] }),
-        jsxRuntimeExports.jsxs("div", { children: [
-          jsxRuntimeExports.jsx("dt", { children: "Listeners" }),
-          jsxRuntimeExports.jsxs("dd", { children: [
-            chaseSelected.listeners,
-            " tuned in"
-          ] })
-        ] })
-      ] }),
-      jsxRuntimeExports.jsxs("button", {
-        className: `chase-button ${chaseTuned ? "chase-secondary" : "chase-primary"} chase-full`,
-        disabled: busy || !chaseSelected.live && !chaseTuned,
-        onClick: () => void action(chaseTuned ? "untune" : "tune", chaseTuned ? {} : { stationId: chaseSelected.id }, chaseTuned ? "Receiver disconnected." : "Receiver tuned."),
-        children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: chaseTuned ? "stop" : "play", size: 17 }),
-          chaseTuned ? "Disconnect receiver" : "Listen in"
-        ]
-      }),
-      chaseSelected.id !== snapshot.mine?.id ? jsxRuntimeExports.jsx(ChaseCallControls, {
-        snapshot,
-        station: chaseSelected,
-        action,
-        busy
-      }) : null,
-      jsxRuntimeExports.jsxs("div", { className: "chase-station-actions", children: [
-        jsxRuntimeExports.jsxs("button", {
-          className: "chase-button chase-secondary",
-          onClick: () => chaseSetDialog("message"),
+        jsxRuntimeExports.jsx("div", { className: "chase-broadcast-list", children: chaseStations.length ? chaseStations.map((chaseStation) => jsxRuntimeExports.jsxs("button", {
+          className: `chase-broadcast-card ${chaseSelectedId === chaseStation.id ? "chase-broadcast-selected" : ""}`,
+          "aria-pressed": chaseSelectedId === chaseStation.id,
+          onClick: () => {
+            chaseSetSelectedId(chaseStation.id);
+            chaseSetFrequency(chaseStation.frequency);
+          },
           children: [
-            jsxRuntimeExports.jsx(ChaseIcon, { name: "message", size: 18 }),
-            "Message studio"
+            jsxRuntimeExports.jsx(ChaseStationArt, { station: chaseStation }),
+            jsxRuntimeExports.jsxs("div", { className: "chase-broadcast-name", children: [
+              jsxRuntimeExports.jsx("h2", { children: chaseStation.name }),
+              jsxRuntimeExports.jsx("p", { children: chaseStation.tagline || "Independent radio. San Andreas." })
+            ] }),
+            jsxRuntimeExports.jsxs("div", { className: "chase-broadcast-frequency", children: [
+              jsxRuntimeExports.jsxs("strong", { children: [
+                ChaseFrequency(chaseStation.frequency),
+                " FM"
+              ] }),
+              jsxRuntimeExports.jsx(ChaseStatus, { live: chaseStation.live, children: chaseStation.live ? "Live now" : "Off air" })
+            ] }),
+            jsxRuntimeExports.jsx("span", { className: "chase-list-strength", children: snapshot.tunedStationId === chaseStation.id ? ChaseReceptionLabel(quality) : "—" })
+          ]
+        }, chaseStation.id)) : jsxRuntimeExports.jsx(ChaseEmpty, { title: "No stations found", children: "Try another name or frequency, or switch to all stations." }) })
+      ] }),
+      jsxRuntimeExports.jsx("aside", { className: "chase-discover-detail", children: chaseSelected ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        jsxRuntimeExports.jsx(ChaseStationArt, {
+          station: chaseSelected,
+          className: "chase-station-cover"
+        }),
+        jsxRuntimeExports.jsx("h2", { children: chaseSelected.name }),
+        jsxRuntimeExports.jsx("p", { children: chaseSelected.tagline || "Independent sound. Open roads." }),
+        jsxRuntimeExports.jsxs("div", { className: "chase-station-program", children: [
+          jsxRuntimeExports.jsx("strong", { children: chaseSelected.showTitle || "No show scheduled" }),
+          jsxRuntimeExports.jsx("span", { children: chaseSelected.hostName ? `with ${chaseSelected.hostName}` : chaseSelected.live ? "Station broadcast" : "Currently off air" })
+        ] }),
+        jsxRuntimeExports.jsxs("div", { className: "chase-list-now", children: [
+          jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "NOW PLAYING" }),
+          jsxRuntimeExports.jsx("strong", { children: chaseSelected.nowPlaying?.title || (chaseSelected.micLive ? "Live microphone" : "Nothing playing") })
+        ] }),
+        jsxRuntimeExports.jsxs("button", {
+          className: `chase-button ${chaseTuned ? "chase-secondary" : "chase-primary"} chase-full`,
+          disabled: busy || !chaseSelected.live && !chaseTuned,
+          onClick: () => void action(chaseTuned ? "untune" : "tune", chaseTuned ? {} : { stationId: chaseSelected.id }, chaseTuned ? "Receiver disconnected." : "Receiver tuned."),
+          children: [
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "broadcast" }),
+            chaseTuned ? "Disconnect receiver" : "Tune in"
           ]
         }),
-        chaseSelected.id !== snapshot.mine?.id ? jsxRuntimeExports.jsxs("button", {
-          className: "chase-button chase-secondary",
-          onClick: () => chaseSetDialog("tip"),
-          children: [
-            jsxRuntimeExports.jsx(ChaseIcon, { name: "money", size: 18 }),
-            "Tip station"
-          ]
-        }) : null
+        jsxRuntimeExports.jsxs("div", { className: "chase-station-actions", children: [
+          jsxRuntimeExports.jsxs("button", {
+            className: "chase-button chase-secondary",
+            onClick: () => chaseSetDialog("message"),
+            children: [
+              jsxRuntimeExports.jsx(ChaseIcon, { name: "music" }),
+              "Request a song"
+            ]
+          }),
+          jsxRuntimeExports.jsxs("button", {
+            className: "chase-button chase-secondary",
+            disabled: chaseOwn,
+            title: chaseOwn ? "You cannot tip your own station" : void 0,
+            onClick: () => chaseSetDialog("tip"),
+            children: [
+              jsxRuntimeExports.jsx(ChaseIcon, { name: "heart" }),
+              "Send a tip"
+            ]
+          })
+        ] }),
+        chaseOwn && jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "You own or operate this station. Tips are for other listeners." }),
+        jsxRuntimeExports.jsx(ChaseCallControls, {
+          snapshot,
+          station: chaseSelected,
+          action,
+          busy
+        })
+      ] }) : jsxRuntimeExports.jsx(ChaseEmpty, { title: "Select a station", children: "Choose a station to see its show and tune in." }) })
+    ] }),
+    jsxRuntimeExports.jsxs("section", { className: "chase-discover-tuner", children: [
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsx("h3", { children: "Manual tuning" }),
+        jsxRuntimeExports.jsx("p", { children: "Enter a frequency to tune directly." })
       ] }),
-      jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "Your receiver stays connected when this panel is closed." })
-    ] }) : jsxRuntimeExports.jsx(ChaseEmpty, { title: "Select a station", children: "Choose a station from the directory to view its broadcast." }) }),
-    chaseDialog === "message" && chaseSelected ? jsxRuntimeExports.jsx(ChaseRequestDialog, {
+      jsxRuntimeExports.jsx(ChaseTuneForm, {
+        snapshot,
+        frequency: chaseFrequency,
+        setFrequency: chaseSetFrequency,
+        action,
+        busy,
+        label: "Tune"
+      }),
+      jsxRuntimeExports.jsxs("details", { className: "chase-receiver-options", children: [
+        jsxRuntimeExports.jsxs("summary", { children: [
+          jsxRuntimeExports.jsx(ChaseIcon, { name: "radio" }),
+          jsxRuntimeExports.jsxs("span", { children: [
+            snapshot.devices?.active === "portable" ? "Field Radio" : snapshot.devices?.active === "vehicle" ? "Dash Receiver" : snapshot.devices?.active === "buds" ? "Signalbuds" : "No receiver equipped",
+            jsxRuntimeExports.jsx("small", { children: "Manage receiver" })
+          ] }),
+          jsxRuntimeExports.jsx(ChaseIcon, { name: "settings", size: 18 })
+        ] }),
+        jsxRuntimeExports.jsx(ChaseDeviceControls, {
+          snapshot,
+          action,
+          busy
+        })
+      ] })
+    ] }),
+    chaseDialog === "message" && chaseSelected && jsxRuntimeExports.jsx(ChaseRequestDialog, {
       snapshot,
       station: chaseSelected,
       action,
       busy,
       close: () => chaseSetDialog(null)
-    }) : null,
-    chaseDialog === "tip" && chaseSelected ? jsxRuntimeExports.jsx(ChaseTipDialog, {
+    }),
+    chaseDialog === "tip" && chaseSelected && jsxRuntimeExports.jsx(ChaseTipDialog, {
       snapshot,
       station: chaseSelected,
       action,
       busy,
       close: () => chaseSetDialog(null)
-    }) : null
-  ] });
-}
-const chaseLoadTimeout = 15e3;
-const chaseYouTubePatterns = [
-  /^https:\/\/(www\.|music\.)?youtube\.com\/watch\?v=([A-Za-z0-9_-]{11})/,
-  /^https:\/\/youtu\.be\/([A-Za-z0-9_-]{11})/,
-  /^https:\/\/(www\.)?youtube\.com\/shorts\/([A-Za-z0-9_-]{11})/
-];
-const chaseSoundCloudPatterns = [
-  /^https:\/\/(www\.|m\.)?soundcloud\.com\/[A-Za-z0-9_-]+\/[A-Za-z0-9_-]+(\?[^\s]*)?$/,
-  /^https:\/\/on\.soundcloud\.com\/[A-Za-z0-9]+/
-];
-const chaseScripts =  new Map();
-let chaseYouTubeReady = null;
-let chaseSoundCloudReady = null;
-function ChaseCleanTitle(value, fallback) {
-  const chaseStrip = (text) => text.replace(/[<>\u0000-\u001f\u007f]/g, " ").replace(/\s+/g, " ").trim();
-  const chaseSource = chaseStrip(value || "") || chaseStrip(fallback);
-  return Array.from(chaseSource).slice(0, 120).join("").trim() || "Track";
-}
-function ChaseVideoId(url) {
-  for (const chasePattern of chaseYouTubePatterns) {
-    const chaseMatch = chasePattern.exec(url);
-    if (chaseMatch)
-      return chaseMatch[chaseMatch.length - 1];
-  }
-  return null;
-}
-function ChaseDetectProvider(url) {
-  if (ChaseVideoId(url))
-    return "youtube";
-  if (chaseSoundCloudPatterns.some((chasePattern) => chasePattern.test(url)))
-    return "soundcloud";
-  return null;
-}
-function ChaseWithTimeout(promise, message, milliseconds = chaseLoadTimeout) {
-  let chaseTimer;
-  return Promise.race([
-    promise,
-    new Promise((_, chaseReject) => {
-      chaseTimer = window.setTimeout(() => chaseReject(new Error(message)), milliseconds);
     })
-  ]).finally(() => window.clearTimeout(chaseTimer));
-}
-function ChaseLoadScript(src) {
-  let chasePending = chaseScripts.get(src);
-  if (!chasePending) {
-    chasePending = new Promise((chaseResolve, chaseReject) => {
-      const chaseScript = document.createElement("script");
-      chaseScript.src = src;
-      chaseScript.async = true;
-      chaseScript.onload = () => chaseResolve();
-      chaseScript.onerror = () => {
-        chaseScripts.delete(src);
-        chaseReject(new Error("The player library could not be loaded."));
-      };
-      document.head.appendChild(chaseScript);
-    });
-    chaseScripts.set(src, chasePending);
-  }
-  return chasePending;
-}
-function ChaseAwaitGlobal(read, message) {
-  return ChaseWithTimeout(new Promise((chaseResolve) => {
-    const chaseTimer = window.setInterval(() => {
-      const chaseValue = read();
-      if (chaseValue) {
-        window.clearInterval(chaseTimer);
-        chaseResolve(chaseValue);
-      }
-    }, 100);
-  }), message);
-}
-function ChaseLoadYouTube() {
-  chaseYouTubeReady || (chaseYouTubeReady = (async () => {
-    if (window.YT?.Player)
-      return window.YT;
-    const chasePrevious = window.onYouTubeIframeAPIReady;
-    window.onYouTubeIframeAPIReady = () => chasePrevious?.();
-    await ChaseLoadScript("https://www.youtube.com/iframe_api");
-    return ChaseAwaitGlobal(() => window.YT?.Player ? window.YT : void 0, "The YouTube player did not respond.");
-  })().catch((chaseFailure) => {
-    chaseYouTubeReady = null;
-    throw chaseFailure;
-  }));
-  return chaseYouTubeReady;
-}
-function ChaseLoadSoundCloud() {
-  chaseSoundCloudReady || (chaseSoundCloudReady = (async () => {
-    if (window.SC?.Widget)
-      return window.SC;
-    await ChaseLoadScript("https://w.soundcloud.com/player/api.js");
-    return ChaseAwaitGlobal(() => window.SC?.Widget ? window.SC : void 0, "The SoundCloud player did not respond.");
-  })().catch((chaseFailure) => {
-    chaseSoundCloudReady = null;
-    throw chaseFailure;
-  }));
-  return chaseSoundCloudReady;
-}
-function ChaseHiddenHost() {
-  const chaseHost = document.createElement("div");
-  chaseHost.className = "chase-hidden-player";
-  chaseHost.setAttribute("aria-hidden", "true");
-  document.body.appendChild(chaseHost);
-  return chaseHost;
-}
-function ChaseYouTubeMessage(code) {
-  if (code === 100)
-    return "This video is unavailable.";
-  if (code === 101 || code === 150)
-    return "This video does not allow embedded playback.";
-  return "The YouTube player failed to play this video.";
-}
-function ChaseYouTubeEmbed(host, videoId, events) {
-  return ChaseLoadYouTube().then((chaseNamespace) => {
-    const chaseTarget = document.createElement("div");
-    host.appendChild(chaseTarget);
-    const chaseVars = {
-      autoplay: 0,
-      controls: 0,
-      disablekb: 1,
-      enablejsapi: 1,
-      playsinline: 1,
-      rel: 0
-    };
-    if (window.location.protocol === "https:")
-      chaseVars.origin = window.location.origin;
-    return new chaseNamespace.Player(chaseTarget, {
-      width: "1",
-      height: "1",
-      videoId,
-      playerVars: chaseVars,
-      events: {
-        onReady: (chaseEvent) => events.onReady(chaseEvent.target),
-        onStateChange: (chaseEvent) => events.onState?.(chaseEvent.data, chaseEvent.target),
-        onError: (chaseEvent) => events.onError(ChaseYouTubeMessage(chaseEvent.data))
-      }
-    });
-  });
-}
-function ChaseSoundCloudEmbed(host, url, events) {
-  return ChaseLoadSoundCloud().then((chaseNamespace) => {
-    const chaseFrame = document.createElement("iframe");
-    chaseFrame.width = "1";
-    chaseFrame.height = "1";
-    chaseFrame.allow = "autoplay";
-    chaseFrame.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}&auto_play=false`;
-    host.appendChild(chaseFrame);
-    const chaseWidget = chaseNamespace.Widget(chaseFrame);
-    chaseWidget.bind(chaseNamespace.Widget.Events.READY, () => events.onReady(chaseWidget));
-    chaseWidget.bind(chaseNamespace.Widget.Events.PLAY, () => events.onPlay?.());
-    chaseWidget.bind(chaseNamespace.Widget.Events.FINISH, () => events.onFinish?.());
-    chaseWidget.bind(chaseNamespace.Widget.Events.ERROR, () => events.onError("The SoundCloud player failed to play this track."));
-    return chaseWidget;
-  });
-}
-function ChaseCreatePlayer(options) {
-  const chaseHost = ChaseHiddenHost();
-  let chaseDestroyed = false;
-  let chaseVolume = 1;
-  let chaseOffset = 0;
-  let chaseWantPlay = false;
-  let chaseBackend = null;
-  let chaseTeardown = null;
-  const chaseReadyTimer = window.setTimeout(() => {
-    if (!chaseBackend)
-      ChaseFail("The track player did not respond.");
-  }, chaseLoadTimeout);
-  function ChaseFail(message) {
-    if (!chaseDestroyed)
-      options.onError?.(message);
-  }
-  function ChaseAttach(backend, teardown) {
-    window.clearTimeout(chaseReadyTimer);
-    if (chaseDestroyed) {
-      teardown();
-      return;
-    }
-    chaseBackend = backend;
-    chaseTeardown = teardown;
-    backend.setVolume(chaseVolume);
-    backend.seek(chaseOffset);
-    if (chaseWantPlay)
-      backend.play();
-  }
-  const chaseSetup = options.provider === "youtube" ? (() => {
-    const chaseVideoId = ChaseVideoId(options.url);
-    if (!chaseVideoId)
-      return Promise.reject(new Error("The YouTube link is invalid."));
-    return ChaseYouTubeEmbed(chaseHost, chaseVideoId, {
-      onReady: (chasePlayer) => ChaseAttach({
-        setVolume: (chaseFraction) => chasePlayer.setVolume(Math.round(chaseFraction * 100)),
-        seek: (chaseSeconds) => chasePlayer.seekTo(chaseSeconds, true),
-        play: () => chasePlayer.playVideo(),
-        destroy: () => chasePlayer.destroy()
-      }, () => chasePlayer.destroy()),
-      onState: (chaseState) => {
-        if (chaseDestroyed)
-          return;
-        if (chaseState === window.YT?.PlayerState.PLAYING)
-          options.onPlaying?.();
-        if (chaseState === window.YT?.PlayerState.ENDED)
-          options.onEnded?.();
-      },
-      onError: ChaseFail
-    });
-  })() : ChaseSoundCloudEmbed(chaseHost, options.url, {
-    onReady: (chaseWidget) => ChaseAttach({
-      setVolume: (chaseFraction) => chaseWidget.setVolume(Math.round(chaseFraction * 100)),
-      seek: (chaseSeconds) => chaseWidget.seekTo(Math.round(chaseSeconds * 1e3)),
-      play: () => chaseWidget.play(),
-      destroy: () => chaseWidget.pause()
-    }, () => chaseWidget.pause()),
-    onPlay: () => {
-      if (!chaseDestroyed)
-        options.onPlaying?.();
-    },
-    onFinish: () => {
-      if (!chaseDestroyed)
-        options.onEnded?.();
-    },
-    onError: ChaseFail
-  });
-  ChaseWithTimeout(chaseSetup, "The track player did not load in time.").catch((chaseFailure) => ChaseFail(chaseFailure instanceof Error ? chaseFailure.message : "The track player could not be started."));
-  return {
-    setVolume(fraction) {
-      chaseVolume = Math.max(0, Math.min(1, fraction));
-      chaseBackend?.setVolume(chaseVolume);
-    },
-    seek(seconds) {
-      chaseOffset = Math.max(0, seconds);
-      chaseBackend?.seek(chaseOffset);
-    },
-    play() {
-      chaseWantPlay = true;
-      chaseBackend?.play();
-    },
-    destroy() {
-      if (chaseDestroyed)
-        return;
-      chaseDestroyed = true;
-      window.clearTimeout(chaseReadyTimer);
-      try {
-        chaseTeardown?.();
-      } catch {
-        chaseTeardown = null;
-      }
-      chaseBackend = null;
-      chaseHost.remove();
-    }
-  };
-}
-function ChaseProbeYouTube(host, url, release) {
-  const chaseVideoId = ChaseVideoId(url);
-  if (!chaseVideoId)
-    return Promise.reject(new Error("The YouTube link is invalid."));
-  return new Promise((chaseResolve, chaseReject) => {
-    let chasePoll;
-    let chaseSettled = false;
-    let chaseProbe = null;
-    release(() => {
-      chaseSettled = true;
-      window.clearInterval(chasePoll);
-      chaseProbe?.destroy();
-      chaseProbe = null;
-    });
-    function ChaseFinish(player) {
-      const chaseDuration = player.getDuration();
-      if (!(chaseDuration > 0))
-        return false;
-      chaseSettled = true;
-      window.clearInterval(chasePoll);
-      const chaseTitle = player.getVideoData().title?.trim();
-      chaseResolve({
-        provider: "youtube",
-        title: ChaseCleanTitle(chaseTitle, url),
-        duration: Math.round(chaseDuration)
-      });
-      return true;
-    }
-    ChaseYouTubeEmbed(host, chaseVideoId, {
-      onReady: (chasePlayer) => {
-        if (chaseSettled) {
-          chasePlayer.destroy();
-          return;
-        }
-        chaseProbe = chasePlayer;
-        if (ChaseFinish(chasePlayer))
-          return;
-        chasePlayer.mute();
-        chasePlayer.playVideo();
-        chasePoll = window.setInterval(() => {
-          if (!chaseSettled)
-            ChaseFinish(chasePlayer);
-        }, 250);
-      },
-      onError: (chaseMessage) => {
-        window.clearInterval(chasePoll);
-        if (!chaseSettled)
-          chaseReject(new Error(chaseMessage));
-      }
-    }).catch(chaseReject);
-  });
-}
-function ChaseProbeSoundCloud(host, url) {
-  return new Promise((chaseResolve, chaseReject) => {
-    ChaseSoundCloudEmbed(host, url, {
-      onReady: (chaseWidget) => chaseWidget.getCurrentSound((chaseSound) => chaseWidget.getDuration((chaseMilliseconds) => {
-        const chaseDuration = Math.round((chaseMilliseconds || chaseSound?.duration || 0) / 1e3);
-        if (!(chaseDuration > 0)) {
-          chaseReject(new Error("This track has no playable duration."));
-          return;
-        }
-        chaseResolve({
-          provider: "soundcloud",
-          title: ChaseCleanTitle(chaseSound?.title, url),
-          duration: chaseDuration
-        });
-      })),
-      onError: (chaseMessage) => chaseReject(new Error(chaseMessage))
-    }).catch(chaseReject);
-  });
-}
-async function ChaseResolveTrack(url) {
-  const chaseProvider = ChaseDetectProvider(url.trim());
-  if (!chaseProvider)
-    throw new Error("Enter a YouTube or SoundCloud track link.");
-  const chaseHost = ChaseHiddenHost();
-  const chaseCleanups = [];
-  try {
-    return await ChaseWithTimeout(chaseProvider === "youtube" ? ChaseProbeYouTube(chaseHost, url.trim(), (chaseCleanup) => chaseCleanups.push(chaseCleanup)) : ChaseProbeSoundCloud(chaseHost, url.trim()), "The link took too long to load. Check it and try again.");
-  } finally {
-    chaseCleanups.forEach((chaseCleanup) => chaseCleanup());
-    chaseHost.remove();
-  }
+  ] });
 }
 const chaseStageLabels = {
   stored: "At the depot",
@@ -14578,91 +15075,131 @@ const chaseProviderLabels = {
   youtube: "YouTube",
   soundcloud: "SoundCloud"
 };
-function ChaseStudio({ snapshot, action, busy, playback }) {
-  const [chaseTab, chaseSetTab] = reactExports.useState("console");
-  const chaseMine = snapshot.mine;
-  const chasePending = snapshot.requests.filter((chaseRequest) => chaseRequest.status === "pending").length;
-  if (!chaseMine)
+function ChaseInitials(name) {
+  return name.trim().split(/\s+/).slice(0, 2).map((part) => part[0]).join("").toUpperCase() || "—";
+}
+function ChaseSectionTitle({ children }) {
+  return jsxRuntimeExports.jsx("h3", { className: "chase-studio-section-title", children });
+}
+function ChaseBroadcastSwitch({ snapshot, station, action, busy }) {
+  const ready = station.stage === "ready" || station.stage === "live";
+  return jsxRuntimeExports.jsxs("button", {
+    className: `chase-button ${station.live ? "chase-secondary" : "chase-primary"}`,
+    disabled: busy || !station.canManage || !station.live && (!ready || snapshot.viewer.canOperate === false),
+    onClick: () => void action("broadcast", { enabled: !station.live }, station.live ? "Transmission stopped." : "Transmission started."),
+    children: [
+      jsxRuntimeExports.jsx(ChaseIcon, { name: station.live ? "stop" : "play", size: 19 }),
+      station.live ? "End broadcast" : "Start broadcast"
+    ]
+  });
+}
+function ChaseStudio({ snapshot, action, busy, playback, previewPlayback, volume, changeVolume, saveVolume, speech, talk, talkKey }) {
+  const [tab, setTab] = reactExports.useState("console");
+  const station = snapshot.mine;
+  const pending = snapshot.requests.filter((request) => request.status === "pending").length;
+  if (!station)
     return jsxRuntimeExports.jsx(ChaseCreateStation, { snapshot, action, busy });
-  return jsxRuntimeExports.jsxs("div", { className: "chase-studio", children: [
+  const props = { snapshot, station, action, busy };
+  return jsxRuntimeExports.jsxs("div", { className: `chase-studio chase-studio-${tab}-view`, children: [
     snapshot.viewer.canOperate === false ? jsxRuntimeExports.jsxs("div", { className: "chase-operation-note", children: [
-      jsxRuntimeExports.jsx(ChaseIcon, { name: "studio", size: 18 }),
+      jsxRuntimeExports.jsx(ChaseIcon, { name: "info" }),
       jsxRuntimeExports.jsxs("span", { children: [
-        "Broadcast operations require the",
+        "Operations require the",
         " ",
         snapshot.config.broadcastJob?.name || "signalworks",
         " job",
         snapshot.config.broadcastJob?.requireDuty ? " while on duty" : "",
-        ". You can still safely stop and store your rig."
+        ". You can still stop and store the rig."
       ] })
     ] }) : null,
-    jsxRuntimeExports.jsxs("section", { className: "chase-studio-banner", children: [
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "STATION" }),
-        jsxRuntimeExports.jsx("h2", { children: chaseMine.name }),
-        jsxRuntimeExports.jsx("p", { children: chaseMine.tagline || "No station description." }),
-        jsxRuntimeExports.jsx(ChaseStudioPeople, { station: chaseMine, action, busy })
-      ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-studio-frequency", children: [
-        ChaseFrequency(chaseMine.frequency),
-        jsxRuntimeExports.jsx("span", { children: "FM" })
-      ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-studio-status", children: [
-        jsxRuntimeExports.jsx(ChaseStatus, { live: chaseMine.live, children: chaseMine.live ? "ON AIR" : "OFF AIR" }),
-        jsxRuntimeExports.jsx("span", { children: chaseStageLabels[chaseMine.stage] })
-      ] })
-    ] }),
-    playback?.monitor && playback.stationId === chaseMine.id ? jsxRuntimeExports.jsxs("div", {
-      className: `chase-studio-cue chase-cue-${playback.phase}`,
-      role: "status",
-      children: [
-        jsxRuntimeExports.jsx(ChaseIcon, { name: "headphones", size: 20 }),
+    jsxRuntimeExports.jsxs("header", { className: "chase-studio-banner", children: [
+      jsxRuntimeExports.jsx(ChaseStationArt, {
+        station,
+        className: "chase-studio-station-art"
+      }),
+      jsxRuntimeExports.jsxs("div", { className: "chase-studio-identity", children: [
         jsxRuntimeExports.jsxs("div", { children: [
-          jsxRuntimeExports.jsx("strong", { children: playback.phase === "playing" ? "Studio cue playing" : playback.phase === "loading" ? "Loading studio cue" : playback.phase === "blocked" ? "Click inside the receiver to enable audio" : "Cartridge audio unavailable" }),
-          jsxRuntimeExports.jsxs("span", { children: [
-            playback.name,
-            playback.phase === "error" ? " · Play the cartridge again to retry." : " · Private local monitoring"
-          ] })
-        ] })
-      ]
-    }) : null,
-    jsxRuntimeExports.jsx("div", { className: "chase-studio-tabs", "aria-label": "Studio sections", children: [
-      { id: "console", label: "Console" },
-      { id: "requests", label: "Inbox", count: chasePending },
-      { id: "library", label: "Cartridges" },
-      { id: "music", label: "Music" },
-      { id: "crew", label: "Crew" },
-      { id: "settings", label: "Station settings" }
-    ].map((chaseItem) => jsxRuntimeExports.jsxs("button", {
-      className: chaseTab === chaseItem.id ? "chase-active-tab" : "",
-      "aria-pressed": chaseTab === chaseItem.id,
-      onClick: () => chaseSetTab(chaseItem.id),
+          jsxRuntimeExports.jsx("h2", { children: station.name }),
+          jsxRuntimeExports.jsxs("span", { className: "chase-studio-frequency", children: [
+            ChaseFrequency(station.frequency),
+            " ",
+            jsxRuntimeExports.jsx("small", { children: "FM" })
+          ] }),
+          jsxRuntimeExports.jsx(ChaseStatus, { live: station.live, children: station.live ? "LIVE" : "OFF AIR" })
+        ] }),
+        jsxRuntimeExports.jsx("p", { children: station.tagline || "Your frequency. Your world." })
+      ] }),
+      jsxRuntimeExports.jsxs("span", { className: "chase-studio-audience", children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "users", size: 19 }),
+        station.listeners,
+        " ",
+        station.listeners === 1 ? "listener" : "listeners"
+      ] }),
+      jsxRuntimeExports.jsx(ChaseBroadcastSwitch, { ...props })
+    ] }),
+    jsxRuntimeExports.jsx("nav", { className: "chase-studio-tabs", "aria-label": "Studio sections", children: [
+      { id: "console", label: "Console", icon: "studio" },
+      { id: "requests", label: "Requests", icon: "message" },
+      { id: "library", label: "Cartridges", icon: "cassette" },
+      { id: "music", label: "Music", icon: "music" },
+      { id: "crew", label: "Crew", icon: "users" },
+      { id: "settings", label: "Settings", icon: "settings" }
+    ].map((item) => jsxRuntimeExports.jsxs("button", {
+      className: tab === item.id || tab === "equipment" && item.id === "console" ? "chase-active-tab" : "",
+      "aria-pressed": tab === item.id || tab === "equipment" && item.id === "console",
+      onClick: () => setTab(item.id),
       children: [
-        chaseItem.label,
-        chaseItem.count ? jsxRuntimeExports.jsx("span", { children: chaseItem.count }) : null
+        jsxRuntimeExports.jsx(ChaseIcon, { name: item.icon, size: 19 }),
+        item.label,
+        item.id === "requests" && pending > 0 ? jsxRuntimeExports.jsx("span", { children: pending }) : null
       ]
-    }, chaseItem.id)) }),
-    chaseTab === "console" ? jsxRuntimeExports.jsx(ChaseConsole, {
-      snapshot,
-      station: chaseMine,
-      action,
-      busy
+    }, item.id)) }),
+    playback?.monitor && playback.stationId === station.id && playback.phase !== "playing" && playback.phase !== "paused" ? jsxRuntimeExports.jsxs("div", { className: "chase-studio-playback-notice", role: "status", children: [
+      jsxRuntimeExports.jsx(ChaseIcon, { name: "headphones" }),
+      jsxRuntimeExports.jsx("span", { children: playback.phase === "loading" ? `Loading private monitor: ${playback.name}` : playback.phase === "blocked" ? "Audio needs a click inside the receiver to start." : `Unable to play ${playback.name}. Try the source again.` })
+    ] }) : null,
+    tab === "console" ? jsxRuntimeExports.jsx(ChaseConsole, {
+      ...props,
+      speech,
+      talk,
+      talkKey,
+      equipment: () => setTab("equipment"),
+      music: () => setTab("music")
     }) : null,
-    chaseTab === "requests" ? jsxRuntimeExports.jsx(ChaseRequests, { snapshot, action, busy }) : null,
-    chaseTab === "library" ? jsxRuntimeExports.jsx(ChaseCartridges, { snapshot, action, busy }) : null,
-    chaseTab === "music" ? jsxRuntimeExports.jsx(ChaseMusic, {
-      snapshot,
-      station: chaseMine,
-      action,
-      busy
-    }) : null,
-    chaseTab === "crew" ? jsxRuntimeExports.jsx(ChaseCrew, { snapshot, action, busy }) : null,
-    chaseTab === "settings" ? jsxRuntimeExports.jsx(ChaseSettings, {
-      station: chaseMine,
-      snapshot,
-      action,
-      busy
-    }, chaseMine.id) : null
+    tab === "equipment" ? jsxRuntimeExports.jsx(ChaseEquipment, { ...props, back: () => setTab("console") }) : null,
+    tab === "requests" ? jsxRuntimeExports.jsx(ChaseRequests, { snapshot, action, busy }) : null,
+    tab === "library" ? jsxRuntimeExports.jsx(ChaseCartridges, { ...props, previewPlayback }) : null,
+    tab === "music" ? jsxRuntimeExports.jsx(ChaseMusic, { ...props }) : null,
+    tab === "crew" ? jsxRuntimeExports.jsx(ChaseCrew, { snapshot, action, busy }) : null,
+    tab === "settings" ? jsxRuntimeExports.jsx(ChaseSettings, { ...props }, station.id) : null,
+    tab !== "console" ? jsxRuntimeExports.jsxs("footer", { className: "chase-studio-footer", children: [
+      jsxRuntimeExports.jsxs("span", { children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "headphones", size: 18 }),
+        playback?.monitor && playback.stationId === station.id && playback.phase === "playing" ? `Private monitor · ${playback.name}` : "Studio controls · changes affect your station"
+      ] }),
+      typeof volume === "number" && changeVolume ? jsxRuntimeExports.jsxs("label", { className: "chase-studio-monitor", children: [
+        jsxRuntimeExports.jsx("span", { children: "Private monitor" }),
+        jsxRuntimeExports.jsx("input", {
+          type: "range",
+          min: "0",
+          max: "100",
+          step: "1",
+          "aria-label": "Private monitor volume",
+          value: volume,
+          onChange: (event) => changeVolume(Number(event.target.value)),
+          onPointerUp: () => saveVolume?.(),
+          onKeyUp: () => saveVolume?.(),
+          onBlur: () => saveVolume?.()
+        }),
+        jsxRuntimeExports.jsxs("output", { children: [
+          Math.round(volume),
+          "%"
+        ] })
+      ] }) : jsxRuntimeExports.jsxs("span", { className: "chase-studio-footer-frequency", children: [
+        ChaseFrequency(station.frequency),
+        " FM"
+      ] })
+    ] }) : null
   ] });
 }
 function ChaseStudioPeople({ station, action, busy }) {
@@ -14670,539 +15207,955 @@ function ChaseStudioPeople({ station, action, busy }) {
     return null;
   return jsxRuntimeExports.jsxs("div", { className: "chase-studio-people", children: [
     station.micLive ? jsxRuntimeExports.jsxs("span", { children: [
-      jsxRuntimeExports.jsx(ChaseIcon, { name: "mic", size: 14 }),
+      jsxRuntimeExports.jsx(ChaseIcon, { name: "mic", size: 15 }),
       station.hostName || "Host"
     ] }) : null,
-    station.cohostNames.map((chaseName, chaseIndex) => jsxRuntimeExports.jsxs("span", { children: [
-      jsxRuntimeExports.jsx(ChaseIcon, { name: "users", size: 14 }),
-      chaseName,
+    station.cohostNames.map((name, index) => jsxRuntimeExports.jsxs("span", { children: [
+      jsxRuntimeExports.jsx(ChaseIcon, { name: "users", size: 15 }),
+      name,
       jsxRuntimeExports.jsx("small", { children: "co-host" })
-    ] }, `${chaseIndex}-${chaseName}`)),
-    station.caller ? jsxRuntimeExports.jsxs("span", { className: "chase-studio-caller", children: [
-      jsxRuntimeExports.jsx(ChaseIcon, { name: "phone", size: 14 }),
-      station.caller.name,
-      jsxRuntimeExports.jsx("small", { children: "on the line" })
-    ] }) : null,
-    station.caller ? jsxRuntimeExports.jsx("button", {
-      className: "chase-text-button",
-      disabled: busy || !station.canManage,
-      onClick: () => void action("endCall", {}, "Caller disconnected."),
-      children: "Hang up caller"
-    }) : null
+    ] }, `${index}-${name}`)),
+    station.caller ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      jsxRuntimeExports.jsxs("span", { className: "chase-studio-caller", children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "phone", size: 15 }),
+        station.caller.name,
+        jsxRuntimeExports.jsx("small", { children: "on the line" })
+      ] }),
+      jsxRuntimeExports.jsx("button", {
+        className: "chase-text-button",
+        disabled: busy || !station.canManage,
+        onClick: () => void action("endCall", {}, "Caller disconnected."),
+        children: "Hang up caller"
+      })
+    ] }) : null
   ] });
 }
-function ChaseTransmitter({ snapshot, station, action, busy }) {
-  const chaseReady = station.stage === "ready" || station.stage === "live";
-  const chaseVoiceReady = snapshot.voiceReady && snapshot.viewer.voiceReady;
-  const chaseCanOperate = snapshot.viewer.canOperate !== false;
-  const chaseIsCoHost = snapshot.viewer.isCoHost === true;
-  const chaseCanJoin = station.micLive && snapshot.viewer.isHost !== true && !chaseIsCoHost;
-  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-transmitter", children: [
-    jsxRuntimeExports.jsxs("div", { className: "chase-panel-heading", children: [
-      jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "TRANSMISSION CONTROL" }),
-      jsxRuntimeExports.jsx(ChaseIcon, { name: "signal" })
-    ] }),
-    jsxRuntimeExports.jsx("h2", { children: station.live ? "Broadcast active" : "Transmission offline" }),
-    jsxRuntimeExports.jsx("p", { children: station.live ? station.showTitle || "No show title set." : "Deploy the rig to start broadcasting." }),
-    jsxRuntimeExports.jsxs("button", {
-      className: `chase-button ${station.live ? "chase-danger" : "chase-primary"}`,
-      disabled: busy || !station.canManage || !station.live && (!chaseReady || !chaseCanOperate),
-      onClick: () => void action("broadcast", { enabled: !station.live }, station.live ? "Transmission stopped." : "Transmission started."),
+function ChaseTransmitter({ snapshot, station, action, busy, speech, talk, talkKey, showBroadcast = true }) {
+  const voiceReady = snapshot.voiceReady && snapshot.viewer.voiceReady;
+  const canOperate = snapshot.viewer.canOperate !== false;
+  const cohost = snapshot.viewer.isCoHost === true;
+  const canJoin = station.micLive && snapshot.viewer.isHost !== true && !cohost;
+  const localSpeech = speech?.local || snapshot.speech?.local;
+  const talking = localSpeech?.stationId === station.id && localSpeech.transmitting || station.talking === true;
+  const canTalk = localSpeech?.stationId === station.id && localSpeech.micOpen === true;
+  const talkRef = reactExports.useRef(talk);
+  reactExports.useEffect(() => {
+    talkRef.current = talk;
+  }, [talk]);
+  reactExports.useEffect(() => () => talkRef.current?.(false), []);
+  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-transmitter chase-studio-microphone", children: [
+    jsxRuntimeExports.jsx(ChaseSectionTitle, { children: "Studio microphone" }),
+    showBroadcast ? jsxRuntimeExports.jsxs("div", { className: "chase-studio-transmitter-switch", children: [
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsx("h2", { children: station.live ? "Broadcast active" : "Transmission offline" }),
+        jsxRuntimeExports.jsx("p", { children: station.showTitle || chaseStageLabels[station.stage] })
+      ] }),
+      jsxRuntimeExports.jsx(ChaseBroadcastSwitch, {
+        snapshot,
+        station,
+        action,
+        busy
+      })
+    ] }) : null,
+    jsxRuntimeExports.jsxs("div", {
+      className: `chase-studio-mic-state ${station.micLive ? "chase-studio-mic-open" : ""}`,
       children: [
-        jsxRuntimeExports.jsx(ChaseIcon, { name: station.live ? "stop" : "play", size: 17 }),
-        station.live ? "End broadcast" : "Start broadcast"
+        jsxRuntimeExports.jsx("span", { className: "chase-studio-mic-emblem", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "mic", size: 36 }) }),
+        jsxRuntimeExports.jsxs("div", { children: [
+          jsxRuntimeExports.jsx("strong", { children: !voiceReady ? "UNAVAILABLE" : talking ? "TRANSMITTING" : station.micLive ? "MIC OPEN" : "MIC CLOSED" }),
+          jsxRuntimeExports.jsx("p", { children: station.micLive ? `${station.hostName || "Host"} · ${ChaseFrequency(station.frequency)} FM` : "Open the microphone when you’re ready." })
+        ] })
       ]
     }),
-    jsxRuntimeExports.jsxs("div", { className: "chase-mic-control", children: [
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("span", {
-          className: `chase-mic-icon ${station.micLive ? "chase-mic-on" : ""}`,
-          children: jsxRuntimeExports.jsx(ChaseIcon, { name: "mic" })
-        }),
-        jsxRuntimeExports.jsxs("span", { children: [
-          jsxRuntimeExports.jsx("strong", { children: "Studio microphone" }),
-          jsxRuntimeExports.jsx("small", { children: station.micLive ? `${station.hostName || "Host"} is on the mic${station.cohostNames.length ? ` with ${station.cohostNames.join(", ")}` : ""}` : chaseVoiceReady ? "Closed · open when you’re ready" : "Voice integration unavailable" })
-        ] })
-      ] }),
-      chaseCanJoin ? jsxRuntimeExports.jsxs("div", { className: "chase-mic-actions", children: [
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-voice-state", children: [
+      jsxRuntimeExports.jsx(ChaseStatus, { live: talking, children: talking ? "VOICE ACTIVE" : station.micLive ? "WAITING FOR SPEECH" : "NOT TRANSMITTING" }),
+      jsxRuntimeExports.jsx("span", { children: voiceReady ? "Voice connected" : "Voice integration unavailable" })
+    ] }),
+    showBroadcast || station.cohostNames.length > 0 || station.caller ? jsxRuntimeExports.jsx(ChaseStudioPeople, { station, action, busy }) : null,
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-mic-buttons", children: [
+      canJoin ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
         jsxRuntimeExports.jsxs("button", {
-          className: "chase-button chase-secondary",
-          disabled: busy || !station.canManage || !chaseVoiceReady || !chaseCanOperate,
+          className: "chase-button chase-primary",
+          disabled: busy || !station.canManage || !voiceReady || !canOperate,
           onClick: () => void action("microphone", { enabled: true }, "You joined as co-host."),
           children: [
-            jsxRuntimeExports.jsx(ChaseIcon, { name: "users", size: 16 }),
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "users", size: 18 }),
             "Join as co-host"
           ]
         }),
         jsxRuntimeExports.jsx("button", {
-          className: "chase-text-button",
+          className: "chase-button chase-secondary",
           disabled: busy || !station.canManage,
           onClick: () => void action("microphone", { enabled: false }, "Microphone closed."),
           children: "Close all"
         })
-      ] }) : jsxRuntimeExports.jsx("button", {
-        className: `chase-toggle ${station.micLive ? "chase-toggle-on" : ""}`,
-        "aria-label": station.micLive ? chaseIsCoHost ? "Leave co-host seat" : "Close microphone" : "Open microphone",
+      ] }) : jsxRuntimeExports.jsxs("button", {
+        className: `chase-button ${station.micLive ? "chase-secondary" : "chase-primary"}`,
+        disabled: busy || !station.canManage || !station.micLive && (!station.live || !voiceReady || !canOperate),
         "aria-pressed": station.micLive,
-        disabled: busy || !station.canManage || !station.micLive && (!station.live || !chaseVoiceReady || !chaseCanOperate),
-        onClick: () => void action("microphone", { enabled: !station.micLive }, station.micLive ? chaseIsCoHost ? "You left the co-host seat." : "Microphone closed." : "Microphone open."),
-        children: jsxRuntimeExports.jsx("span", {})
-      })
+        onClick: () => void action("microphone", { enabled: !station.micLive }, station.micLive ? cohost ? "You left the co-host seat." : "Microphone closed." : "Microphone open."),
+        children: [
+          jsxRuntimeExports.jsx(ChaseIcon, { name: "mic", size: 18 }),
+          station.micLive ? cohost ? "Leave co-host seat" : "Close microphone" : "Open microphone"
+        ]
+      }),
+      talk ? jsxRuntimeExports.jsxs("button", {
+        className: `chase-button chase-secondary ${localSpeech?.transmitting ? "chase-studio-talking" : ""}`,
+        disabled: !canTalk || busy,
+        onPointerDown: (event) => {
+          event.currentTarget.setPointerCapture(event.pointerId);
+          talk(true);
+        },
+        onPointerUp: () => talk(false),
+        onPointerCancel: () => talk(false),
+        onLostPointerCapture: () => talk(false),
+        onKeyDown: (event) => {
+          if ((event.key === " " || event.key === "Enter") && !event.repeat) {
+            event.preventDefault();
+            talk(true);
+          }
+        },
+        onKeyUp: (event) => {
+          if (event.key === " " || event.key === "Enter") {
+            event.preventDefault();
+            talk(false);
+          }
+        },
+        onBlur: () => talk(false),
+        children: [
+          "Hold to talk",
+          talkKey ? jsxRuntimeExports.jsx("kbd", { children: talkKey }) : null
+        ]
+      }) : null
     ] })
   ] });
 }
-function ChaseConsole({ snapshot, station, action, busy }) {
-  const [chaseAmount, chaseSetAmount] = reactExports.useState("");
-  const chaseTransition = station.stage === "deploying" || station.stage === "packing";
-  const chaseReady = station.stage === "ready" || station.stage === "live";
-  const chaseCanOperate = snapshot.viewer.canOperate !== false;
-  return jsxRuntimeExports.jsxs("div", { className: "chase-console-grid", children: [
-    jsxRuntimeExports.jsx(ChaseTransmitter, {
-      snapshot,
-      station,
-      action,
-      busy
-    }),
-    jsxRuntimeExports.jsxs("section", { className: "chase-card chase-rig-card", children: [
-      jsxRuntimeExports.jsxs("div", { className: "chase-panel-heading", children: [
-        jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "MOBILE STUDIO" }),
-        jsxRuntimeExports.jsx(ChaseIcon, { name: "van" })
+function ChaseNowPlaying({ station, action, busy, canEdit, compact = false }) {
+  const playing = station.nowPlaying;
+  const artwork = station.queue?.find((track) => track.id === playing?.trackId) || playing;
+  return jsxRuntimeExports.jsxs("div", {
+    className: `chase-now-track chase-studio-now ${compact ? "chase-studio-now-compact" : ""}`,
+    children: [
+      jsxRuntimeExports.jsx(ChaseTrackArt, {
+        track: artwork ?? void 0,
+        className: "chase-studio-track-art"
+      }),
+      jsxRuntimeExports.jsxs("div", { className: "chase-studio-now-info", children: [
+        jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: playing ? playing.paused ? "PAUSED" : "NOW PLAYING" : "READY WHEN YOU ARE" }),
+        jsxRuntimeExports.jsx("strong", { children: playing?.title || "Nothing playing" }),
+        jsxRuntimeExports.jsx("span", { children: playing ? chaseProviderLabels[playing.provider] : station.live ? "Choose a track or cartridge to begin." : "Start the broadcast to play music." }),
+        jsxRuntimeExports.jsx(ChaseProgress, { playing })
       ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-rig-state", children: [
-        jsxRuntimeExports.jsx("strong", { children: chaseStageLabels[station.stage] }),
-        jsxRuntimeExports.jsx("span", { children: station.vehicleNetId ? "Van assigned" : "Van stored" })
-      ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-battery-line", children: [
-        jsxRuntimeExports.jsxs("span", { children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "bolt", size: 15 }),
-          "Battery"
-        ] }),
-        jsxRuntimeExports.jsxs("strong", { children: [
-          Math.round(station.battery),
-          "%"
-        ] })
-      ] }),
-      jsxRuntimeExports.jsx("div", { className: "chase-progress-track", children: jsxRuntimeExports.jsx("span", {
-        style: { width: `${Math.max(0, Math.min(100, station.battery))}%` }
-      }) }),
-      jsxRuntimeExports.jsx("div", { className: "chase-rig-buttons", children: station.stage === "stored" ? jsxRuntimeExports.jsxs("button", {
-        className: "chase-button chase-secondary",
-        disabled: busy || !station.canManage || !chaseCanOperate,
-        onClick: () => void action("spawnVan", {}, "Your studio van is ready."),
-        children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "van", size: 17 }),
-          "Collect van"
-        ]
-      }) : jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      jsxRuntimeExports.jsxs("div", { className: "chase-now-actions chase-studio-transport", children: [
         jsxRuntimeExports.jsx("button", {
-          className: "chase-button chase-secondary",
-          disabled: busy || !station.canManage || chaseTransition || !chaseReady && !chaseCanOperate,
-          onClick: () => void action(chaseReady ? "pack" : "deploy", {}, chaseReady ? "Rig packing started." : "Rig deployment started."),
-          children: chaseTransition ? chaseStageLabels[station.stage] : chaseReady ? "Pack rig" : "Deploy rig"
+          className: "chase-icon-button",
+          title: "Previous track",
+          "aria-label": "Previous track",
+          disabled: busy || !canEdit || !station.live || !station.queue?.length,
+          onClick: () => void action("previousTrack", {}, "Previous track requested."),
+          children: jsxRuntimeExports.jsx(ChaseIcon, { name: "previous", size: 23 })
         }),
         jsxRuntimeExports.jsx("button", {
-          className: "chase-button chase-subtle",
-          disabled: busy || !station.canManage || station.stage !== "parked",
-          onClick: () => void action("storeVan", {}, "Van returned to the depot."),
-          children: "Store van"
-        })
-      ] }) }),
-      jsxRuntimeExports.jsxs("button", {
-        className: "chase-text-button chase-recharge",
-        disabled: busy || !station.canManage || station.stage !== "parked" || station.battery >= 100 || !chaseCanOperate,
-        onClick: () => void action("recharge", {}, "Battery recharged."),
-        children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "bolt", size: 15 }),
-          "Recharge at depot"
-        ]
+          className: "chase-button chase-primary chase-studio-play-button",
+          "aria-label": playing?.provider === "file" ? "Stop cartridge" : playing?.paused ? "Resume playback" : playing ? "Pause playback" : "Play first queued track",
+          disabled: busy || !canEdit || !station.live || !playing && !station.queue?.length,
+          onClick: () => playing?.provider === "file" ? void action("stopCartridge", {}, "Cartridge stopped.") : playing ? void action("pauseTrack", { paused: !playing.paused }, playing.paused ? "Playback resumed." : "Playback paused.") : void action("playTrack", { trackId: station.queue?.[0]?.id }, "Track playback requested."),
+          children: jsxRuntimeExports.jsx(ChaseIcon, {
+            name: playing?.provider === "file" ? "stop" : playing && !playing.paused ? "pause" : "play",
+            size: 29
+          })
+        }),
+        jsxRuntimeExports.jsx("button", {
+          className: "chase-icon-button",
+          title: "Next track",
+          "aria-label": "Next track",
+          disabled: busy || !canEdit || !station.live || !station.queue?.length,
+          onClick: () => void action("skipTrack", {}, "Next track requested."),
+          children: jsxRuntimeExports.jsx(ChaseIcon, { name: "next", size: 23 })
+        }),
+        playing ? jsxRuntimeExports.jsx("button", {
+          className: "chase-icon-button",
+          title: "Stop playback",
+          "aria-label": "Stop playback",
+          disabled: busy || !station.canManage,
+          onClick: () => void action("stopCartridge", {}, "Playback stopped."),
+          children: jsxRuntimeExports.jsx(ChaseIcon, { name: "stop", size: 20 })
+        }) : null
+      ] })
+    ]
+  });
+}
+function ChaseConsole({ snapshot, station, action, busy, equipment, music, speech, talk, talkKey }) {
+  const canEdit = station.canManage && snapshot.viewer.canOperate !== false;
+  const queue = station.queue || [];
+  const playingIndex = queue.findIndex((track) => track.id === station.nowPlaying?.trackId);
+  const upcoming = playingIndex >= 0 ? station.mode === "autonomous" ? queue.length === 1 ? queue : [...queue.slice(playingIndex + 1), ...queue.slice(0, playingIndex)] : queue.slice(playingIndex + 1) : queue;
+  const queueLabel = station.nowPlaying && playingIndex < 0 ? "Playlist" : "Up next";
+  return jsxRuntimeExports.jsxs("div", { className: "chase-studio-console", children: [
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-console-main", children: [
+      jsxRuntimeExports.jsx(ChaseSectionTitle, { children: "Now playing" }),
+      jsxRuntimeExports.jsx(ChaseNowPlaying, {
+        station,
+        action,
+        busy,
+        canEdit
       }),
-      jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "Rig controls require you to be beside the van. Collection, storage and charging require the depot." })
-    ] }),
-    jsxRuntimeExports.jsxs("section", { className: "chase-card chase-studio-stats", children: [
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("span", { className: "chase-stat-icon", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "headphones" }) }),
-        jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "TUNED IN NOW" }),
-        jsxRuntimeExports.jsx("strong", { children: station.listeners.toString().padStart(2, "0") }),
-        jsxRuntimeExports.jsx("span", { children: "On your frequency" })
+      jsxRuntimeExports.jsxs("div", { className: "chase-studio-subheading", children: [
+        jsxRuntimeExports.jsx(ChaseSectionTitle, { children: queueLabel }),
+        jsxRuntimeExports.jsxs("button", { className: "chase-text-button", onClick: music, children: [
+          "View queue ",
+          jsxRuntimeExports.jsx(ChaseIcon, { name: "arrow", size: 15 })
+        ] })
       ] }),
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("span", { className: "chase-stat-icon", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "signal" }) }),
-        jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "TRANSMITTER POWER" }),
-        jsxRuntimeExports.jsx("strong", { children: snapshot.config.powerModes.find((chaseMode) => chaseMode.id === station.power)?.label || station.power }),
-        jsxRuntimeExports.jsx("span", { children: station.isPublic ? "Listed in station directory" : "Unlisted frequency" })
+      jsxRuntimeExports.jsxs("div", { className: "chase-studio-up-next", children: [
+        upcoming.slice(0, 3).map((track, index) => jsxRuntimeExports.jsxs("div", { children: [
+          jsxRuntimeExports.jsx("span", { children: index + 1 }),
+          jsxRuntimeExports.jsx("strong", { children: track.title }),
+          jsxRuntimeExports.jsx("span", { children: ChaseClock(track.duration) }),
+          jsxRuntimeExports.jsx("button", {
+            className: "chase-icon-button",
+            "aria-label": `Play ${track.title}`,
+            disabled: busy || !canEdit || !station.live,
+            onClick: () => void action("playTrack", { trackId: track.id }, "Track playback requested."),
+            children: jsxRuntimeExports.jsx(ChaseIcon, { name: "play", size: 16 })
+          })
+        ] }, track.id)),
+        !upcoming.length ? jsxRuntimeExports.jsx("p", { children: queue.length ? "No further tracks queued." : "Your queue is empty. Add a track in Music." }) : null
       ] })
     ] }),
-    jsxRuntimeExports.jsxs("section", { className: "chase-card chase-balance-card", children: [
-      jsxRuntimeExports.jsxs("div", { className: "chase-panel-heading", children: [
-        jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "STATION BALANCE" }),
-        jsxRuntimeExports.jsx(ChaseIcon, { name: "money" })
-      ] }),
-      station.canWithdraw && typeof station.balance === "number" ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-        jsxRuntimeExports.jsx("strong", { children: ChaseMoney(station.balance, snapshot.config.currency) }),
-        jsxRuntimeExports.jsx("p", { children: "Listener tips fund this balance. Only the owner can withdraw to their account." }),
-        jsxRuntimeExports.jsxs("form", {
-          className: "chase-input-action",
-          onSubmit: async (chaseEvent) => {
-            chaseEvent.preventDefault();
-            if (await action("withdraw", { amount: Number(chaseAmount) }, "Withdrawal completed."))
-              chaseSetAmount("");
-          },
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-console-side", children: [
+      jsxRuntimeExports.jsx(ChaseTransmitter, {
+        snapshot,
+        station,
+        action,
+        busy,
+        speech,
+        talk,
+        talkKey,
+        showBroadcast: false
+      }),
+      jsxRuntimeExports.jsxs("section", { className: "chase-studio-mobile-rig", children: [
+        jsxRuntimeExports.jsx(ChaseSectionTitle, { children: "Mobile studio" }),
+        jsxRuntimeExports.jsxs("div", { children: [
+          jsxRuntimeExports.jsx(ChaseIcon, { name: "van", size: 35 }),
+          jsxRuntimeExports.jsxs("span", { children: [
+            jsxRuntimeExports.jsx("strong", { children: chaseStageLabels[station.stage] }),
+            jsxRuntimeExports.jsx("small", { children: station.vehicleNetId ? "Studio van assigned" : "Van stored at the depot" })
+          ] }),
+          jsxRuntimeExports.jsxs("span", { className: "chase-studio-battery", children: [
+            jsxRuntimeExports.jsx("small", { children: "BATTERY" }),
+            jsxRuntimeExports.jsxs("strong", { children: [
+              Math.round(station.battery),
+              "%"
+            ] })
+          ] })
+        ] }),
+        jsxRuntimeExports.jsxs("button", {
+          className: "chase-button chase-secondary chase-full",
+          onClick: equipment,
           children: [
-            jsxRuntimeExports.jsx("span", { children: snapshot.config.currency }),
-            jsxRuntimeExports.jsx("input", {
-              "aria-label": "Withdrawal amount",
-              type: "number",
-              min: "1",
-              max: station.balance,
-              step: "1",
-              required: true,
-              placeholder: "Amount",
-              value: chaseAmount,
-              onChange: (chaseEvent) => chaseSetAmount(chaseEvent.target.value)
-            }),
-            jsxRuntimeExports.jsx("button", {
-              className: "chase-button chase-secondary",
-              disabled: busy || station.balance <= 0,
-              children: "Withdraw"
-            })
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "settings", size: 18 }),
+            "Manage equipment",
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "arrow", size: 16 })
           ]
         })
-      ] }) : jsxRuntimeExports.jsx("p", { children: "Station funds are managed by the owner." }),
-      jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "Requests and ads are free. Broadcasting does not generate money automatically." })
+      ] })
+    ] }),
+    jsxRuntimeExports.jsxs("section", { className: "chase-studio-quick-carts", children: [
+      jsxRuntimeExports.jsx(ChaseSectionTitle, { children: "Cartridge triggers" }),
+      jsxRuntimeExports.jsxs("div", { children: [
+        snapshot.cartridges.slice(0, 3).map((cartridge) => jsxRuntimeExports.jsxs("button", {
+          className: "chase-button chase-secondary",
+          disabled: busy || !canEdit || !station.live,
+          onClick: () => void action("playCartridge", { cartridgeId: cartridge.id }, "Cartridge playback requested."),
+          children: [
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "play", size: 22 }),
+            jsxRuntimeExports.jsx("strong", { children: cartridge.name }),
+            jsxRuntimeExports.jsx("span", { children: ChaseClock(cartridge.duration) })
+          ]
+        }, cartridge.id)),
+        !snapshot.cartridges.length ? jsxRuntimeExports.jsx("p", { children: "No cartridges are configured for this station." }) : null
+      ] })
+    ] }),
+    jsxRuntimeExports.jsx(ChaseMusicVolume, {
+      station,
+      action,
+      busy,
+      canEdit
+    })
+  ] });
+}
+function ChaseEquipment({ snapshot, station, action, busy, back }) {
+  const ready = station.stage === "ready" || station.stage === "live";
+  const transition = station.stage === "deploying" || station.stage === "packing";
+  const canOperate = snapshot.viewer.canOperate !== false;
+  const collected = station.stage !== "stored";
+  const positionChosen = ready || station.stage === "deploying";
+  const steps = [
+    {
+      title: "Collect studio van",
+      description: "Take your broadcast van from the depot.",
+      done: collected,
+      current: !collected
+    },
+    {
+      title: "Park at broadcast location",
+      description: "Choose your location and stand beside the console.",
+      done: positionChosen,
+      current: collected && !positionChosen
+    },
+    {
+      title: "Deploy equipment",
+      description: transition ? chaseStageLabels[station.stage] : "Set up the antenna and broadcast equipment.",
+      done: ready,
+      current: positionChosen && !ready
+    },
+    {
+      title: "Start broadcast",
+      description: "Go on air and reach your listeners.",
+      done: station.live,
+      current: ready && !station.live
+    }
+  ];
+  return jsxRuntimeExports.jsxs("section", { className: "chase-studio-equipment", children: [
+    jsxRuntimeExports.jsxs("button", { className: "chase-text-button chase-studio-back", onClick: back, children: [
+      jsxRuntimeExports.jsx(ChaseIcon, { name: "previous", size: 17 }),
+      "Studio / Console / Equipment"
+    ] }),
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-equipment-grid", children: [
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsxs("div", { className: "chase-section-heading", children: [
+          jsxRuntimeExports.jsxs("div", { children: [
+            jsxRuntimeExports.jsx("h2", { children: "Mobile studio" }),
+            jsxRuntimeExports.jsx("p", { children: "Manage your rig and prepare for deployment." })
+          ] }),
+          jsxRuntimeExports.jsx(ChaseStatus, { live: station.live, children: station.live ? "LIVE" : "OFF AIR" })
+        ] }),
+        jsxRuntimeExports.jsxs("figure", { className: "chase-studio-van", children: [
+          jsxRuntimeExports.jsx("img", {
+            src: "images/senora-van.jpg",
+            alt: "Senora mobile studio captured in FiveM"
+          }),
+          jsxRuntimeExports.jsxs("figcaption", { children: [
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "van", size: 27 }),
+            jsxRuntimeExports.jsxs("div", { children: [
+              jsxRuntimeExports.jsx("strong", { children: chaseStageLabels[station.stage] }),
+              jsxRuntimeExports.jsx("span", { children: station.vehicleNetId ? "Van assigned to your station" : "Van stored" })
+            ] })
+          ] })
+        ] }),
+        jsxRuntimeExports.jsxs("div", { className: "chase-studio-equipment-actions", children: [
+          station.stage === "stored" ? jsxRuntimeExports.jsxs("button", {
+            className: "chase-button chase-primary",
+            disabled: busy || !station.canManage || !canOperate,
+            onClick: () => void action("spawnVan", {}, "Your studio van is ready."),
+            children: [
+              jsxRuntimeExports.jsx(ChaseIcon, { name: "van" }),
+              "Collect van"
+            ]
+          }) : jsxRuntimeExports.jsxs("button", {
+            className: "chase-button chase-primary",
+            disabled: busy || !station.canManage || transition || !ready && !canOperate,
+            onClick: () => void action(ready ? "pack" : "deploy", {}, ready ? "Rig packing started." : "Rig deployment started."),
+            children: [
+              jsxRuntimeExports.jsx(ChaseIcon, { name: "studio" }),
+              transition ? chaseStageLabels[station.stage] : ready ? "Pack rig" : "Deploy equipment"
+            ]
+          }),
+          jsxRuntimeExports.jsxs("button", {
+            className: "chase-button chase-secondary",
+            disabled: busy || !station.canManage || station.stage !== "parked" || station.battery >= 100 || !canOperate,
+            onClick: () => void action("recharge", {}, "Battery recharged."),
+            children: [
+              jsxRuntimeExports.jsx(ChaseIcon, { name: "bolt" }),
+              "Recharge at depot"
+            ]
+          }),
+          collected ? jsxRuntimeExports.jsx("button", {
+            className: "chase-button chase-secondary",
+            disabled: busy || !station.canManage || station.stage !== "parked",
+            onClick: () => void action("storeVan", {}, "Van returned to the depot."),
+            children: "Store van"
+          }) : null
+        ] }),
+        jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "Collect, store and recharge at the depot. Deploy and pack beside your van. The server checks your location before changing the rig." })
+      ] }),
+      jsxRuntimeExports.jsxs("div", { className: "chase-studio-checklist", children: [
+        jsxRuntimeExports.jsx("h3", { children: "Setup checklist" }),
+        jsxRuntimeExports.jsx("p", { children: "Prepare the mobile studio before going on air." }),
+        jsxRuntimeExports.jsx("ol", { children: steps.map((step, index) => jsxRuntimeExports.jsxs("li", {
+          className: step.done ? "chase-step-done" : step.current ? "chase-step-current" : "",
+          children: [
+            jsxRuntimeExports.jsx("span", { children: step.done ? jsxRuntimeExports.jsx(ChaseIcon, { name: "check", size: 22 }) : index + 1 }),
+            jsxRuntimeExports.jsxs("div", { children: [
+              jsxRuntimeExports.jsx("strong", { children: step.title }),
+              jsxRuntimeExports.jsx("p", { children: step.description })
+            ] }),
+            jsxRuntimeExports.jsx("small", { children: step.done ? "Ready" : step.current ? "Current" : "Pending" })
+          ]
+        }, step.title)) }),
+        jsxRuntimeExports.jsx(ChaseSectionTitle, { children: "Van battery" }),
+        jsxRuntimeExports.jsxs("div", { className: "chase-studio-battery-meter", children: [
+          jsxRuntimeExports.jsx(ChaseMeter, { value: station.battery, max: 100, label: "Van battery" }),
+          jsxRuntimeExports.jsxs("strong", { children: [
+            Math.round(station.battery),
+            "%"
+          ] })
+        ] }),
+        station.battery < 25 ? jsxRuntimeExports.jsxs("p", { className: "chase-studio-warning", children: [
+          jsxRuntimeExports.jsx(ChaseIcon, { name: "info", size: 18 }),
+          "Low battery — recharge before broadcasting."
+        ] }) : null
+      ] })
+    ] }),
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-readiness", children: [
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsx("strong", { children: "Studio readiness" }),
+        jsxRuntimeExports.jsx("span", { children: ready ? "Rig deployed and ready" : "Deploy your equipment before going live" })
+      ] }),
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "broadcast" }),
+        jsxRuntimeExports.jsxs("span", { children: [
+          "Transmitter",
+          jsxRuntimeExports.jsx("strong", { children: station.live ? "On air" : "Offline" })
+        ] })
+      ] }),
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "mic" }),
+        jsxRuntimeExports.jsxs("span", { children: [
+          "Microphone",
+          jsxRuntimeExports.jsx("strong", { children: station.micLive ? "Open" : "Closed" })
+        ] })
+      ] }),
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "signal" }),
+        jsxRuntimeExports.jsxs("span", { children: [
+          "Coverage",
+          jsxRuntimeExports.jsx("strong", { children: snapshot.config.powerModes.find((mode) => mode.id === station.power)?.label || station.power })
+        ] })
+      ] }),
+      jsxRuntimeExports.jsx(ChaseBroadcastSwitch, {
+        snapshot,
+        station,
+        action,
+        busy
+      })
     ] })
   ] });
 }
 function ChaseRequests({ snapshot, action, busy, heading = true }) {
-  const [chaseFilter, chaseSetFilter] = reactExports.useState("pending");
-  const chaseRequests = snapshot.requests.filter((chaseRequest) => chaseFilter === "all" || chaseRequest.status === "pending");
-  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card", children: [
-    jsxRuntimeExports.jsxs("div", { className: "chase-section-heading", children: [
-      heading ? jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("h2", { children: "Studio inbox" }),
-        jsxRuntimeExports.jsx("p", { children: "Review listener requests and advertisements." })
-      ] }) : null,
-      jsxRuntimeExports.jsxs("div", { className: "chase-segmented", children: [
-        jsxRuntimeExports.jsx("button", {
-          className: chaseFilter === "pending" ? "chase-selected" : "",
-          onClick: () => chaseSetFilter("pending"),
-          children: "Pending"
+  const [filter, setFilter] = reactExports.useState("pending");
+  const [kind, setKind] = reactExports.useState("all");
+  const [selectedId, setSelectedId] = reactExports.useState(null);
+  const [resolving, setResolving] = reactExports.useState(false);
+  const [issue, setIssue] = reactExports.useState("");
+  const requests = snapshot.requests.filter((request) => (filter === "all" || request.status === "pending") && (kind === "all" || (kind === "song" ? Boolean(request.url) : kind === "message" ? !request.url && request.kind !== "advertisement" : request.kind === kind)));
+  const selected = requests.find((request) => request.id === selectedId) || requests[0];
+  const canManage = snapshot.mine?.canManage === true;
+  async function queueRequest() {
+    if (!selected?.url || resolving)
+      return;
+    setResolving(true);
+    setIssue("");
+    try {
+      const track = await ChaseResolveTrack(selected.url);
+      await action("queueRequest", {
+        requestId: selected.id,
+        title: track.title,
+        duration: track.duration
+      }, "Song added to the queue and request accepted.");
+    } catch (failure) {
+      setIssue(ChaseError(failure));
+    } finally {
+      setResolving(false);
+    }
+  }
+  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card chase-studio-requests", children: [
+    heading ? jsxRuntimeExports.jsx("div", { className: "chase-section-heading", children: jsxRuntimeExports.jsxs("div", { children: [
+      jsxRuntimeExports.jsx("h2", { children: "Listener requests" }),
+      jsxRuntimeExports.jsx("p", { children: "Your listeners have something to say." })
+    ] }) }) : null,
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-request-filters", children: [
+      jsxRuntimeExports.jsxs("div", { className: "chase-segmented", "aria-label": "Request status", children: [
+        jsxRuntimeExports.jsxs("button", {
+          "aria-pressed": filter === "pending",
+          className: filter === "pending" ? "chase-selected" : "",
+          onClick: () => setFilter("pending"),
+          children: [
+            "Pending",
+            " ",
+            jsxRuntimeExports.jsx("span", { children: snapshot.requests.filter((request) => request.status === "pending").length })
+          ]
         }),
         jsxRuntimeExports.jsx("button", {
-          className: chaseFilter === "all" ? "chase-selected" : "",
-          onClick: () => chaseSetFilter("all"),
+          "aria-pressed": filter === "all",
+          className: filter === "all" ? "chase-selected" : "",
+          onClick: () => setFilter("all"),
           children: "All messages"
         })
-      ] })
-    ] }),
-    chaseRequests.length ? jsxRuntimeExports.jsx("div", { className: "chase-inbox", children: chaseRequests.map((chaseRequest) => jsxRuntimeExports.jsxs("article", { className: "chase-request-card", children: [
-      jsxRuntimeExports.jsx("span", { className: "chase-avatar", children: chaseRequest.senderName.slice(0, 1) }),
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsxs("div", { className: "chase-request-meta", children: [
-          jsxRuntimeExports.jsx("strong", { children: chaseRequest.senderName }),
-          jsxRuntimeExports.jsx("span", { children: chaseRequest.kind === "advertisement" ? "ADVERTISEMENT" : "REQUEST" }),
-          jsxRuntimeExports.jsx("span", { children: chaseRequest.status })
-        ] }),
-        jsxRuntimeExports.jsx("p", { children: chaseRequest.message }),
-        chaseRequest.status === "pending" ? jsxRuntimeExports.jsxs("div", { className: "chase-inline-actions", children: [
-          jsxRuntimeExports.jsxs("button", {
-            className: "chase-button chase-secondary",
-            disabled: busy || !snapshot.mine?.canManage,
-            onClick: () => void action("moderateRequest", { requestId: chaseRequest.id, status: "accepted" }, "Message accepted."),
-            children: [
-              jsxRuntimeExports.jsx(ChaseIcon, { name: "check", size: 16 }),
-              "Accept"
-            ]
-          }),
-          jsxRuntimeExports.jsx("button", {
-            className: "chase-text-button",
-            disabled: busy || !snapshot.mine?.canManage,
-            onClick: () => void action("moderateRequest", { requestId: chaseRequest.id, status: "dismissed" }, "Message dismissed."),
-            children: "Dismiss"
-          })
-        ] }) : null
-      ] })
-    ] }, chaseRequest.id)) }) : jsxRuntimeExports.jsx(ChaseEmpty, { title: "You’re all caught up", children: "Incoming messages will appear here when listeners send a line to your studio." })
-  ] });
-}
-function ChaseCartridges({ snapshot, action, busy }) {
-  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card", children: [
-    jsxRuntimeExports.jsxs("div", { className: "chase-section-heading", children: [
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("h2", { children: "Cartridge library" }),
-        jsxRuntimeExports.jsx("p", { children: "Station idents, intermissions, and sign-offs." })
       ] }),
-      jsxRuntimeExports.jsxs("button", {
-        className: "chase-button chase-secondary",
-        disabled: busy || !snapshot.mine?.canManage,
-        onClick: () => void action("stopCartridge", {}, "Cartridge stopped."),
-        children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "stop", size: 16 }),
-          "Stop playback"
-        ]
-      })
-    ] }),
-    jsxRuntimeExports.jsx("div", { className: "chase-cartridge-grid", children: snapshot.cartridges.map((chaseCartridge) => jsxRuntimeExports.jsxs("article", { className: "chase-cartridge-card", children: [
-      jsxRuntimeExports.jsx("span", { className: "chase-cartridge-icon", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "cassette", size: 28 }) }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-cartridge-details", children: [
-        jsxRuntimeExports.jsxs("div", { children: [
-          jsxRuntimeExports.jsx("h3", { children: chaseCartridge.name }),
-          jsxRuntimeExports.jsx("p", { children: chaseCartridge.description }),
-          jsxRuntimeExports.jsxs("span", { children: [
-            Math.floor(chaseCartridge.duration / 60),
-            ":",
-            Math.round(chaseCartridge.duration % 60).toString().padStart(2, "0")
-          ] })
-        ] }),
-        jsxRuntimeExports.jsx("button", {
-          className: "chase-icon-button",
-          "aria-label": `Play ${chaseCartridge.name}`,
-          disabled: busy || !snapshot.mine?.live || !snapshot.mine?.canManage || snapshot.viewer.canOperate === false,
-          onClick: () => void action("playCartridge", { cartridgeId: chaseCartridge.id }, "Cartridge playback requested."),
-          children: jsxRuntimeExports.jsx(ChaseIcon, { name: "play", size: 18 })
+      jsxRuntimeExports.jsxs("label", { children: [
+        jsxRuntimeExports.jsx("span", { className: "chase-sr-only", children: "Request type" }),
+        jsxRuntimeExports.jsxs("select", {
+          value: kind,
+          onChange: (event) => setKind(event.target.value),
+          children: [
+            jsxRuntimeExports.jsx("option", { value: "all", children: "All types" }),
+            jsxRuntimeExports.jsx("option", { value: "song", children: "Song requests" }),
+            jsxRuntimeExports.jsx("option", { value: "message", children: "Messages" }),
+            jsxRuntimeExports.jsx("option", { value: "advertisement", children: "Advertisements" })
+          ]
         })
       ] })
-    ] }, chaseCartridge.id)) }),
-    !snapshot.cartridges.length ? jsxRuntimeExports.jsx(ChaseEmpty, { icon: "cassette", title: "Your shelf is empty", children: "Configured station cartridges will appear here." }) : null,
-    jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "Your transmitter must be live and you must be beside the console to play a cartridge. Tuned listeners hear the broadcast, and you hear a private studio cue. The receiver volume slider controls your cue level." })
+    ] }),
+    selected ? jsxRuntimeExports.jsxs("div", { className: "chase-studio-request-grid", children: [
+      jsxRuntimeExports.jsx("div", {
+        className: "chase-studio-request-list",
+        "aria-label": "Listener messages",
+        children: requests.map((request) => jsxRuntimeExports.jsxs("button", {
+          className: `chase-studio-request-row ${selected.id === request.id ? "chase-request-selected" : ""}`,
+          "aria-pressed": selected.id === request.id,
+          onClick: () => {
+            setSelectedId(request.id);
+            setIssue("");
+          },
+          children: [
+            jsxRuntimeExports.jsx("span", { className: "chase-avatar", children: ChaseInitials(request.senderName) }),
+            jsxRuntimeExports.jsxs("span", { children: [
+              jsxRuntimeExports.jsx("strong", { children: request.senderName }),
+              jsxRuntimeExports.jsxs("span", { children: [
+                jsxRuntimeExports.jsx(ChaseIcon, {
+                  name: request.url ? "music" : request.kind === "advertisement" ? "broadcast" : "message",
+                  size: 15
+                }),
+                request.url ? "Song request" : request.kind === "advertisement" ? "Advertisement" : "Message"
+              ] }),
+              jsxRuntimeExports.jsx("small", { children: request.message })
+            ] }),
+            jsxRuntimeExports.jsx("span", { className: "chase-studio-request-state", children: request.status })
+          ]
+        }, request.id))
+      }),
+      jsxRuntimeExports.jsxs("article", { className: "chase-studio-request-detail", children: [
+        jsxRuntimeExports.jsxs("header", { children: [
+          jsxRuntimeExports.jsx("span", { className: "chase-studio-request-emblem", children: jsxRuntimeExports.jsx(ChaseIcon, {
+            name: selected.url ? "music" : selected.kind === "advertisement" ? "broadcast" : "message",
+            size: 34
+          }) }),
+          jsxRuntimeExports.jsxs("div", { children: [
+            jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: selected.url ? "SONG REQUEST" : selected.kind === "advertisement" ? "ADVERTISEMENT" : "LISTENER MESSAGE" }),
+            jsxRuntimeExports.jsx("h3", { children: selected.senderName }),
+            jsxRuntimeExports.jsxs("small", { children: [
+              "Received",
+              " ",
+              new Date(selected.createdAt).toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit"
+              })
+            ] })
+          ] })
+        ] }),
+        jsxRuntimeExports.jsx("blockquote", { children: selected.message }),
+        selected.url ? jsxRuntimeExports.jsxs("div", { className: "chase-studio-request-link", children: [
+          jsxRuntimeExports.jsx(ChaseIcon, { name: "link", size: 23 }),
+          jsxRuntimeExports.jsxs("div", { children: [
+            jsxRuntimeExports.jsx("strong", { children: ChaseDetectProvider(selected.url) === "youtube" ? "YouTube song link" : "SoundCloud song link" }),
+            jsxRuntimeExports.jsx("span", { children: selected.url })
+          ] })
+        ] }) : null,
+        jsxRuntimeExports.jsx("div", { className: "chase-inline-actions", children: selected.status === "pending" ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+          jsxRuntimeExports.jsxs("button", {
+            className: "chase-button chase-primary",
+            disabled: busy || !canManage || resolving || !!selected.url && (snapshot.viewer.canOperate === false || snapshot.config.music?.enabled === false),
+            onClick: () => selected.url ? void queueRequest() : void action("moderateRequest", { requestId: selected.id, status: "accepted" }, "Message accepted."),
+            children: [
+              jsxRuntimeExports.jsx(ChaseIcon, {
+                name: selected.url ? "plus" : "check",
+                size: 20
+              }),
+              resolving ? "Checking song…" : selected.url ? "Add to queue" : "Accept message"
+            ]
+          }),
+          jsxRuntimeExports.jsxs("button", {
+            className: "chase-button chase-secondary",
+            disabled: busy || !canManage || resolving,
+            onClick: () => void action("moderateRequest", { requestId: selected.id, status: "dismissed" }, "Message dismissed."),
+            children: [
+              jsxRuntimeExports.jsx(ChaseIcon, { name: "trash", size: 19 }),
+              "Dismiss"
+            ]
+          })
+        ] }) : jsxRuntimeExports.jsxs("span", { className: "chase-studio-request-handled", children: [
+          jsxRuntimeExports.jsx(ChaseIcon, {
+            name: selected.status === "accepted" ? "check" : "close"
+          }),
+          "This message was ",
+          selected.status,
+          "."
+        ] }) }),
+        issue ? jsxRuntimeExports.jsx("p", { className: "chase-field-error", role: "alert", children: issue }) : jsxRuntimeExports.jsx("p", { className: "chase-caption", children: selected.url ? "Adding the linked song also marks the request as handled." : "Accept a message to mark it as handled by your studio." })
+      ] })
+    ] }) : jsxRuntimeExports.jsx(ChaseEmpty, {
+      icon: "message",
+      title: filter === "pending" ? "You’re all caught up" : "No messages here",
+      children: "Listener requests and advertisements appear here when they arrive."
+    })
   ] });
 }
-function ChaseNowPlaying({ station, action, busy, canEdit }) {
-  const chaseNow = station.nowPlaying;
-  const [chaseTick, chaseSetTick] = reactExports.useState(Date.now());
-  reactExports.useEffect(() => {
-    if (!chaseNow)
-      return;
-    chaseSetTick(Date.now());
-    const chaseTimer = window.setInterval(() => chaseSetTick(Date.now()), 1e3);
-    return () => window.clearInterval(chaseTimer);
-  }, [chaseNow]);
-  if (!chaseNow)
-    return jsxRuntimeExports.jsxs("div", { className: "chase-now-track chase-now-idle", children: [
-      jsxRuntimeExports.jsx("span", { className: "chase-cartridge-icon", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "cassette", size: 24 }) }),
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("strong", { children: "Nothing playing" }),
-        jsxRuntimeExports.jsx("span", { children: station.live ? "Play a queued track to start the music." : "Start the broadcast to play music." })
-      ] })
-    ] });
-  const chaseElapsed = Math.max(0, Math.min(chaseNow.duration, chaseTick / 1e3 - chaseNow.startedAt));
-  return jsxRuntimeExports.jsxs("div", { className: "chase-now-track", children: [
-    jsxRuntimeExports.jsx("span", { className: "chase-cartridge-icon", children: jsxRuntimeExports.jsx(ChaseIcon, {
-      name: chaseNow.provider === "file" ? "cassette" : "play",
-      size: 24
+function ChaseCartridges({ snapshot, station, action, busy, previewPlayback }) {
+  const canPlay = station.canManage && snapshot.viewer.canOperate !== false;
+  const playing = station.nowPlaying?.provider === "file" ? station.nowPlaying : null;
+  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card chase-studio-cartridges", children: [
+    jsxRuntimeExports.jsx("div", { className: "chase-section-heading", children: jsxRuntimeExports.jsxs("div", { children: [
+      jsxRuntimeExports.jsx("h2", { children: "Cartridge library" }),
+      jsxRuntimeExports.jsx("p", { children: "Station idents, intermissions and sign-offs." })
+    ] }) }),
+    jsxRuntimeExports.jsx("div", { className: "chase-cartridge-grid", children: snapshot.cartridges.map((cartridge) => {
+      const active = playing?.cartridgeId === cartridge.id;
+      const matchingPreview = previewPlayback?.cartridgeId === cartridge.id;
+      const preview = matchingPreview && previewPlayback.phase !== "error";
+      const failedPreview = matchingPreview && previewPlayback.phase === "error";
+      return jsxRuntimeExports.jsxs("article", {
+        className: `chase-cartridge-card ${active ? "chase-cartridge-active" : ""}`,
+        children: [
+          jsxRuntimeExports.jsxs("div", { className: "chase-studio-cartridge-heading", children: [
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "cassette", size: 48 }),
+            jsxRuntimeExports.jsxs("div", { children: [
+              jsxRuntimeExports.jsx("h3", { children: cartridge.name }),
+              jsxRuntimeExports.jsx("p", { children: cartridge.description }),
+              jsxRuntimeExports.jsx("span", { className: "chase-studio-duration", children: ChaseClock(cartridge.duration) })
+            ] })
+          ] }),
+          jsxRuntimeExports.jsx("div", { className: "chase-studio-cartridge-state", children: active ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+            jsxRuntimeExports.jsx(ChaseProgress, { playing }),
+            jsxRuntimeExports.jsx("strong", { children: playing?.paused ? "Paused" : "On air" })
+          ] }) : jsxRuntimeExports.jsx("span", { children: matchingPreview ? previewPlayback.phase === "playing" ? "Private preview playing" : previewPlayback.phase === "loading" ? "Loading preview…" : "Preview unavailable" : "Ready" }) }),
+          jsxRuntimeExports.jsxs("div", { className: "chase-studio-cartridge-actions", children: [
+            jsxRuntimeExports.jsxs("button", {
+              className: "chase-button chase-secondary",
+              disabled: busy || (preview ? !station.canManage : !canPlay),
+              onClick: () => void action(preview ? "stopPreview" : "previewCartridge", preview ? {} : { cartridgeId: cartridge.id }, preview ? "Preview stopped." : "Private preview requested."),
+              children: [
+                jsxRuntimeExports.jsx(ChaseIcon, { name: preview ? "stop" : "headphones", size: 19 }),
+                preview ? "Stop preview" : failedPreview ? "Retry preview" : "Preview"
+              ]
+            }),
+            jsxRuntimeExports.jsxs("button", {
+              className: "chase-button chase-primary",
+              disabled: busy || (active ? !station.canManage : !canPlay || !station.live),
+              onClick: () => void action(active ? "stopCartridge" : "playCartridge", active ? {} : { cartridgeId: cartridge.id }, active ? "Cartridge stopped." : "Cartridge playback requested."),
+              children: [
+                jsxRuntimeExports.jsx(ChaseIcon, { name: active ? "stop" : "play", size: 20 }),
+                active ? "Stop" : "Play on air"
+              ]
+            })
+          ] })
+        ]
+      }, cartridge.id);
     }) }),
-    jsxRuntimeExports.jsxs("div", { children: [
-      jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "NOW PLAYING" }),
-      jsxRuntimeExports.jsx("strong", { children: chaseNow.title }),
-      jsxRuntimeExports.jsxs("span", { children: [
-        chaseProviderLabels[chaseNow.provider] || chaseNow.provider,
-        " ·",
-        " ",
-        ChaseClock(chaseElapsed),
-        " / ",
-        ChaseClock(chaseNow.duration)
-      ] }),
-      jsxRuntimeExports.jsx("div", { className: "chase-progress-track", children: jsxRuntimeExports.jsx("span", {
-        style: {
-          width: `${chaseNow.duration > 0 ? Math.min(100, chaseElapsed / chaseNow.duration * 100) : 0}%`
-        }
-      }) })
-    ] }),
-    jsxRuntimeExports.jsxs("div", { className: "chase-now-actions", children: [
-      jsxRuntimeExports.jsxs("button", {
-        className: "chase-button chase-secondary",
-        disabled: busy || !canEdit || !station.live,
-        onClick: () => void action("skipTrack", {}, "Skipped ahead."),
-        children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "arrow", size: 16 }),
-          "Skip"
-        ]
-      }),
-      jsxRuntimeExports.jsxs("button", {
-        className: "chase-button chase-subtle",
-        disabled: busy || !station.canManage,
-        onClick: () => void action("stopCartridge", {}, "Playback stopped."),
-        children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "stop", size: 16 }),
-          "Stop"
-        ]
-      })
+    !snapshot.cartridges.length ? jsxRuntimeExports.jsx(ChaseEmpty, { icon: "cassette", title: "Your shelf is empty", children: "Configured station cartridges will appear here." }) : null,
+    playing ? jsxRuntimeExports.jsxs("div", { className: "chase-studio-cartridge-current", children: [
+      jsxRuntimeExports.jsx(ChaseSectionTitle, { children: "On-air playback" }),
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "cassette", size: 32 }),
+        jsxRuntimeExports.jsx("strong", { children: playing.title }),
+        jsxRuntimeExports.jsx(ChaseProgress, { playing }),
+        jsxRuntimeExports.jsxs("button", {
+          className: "chase-button chase-primary",
+          disabled: busy || !station.canManage,
+          onClick: () => void action("stopCartridge", {}, "Playback stopped."),
+          children: [
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "stop" }),
+            "Stop playback"
+          ]
+        })
+      ] })
+    ] }) : null,
+    jsxRuntimeExports.jsxs("p", { className: "chase-caption", children: [
+      jsxRuntimeExports.jsx(ChaseIcon, { name: "info", size: 17 }),
+      "Preview is private. On-air playback requires a live transmitter and proximity to the studio console."
     ] })
   ] });
 }
+function ChaseMusicVolume({ station, action, busy, canEdit }) {
+  const [volume, setVolume] = reactExports.useState(Math.round((station.musicVolume ?? 1) * 100));
+  reactExports.useEffect(() => setVolume(Math.round((station.musicVolume ?? 1) * 100)), [station.musicVolume]);
+  const changed = volume !== Math.round((station.musicVolume ?? 1) * 100);
+  return jsxRuntimeExports.jsxs("div", { className: "chase-studio-music-volume", children: [
+    jsxRuntimeExports.jsx(ChaseIcon, { name: "volume", size: 19 }),
+    jsxRuntimeExports.jsxs("label", { children: [
+      jsxRuntimeExports.jsx("span", { children: "Broadcast music volume" }),
+      jsxRuntimeExports.jsx("input", {
+        type: "range",
+        min: "0",
+        max: "100",
+        step: "1",
+        "aria-label": "Broadcast music volume",
+        value: volume,
+        disabled: busy || !canEdit,
+        onChange: (event) => setVolume(Number(event.target.value))
+      })
+    ] }),
+    jsxRuntimeExports.jsxs("output", { children: [
+      volume,
+      "%"
+    ] }),
+    jsxRuntimeExports.jsx("button", {
+      className: "chase-button chase-secondary",
+      disabled: busy || !canEdit || !changed,
+      onClick: () => void action("musicVolume", { volume: volume / 100 }, "Broadcast music volume updated."),
+      children: "Apply"
+    })
+  ] });
+}
 function ChaseMusic({ snapshot, station, action, busy, heading = true }) {
-  const [chaseLink, chaseSetLink] = reactExports.useState("");
-  const [chaseResolving, chaseSetResolving] = reactExports.useState(false);
-  const [chaseIssue, chaseSetIssue] = reactExports.useState("");
-  const chaseMusic = snapshot.config.music;
-  const chaseQueue = station.queue || [];
-  const chaseMode = station.mode || "dj";
-  const chaseCanEdit = station.canManage && snapshot.viewer.canOperate !== false;
-  const chaseFull = chaseMusic ? chaseQueue.length >= chaseMusic.maxQueue : false;
-  if (chaseMusic?.enabled === false)
-    return jsxRuntimeExports.jsx("section", { className: "chase-card chase-content-card", children: jsxRuntimeExports.jsx(ChaseEmpty, { icon: "cassette", title: "Music is switched off", children: "Online track playback is disabled on this server." }) });
-  async function ChaseAddTrack(event) {
+  const [link, setLink] = reactExports.useState("");
+  const [resolving, setResolving] = reactExports.useState(false);
+  const [issue, setIssue] = reactExports.useState("");
+  const inputId = reactExports.useId();
+  const music = snapshot.config.music;
+  const queue = station.queue || [];
+  const canEdit = station.canManage && snapshot.viewer.canOperate !== false;
+  const full = music ? queue.length >= music.maxQueue : false;
+  if (music?.enabled === false)
+    return jsxRuntimeExports.jsx("section", { className: "chase-card chase-content-card", children: jsxRuntimeExports.jsx(ChaseEmpty, { icon: "music", title: "Music is switched off", children: "Online track playback is disabled on this server." }) });
+  async function addTrack(event) {
     event.preventDefault();
-    const chaseUrl = chaseLink.trim();
-    if (!chaseUrl || chaseResolving)
+    const url = link.trim();
+    if (!url || resolving)
       return;
-    chaseSetIssue("");
-    const chaseProvider = ChaseDetectProvider(chaseUrl);
-    if (!chaseProvider) {
-      chaseSetIssue("Enter a YouTube or SoundCloud track link.");
-      return;
-    }
-    if (chaseMusic?.providers?.[chaseProvider] === false) {
-      chaseSetIssue(`${chaseProviderLabels[chaseProvider]} links are disabled on this server.`);
+    setIssue("");
+    const provider = ChaseDetectProvider(url);
+    if (!provider) {
+      setIssue("Enter a YouTube or SoundCloud track link.");
       return;
     }
-    chaseSetResolving(true);
+    if (music?.providers?.[provider] === false) {
+      setIssue(`${chaseProviderLabels[provider]} links are disabled on this server.`);
+      return;
+    }
+    setResolving(true);
     try {
-      const chaseTrack = await ChaseResolveTrack(chaseUrl);
-      if (await action("queueAdd", {
-        url: chaseUrl,
-        title: chaseTrack.title,
-        duration: chaseTrack.duration
-      }, "Track added to the queue."))
-        chaseSetLink("");
-    } catch (chaseFailure) {
-      chaseSetIssue(ChaseError(chaseFailure));
+      const track = await ChaseResolveTrack(url);
+      if (await action("queueAdd", { url, title: track.title, duration: track.duration }, "Track added to the queue."))
+        setLink("");
+    } catch (failure) {
+      setIssue(ChaseError(failure));
     } finally {
-      chaseSetResolving(false);
+      setResolving(false);
     }
   }
-  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card", children: [
+  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card chase-studio-music", children: [
     heading ? jsxRuntimeExports.jsxs("div", { className: "chase-section-heading", children: [
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("h2", { children: "Music queue" }),
-        jsxRuntimeExports.jsx("p", { children: "Line up YouTube and SoundCloud tracks for your broadcast." })
-      ] }),
+      jsxRuntimeExports.jsx("h2", { children: "Music queue" }),
       jsxRuntimeExports.jsxs("span", { className: "chase-count-pill", children: [
-        chaseQueue.length,
-        chaseMusic ? ` / ${chaseMusic.maxQueue}` : "",
-        " queued"
+        queue.length,
+        music ? ` / ${music.maxQueue}` : "",
+        " tracks"
       ] })
     ] }) : null,
     jsxRuntimeExports.jsx(ChaseNowPlaying, {
       station,
       action,
       busy,
-      canEdit: chaseCanEdit
+      canEdit,
+      compact: true
     }),
-    jsxRuntimeExports.jsxs("form", { className: "chase-music-add", onSubmit: ChaseAddTrack, children: [
-      jsxRuntimeExports.jsx("label", { htmlFor: "chase-track-link", children: "Add a track link" }),
+    jsxRuntimeExports.jsxs("form", { className: "chase-music-add", onSubmit: addTrack, children: [
+      jsxRuntimeExports.jsx("label", { htmlFor: inputId, className: "chase-sr-only", children: "Add a YouTube or SoundCloud track" }),
       jsxRuntimeExports.jsxs("div", { className: "chase-input-action", children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "link", size: 23 }),
         jsxRuntimeExports.jsx("input", {
-          id: "chase-track-link",
+          id: inputId,
           type: "url",
-          placeholder: "https://www.youtube.com/watch?v=… or https://soundcloud.com/…",
-          value: chaseLink,
+          placeholder: "Paste a YouTube or SoundCloud link to add a track…",
+          value: link,
           maxLength: 300,
           required: true,
-          disabled: chaseResolving,
-          onChange: (chaseEvent) => chaseSetLink(chaseEvent.target.value)
+          disabled: resolving || !canEdit,
+          onChange: (event) => setLink(event.target.value)
         }),
         jsxRuntimeExports.jsxs("button", {
           className: "chase-button chase-primary",
-          disabled: busy || chaseResolving || !chaseCanEdit || chaseFull,
+          disabled: busy || resolving || !canEdit || full,
           children: [
-            jsxRuntimeExports.jsx(ChaseIcon, { name: "plus", size: 16 }),
-            chaseResolving ? "Checking link…" : "Add"
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "plus", size: 22 }),
+            resolving ? "Checking link…" : "Add track"
           ]
         })
       ] }),
-      chaseIssue ? jsxRuntimeExports.jsx("span", { className: "chase-field-hint chase-field-error", role: "alert", children: chaseIssue }) : jsxRuntimeExports.jsx("span", { className: "chase-field-hint", children: chaseFull ? "The queue is full. Remove a track to add another." : chaseMusic ? `Tracks between ${ChaseClock(chaseMusic.minDurationSeconds)} and ${ChaseClock(chaseMusic.maxDurationSeconds)} long. The title and length are read from the link before it is added.` : "The title and length are read from the link before it is added." })
+      issue ? jsxRuntimeExports.jsx("p", { className: "chase-field-error", role: "alert", children: issue }) : jsxRuntimeExports.jsx("span", { className: "chase-track-link-hint", children: full ? "The queue is full. Remove a track to add another." : music ? `Tracks must be between ${ChaseClock(music.minDurationSeconds)} and ${ChaseClock(music.maxDurationSeconds)}.` : "The title and duration are read from your link." })
     ] }),
-    jsxRuntimeExports.jsx("div", { className: "chase-queue-list", children: chaseQueue.map((chaseTrack, chaseIndex) => jsxRuntimeExports.jsxs("article", { children: [
-      jsxRuntimeExports.jsx("span", { className: "chase-queue-index", children: chaseIndex + 1 }),
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("strong", { children: chaseTrack.title }),
-        jsxRuntimeExports.jsxs("span", { children: [
-          chaseProviderLabels[chaseTrack.provider] || chaseTrack.provider,
-          " ",
-          "· ",
-          ChaseClock(chaseTrack.duration)
-        ] })
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-queue-table", children: [
+      jsxRuntimeExports.jsxs("div", { className: "chase-studio-queue-head", children: [
+        jsxRuntimeExports.jsx("span", { children: "#" }),
+        jsxRuntimeExports.jsx("span", { children: "Track" }),
+        jsxRuntimeExports.jsx("span", { children: "Source" }),
+        jsxRuntimeExports.jsx("span", { children: "Duration" }),
+        jsxRuntimeExports.jsx("span", { children: "Actions" })
       ] }),
-      jsxRuntimeExports.jsx("button", {
-        className: "chase-icon-button",
-        "aria-label": `Play ${chaseTrack.title} now`,
-        disabled: busy || !station.live || !chaseCanEdit,
-        onClick: () => void action("playTrack", { trackId: chaseTrack.id }, "Track playback requested."),
-        children: jsxRuntimeExports.jsx(ChaseIcon, { name: "play", size: 18 })
-      }),
-      jsxRuntimeExports.jsx("button", {
-        className: "chase-text-button",
-        disabled: busy || !chaseCanEdit,
-        onClick: () => void action("queueRemove", { trackId: chaseTrack.id }, "Track removed."),
-        children: "Remove"
+      jsxRuntimeExports.jsx("div", { className: "chase-queue-list", children: queue.map((track, index) => jsxRuntimeExports.jsxs("article", { children: [
+        jsxRuntimeExports.jsx("span", { className: "chase-queue-index", children: index + 1 }),
+        jsxRuntimeExports.jsxs("div", { className: "chase-studio-queue-track", children: [
+          jsxRuntimeExports.jsx(ChaseTrackArt, {
+            track,
+            className: "chase-studio-queue-art"
+          }),
+          jsxRuntimeExports.jsx("strong", { children: track.title })
+        ] }),
+        jsxRuntimeExports.jsx("span", { className: "chase-studio-queue-source", children: chaseProviderLabels[track.provider] }),
+        jsxRuntimeExports.jsx("span", { className: "chase-studio-queue-duration", children: ChaseClock(track.duration) }),
+        jsxRuntimeExports.jsxs("div", { className: "chase-studio-queue-actions", children: [
+          jsxRuntimeExports.jsx("button", {
+            className: "chase-icon-button",
+            "aria-label": `Move ${track.title} up`,
+            disabled: busy || !canEdit || index === 0,
+            onClick: () => void action("queueMove", { trackId: track.id, position: index }, "Queue order updated."),
+            children: jsxRuntimeExports.jsx(ChaseIcon, { name: "up", size: 17 })
+          }),
+          jsxRuntimeExports.jsx("button", {
+            className: "chase-icon-button",
+            "aria-label": `Move ${track.title} down`,
+            disabled: busy || !canEdit || index === queue.length - 1,
+            onClick: () => void action("queueMove", { trackId: track.id, position: index + 2 }, "Queue order updated."),
+            children: jsxRuntimeExports.jsx(ChaseIcon, { name: "down", size: 17 })
+          }),
+          jsxRuntimeExports.jsx("button", {
+            className: "chase-icon-button",
+            "aria-label": `Play ${track.title} now`,
+            disabled: busy || !station.live || !canEdit,
+            onClick: () => void action("playTrack", { trackId: track.id }, "Track playback requested."),
+            children: jsxRuntimeExports.jsx(ChaseIcon, { name: "play", size: 18 })
+          }),
+          jsxRuntimeExports.jsx("button", {
+            className: "chase-icon-button chase-studio-delete",
+            "aria-label": `Remove ${track.title}`,
+            disabled: busy || !canEdit,
+            onClick: () => void action("queueRemove", { trackId: track.id }, "Track removed from the queue."),
+            children: jsxRuntimeExports.jsx(ChaseIcon, { name: "trash", size: 18 })
+          })
+        ] })
+      ] }, track.id)) }),
+      !queue.length ? jsxRuntimeExports.jsx(ChaseEmpty, { icon: "music", title: "Your next track starts here", children: "Paste a supported track link to build your queue." }) : null
+    ] }),
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-music-summary", children: [
+      jsxRuntimeExports.jsxs("p", { children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "info", size: 18 }),
+        station.mode === "autonomous" ? "Autonomous · the queue loops while the transmitter is live." : "DJ-managed · the queue stops after the last track."
+      ] }),
+      jsxRuntimeExports.jsx(ChaseMusicVolume, {
+        station,
+        action,
+        busy,
+        canEdit
       })
-    ] }, chaseTrack.id)) }),
-    !chaseQueue.length ? jsxRuntimeExports.jsx(ChaseEmpty, { icon: "cassette", title: "The queue is empty", children: "Paste a YouTube or SoundCloud link above to line up your first track." }) : null,
-    jsxRuntimeExports.jsxs("p", { className: "chase-caption", children: [
-      chaseMode === "autonomous" ? "Autonomous mode: while the transmitter is live the queue plays on its own and loops back to the start. Starting a broadcast with queued tracks begins playback automatically." : `DJ-managed mode: play a track to start, the queue continues in order and stops after the last track. Autoplay is ${station.autoplay ? "on" : "off"}.`,
-      " ",
-      "You must be beside the live console to play or skip a track. Listeners hear the track and you hear a private studio cue."
     ] })
   ] });
 }
 function ChaseCrew({ snapshot, action, busy }) {
-  const [chaseSource, chaseSetSource] = reactExports.useState("");
-  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card", children: [
-    jsxRuntimeExports.jsxs("div", { className: "chase-section-heading", children: [
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("h2", { children: "Studio crew" }),
-        jsxRuntimeExports.jsx("p", { children: "Manage who can operate this station." })
+  const [source, setSource] = reactExports.useState("");
+  const owner = snapshot.mine?.canWithdraw === true;
+  const inputId = reactExports.useId();
+  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card chase-studio-crew", children: [
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-crew-roster", children: [
+      jsxRuntimeExports.jsxs("div", { className: "chase-section-heading", children: [
+        jsxRuntimeExports.jsxs("div", { children: [
+          jsxRuntimeExports.jsx("h2", { children: "Studio crew" }),
+          jsxRuntimeExports.jsx("p", { children: "Manage who can operate this station." })
+        ] }),
+        jsxRuntimeExports.jsxs("span", { className: "chase-count-pill", children: [
+          snapshot.crew.length,
+          " members"
+        ] })
       ] }),
-      jsxRuntimeExports.jsxs("span", { className: "chase-count-pill", children: [
-        snapshot.crew.length,
-        " crew members"
+      jsxRuntimeExports.jsxs("div", { className: "chase-studio-crew-table", children: [
+        jsxRuntimeExports.jsxs("div", { className: "chase-studio-crew-head", children: [
+          jsxRuntimeExports.jsx("span", { children: "Name" }),
+          jsxRuntimeExports.jsx("span", { children: "Status" }),
+          jsxRuntimeExports.jsx("span", { children: "Access" }),
+          jsxRuntimeExports.jsx("span", { children: "Action" })
+        ] }),
+        owner ? jsxRuntimeExports.jsxs("div", { className: "chase-studio-crew-row", children: [
+          jsxRuntimeExports.jsxs("div", { children: [
+            jsxRuntimeExports.jsx("span", { className: "chase-avatar", children: ChaseInitials(snapshot.viewer.name) }),
+            jsxRuntimeExports.jsxs("strong", { children: [
+              snapshot.viewer.name,
+              " ",
+              jsxRuntimeExports.jsx("small", { children: "(You)" })
+            ] })
+          ] }),
+          jsxRuntimeExports.jsx("span", { children: jsxRuntimeExports.jsx(ChaseStatus, { live: true, children: "Connected" }) }),
+          jsxRuntimeExports.jsx("span", { children: "Owner" }),
+          jsxRuntimeExports.jsx("span", { children: "—" })
+        ] }) : null,
+        snapshot.crew.map((member) => jsxRuntimeExports.jsxs("div", {
+          className: "chase-studio-crew-row",
+          children: [
+            jsxRuntimeExports.jsxs("div", { children: [
+              jsxRuntimeExports.jsx("span", { className: "chase-avatar", children: ChaseInitials(member.name) }),
+              jsxRuntimeExports.jsx("strong", { children: member.name })
+            ] }),
+            jsxRuntimeExports.jsxs("span", { children: [
+              jsxRuntimeExports.jsx(ChaseStatus, { live: member.online === true, children: member.online === true ? "Online" : member.online === false ? "Offline" : "Unknown" }),
+              member.online && member.source > 0 ? jsxRuntimeExports.jsxs("small", { children: [
+                "ID ",
+                member.source
+              ] }) : null
+            ] }),
+            jsxRuntimeExports.jsx("span", { children: "Operator" }),
+            owner ? jsxRuntimeExports.jsx("button", {
+              className: "chase-icon-button chase-studio-delete",
+              "aria-label": `Remove ${member.name} from crew`,
+              disabled: busy,
+              onClick: () => void action("crewRemove", member.memberId ? { memberId: member.memberId } : { source: member.source }, "Crew member removed."),
+              children: jsxRuntimeExports.jsx(ChaseIcon, { name: "trash", size: 19 })
+            }) : jsxRuntimeExports.jsx("span", { children: "—" })
+          ]
+        }, member.memberId ?? member.source)),
+        !snapshot.crew.length && !owner ? jsxRuntimeExports.jsx(ChaseEmpty, { icon: "users", title: "No crew members", children: "The station owner can add connected players." }) : null
+      ] }),
+      jsxRuntimeExports.jsxs("p", { className: "chase-caption", children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "info", size: 18 }),
+        owner ? "You own this station. Crew access and station funds are yours to manage." : "Crew members can operate the station. The owner manages membership and funds."
       ] })
     ] }),
-    snapshot.mine?.canWithdraw ? jsxRuntimeExports.jsxs("form", {
-      className: "chase-crew-invite",
-      onSubmit: async (chaseEvent) => {
-        chaseEvent.preventDefault();
-        if (await action("crewAdd", { source: Number(chaseSource) }, "Crew member added."))
-          chaseSetSource("");
-      },
-      children: [
-        jsxRuntimeExports.jsx("label", { htmlFor: "chase-crew-id", children: "Add a connected player" }),
-        jsxRuntimeExports.jsxs("div", { className: "chase-input-action", children: [
+    jsxRuntimeExports.jsxs("aside", { className: "chase-studio-crew-add", children: [
+      jsxRuntimeExports.jsx("h3", { children: "Add crew member" }),
+      jsxRuntimeExports.jsx("p", { children: "Enter a player’s server ID to add them to your crew." }),
+      owner ? jsxRuntimeExports.jsxs("form", {
+        onSubmit: async (event) => {
+          event.preventDefault();
+          if (await action("crewAdd", { source: Number(source) }, "Crew member added."))
+            setSource("");
+        },
+        children: [
+          jsxRuntimeExports.jsx("label", { htmlFor: inputId, children: "Player server ID" }),
           jsxRuntimeExports.jsx("input", {
-            id: "chase-crew-id",
+            id: inputId,
             type: "number",
             min: "1",
             step: "1",
-            placeholder: "Player server ID",
             required: true,
-            value: chaseSource,
-            onChange: (chaseEvent) => chaseSetSource(chaseEvent.target.value)
+            placeholder: "Enter server ID",
+            value: source,
+            onChange: (event) => setSource(event.target.value)
           }),
-          jsxRuntimeExports.jsxs("button", { className: "chase-button chase-primary", disabled: busy, children: [
-            jsxRuntimeExports.jsx(ChaseIcon, { name: "plus", size: 16 }),
-            "Add to crew"
-          ] })
-        ] })
-      ]
-    }) : null,
-    jsxRuntimeExports.jsx("div", { className: "chase-crew-list", children: snapshot.crew.map((chaseMember) => jsxRuntimeExports.jsxs("article", { children: [
-      jsxRuntimeExports.jsx("span", { className: "chase-avatar", children: chaseMember.name.slice(0, 1) }),
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsx("strong", { children: chaseMember.name }),
-        jsxRuntimeExports.jsxs("span", { children: [
-          "Studio crew ·",
-          " ",
-          chaseMember.source > 0 ? `ID ${chaseMember.source}` : "Offline"
-        ] })
-      ] }),
-      snapshot.mine?.canWithdraw ? jsxRuntimeExports.jsx("button", {
-        className: "chase-text-button",
-        disabled: busy,
-        onClick: () => void action("crewRemove", chaseMember.memberId ? { memberId: chaseMember.memberId } : { source: chaseMember.source }, "Crew member removed."),
-        children: "Remove"
-      }) : null
-    ] }, chaseMember.memberId ?? chaseMember.source)) }),
-    !snapshot.crew.length ? jsxRuntimeExports.jsx(ChaseEmpty, { icon: "users", title: "An open seat at the desk", children: "Add a connected player to help run your station." }) : null
+          jsxRuntimeExports.jsxs("button", {
+            className: "chase-button chase-primary chase-full",
+            disabled: busy,
+            children: [
+              jsxRuntimeExports.jsx(ChaseIcon, { name: "plus", size: 21 }),
+              "Add to crew"
+            ]
+          }),
+          jsxRuntimeExports.jsx("small", { children: "The server checks that the player is connected." })
+        ]
+      }) : jsxRuntimeExports.jsx("p", { className: "chase-studio-access-note", children: "Only the station owner can add or remove crew." }),
+      jsxRuntimeExports.jsxs("div", { className: "chase-studio-crew-permissions", children: [
+        jsxRuntimeExports.jsx("h3", { children: "Crew access" }),
+        jsxRuntimeExports.jsx("p", { children: "Crew members can operate the console, manage music and handle requests. Only the owner can withdraw station funds." })
+      ] })
+    ] })
   ] });
 }
 function ChaseStationSettings(station) {
@@ -15216,133 +16169,252 @@ function ChaseStationSettings(station) {
   };
 }
 function ChaseModeControl({ snapshot, station, action, busy }) {
-  const chaseMode = station.mode || "dj";
-  const chaseCanEdit = station.canManage && snapshot.viewer.canOperate !== false;
+  const mode = station.mode || "dj";
+  const canEdit = station.canManage && snapshot.viewer.canOperate !== false;
   return jsxRuntimeExports.jsxs("div", { className: "chase-mode-control", children: [
     jsxRuntimeExports.jsxs("div", { children: [
       jsxRuntimeExports.jsx("strong", { children: "Station mode" }),
-      jsxRuntimeExports.jsx("small", { children: chaseMode === "autonomous" ? "The music queue loops on its own while the transmitter is live." : "A DJ starts tracks. The queue plays in order and stops when it ends." })
+      jsxRuntimeExports.jsx("small", { children: mode === "autonomous" ? "The music queue loops while the transmitter is live." : "A DJ starts tracks. The queue plays in order and stops when it ends." })
     ] }),
     jsxRuntimeExports.jsx("div", { className: "chase-segmented", "aria-label": "Station mode", children: [
       { id: "dj", label: "DJ-managed" },
       { id: "autonomous", label: "Autonomous" }
-    ].map((chaseOption) => jsxRuntimeExports.jsx("button", {
+    ].map((option) => jsxRuntimeExports.jsx("button", {
       type: "button",
-      className: chaseMode === chaseOption.id ? "chase-selected" : "",
-      "aria-pressed": chaseMode === chaseOption.id,
-      disabled: busy || !chaseCanEdit || chaseMode === chaseOption.id,
-      onClick: () => void action("setMode", { mode: chaseOption.id }, "Station mode updated."),
-      children: chaseOption.label
-    }, chaseOption.id)) })
+      className: mode === option.id ? "chase-selected" : "",
+      "aria-pressed": mode === option.id,
+      disabled: busy || !canEdit || mode === option.id,
+      onClick: () => void action("setMode", { mode: option.id }, "Station mode updated."),
+      children: option.label
+    }, option.id)) })
+  ] });
+}
+function ChaseBalance({ snapshot, station, action, busy }) {
+  const [amount, setAmount] = reactExports.useState("");
+  const inputId = reactExports.useId();
+  return jsxRuntimeExports.jsxs("section", { className: "chase-studio-balance", children: [
+    jsxRuntimeExports.jsx(ChaseSectionTitle, { children: "Station balance" }),
+    station.canWithdraw && typeof station.balance === "number" ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+      jsxRuntimeExports.jsx("strong", { className: "chase-studio-balance-value", children: ChaseMoney(station.balance, snapshot.config.currency) }),
+      jsxRuntimeExports.jsx("p", { children: "Funded by listener tips." }),
+      jsxRuntimeExports.jsxs("form", {
+        onSubmit: async (event) => {
+          event.preventDefault();
+          if (await action("withdraw", { amount: Number(amount) }, "Withdrawal completed."))
+            setAmount("");
+        },
+        children: [
+          jsxRuntimeExports.jsx("label", { htmlFor: inputId, children: "Withdraw amount" }),
+          jsxRuntimeExports.jsxs("div", { className: "chase-input-action", children: [
+            jsxRuntimeExports.jsx("input", {
+              id: inputId,
+              type: "number",
+              min: "1",
+              max: station.balance,
+              step: "1",
+              required: true,
+              placeholder: "Amount",
+              value: amount,
+              onChange: (event) => setAmount(event.target.value)
+            }),
+            jsxRuntimeExports.jsx("button", {
+              className: "chase-button chase-secondary",
+              disabled: busy || station.balance <= 0,
+              children: "Withdraw"
+            })
+          ] })
+        ]
+      }),
+      jsxRuntimeExports.jsx("small", { children: "Owner access only." })
+    ] }) : jsxRuntimeExports.jsx("p", { children: "Station funds are managed by the owner." })
   ] });
 }
 function ChaseSettings({ snapshot, station, action, busy }) {
-  const [chaseForm, chaseSetForm] = reactExports.useState(ChaseStationSettings(station));
-  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card", children: [
+  const current = {
+    ...ChaseStationSettings(station),
+    mode: station.mode || "dj"
+  };
+  const [form, setForm] = reactExports.useState(current);
+  const serialized = JSON.stringify(current);
+  const previous = reactExports.useRef(serialized);
+  reactExports.useEffect(() => {
+    if (previous.current !== serialized) {
+      const old = previous.current;
+      previous.current = serialized;
+      setForm((draft) => JSON.stringify(draft) === old ? JSON.parse(serialized) : draft);
+    }
+  }, [serialized]);
+  const dirty = JSON.stringify(form) !== serialized;
+  const canEdit = station.canManage && snapshot.viewer.canOperate !== false;
+  const transmissionLocked = station.live || station.stage === "deploying" || station.stage === "packing";
+  const locked = busy || !canEdit || transmissionLocked;
+  const formId = reactExports.useId();
+  return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card chase-studio-settings", children: [
     jsxRuntimeExports.jsx("div", { className: "chase-section-heading", children: jsxRuntimeExports.jsxs("div", { children: [
       jsxRuntimeExports.jsx("h2", { children: "Station settings" }),
-      jsxRuntimeExports.jsx("p", { children: "Configure your station identity and transmission." })
+      jsxRuntimeExports.jsx("p", { children: "Configure your identity and transmission settings." })
     ] }) }),
-    jsxRuntimeExports.jsx(ChaseModeControl, {
-      snapshot,
-      station,
-      action,
-      busy
-    }),
-    jsxRuntimeExports.jsxs("form", {
-      className: "chase-settings-form",
-      onSubmit: async (chaseEvent) => {
-        chaseEvent.preventDefault();
-        await action("updateStation", chaseForm, "Station settings saved.");
-      },
-      children: [
-        jsxRuntimeExports.jsxs("label", { children: [
-          "Station name",
-          jsxRuntimeExports.jsx("input", {
-            value: chaseForm.name,
-            maxLength: 40,
-            required: true,
-            onChange: (chaseEvent) => chaseSetForm({ ...chaseForm, name: chaseEvent.target.value })
-          })
-        ] }),
-        jsxRuntimeExports.jsxs("label", { children: [
-          "Frequency (MHz)",
-          jsxRuntimeExports.jsx("input", {
-            type: "number",
-            min: snapshot.config.frequencyMin / 10,
-            max: snapshot.config.frequencyMax / 10,
-            step: "0.1",
-            required: true,
-            value: chaseForm.frequency / 10,
-            onChange: (chaseEvent) => chaseSetForm({
-              ...chaseForm,
-              frequency: Math.round(Number(chaseEvent.target.value) * 10)
-            })
-          })
-        ] }),
-        jsxRuntimeExports.jsxs("label", { className: "chase-span-full", children: [
-          "Tagline",
-          jsxRuntimeExports.jsx("input", {
-            value: chaseForm.tagline,
-            maxLength: 100,
-            onChange: (chaseEvent) => chaseSetForm({ ...chaseForm, tagline: chaseEvent.target.value })
-          })
-        ] }),
-        jsxRuntimeExports.jsxs("label", { className: "chase-span-full", children: [
-          "Show title",
-          jsxRuntimeExports.jsx("input", {
-            value: chaseForm.showTitle,
-            maxLength: 80,
-            onChange: (chaseEvent) => chaseSetForm({ ...chaseForm, showTitle: chaseEvent.target.value })
-          })
-        ] }),
-        jsxRuntimeExports.jsxs("label", { children: [
-          "Transmitter power",
-          jsxRuntimeExports.jsx("select", {
-            value: chaseForm.power,
-            onChange: (chaseEvent) => chaseSetForm({ ...chaseForm, power: chaseEvent.target.value }),
-            children: snapshot.config.powerModes.map((chaseMode) => jsxRuntimeExports.jsx("option", { value: chaseMode.id, children: chaseMode.label }, chaseMode.id))
-          })
-        ] }),
-        jsxRuntimeExports.jsxs("label", { className: "chase-checkbox-label", children: [
-          jsxRuntimeExports.jsx("input", {
-            type: "checkbox",
-            checked: chaseForm.isPublic,
-            onChange: (chaseEvent) => chaseSetForm({
-              ...chaseForm,
-              isPublic: chaseEvent.target.checked
-            })
-          }),
-          jsxRuntimeExports.jsxs("span", { children: [
-            "List in station directory",
-            jsxRuntimeExports.jsx("small", { children: "Unlisted stations can still be tuned by frequency." })
+    transmissionLocked ? jsxRuntimeExports.jsxs("p", { className: "chase-studio-settings-lock", role: "status", children: [
+      jsxRuntimeExports.jsx(ChaseIcon, { name: "info", size: 18 }),
+      "Stop the broadcast and wait for the rig to finish moving before editing station settings."
+    ] }) : null,
+    jsxRuntimeExports.jsxs("div", { className: "chase-studio-settings-grid", children: [
+      jsxRuntimeExports.jsxs("form", {
+        id: formId,
+        onSubmit: async (event) => {
+          event.preventDefault();
+          if (locked)
+            return;
+          const saved = {
+            ...form,
+            name: form.name.trim(),
+            tagline: form.tagline.trim(),
+            showTitle: form.showTitle.trim()
+          };
+          if (await action("updateStation", saved, "Station settings saved."))
+            setForm(saved);
+        },
+        children: [
+          jsxRuntimeExports.jsxs("fieldset", { disabled: locked, children: [
+            jsxRuntimeExports.jsx("legend", { children: "Identity" }),
+            jsxRuntimeExports.jsxs("label", { children: [
+              jsxRuntimeExports.jsx("span", { children: "Station name" }),
+              jsxRuntimeExports.jsx("input", {
+                value: form.name,
+                required: true,
+                minLength: 3,
+                maxLength: 48,
+                onChange: (event) => setForm({ ...form, name: event.target.value })
+              })
+            ] }),
+            jsxRuntimeExports.jsxs("label", { children: [
+              jsxRuntimeExports.jsx("span", { children: "Tagline" }),
+              jsxRuntimeExports.jsx("input", {
+                value: form.tagline,
+                maxLength: 100,
+                onChange: (event) => setForm({ ...form, tagline: event.target.value })
+              })
+            ] }),
+            jsxRuntimeExports.jsxs("label", { children: [
+              jsxRuntimeExports.jsx("span", { children: "Show title" }),
+              jsxRuntimeExports.jsx("input", {
+                value: form.showTitle,
+                maxLength: 64,
+                onChange: (event) => setForm({ ...form, showTitle: event.target.value })
+              })
+            ] })
+          ] }),
+          jsxRuntimeExports.jsxs("fieldset", { disabled: locked, children: [
+            jsxRuntimeExports.jsx("legend", { children: "Transmission" }),
+            jsxRuntimeExports.jsxs("label", { children: [
+              jsxRuntimeExports.jsx("span", { children: "Frequency (MHz)" }),
+              jsxRuntimeExports.jsx("input", {
+                type: "number",
+                min: snapshot.config.frequencyMin / 10,
+                max: snapshot.config.frequencyMax / 10,
+                step: "0.1",
+                required: true,
+                value: form.frequency / 10,
+                onChange: (event) => setForm({
+                  ...form,
+                  frequency: Math.round(Number(event.target.value) * 10)
+                })
+              })
+            ] }),
+            jsxRuntimeExports.jsxs("label", { children: [
+              jsxRuntimeExports.jsx("span", { children: "Transmitter power" }),
+              jsxRuntimeExports.jsx("select", {
+                value: form.power,
+                onChange: (event) => setForm({ ...form, power: event.target.value }),
+                children: snapshot.config.powerModes.map((mode) => jsxRuntimeExports.jsx("option", { value: mode.id, children: mode.label }, mode.id))
+              })
+            ] }),
+            jsxRuntimeExports.jsxs("label", { className: "chase-checkbox-label", children: [
+              jsxRuntimeExports.jsx("input", {
+                type: "checkbox",
+                checked: form.isPublic,
+                onChange: (event) => setForm({ ...form, isPublic: event.target.checked })
+              }),
+              jsxRuntimeExports.jsxs("span", { children: [
+                "List in station directory",
+                jsxRuntimeExports.jsx("small", { children: "Unlisted stations can still be tuned by frequency." })
+              ] })
+            ] })
           ] })
+        ]
+      }),
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsxs("fieldset", { className: "chase-studio-mode-options", disabled: locked, children: [
+          jsxRuntimeExports.jsx("legend", { children: "Playback mode" }),
+          [
+            {
+              id: "dj",
+              name: "DJ-managed",
+              description: "A DJ starts tracks, takes requests and manages the station in real time."
+            },
+            {
+              id: "autonomous",
+              name: "Autonomous",
+              description: "The music queue loops automatically while the transmitter is live."
+            }
+          ].map((mode) => jsxRuntimeExports.jsxs("label", { children: [
+            jsxRuntimeExports.jsx("input", {
+              type: "radio",
+              name: `${formId}-mode`,
+              checked: form.mode === mode.id,
+              onChange: () => setForm({ ...form, mode: mode.id })
+            }),
+            jsxRuntimeExports.jsxs("span", { children: [
+              jsxRuntimeExports.jsx("strong", { children: mode.name }),
+              jsxRuntimeExports.jsx("small", { children: mode.description })
+            ] })
+          ] }, mode.id))
         ] }),
-        jsxRuntimeExports.jsxs("div", { className: "chase-settings-footer chase-span-full", children: [
-          jsxRuntimeExports.jsx("p", { children: "Your changes apply when the station is saved." }),
-          jsxRuntimeExports.jsxs("button", {
-            className: "chase-button chase-primary",
-            disabled: busy || !station.canManage || snapshot.viewer.canOperate === false,
-            children: [
-              "Save station ",
-              jsxRuntimeExports.jsx(ChaseIcon, { name: "check", size: 17 })
-            ]
-          })
+        jsxRuntimeExports.jsx(ChaseBalance, {
+          snapshot,
+          station,
+          action,
+          busy
+        })
+      ] })
+    ] }),
+    jsxRuntimeExports.jsxs("footer", { className: "chase-studio-settings-footer", children: [
+      jsxRuntimeExports.jsxs("div", { children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: dirty ? "info" : "check", size: 27 }),
+        jsxRuntimeExports.jsxs("span", { children: [
+          jsxRuntimeExports.jsx("strong", { children: dirty ? "Unsaved changes" : "All changes saved" }),
+          jsxRuntimeExports.jsx("small", { children: dirty ? "Save to apply your station settings." : "Your station is up to date." })
         ] })
-      ]
-    })
+      ] }),
+      jsxRuntimeExports.jsx("button", {
+        type: "button",
+        className: "chase-button chase-secondary",
+        disabled: busy || !dirty,
+        onClick: () => setForm(current),
+        children: "Discard"
+      }),
+      jsxRuntimeExports.jsxs("button", {
+        form: formId,
+        className: "chase-button chase-primary",
+        disabled: locked || !dirty,
+        children: [
+          jsxRuntimeExports.jsx(ChaseIcon, { name: "check", size: 20 }),
+          "Save station"
+        ]
+      })
+    ] })
   ] });
 }
 function ChaseCreateStation({ snapshot, action, busy }) {
-  const [chaseName, chaseSetName] = reactExports.useState("");
-  const [chaseTagline, chaseSetTagline] = reactExports.useState("");
-  const [chaseFrequency, chaseSetFrequency] = reactExports.useState(987);
+  const [name, setName] = reactExports.useState("");
+  const [tagline, setTagline] = reactExports.useState("");
+  const [frequency, setFrequency] = reactExports.useState(Math.max(snapshot.config.frequencyMin, Math.min(snapshot.config.frequencyMax, 987)));
   return jsxRuntimeExports.jsxs("section", { className: "chase-card chase-create-station", children: [
     jsxRuntimeExports.jsxs("div", { className: "chase-create-intro", children: [
-      jsxRuntimeExports.jsx("span", { className: "chase-modal-icon", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "radio", size: 24 }) }),
+      jsxRuntimeExports.jsx("span", { className: "chase-modal-icon", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "broadcast", size: 28 }) }),
       jsxRuntimeExports.jsxs("div", { children: [
         jsxRuntimeExports.jsx("h2", { children: "Create your station" }),
-        jsxRuntimeExports.jsx("p", { children: "Reserve a frequency and access your mobile studio." })
+        jsxRuntimeExports.jsx("p", { children: "Reserve a frequency. Bring the airwaves to life." })
       ] }),
       jsxRuntimeExports.jsxs("span", { className: "chase-create-price", children: [
         ChaseMoney(snapshot.config.stationPrice, snapshot.config.currency),
@@ -15350,21 +16422,18 @@ function ChaseCreateStation({ snapshot, action, busy }) {
       ] })
     ] }),
     jsxRuntimeExports.jsxs("form", {
-      onSubmit: async (chaseEvent) => {
-        chaseEvent.preventDefault();
-        await action("createStation", {
-          name: chaseName,
-          tagline: chaseTagline,
-          frequency: chaseFrequency
-        }, "Your station is ready.");
+      onSubmit: async (event) => {
+        event.preventDefault();
+        await action("createStation", { name, tagline, frequency }, "Your station is ready.");
       },
       children: [
         jsxRuntimeExports.jsxs("label", { children: [
           "Station name",
           jsxRuntimeExports.jsx("input", {
-            value: chaseName,
-            onChange: (chaseEvent) => chaseSetName(chaseEvent.target.value),
-            maxLength: 40,
+            value: name,
+            onChange: (event) => setName(event.target.value),
+            minLength: 3,
+            maxLength: 48,
             required: true,
             placeholder: "Station name"
           })
@@ -15372,8 +16441,8 @@ function ChaseCreateStation({ snapshot, action, busy }) {
         jsxRuntimeExports.jsxs("label", { children: [
           "Tagline",
           jsxRuntimeExports.jsx("input", {
-            value: chaseTagline,
-            onChange: (chaseEvent) => chaseSetTagline(chaseEvent.target.value),
+            value: tagline,
+            onChange: (event) => setTagline(event.target.value),
             maxLength: 100,
             placeholder: "Station description"
           })
@@ -15385,18 +16454,18 @@ function ChaseCreateStation({ snapshot, action, busy }) {
             step: "0.1",
             min: snapshot.config.frequencyMin / 10,
             max: snapshot.config.frequencyMax / 10,
-            value: chaseFrequency / 10,
-            onChange: (chaseEvent) => chaseSetFrequency(Math.round(Number(chaseEvent.target.value) * 10)),
+            value: frequency / 10,
+            onChange: (event) => setFrequency(Math.round(Number(event.target.value) * 10)),
             required: true
           })
         ] }),
-        jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "Visit the acquisition point to purchase your station and reserve an available frequency." }),
+        jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "Visit the acquisition point to purchase a station and reserve an available frequency." }),
         jsxRuntimeExports.jsxs("button", {
           className: "chase-button chase-primary chase-full",
           disabled: busy || !snapshot.viewer.canCreate,
           children: [
-            "Acquire station ",
-            jsxRuntimeExports.jsx(ChaseIcon, { name: "arrow", size: 17 })
+            "Acquire station",
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "arrow", size: 18 })
           ]
         }),
         !snapshot.viewer.canCreate ? jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "Station acquisition requires authorized Signalworks employment." }) : null
@@ -15404,231 +16473,423 @@ function ChaseCreateStation({ snapshot, action, busy }) {
     })
   ] });
 }
+function chaseBearing(value) {
+  return (value % 360 + 360) % 360;
+}
+function chaseBearingText(value) {
+  return `${(Math.round(chaseBearing(value)) % 360).toString().padStart(3, "0")}°`;
+}
+function chaseDirection(value) {
+  return ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][Math.round(chaseBearing(value) / 45) % 8];
+}
+function chaseCompassPoint(degrees, radius) {
+  const radians = degrees * Math.PI / 180;
+  return {
+    x: 200 + radius * Math.sin(radians),
+    y: 200 - radius * Math.cos(radians)
+  };
+}
+const chaseCompassTicks = Array.from({ length: 72 }, (_, index) => index * 5);
+const chaseCompassLabels = Array.from({ length: 12 }, (_, index) => index * 30);
+const chaseCardinalLabels = {
+  0: "N",
+  90: "E",
+  180: "S",
+  270: "W"
+};
+function ChaseBearingGauge({ bearing }) {
+  return jsxRuntimeExports.jsxs("svg", {
+    className: "chase-scanner-compass",
+    viewBox: "0 0 400 400",
+    "aria-hidden": "true",
+    focusable: "false",
+    children: [
+      jsxRuntimeExports.jsx("circle", { className: "chase-compass-boundary", cx: "200", cy: "200", r: "185" }),
+      jsxRuntimeExports.jsx("circle", { className: "chase-compass-reference", cx: "200", cy: "200", r: "91" }),
+      jsxRuntimeExports.jsx("line", { className: "chase-compass-axis", x1: "200", y1: "91", x2: "200", y2: "309" }),
+      jsxRuntimeExports.jsx("line", { className: "chase-compass-axis", x1: "91", y1: "200", x2: "309", y2: "200" }),
+      jsxRuntimeExports.jsx("g", { className: "chase-compass-graduations", children: chaseCompassTicks.map((degrees) => {
+        const major = degrees % 30 === 0;
+        const cardinal = degrees % 90 === 0;
+        const outer = chaseCompassPoint(degrees, 177);
+        const inner = chaseCompassPoint(degrees, cardinal ? 157 : major ? 160 : 168);
+        return jsxRuntimeExports.jsx("line", {
+          className: major ? "chase-compass-tick major" : "chase-compass-tick",
+          "data-degrees": degrees,
+          x1: inner.x,
+          y1: inner.y,
+          x2: outer.x,
+          y2: outer.y
+        }, degrees);
+      }) }),
+      jsxRuntimeExports.jsx("g", { className: "chase-compass-labels", children: chaseCompassLabels.map((degrees) => {
+        const point = chaseCompassPoint(degrees, 137);
+        const cardinal = chaseCardinalLabels[degrees];
+        return jsxRuntimeExports.jsx("text", {
+          className: cardinal ? "chase-compass-cardinal" : "chase-compass-degree",
+          x: point.x,
+          y: point.y,
+          textAnchor: "middle",
+          dominantBaseline: "central",
+          children: cardinal || degrees
+        }, degrees);
+      }) }),
+      bearing === null ? jsxRuntimeExports.jsx("text", {
+        className: "chase-compass-no-reading",
+        x: "200",
+        y: "200",
+        textAnchor: "middle",
+        dominantBaseline: "central",
+        children: "NO BEARING"
+      }) : jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+        jsxRuntimeExports.jsxs("g", {
+          className: "chase-compass-bearing",
+          transform: `rotate(${chaseBearing(bearing)} 200 200)`,
+          "data-bearing": chaseBearing(bearing),
+          children: [
+            jsxRuntimeExports.jsx("line", { x1: "200", y1: "200", x2: "200", y2: "76" }),
+            jsxRuntimeExports.jsx("polygon", { points: "200,62 194,81 200,76 206,81" })
+          ]
+        }),
+        jsxRuntimeExports.jsx("circle", { className: "chase-compass-pivot", cx: "200", cy: "200", r: "11" })
+      ] })
+    ]
+  });
+}
+function chaseReadingAge(receivedAt, now) {
+  const seconds = Math.max(0, Math.floor((now - receivedAt) / 1e3));
+  if (seconds < 2)
+    return "Just received";
+  if (seconds < 60)
+    return `${seconds} seconds ago`;
+  const minutes = Math.floor(seconds / 60);
+  return `${minutes} minute${minutes === 1 ? "" : "s"} ago`;
+}
 function ChaseScanner({ snapshot, notify }) {
-  const [chaseFrequency, chaseSetFrequency] = reactExports.useState(987);
+  const chaseMinimum = snapshot.config.frequencyMin;
+  const chaseMaximum = snapshot.config.frequencyMax;
+  const [chaseFrequency, chaseSetFrequency] = reactExports.useState(() => (Math.max(chaseMinimum, Math.min(chaseMaximum, 987)) / 10).toFixed(3));
   const [chaseBusy, chaseSetBusy] = reactExports.useState(false);
   const [chaseReadings, chaseSetReadings] = reactExports.useState([]);
-  const chaseReading = chaseReadings[0];
+  const [chaseNow, chaseSetNow] = reactExports.useState(Date.now);
+  const chasePending = reactExports.useRef(false);
+  const chaseSequence = reactExports.useRef(0);
+  const chaseTarget = chaseFrequency.trim() ? Number(chaseFrequency) * 10 : NaN;
+  const chaseValidTarget = Number.isFinite(chaseTarget) && Math.abs(chaseTarget - Math.round(chaseTarget)) < 1e-5 && chaseTarget >= chaseMinimum && chaseTarget <= chaseMaximum;
+  const chaseEntry = chaseValidTarget ? chaseReadings.find((entry) => entry.reading.frequency === Math.round(chaseTarget)) : void 0;
+  const chaseReading = chaseEntry?.reading;
+  const chaseStrength = chaseReading ? chaseReading.detected ? chaseReading.strength : 0 : null;
+  reactExports.useEffect(() => {
+    if (!chaseEntry)
+      return;
+    chaseSetNow(Date.now());
+    const timer = window.setInterval(() => chaseSetNow(Date.now()), 1e3);
+    return () => window.clearInterval(timer);
+  }, [chaseEntry]);
+  function chaseStepFrequency(step) {
+    const current = Number.isFinite(chaseTarget) ? Math.round(chaseTarget) : chaseMinimum;
+    const next = Math.max(chaseMinimum, Math.min(chaseMaximum, current + step));
+    chaseSetFrequency((next / 10).toFixed(3));
+  }
   async function ChaseTakeReading(event) {
     event.preventDefault();
-    if (chaseBusy)
+    if (chasePending.current || !snapshot.viewer.isPolice)
       return;
+    if (!chaseValidTarget) {
+      notify("Choose a valid FM frequency in 0.1 MHz steps.", "error");
+      return;
+    }
+    chasePending.current = true;
     chaseSetBusy(true);
     try {
       const chaseResult = await ChasePost("scan", {
-        frequency: chaseFrequency
+        frequency: Math.round(chaseTarget)
       });
-      if (typeof chaseResult?.detected !== "boolean" || !Number.isFinite(chaseResult.frequency))
+      if (typeof chaseResult?.detected !== "boolean" || chaseResult.frequency !== Math.round(chaseTarget) || !Number.isFinite(chaseResult.strength) || !Number.isFinite(chaseResult.bearing) || !Number.isFinite(chaseResult.uncertainty) || !Number.isFinite(chaseResult.readings)) {
         throw new Error("The scanner returned an incomplete reading.");
-      chaseSetReadings((chaseCurrent) => [chaseResult, ...chaseCurrent].slice(0, 8));
+      }
+      const chaseReceivedAt = Date.now();
+      const chaseNext = {
+        id: ++chaseSequence.current,
+        receivedAt: chaseReceivedAt,
+        reading: chaseResult
+      };
+      chaseSetReadings((current) => [chaseNext, ...current].slice(0, 8));
+      chaseSetNow(chaseReceivedAt);
       notify(chaseResult.message || "Scanner reading received.", "info");
     } catch (chaseError) {
       notify(ChaseError(chaseError), "error");
     } finally {
+      chasePending.current = false;
       chaseSetBusy(false);
     }
   }
   if (!snapshot.viewer.isPolice)
     return jsxRuntimeExports.jsx("section", { className: "chase-card", children: jsxRuntimeExports.jsx(ChaseEmpty, { icon: "scan", title: "Scanner access restricted", children: "A scanner is available to authorized on-duty officers." }) });
-  return jsxRuntimeExports.jsxs("div", { className: "chase-scanner-grid", children: [
-    jsxRuntimeExports.jsxs("section", { className: "chase-card chase-scanner-main", children: [
-      jsxRuntimeExports.jsxs("div", { className: "chase-panel-heading", children: [
-        jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "DIRECTIONAL RECEIVER" }),
-        jsxRuntimeExports.jsx("span", { className: "chase-count-pill", children: "PASSIVE SCAN" })
-      ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-compass", children: [
-        jsxRuntimeExports.jsx("div", { className: "chase-compass-cross" }),
-        jsxRuntimeExports.jsx("div", { className: "chase-compass-ring" }),
-        jsxRuntimeExports.jsx("div", { className: "chase-compass-inner" }),
-        jsxRuntimeExports.jsx("span", { className: "chase-compass-n", children: "N" }),
-        jsxRuntimeExports.jsx("span", { className: "chase-compass-e", children: "E" }),
-        jsxRuntimeExports.jsx("span", { className: "chase-compass-s", children: "S" }),
-        jsxRuntimeExports.jsx("span", { className: "chase-compass-w", children: "W" }),
-        chaseReading?.detected ? jsxRuntimeExports.jsx("div", {
-          className: "chase-compass-needle",
-          style: { transform: `rotate(${chaseReading.bearing}deg)` },
-          children: jsxRuntimeExports.jsx(ChaseIcon, { name: "direction", size: 100 })
-        }) : jsxRuntimeExports.jsx("div", { className: "chase-compass-idle", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "scan", size: 44 }) }),
-        jsxRuntimeExports.jsx("div", { className: "chase-compass-center" })
-      ] }),
-      jsxRuntimeExports.jsxs("div", { className: "chase-scanner-bearing", children: [
-        jsxRuntimeExports.jsx("strong", { children: chaseReading?.detected ? `${Math.round(chaseReading.bearing)}°` : "— —" }),
-        jsxRuntimeExports.jsx("span", { children: chaseReading?.detected ? `Approximate bearing · ±${Math.round(chaseReading.uncertainty)}°` : "Awaiting your first reading" })
-      ] }),
-      jsxRuntimeExports.jsxs("form", { onSubmit: ChaseTakeReading, className: "chase-scanner-form", children: [
-        jsxRuntimeExports.jsx("label", { htmlFor: "chase-scan-frequency", children: "Target frequency (MHz)" }),
-        jsxRuntimeExports.jsxs("div", { className: "chase-input-action", children: [
-          jsxRuntimeExports.jsx("input", {
-            id: "chase-scan-frequency",
-            type: "number",
-            min: snapshot.config.frequencyMin / 10,
-            max: snapshot.config.frequencyMax / 10,
-            step: "0.1",
-            required: true,
-            value: chaseFrequency / 10,
-            onChange: (chaseEvent) => chaseSetFrequency(Math.round(Number(chaseEvent.target.value) * 10))
-          }),
-          jsxRuntimeExports.jsxs("button", { className: "chase-button chase-primary", disabled: chaseBusy, children: [
-            jsxRuntimeExports.jsx(ChaseIcon, { name: "scan", size: 18 }),
-            chaseBusy ? "Reading…" : "Take reading"
-          ] })
-        ] })
-      ] })
-    ] }),
-    jsxRuntimeExports.jsxs("div", { className: "chase-scanner-side", children: [
-      jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card", children: [
-        jsxRuntimeExports.jsxs("div", { className: "chase-panel-heading", children: [
-          jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "SIGNAL INTELLIGENCE" }),
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "signal" })
-        ] }),
-        jsxRuntimeExports.jsx("h2", { children: chaseReading ? chaseReading.detected ? "Signal detected" : "No signal detected" : "Signal information" }),
-        jsxRuntimeExports.jsx("p", { children: chaseReading?.message || "Take a reading from your current position. A bearing gives a direction, not a destination." }),
-        jsxRuntimeExports.jsxs("div", { className: "chase-scanner-quality", children: [
-          jsxRuntimeExports.jsx(ChaseSignal, {
-            quality: chaseReading ? chaseReading.detected ? chaseReading.strength : 0 : null
-          }),
-          jsxRuntimeExports.jsx("span", { children: chaseReading ? `${chaseReading.readings} separated reading${chaseReading.readings === 1 ? "" : "s"}` : "No readings yet" })
-        ] }),
-        chaseReading?.searchArea ? jsxRuntimeExports.jsxs("div", { className: "chase-search-area", children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "scan", size: 28 }),
-          jsxRuntimeExports.jsxs("div", { children: [
-            jsxRuntimeExports.jsx("strong", { children: "Approximate search area" }),
-            jsxRuntimeExports.jsxs("span", { children: [
-              Math.round(chaseReading.searchArea.radius),
-              " m radius · check your map"
-            ] })
-          ] })
-        ] }) : jsxRuntimeExports.jsxs("div", { className: "chase-scanner-tip", children: [
-          jsxRuntimeExports.jsx("span", { children: "SCAN GUIDANCE" }),
-          jsxRuntimeExports.jsx("p", { children: "Move between scans. Geographically separated readings help narrow the search area." })
-        ] })
-      ] }),
-      jsxRuntimeExports.jsxs("section", { className: "chase-card chase-content-card", children: [
-        jsxRuntimeExports.jsxs("div", { className: "chase-section-heading", children: [
-          jsxRuntimeExports.jsx("h3", { children: "Reading history" }),
-          jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "THIS SESSION" })
-        ] }),
-        chaseReadings.length ? jsxRuntimeExports.jsx("ol", { className: "chase-scan-history", children: chaseReadings.map((chaseItem, chaseIndex) => jsxRuntimeExports.jsxs("li", { children: [
-          jsxRuntimeExports.jsx("span", { children: (chaseReadings.length - chaseIndex).toString().padStart(2, "0") }),
-          jsxRuntimeExports.jsxs("div", { children: [
-            jsxRuntimeExports.jsxs("strong", { children: [
-              ChaseFrequency(chaseItem.frequency),
-              " FM"
-            ] }),
-            jsxRuntimeExports.jsx("small", { children: chaseItem.detected ? `${Math.round(chaseItem.bearing)}° bearing · ${Math.round(chaseItem.strength * 100)}% signal` : "No signal detected" })
-          ] }),
-          jsxRuntimeExports.jsx(ChaseIcon, {
-            name: chaseItem.detected ? "signal" : "scan",
-            size: 17
-          })
-        ] }, `${chaseItem.frequency}-${chaseIndex}`)) }) : jsxRuntimeExports.jsx("p", { className: "chase-caption", children: "Your recent readings will appear here. No exact transmitter location is displayed." })
-      ] })
-    ] })
-  ] });
-}
-function ChaseDirectory({ snapshot, speech, action, busy, refresh }) {
-  const [chaseSearch, chaseSetSearch] = reactExports.useState("");
-  const chaseActive = snapshot.stations.filter((chaseStation) => chaseStation.live === true);
-  const chaseStations = chaseActive.filter((chaseStation) => `${chaseStation.name} ${chaseStation.micLive ? chaseStation.hostName || "" : ""} ${ChaseFrequency(chaseStation.frequency)}`.toLowerCase().includes(chaseSearch.trim().toLowerCase()));
-  const chaseCanTune = !snapshot.devices || snapshot.devices.active !== "none";
-  return jsxRuntimeExports.jsxs("section", { className: "chase-active-directory chase-card", children: [
-    jsxRuntimeExports.jsxs("div", { className: "chase-section-heading", children: [
-      jsxRuntimeExports.jsxs("div", { children: [
-        jsxRuntimeExports.jsxs("h2", { children: [
-          "On the air",
-          " ",
-          jsxRuntimeExports.jsx("span", { className: "chase-count-pill", children: chaseActive.length })
-        ] }),
-        jsxRuntimeExports.jsx("p", { children: "Current broadcasts in your station directory." })
-      ] }),
-      jsxRuntimeExports.jsxs("button", {
-        className: "chase-button chase-secondary",
-        disabled: busy,
-        onClick: refresh,
+  return jsxRuntimeExports.jsxs("div", { className: "chase-scanner-console", children: [
+    jsxRuntimeExports.jsxs("div", { className: "chase-scanner-panels", children: [
+      jsxRuntimeExports.jsxs("section", {
+        className: "chase-scanner-direction",
+        "aria-labelledby": "chase-scanner-title",
         children: [
-          jsxRuntimeExports.jsx(ChaseIcon, { name: "refresh", size: 18 }),
-          "Refresh frequencies"
+          jsxRuntimeExports.jsx("h2", { id: "chase-scanner-title", children: "Directional receiver" }),
+          jsxRuntimeExports.jsx("p", { children: "Take directional readings and review signal history." }),
+          jsxRuntimeExports.jsx("div", {
+            className: `chase-scanner-dial ${chaseReading?.detected ? "has-reading" : ""}`,
+            role: "img",
+            "aria-label": chaseReading?.detected ? `Approximate bearing ${chaseBearingText(chaseReading.bearing)}, ${chaseDirection(chaseReading.bearing)}, uncertainty plus or minus ${Math.round(chaseReading.uncertainty)} degrees` : "Direction unavailable until a signal is detected",
+            children: jsxRuntimeExports.jsx(ChaseBearingGauge, {
+              bearing: chaseReading?.detected ? chaseReading.bearing : null
+            })
+          }),
+          jsxRuntimeExports.jsxs("div", { className: "chase-scanner-bearing-readout", "aria-live": "polite", children: [
+            jsxRuntimeExports.jsx("strong", { children: chaseReading?.detected ? chaseBearingText(chaseReading.bearing) : "— — —" }),
+            chaseReading?.detected ? jsxRuntimeExports.jsx("span", { children: chaseDirection(chaseReading.bearing) }) : null
+          ] }),
+          jsxRuntimeExports.jsx("p", { className: "chase-scanner-last-reading", children: chaseEntry ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
+            "Last reading ·",
+            " ",
+            jsxRuntimeExports.jsx("time", { dateTime: new Date(chaseEntry.receivedAt).toISOString(), children: chaseReadingAge(chaseEntry.receivedAt, chaseNow) })
+          ] }) : "Awaiting a reading on this frequency" }),
+          chaseReading?.detected ? jsxRuntimeExports.jsxs("p", { className: "chase-scanner-uncertainty", children: [
+            "Approximate bearing · ±",
+            Math.round(chaseReading.uncertainty),
+            "°"
+          ] }) : null
         ]
-      })
-    ] }),
-    jsxRuntimeExports.jsxs("label", { className: "chase-search", children: [
-      jsxRuntimeExports.jsx(ChaseIcon, { name: "search", size: 19 }),
-      jsxRuntimeExports.jsx("input", {
-        "aria-label": "Search active frequencies",
-        placeholder: "Search station, host or frequency",
-        value: chaseSearch,
-        onChange: (chaseEvent) => chaseSetSearch(chaseEvent.target.value)
-      })
-    ] }),
-    !chaseCanTune ? jsxRuntimeExports.jsxs("p", { className: "chase-directory-hint", children: [
-      jsxRuntimeExports.jsx(ChaseIcon, { name: "headphones", size: 18 }),
-      "Equip a receiver in Listen to tune in."
-    ] }) : null,
-    chaseStations.length ? jsxRuntimeExports.jsxs("div", { className: "chase-active-list", children: [
-      jsxRuntimeExports.jsxs("div", { className: "chase-active-columns", "aria-hidden": "true", children: [
-        jsxRuntimeExports.jsx("span", { children: "Station" }),
-        jsxRuntimeExports.jsx("span", { children: "Frequency" }),
-        jsxRuntimeExports.jsx("span", { children: "Host" }),
-        jsxRuntimeExports.jsx("span", { children: "Microphone" }),
-        jsxRuntimeExports.jsx("span", {})
-      ] }),
-      chaseStations.map((chaseStation) => {
-        const chaseTalking = speech?.local.talking && speech.local.stationId === chaseStation.id || speech?.receiver?.talking && speech.receiver.stationId === chaseStation.id;
-        const chaseConnected = snapshot.tunedStationId === chaseStation.id;
-        return jsxRuntimeExports.jsxs("article", { className: "chase-active-row", children: [
-          jsxRuntimeExports.jsxs("div", { className: "chase-active-name", children: [
-            jsxRuntimeExports.jsx("span", { className: "chase-station-symbol", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "broadcast", size: 22 }) }),
-            jsxRuntimeExports.jsxs("div", { children: [
-              jsxRuntimeExports.jsx("h3", { children: chaseStation.name }),
-              jsxRuntimeExports.jsx("p", { children: chaseStation.showTitle || "Live broadcast" })
+      }),
+      jsxRuntimeExports.jsxs("form", {
+        className: "chase-scanner-controls",
+        onSubmit: ChaseTakeReading,
+        "aria-busy": chaseBusy,
+        children: [
+          jsxRuntimeExports.jsxs("div", { children: [
+            jsxRuntimeExports.jsxs("label", {
+              className: "chase-scanner-label",
+              htmlFor: "chase-scan-frequency",
+              children: [
+                "Target frequency ",
+                jsxRuntimeExports.jsx("span", { children: "(MHz)" })
+              ]
+            }),
+            jsxRuntimeExports.jsx("p", { id: "chase-scan-frequency-hint", children: "Set the frequency to scan for signals." }),
+            jsxRuntimeExports.jsxs("div", { className: "chase-scanner-tuner", children: [
+              jsxRuntimeExports.jsxs("div", { className: "chase-scanner-frequency-field", children: [
+                jsxRuntimeExports.jsx("input", {
+                  id: "chase-scan-frequency",
+                  type: "number",
+                  inputMode: "decimal",
+                  min: chaseMinimum / 10,
+                  max: chaseMaximum / 10,
+                  step: "0.1",
+                  required: true,
+                  value: chaseFrequency,
+                  disabled: chaseBusy,
+                  "aria-describedby": "chase-scan-frequency-hint",
+                  onChange: (event) => chaseSetFrequency(event.target.value),
+                  onBlur: () => {
+                    if (chaseValidTarget)
+                      chaseSetFrequency((Math.round(chaseTarget) / 10).toFixed(3));
+                  }
+                }),
+                jsxRuntimeExports.jsx("span", { "aria-hidden": "true", children: "MHz" })
+              ] }),
+              jsxRuntimeExports.jsx("button", {
+                type: "button",
+                className: "chase-scanner-step",
+                "aria-label": "Decrease frequency by 0.1 MHz",
+                disabled: chaseBusy || chaseValidTarget && chaseTarget <= chaseMinimum,
+                onClick: () => chaseStepFrequency(-1),
+                children: jsxRuntimeExports.jsx(ChaseIcon, { name: "minus", size: 24 })
+              }),
+              jsxRuntimeExports.jsx("button", {
+                type: "button",
+                className: "chase-scanner-step",
+                "aria-label": "Increase frequency by 0.1 MHz",
+                disabled: chaseBusy || chaseValidTarget && chaseTarget >= chaseMaximum,
+                onClick: () => chaseStepFrequency(1),
+                children: jsxRuntimeExports.jsx(ChaseIcon, { name: "plus", size: 24 })
+              })
             ] })
           ] }),
-          jsxRuntimeExports.jsxs("div", { className: "chase-active-frequency", children: [
-            jsxRuntimeExports.jsx("span", { className: "chase-mobile-label", children: "Frequency" }),
-            jsxRuntimeExports.jsxs("strong", { children: [
-              ChaseFrequency(chaseStation.frequency),
-              " ",
-              jsxRuntimeExports.jsx("small", { children: "FM" })
-            ] })
-          ] }),
-          jsxRuntimeExports.jsxs("div", { className: "chase-active-host", children: [
-            jsxRuntimeExports.jsx("span", { className: "chase-mobile-label", children: "Host" }),
-            jsxRuntimeExports.jsxs("span", { children: [
-              chaseStation.micLive && chaseStation.hostName ? chaseStation.hostName : "No host",
-              chaseStation.micLive && chaseStation.cohostNames.length ? jsxRuntimeExports.jsxs("small", { className: "chase-cohost-count", children: [
-                "+",
-                chaseStation.cohostNames.length,
-                " co-host",
-                chaseStation.cohostNames.length === 1 ? "" : "s"
-              ] }) : null
-            ] })
-          ] }),
-          jsxRuntimeExports.jsxs("span", {
-            className: `chase-directory-speech ${chaseTalking ? "chase-speech-onair" : ""}`,
+          jsxRuntimeExports.jsxs("section", {
+            className: "chase-scanner-signal",
+            "aria-labelledby": "chase-scanner-strength-title",
             children: [
-              jsxRuntimeExports.jsx(ChaseIcon, { name: "mic", size: 17 }),
-              chaseTalking ? "On-air speech" : chaseStation.micLive ? "Mic open" : "Mic closed"
+              jsxRuntimeExports.jsx("h3", { id: "chase-scanner-strength-title", children: "Signal strength" }),
+              jsxRuntimeExports.jsxs("div", { className: "chase-scanner-signal-row", children: [
+                jsxRuntimeExports.jsx(ChaseMeter, {
+                  value: chaseStrength,
+                  label: chaseStrength === null ? "Signal strength unavailable; take a reading" : "Captured signal strength"
+                }),
+                jsxRuntimeExports.jsx("strong", { children: chaseStrength === null ? "No reading" : ChaseReceptionLabel(chaseStrength) })
+              ] }),
+              jsxRuntimeExports.jsx("p", { className: "chase-scanner-message", role: "status", children: chaseBusy ? "Taking a reading from your current position…" : chaseReading?.message || "Take a reading to measure this frequency." })
             ]
           }),
           jsxRuntimeExports.jsxs("button", {
-            className: `chase-button ${chaseConnected ? "chase-secondary" : "chase-primary"}`,
-            disabled: busy || !chaseCanTune || chaseConnected,
-            "aria-label": chaseConnected ? `Tuned to ${chaseStation.name}` : `Tune to ${chaseStation.name}`,
-            onClick: () => void action("tune", { stationId: chaseStation.id }, "Receiver tuned."),
+            type: "submit",
+            className: "chase-button chase-primary chase-scanner-submit",
+            disabled: chaseBusy || !chaseValidTarget,
             children: [
-              jsxRuntimeExports.jsx(ChaseIcon, {
-                name: chaseConnected ? "check" : "headphones",
-                size: 17
-              }),
-              chaseConnected ? "Tuned" : "Tune in"
+              jsxRuntimeExports.jsx(ChaseIcon, { name: "scan", size: 27 }),
+              chaseBusy ? "Taking reading…" : "Take reading"
             ]
-          })
-        ] }, chaseStation.id);
+          }),
+          chaseReading ? jsxRuntimeExports.jsxs("p", { className: "chase-scanner-count", children: [
+            chaseReading.readings,
+            " separated reading",
+            chaseReading.readings === 1 ? "" : "s",
+            " recorded"
+          ] }) : null,
+          chaseReading?.searchArea ? jsxRuntimeExports.jsxs("div", { className: "chase-scanner-search-area", children: [
+            jsxRuntimeExports.jsx(ChaseIcon, { name: "scan", size: 24 }),
+            jsxRuntimeExports.jsxs("div", { children: [
+              jsxRuntimeExports.jsx("strong", { children: "Approximate search area established" }),
+              jsxRuntimeExports.jsxs("span", { children: [
+                Math.round(chaseReading.searchArea.radius),
+                " m radius · check your map"
+              ] })
+            ] })
+          ] }) : null
+        ]
       })
-    ] }) : jsxRuntimeExports.jsx(ChaseEmpty, {
-      title: chaseActive.length ? "No matching frequencies" : "No active frequencies",
-      children: chaseActive.length ? "Try another station name, host or frequency." : "Stations appear here when they start broadcasting. Refresh to check again."
-    })
+    ] }),
+    jsxRuntimeExports.jsxs("section", {
+      className: "chase-scanner-history",
+      "aria-labelledby": "chase-scanner-history-title",
+      children: [
+        jsxRuntimeExports.jsxs("header", { children: [
+          jsxRuntimeExports.jsx("h2", { id: "chase-scanner-history-title", children: "Reading history" }),
+          jsxRuntimeExports.jsx("p", { children: "Your recent readings appear below. Bearings indicate direction, not distance." })
+        ] }),
+        jsxRuntimeExports.jsx("div", {
+          className: "chase-scanner-history-scroll",
+          tabIndex: 0,
+          role: "region",
+          "aria-label": "Recent scanner readings",
+          children: jsxRuntimeExports.jsxs("table", { children: [
+            jsxRuntimeExports.jsx("thead", { children: jsxRuntimeExports.jsxs("tr", { children: [
+              jsxRuntimeExports.jsx("th", { scope: "col", children: "Time" }),
+              jsxRuntimeExports.jsx("th", { scope: "col", children: "Frequency" }),
+              jsxRuntimeExports.jsx("th", { scope: "col", children: "Bearing" }),
+              jsxRuntimeExports.jsx("th", { scope: "col", children: "Reception" })
+            ] }) }),
+            jsxRuntimeExports.jsx("tbody", { children: chaseReadings.length ? chaseReadings.map(({ id, receivedAt, reading }) => jsxRuntimeExports.jsxs("tr", { children: [
+              jsxRuntimeExports.jsx("td", { children: jsxRuntimeExports.jsx("time", {
+                dateTime: new Date(receivedAt).toISOString(),
+                title: "Received at local time",
+                children: new Date(receivedAt).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  second: "2-digit",
+                  hour12: false
+                })
+              }) }),
+              jsxRuntimeExports.jsxs("td", { children: [
+                (reading.frequency / 10).toFixed(3),
+                " MHz"
+              ] }),
+              jsxRuntimeExports.jsx("td", { children: reading.detected ? jsxRuntimeExports.jsxs("span", {
+                title: `Approximate bearing, ±${Math.round(reading.uncertainty)}°`,
+                children: [
+                  chaseBearingText(reading.bearing),
+                  " ",
+                  jsxRuntimeExports.jsxs("small", { children: [
+                    "±",
+                    Math.round(reading.uncertainty),
+                    "°"
+                  ] })
+                ]
+              }) : "—" }),
+              jsxRuntimeExports.jsx("td", {
+                className: reading.detected ? "chase-scanner-detected" : "",
+                children: reading.detected ? ChaseReceptionLabel(reading.strength) : "No signal"
+              })
+            ] }, id)) : jsxRuntimeExports.jsx("tr", { children: jsxRuntimeExports.jsx("td", { colSpan: 4, className: "chase-scanner-history-empty", children: "No readings yet. Set a frequency and take your first reading." }) }) })
+          ] })
+        })
+      ]
+    }),
+    jsxRuntimeExports.jsxs("footer", { className: "chase-scanner-guidance", children: [
+      jsxRuntimeExports.jsx(ChaseIcon, { name: "info", size: 22 }),
+      jsxRuntimeExports.jsx("p", { children: "Move between readings to narrow the search area. Bearings indicate direction, not distance." }),
+      jsxRuntimeExports.jsx("span", { children: "Senora County // Field operations" })
+    ] })
+  ] });
+}
+function ChaseDirectory({ snapshot, speech, action, busy, quality = null, onListen }) {
+  const chaseStation = snapshot.stations.find((chaseItem) => chaseItem.id === snapshot.tunedStationId);
+  if (!chaseStation)
+    return jsxRuntimeExports.jsxs("section", { className: "chase-onair-empty", children: [
+      jsxRuntimeExports.jsx(ChaseEmpty, { icon: "headphones", title: "Find your station first", children: "Tune to a station in Listen, then come here to send requests and support the crew." }),
+      jsxRuntimeExports.jsxs("button", { className: "chase-button chase-primary", onClick: onListen, children: [
+        jsxRuntimeExports.jsx(ChaseIcon, { name: "broadcast" }),
+        "Browse stations"
+      ] })
+    ] });
+  const chaseTalking = speech?.receiver?.stationId === chaseStation.id && speech.receiver.talking;
+  return jsxRuntimeExports.jsxs("div", { className: "chase-onair", children: [
+    jsxRuntimeExports.jsxs("section", { className: "chase-tuned-panel", children: [
+      jsxRuntimeExports.jsxs("div", { className: "chase-section-intro", children: [
+        jsxRuntimeExports.jsx("h2", { children: "CURRENTLY TUNED" }),
+        jsxRuntimeExports.jsx("p", { children: "Live radio from across Senora County." })
+      ] }),
+      jsxRuntimeExports.jsxs("div", { className: "chase-tuned-identity", children: [
+        jsxRuntimeExports.jsx(ChaseStationArt, { station: chaseStation }),
+        jsxRuntimeExports.jsxs("div", { className: "chase-tuned-details", children: [
+          jsxRuntimeExports.jsx("h2", { children: chaseStation.name }),
+          jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "SENORA COUNTY" }),
+          jsxRuntimeExports.jsxs("div", { className: "chase-dial-frequency", children: [
+            ChaseFrequency(chaseStation.frequency),
+            jsxRuntimeExports.jsx("small", { children: "FM" })
+          ] }),
+          jsxRuntimeExports.jsx(ChaseStatus, { live: chaseStation.live, children: chaseStation.live ? "LIVE" : "OFF AIR" }),
+          jsxRuntimeExports.jsxs("div", { className: "chase-tuned-show", children: [
+            jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "SHOW" }),
+            jsxRuntimeExports.jsx("h3", { children: chaseStation.showTitle || "No show scheduled" }),
+            jsxRuntimeExports.jsx("p", { children: chaseStation.hostName ? `with ${chaseStation.hostName}` : "Independent broadcast" })
+          ] }),
+          jsxRuntimeExports.jsxs("div", { className: "chase-tuned-show", children: [
+            jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "NOW PLAYING" }),
+            jsxRuntimeExports.jsx("h3", { children: chaseTalking ? "Live microphone" : chaseStation.nowPlaying?.title || "Nothing playing" }),
+            jsxRuntimeExports.jsx("p", { children: chaseStation.nowPlaying?.provider === "file" ? "Station cartridge" : chaseStation.nowPlaying?.provider === "youtube" ? "YouTube" : chaseStation.nowPlaying?.provider === "soundcloud" ? "SoundCloud" : "" })
+          ] })
+        ] })
+      ] }),
+      jsxRuntimeExports.jsxs("div", { className: "chase-tuned-reception", children: [
+        jsxRuntimeExports.jsx("span", { className: "chase-eyebrow", children: "RECEPTION" }),
+        jsxRuntimeExports.jsxs("div", { children: [
+          jsxRuntimeExports.jsx(ChaseMeter, { value: quality, label: "Signal strength" }),
+          jsxRuntimeExports.jsx("strong", { children: ChaseReceptionLabel(quality) })
+        ] }),
+        jsxRuntimeExports.jsx("p", { children: quality === null ? "Waiting for receiver information." : quality > 0.66 ? "Clear signal. Great reception in your area." : quality > 0 ? "Reception changes with your distance and surroundings." : "Move within range of the transmitter." })
+      ] }),
+      jsxRuntimeExports.jsx(ChaseCallControls, {
+        snapshot,
+        station: chaseStation,
+        action,
+        busy
+      })
+    ] }),
+    jsxRuntimeExports.jsxs("section", { className: "chase-send-panel", children: [
+      jsxRuntimeExports.jsxs("div", { className: "chase-section-intro", children: [
+        jsxRuntimeExports.jsx("h2", { children: "SEND TO THE STUDIO" }),
+        jsxRuntimeExports.jsx("p", { children: "Get your music heard on Senora County." })
+      ] }),
+      jsxRuntimeExports.jsx(ChaseRequestForm, {
+        snapshot,
+        station: chaseStation,
+        action,
+        busy
+      }, chaseStation.id),
+      jsxRuntimeExports.jsx(ChaseTipForm, {
+        snapshot,
+        station: chaseStation,
+        action,
+        busy
+      })
+    ] })
   ] });
 }
 const chaseTalkKeyLabels = {
@@ -15917,7 +17178,10 @@ function ChasePhoneApp({ snapshot, loading, busy, error, speech, talkKey, talk, 
         }) : jsxRuntimeExports.jsx(ChasePhoneStudio, {
           snapshot,
           action,
-          busy
+          busy,
+          speech,
+          talk,
+          talkKey
         }) }, chaseCurrentTab)
       }) : loading ? jsxRuntimeExports.jsxs("div", { className: "chase-loading", role: "status", children: [
         jsxRuntimeExports.jsx(ChaseIcon, { name: "radio", size: 36 }),
@@ -16398,7 +17662,7 @@ function ChasePhoneDevices({ snapshot, action, busy }) {
     chaseDevices.active === "none" ? jsxRuntimeExports.jsx("p", { className: "chase-phone-hint", children: "Equip a receiver to listen. Buy one from the Senora kiosk vendor in Legion Square." }) : null
   ] });
 }
-function ChasePhoneStudio({ snapshot, action, busy }) {
+function ChasePhoneStudio({ snapshot, action, busy, speech, talk, talkKey }) {
   const [chaseOpen, chaseSetOpen] = reactExports.useState({
     music: true
   });
@@ -16438,7 +17702,10 @@ function ChasePhoneStudio({ snapshot, action, busy }) {
       snapshot,
       station: chaseMine,
       action,
-      busy
+      busy,
+      speech: speech ?? void 0,
+      talk,
+      talkKey
     }),
     jsxRuntimeExports.jsx(ChasePhoneSection, {
       eyebrow: "Playlist",
@@ -16675,6 +17942,7 @@ function ChaseApp() {
   const [chaseSpeechTalkKey, chaseSetSpeechTalkKey] = reactExports.useState(void 0);
   const [chasePhoneOpen, chaseSetPhoneOpen] = reactExports.useState(false);
   const [chasePlayback, chaseSetPlayback] = reactExports.useState(null);
+  const [chasePreviewPlayback, chaseSetPreviewPlayback] = reactExports.useState(null);
   const [chaseSnapshot, chaseSetSnapshot] = reactExports.useState(null);
   const [chaseLoading, chaseSetLoading] = reactExports.useState(false);
   const [chaseBusy, chaseSetBusy] = reactExports.useState(false);
@@ -16695,6 +17963,10 @@ function ChaseApp() {
   const chasePlayerRef = reactExports.useRef(null);
   const chaseAudioIdentityRef = reactExports.useRef(null);
   const chaseMonitorRef = reactExports.useRef(false);
+  const chasePausedRef = reactExports.useRef(false);
+  const chaseMusicVolumeRef = reactExports.useRef(1);
+  const chasePreviewAudioRef = reactExports.useRef(null);
+  const chasePreviewTimerRef = reactExports.useRef(void 0);
   const chaseViewRef = reactExports.useRef("listen");
   const chaseGenerationRef = reactExports.useRef(0);
   const chasePanelRef = reactExports.useRef(null);
@@ -16712,11 +17984,13 @@ function ChaseApp() {
         chaseAudioRef.current.volume = chaseLevel;
       chasePlayerRef.current?.setVolume(chaseLevel);
     }));
-    chaseVolumeFaderRef.current.set(value);
+    chaseVolumeFaderRef.current.set(value * chaseMusicVolumeRef.current);
   }, []);
   const ChaseChangeVolume = reactExports.useCallback((value) => {
     chaseSetVolume(value);
     chaseVolumeRef.current = value;
+    if (chasePreviewAudioRef.current)
+      chasePreviewAudioRef.current.volume = value / 100;
     ChaseApplyOutputVolume(ChasePlaybackVolume(value, chaseQualityRef.current, chaseGainRef.current, chaseMonitorRef.current));
   }, [ChaseApplyOutputVolume]);
   const ChaseStopAudio = reactExports.useCallback(() => {
@@ -16734,7 +18008,20 @@ function ChaseApp() {
   const ChaseNotify = reactExports.useCallback((message, tone) => {
     chaseSetToast({ message, tone });
   }, []);
+  const ChaseStopPreviewAudio = reactExports.useCallback(() => {
+    window.clearTimeout(chasePreviewTimerRef.current);
+    chasePreviewTimerRef.current = void 0;
+    chasePreviewAudioRef.current?.pause();
+    chasePreviewAudioRef.current = null;
+    chaseSetPreviewPlayback(null);
+  }, []);
+  reactExports.useEffect(() => {
+    if (chaseView !== "studio")
+      ChaseStopPreviewAudio();
+  }, [chaseView, ChaseStopPreviewAudio]);
   const ChaseStartPlayback = reactExports.useCallback(async (audio) => {
+    if (chasePausedRef.current)
+      return;
     try {
       if (chaseGraphRef.current && chaseContextRef.current?.state !== "running") {
         let chaseResumeTimeout;
@@ -16749,17 +18036,21 @@ function ChaseApp() {
           window.clearTimeout(chaseResumeTimeout);
         }
       }
-      if (chaseAudioRef.current !== audio)
+      if (chaseAudioRef.current !== audio || chasePausedRef.current)
         return;
       if (chaseGraphRef.current && chaseContextRef.current?.state !== "running")
         throw new Error("Audio is paused. Click inside the receiver to enable sound.");
       await audio.play();
+      if (chaseAudioRef.current !== audio || chasePausedRef.current) {
+        audio.pause();
+        return;
+      }
       if (chaseAudioRef.current === audio)
         chaseSetPlayback((chaseCurrent) => chaseCurrent ? { ...chaseCurrent, phase: "playing" } : null);
       if (chaseAudioRef.current === audio)
         chaseSetToast((chaseCurrent) => chaseCurrent?.message === "Audio is paused. Click inside the receiver to enable sound." ? null : chaseCurrent);
     } catch (chaseFailure) {
-      if (chaseAudioRef.current !== audio)
+      if (chaseAudioRef.current !== audio || chasePausedRef.current)
         return;
       const chaseLoadFailed = Boolean(audio.error) || chaseFailure instanceof DOMException && chaseFailure.name === "NotSupportedError";
       chaseSetPlayback((chaseCurrent) => chaseCurrent ? { ...chaseCurrent, phase: chaseLoadFailed ? "error" : "blocked" } : null);
@@ -16769,6 +18060,8 @@ function ChaseApp() {
   const ChaseApplySnapshot = reactExports.useCallback((data) => {
     const chaseData = ChaseNormalizeSnapshot(data);
     chaseSetSnapshot(chaseData);
+    if (!chaseData.mine || chaseData.viewer.canOperate === false)
+      ChaseStopPreviewAudio();
     if (chaseData.speech !== void 0)
       chaseSetSpeech(ChaseNormalizeSpeech(chaseData.speech));
     if (chaseData.config.speech) {
@@ -16781,9 +18074,11 @@ function ChaseApp() {
       const chaseValue = Math.max(0, Math.min(100, chaseData.volume));
       chaseSetVolume(chaseValue);
       chaseVolumeRef.current = chaseValue;
+      if (chasePreviewAudioRef.current)
+        chasePreviewAudioRef.current.volume = chaseValue / 100;
       ChaseApplyOutputVolume(ChasePlaybackVolume(chaseValue, chaseQualityRef.current, chaseGainRef.current, chaseMonitorRef.current));
     }
-  }, [ChaseApplyOutputVolume]);
+  }, [ChaseApplyOutputVolume, ChaseStopPreviewAudio]);
   const ChaseBootstrap = reactExports.useCallback(async () => {
     const chaseGeneration = ++chaseGenerationRef.current;
     chaseSetLoading(true);
@@ -16803,6 +18098,7 @@ function ChaseApp() {
     }
   }, [ChaseApplySnapshot]);
   const ChaseClose = reactExports.useCallback(async () => {
+    ChaseStopPreviewAudio();
     try {
       await ChasePost("close");
       chaseSetVisible(false);
@@ -16810,7 +18106,7 @@ function ChaseApp() {
     } catch (chaseFailure) {
       ChaseNotify(ChaseError(chaseFailure), "error");
     }
-  }, [ChaseNotify]);
+  }, [ChaseNotify, ChaseStopPreviewAudio]);
   const ChaseAction = reactExports.useCallback(async (action, data = {}, message) => {
     if (chaseBusyRef.current)
       return false;
@@ -16866,6 +18162,8 @@ function ChaseApp() {
       if (!chaseData || typeof chaseData !== "object" || typeof chaseData.type !== "string")
         return;
       if (chaseData.type === "chase_bootleg:visibility") {
+        if (chaseData.visible !== true)
+          ChaseStopPreviewAudio();
         chaseSetVisible(chaseData.visible === true);
         const chasePlacedTarget = chaseData.receiver === "placed" ? ChaseNormalizePlaced(chaseData.placed) : null;
         chaseSetPlaced(chasePlacedTarget);
@@ -16910,7 +18208,68 @@ function ChaseApp() {
         const chaseValue = Math.max(0, Math.min(100, chaseData.volume));
         chaseSetVolume(chaseValue);
         chaseVolumeRef.current = chaseValue;
+        if (chasePreviewAudioRef.current)
+          chasePreviewAudioRef.current.volume = chaseValue / 100;
         ChaseApplyOutputVolume(ChasePlaybackVolume(chaseValue, chaseQualityRef.current, chaseGainRef.current, chaseMonitorRef.current));
+      } else if (chaseData.type === "chase_bootleg:previewStop") {
+        ChaseStopPreviewAudio();
+      } else if (chaseData.type === "chase_bootleg:previewAudio" && !chasePhone) {
+        ChaseStopPreviewAudio();
+        try {
+          let ChasePreviewFailed = function() {
+            if (chasePreviewAudioRef.current !== chaseAudio)
+              return;
+            window.clearTimeout(chasePreviewTimerRef.current);
+            chaseAudio.pause();
+            chasePreviewAudioRef.current = null;
+            chaseSetPreviewPlayback((chaseCurrent) => chaseCurrent ? { ...chaseCurrent, phase: "error" } : null);
+            ChaseNotify("The private preview could not play. Try Preview again.", "error");
+          };
+          if (typeof chaseData.url !== "string" || typeof chaseData.cartridgeId !== "string")
+            return;
+          const chaseUrl = new URL(chaseData.url, window.location.href);
+          const chaseDuration = Number(chaseData.duration);
+          if (!["https:", "http:"].includes(chaseUrl.protocol) || !Number.isFinite(chaseDuration) || chaseDuration <= 0 || chaseDuration > 600)
+            return;
+          const chaseAudio = new Audio(chaseUrl.href);
+          chasePreviewAudioRef.current = chaseAudio;
+          chaseAudio.volume = chaseVolumeRef.current / 100;
+          chaseSetPreviewPlayback({
+            cartridgeId: chaseData.cartridgeId,
+            name: String(chaseData.title || "Cartridge preview"),
+            duration: chaseDuration,
+            startedAt: Date.now() / 1e3,
+            phase: "loading"
+          });
+          chasePreviewTimerRef.current = window.setTimeout(ChasePreviewFailed, 15e3);
+          chaseAudio.addEventListener("loadedmetadata", () => {
+            if (chasePreviewAudioRef.current !== chaseAudio)
+              return;
+            void chaseAudio.play().then(() => {
+              if (chasePreviewAudioRef.current !== chaseAudio) {
+                chaseAudio.pause();
+                return;
+              }
+              window.clearTimeout(chasePreviewTimerRef.current);
+              chaseSetPreviewPlayback((chaseCurrent) => chaseCurrent ? {
+                ...chaseCurrent,
+                startedAt: Date.now() / 1e3,
+                phase: "playing"
+              } : null);
+              chasePreviewTimerRef.current = window.setTimeout(ChaseStopPreviewAudio, chaseDuration * 1e3);
+            }).catch(ChasePreviewFailed);
+          }, { once: true });
+          chaseAudio.addEventListener("ended", () => {
+            if (chasePreviewAudioRef.current === chaseAudio)
+              ChaseStopPreviewAudio();
+          }, { once: true });
+          chaseAudio.addEventListener("error", ChasePreviewFailed, {
+            once: true
+          });
+        } catch {
+          ChaseStopPreviewAudio();
+          ChaseNotify("The cartridge preview address is invalid.", "error");
+        }
       } else if (chaseData.type === "chase_bootleg:audioStop") {
         ChaseStopAudio();
       } else if (chaseData.type === "chase_bootleg:incomingCall") {
@@ -16938,15 +18297,30 @@ function ChaseApp() {
         chaseQualityRef.current = Number.isFinite(chaseData.quality) ? Math.max(0, Math.min(1, chaseData.quality)) : 1;
         chaseGainRef.current = Number.isFinite(chaseData.gain) ? Math.max(0, Math.min(1, chaseData.gain)) : 1;
         const chaseMonitor = chaseData.monitor === true;
+        const chasePaused = chaseData.paused === true;
+        const chaseWasPaused = chasePausedRef.current;
+        chasePausedRef.current = chasePaused;
+        chaseMusicVolumeRef.current = Number.isFinite(chaseData.musicVolume) ? Math.max(0, Math.min(1, chaseData.musicVolume)) : 1;
+        const chaseOffset = chasePaused && Number.isFinite(chaseData.offsetSeconds) ? Math.max(0, chaseData.offsetSeconds) : chaseStartedSeconds !== null ? Math.max(0, Date.now() / 1e3 - chaseStartedSeconds) : 0;
         const chaseTrackVolume = ChasePlaybackVolume(chaseVolumeRef.current, chaseQualityRef.current, chaseGainRef.current, chaseMonitor);
         if (chaseAudioIdentityRef.current === chaseIdentity && chasePlayerRef.current) {
           chaseMonitorRef.current = chaseMonitor;
-          chaseSetPlayback((chaseCurrent) => chaseCurrent ? { ...chaseCurrent, monitor: chaseMonitor } : null);
+          chaseSetPlayback((chaseCurrent) => chaseCurrent ? {
+            ...chaseCurrent,
+            monitor: chaseMonitor,
+            phase: chasePaused ? "paused" : chaseWasPaused ? "loading" : chaseCurrent.phase
+          } : null);
+          if (chasePaused) {
+            chasePlayerRef.current.pause();
+            chasePlayerRef.current.seek(chaseOffset);
+          } else if (chaseWasPaused) {
+            chasePlayerRef.current.seek(chaseOffset);
+            chasePlayerRef.current.play();
+          }
           ChaseApplyOutputVolume(chaseTrackVolume);
           return;
         }
         ChaseStopAudio();
-        const chaseOffset = chaseStartedSeconds !== null ? Math.max(0, Date.now() / 1e3 - chaseStartedSeconds) : 0;
         const chaseDuration = Number(chaseData.duration);
         if (chaseDuration > 0 && chaseOffset >= chaseDuration)
           return;
@@ -16954,11 +18328,15 @@ function ChaseApp() {
           provider: chaseData.provider,
           url: chaseData.url,
           onPlaying: () => {
+            if (chasePlayerRef.current === chasePlayer && chasePausedRef.current) {
+              chasePlayer.pause();
+              return;
+            }
             if (chasePlayerRef.current === chasePlayer)
               chaseSetPlayback((chaseCurrent) => chaseCurrent ? { ...chaseCurrent, phase: "playing" } : null);
           },
           onEnded: () => {
-            if (chasePlayerRef.current === chasePlayer)
+            if (chasePlayerRef.current === chasePlayer && !chasePausedRef.current)
               ChaseStopAudio();
           },
           onError: (chaseMessage) => {
@@ -16972,7 +18350,7 @@ function ChaseApp() {
         chaseAudioIdentityRef.current = chaseIdentity;
         chaseMonitorRef.current = chaseMonitor;
         chaseSetPlayback({
-          phase: "loading",
+          phase: chasePaused ? "paused" : "loading",
           monitor: chaseMonitor,
           stationId: Number.isFinite(chaseData.stationId) ? chaseData.stationId : void 0,
           name: typeof chaseData.title === "string" && chaseData.title ? chaseData.title : typeof chaseData.name === "string" ? chaseData.name : "Track",
@@ -16981,7 +18359,8 @@ function ChaseApp() {
         chasePlayer.setVolume(0);
         ChaseApplyOutputVolume(chaseTrackVolume);
         chasePlayer.seek(chaseOffset);
-        chasePlayer.play();
+        if (!chasePaused)
+          chasePlayer.play();
       } else if (chaseData.type === "chase_bootleg:audio" && typeof chaseData.url === "string" && !chasePreview && !chasePhone) {
         try {
           const chaseUrl = new URL(chaseData.url, window.location.href);
@@ -16999,10 +18378,26 @@ function ChaseApp() {
           chaseQualityRef.current = Number.isFinite(chaseData.quality) ? Math.max(0, Math.min(1, chaseData.quality)) : 1;
           chaseGainRef.current = Number.isFinite(chaseData.gain) ? Math.max(0, Math.min(1, chaseData.gain)) : 1;
           const chaseMonitor = chaseData.monitor === true;
+          const chasePaused = chaseData.paused === true;
+          const chaseWasPaused = chasePausedRef.current;
+          chasePausedRef.current = chasePaused;
+          chaseMusicVolumeRef.current = Number.isFinite(chaseData.musicVolume) ? Math.max(0, Math.min(1, chaseData.musicVolume)) : 1;
+          const chaseOffset = chasePaused && Number.isFinite(chaseData.offsetSeconds) ? Math.max(0, chaseData.offsetSeconds) : chaseStartedSeconds !== null ? Math.max(0, Date.now() / 1e3 - chaseStartedSeconds) : 0;
           const chaseAudioVolume = ChasePlaybackVolume(chaseVolumeRef.current, chaseQualityRef.current, chaseGainRef.current, chaseMonitor);
           if (chaseAudioIdentityRef.current === chaseIdentity && chaseAudioRef.current) {
             chaseMonitorRef.current = chaseMonitor;
-            chaseSetPlayback((chaseCurrent) => chaseCurrent ? { ...chaseCurrent, monitor: chaseMonitor } : null);
+            chaseSetPlayback((chaseCurrent) => chaseCurrent ? {
+              ...chaseCurrent,
+              monitor: chaseMonitor,
+              phase: chasePaused ? "paused" : chaseWasPaused ? "loading" : chaseCurrent.phase
+            } : null);
+            if (chasePaused) {
+              chaseAudioRef.current.pause();
+              chaseAudioRef.current.currentTime = chaseOffset;
+            } else if (chaseWasPaused) {
+              chaseAudioRef.current.currentTime = chaseOffset;
+              void ChaseStartPlayback(chaseAudioRef.current);
+            }
             ChaseApplyOutputVolume(chaseAudioVolume);
             if (chaseGraphRef.current)
               ChaseApplyProfile(chaseGraphRef.current, chaseProfileRef.current);
@@ -17014,7 +18409,7 @@ function ChaseApp() {
           chaseAudioIdentityRef.current = chaseIdentity;
           chaseMonitorRef.current = chaseMonitor;
           chaseSetPlayback({
-            phase: "loading",
+            phase: chasePaused ? "paused" : "loading",
             monitor: chaseMonitor,
             stationId: Number.isFinite(chaseData.stationId) ? chaseData.stationId : void 0,
             name: typeof chaseData.title === "string" && chaseData.title ? chaseData.title : typeof chaseData.name === "string" ? chaseData.name : "Cartridge",
@@ -17030,7 +18425,6 @@ function ChaseApp() {
           }
           chaseAudio.volume = 0;
           ChaseApplyOutputVolume(chaseAudioVolume);
-          const chaseOffset = chaseStartedSeconds !== null ? Math.max(0, Date.now() / 1e3 - chaseStartedSeconds) : 0;
           chaseAudio.addEventListener("loadedmetadata", () => {
             if (chaseAudioRef.current !== chaseAudio)
               return;
@@ -17039,7 +18433,8 @@ function ChaseApp() {
               return;
             }
             chaseAudio.currentTime = chaseOffset;
-            void ChaseStartPlayback(chaseAudio);
+            if (!chasePausedRef.current)
+              void ChaseStartPlayback(chaseAudio);
           }, { once: true });
           chaseAudio.addEventListener("error", () => {
             if (chaseAudioRef.current === chaseAudio) {
@@ -17048,7 +18443,7 @@ function ChaseApp() {
             }
           }, { once: true });
           chaseAudio.addEventListener("ended", () => {
-            if (chaseAudioRef.current === chaseAudio)
+            if (chaseAudioRef.current === chaseAudio && !chasePausedRef.current)
               ChaseStopAudio();
           }, { once: true });
         } catch {
@@ -17060,6 +18455,7 @@ function ChaseApp() {
     return () => {
       window.removeEventListener("message", ChaseReceiveMessage);
       ChaseStopAudio();
+      ChaseStopPreviewAudio();
       void chaseContextRef.current?.close();
       chaseContextRef.current = null;
     };
@@ -17068,13 +18464,14 @@ function ChaseApp() {
     ChaseApplyOutputVolume,
     ChaseNotify,
     ChaseStopAudio,
-    ChaseStartPlayback
+    ChaseStartPlayback,
+    ChaseStopPreviewAudio
   ]);
   reactExports.useEffect(() => {
     if (chasePhone)
       return;
     function ChaseResumeAudio() {
-      if (!chaseAudioRef.current)
+      if (!chaseAudioRef.current || chasePausedRef.current)
         return;
       if (chaseAudioRef.current.paused || chaseGraphRef.current && chaseContextRef.current?.state === "suspended")
         void ChaseStartPlayback(chaseAudioRef.current);
@@ -17182,24 +18579,24 @@ function ChaseApp() {
           jsxRuntimeExports.jsx("div", { className: "chase-brand", "aria-label": "Senora Signalworks", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "broadcast", size: 28 }) }),
           jsxRuntimeExports.jsxs("nav", { "aria-label": "Radio sections", children: [
             jsxRuntimeExports.jsxs("button", {
-              "aria-label": "Discover",
-              title: "Discover",
+              "aria-label": "Listen",
+              title: "Listen",
               className: chaseCurrentView === "listen" ? "chase-nav-active" : "",
               "aria-current": chaseCurrentView === "listen" ? "page" : void 0,
               onClick: () => chaseSetView("listen"),
               children: [
-                jsxRuntimeExports.jsx(ChaseIcon, { name: "radio", size: 24 }),
+                jsxRuntimeExports.jsx(ChaseIcon, { name: "headphones", size: 24 }),
                 jsxRuntimeExports.jsx("span", { children: "Listen" })
               ]
             }),
             jsxRuntimeExports.jsxs("button", {
-              "aria-label": "Active frequencies",
-              title: "Active frequencies",
+              "aria-label": "On air",
+              title: "On air",
               className: chaseCurrentView === "directory" ? "chase-nav-active" : "",
               "aria-current": chaseCurrentView === "directory" ? "page" : void 0,
               onClick: () => chaseSetView("directory"),
               children: [
-                jsxRuntimeExports.jsx(ChaseIcon, { name: "directory", size: 24 }),
+                jsxRuntimeExports.jsx(ChaseIcon, { name: "mic", size: 24 }),
                 jsxRuntimeExports.jsx("span", { children: "On air" })
               ]
             }),
@@ -17239,7 +18636,7 @@ function ChaseApp() {
           jsxRuntimeExports.jsxs("header", { className: "chase-topbar", children: [
             jsxRuntimeExports.jsxs("div", { className: "chase-breadcrumb", children: [
               jsxRuntimeExports.jsx("strong", { children: "SENORA SIGNALWORKS" }),
-              jsxRuntimeExports.jsx("span", { children: "Broadcast network" })
+              jsxRuntimeExports.jsx("span", { children: chaseCurrentView === "studio" ? "Broadcast studio" : chaseCurrentView === "scanner" ? "Field operations" : "Broadcast network" })
             ] }),
             jsxRuntimeExports.jsxs("div", { children: [
               chasePreview ? jsxRuntimeExports.jsx("span", { className: "chase-preview-badge", children: "INTERACTIVE PREVIEW · NO LIVE AUDIO" }) : jsxRuntimeExports.jsx(ChaseStatus, { live: Boolean(chaseSnapshot) && !chaseError, children: chaseError ? "CONNECTION INTERRUPTED" : chaseSnapshot ? "RECEIVER CONNECTED" : "CONNECTING" }),
@@ -17284,7 +18681,7 @@ function ChaseApp() {
                 children: "Reconnect"
               })
             ] }) : null,
-            chaseSpeechEnabled ? jsxRuntimeExports.jsx(ChaseSpeechIndicator, {
+            chaseSpeechEnabled && (chaseReceiver || chaseCurrentView !== "studio") ? jsxRuntimeExports.jsx(ChaseSpeechIndicator, {
               speech: chaseSpeech,
               talkKey: chaseTalkKey,
               talk: ChaseTalk
@@ -17305,7 +18702,10 @@ function ChaseApp() {
                 speech: chaseSpeechEnabled ? chaseSpeech : null,
                 action: ChaseAction,
                 busy: chaseBusy || chaseLoading,
-                refresh: () => void ChaseBootstrap()
+                refresh: () => void ChaseBootstrap(),
+                quality: chaseQuality,
+                onListen: () => chaseSetView("listen"),
+                onMinimize: () => void ChaseClose()
               }) : chaseCurrentView === "listen" ? jsxRuntimeExports.jsx(ChaseListen, {
                 snapshot: chaseCurrentSnapshot,
                 action: ChaseAction,
@@ -17315,7 +18715,14 @@ function ChaseApp() {
                 snapshot: chaseCurrentSnapshot,
                 action: ChaseAction,
                 busy: chaseBusy,
-                playback: chasePlayback
+                playback: chasePlayback,
+                previewPlayback: chasePreviewPlayback,
+                volume: chaseVolume,
+                changeVolume: ChaseChangeVolume,
+                saveVolume: () => void ChaseSaveVolume(),
+                speech: chaseSpeechEnabled ? chaseSpeech ?? void 0 : void 0,
+                talk: ChaseTalk,
+                talkKey: chaseTalkKey
               }) : jsxRuntimeExports.jsx(ChaseScanner, {
                 snapshot: chaseCurrentSnapshot,
                 notify: ChaseNotify
@@ -17330,8 +18737,8 @@ function ChaseApp() {
           jsxRuntimeExports.jsxs("footer", { className: "chase-player", children: [
             jsxRuntimeExports.jsx("span", { className: "chase-player-icon", children: jsxRuntimeExports.jsx(ChaseIcon, { name: "headphones", size: 21 }) }),
             jsxRuntimeExports.jsxs("div", { className: "chase-player-station", children: [
-              jsxRuntimeExports.jsx("strong", { children: (chasePlayback?.monitor ? "Studio cue" : null) || chaseTuned?.name || (chaseSnapshot?.tunedStationId ? "Unlisted frequency" : "Nothing tuned in") }),
-              jsxRuntimeExports.jsx("span", { children: chasePlayback?.monitor ? `${chasePlayback.name} · ${chasePlayback.phase === "playing" ? chaseVolume === 0 ? "Muted" : "Playing locally" : chasePlayback.phase === "loading" ? "Loading audio" : chasePlayback.phase === "blocked" ? "Click to enable audio" : "Audio unavailable"}` : chaseTuned ? `${ChaseFrequency(chaseTuned.frequency)} FM · ${chaseTuned.showTitle || "Independent radio"}` : "Select a station to connect." })
+              jsxRuntimeExports.jsx("strong", { children: (chasePreviewPlayback ? "Private preview" : chasePlayback?.monitor ? "Private monitor" : null) || chaseTuned?.name || (chaseSnapshot?.tunedStationId ? "Unlisted frequency" : "Nothing tuned in") }),
+              jsxRuntimeExports.jsx("span", { children: chasePreviewPlayback ? `${chasePreviewPlayback.name} · ${chasePreviewPlayback.phase === "playing" ? "Playing locally" : chasePreviewPlayback.phase === "loading" ? "Loading audio" : "Audio unavailable"}` : chasePlayback?.monitor ? `${chasePlayback.name} · ${chasePlayback.phase === "playing" ? chaseVolume === 0 ? "Muted" : "Playing locally" : chasePlayback.phase === "paused" ? "Paused" : chasePlayback.phase === "loading" ? "Loading audio" : chasePlayback.phase === "blocked" ? "Click to enable audio" : "Audio unavailable"}` : chaseTuned ? `${ChaseFrequency(chaseTuned.frequency)} FM · ${chaseTuned.showTitle || "Independent radio"}` : "Select a station to connect." })
             ] }),
             chaseBusy ? jsxRuntimeExports.jsx("span", { className: "chase-busy-indicator", role: "status", children: "Waiting for server…" }) : null,
             jsxRuntimeExports.jsxs("div", { className: "chase-player-volume", children: [
@@ -17367,7 +18774,25 @@ function ChaseApp() {
                 "%"
               ] })
             ] }),
-            jsxRuntimeExports.jsx("span", { className: "chase-player-fm", children: "LOCAL RECEIVER" })
+            chaseCurrentView === "directory" && chaseTuned && !chaseReceiver ? jsxRuntimeExports.jsxs("div", { className: "chase-player-actions", children: [
+              jsxRuntimeExports.jsxs("button", {
+                className: "chase-button chase-secondary",
+                disabled: chaseBusy,
+                onClick: () => void ChaseAction("untune", {}, "Receiver disconnected."),
+                children: [
+                  jsxRuntimeExports.jsx(ChaseIcon, { name: "headphones" }),
+                  "Disconnect"
+                ]
+              }),
+              jsxRuntimeExports.jsxs("button", {
+                className: "chase-button chase-secondary",
+                onClick: () => void ChaseClose(),
+                children: [
+                  jsxRuntimeExports.jsx(ChaseIcon, { name: "minus" }),
+                  "Minimize"
+                ]
+              })
+            ] }) : jsxRuntimeExports.jsx("span", { className: "chase-player-fm", children: "LOCAL RECEIVER" })
           ] })
         ] }),
         jsxRuntimeExports.jsx(ChaseToast, { toast: chaseToast, dismiss: () => chaseSetToast(null) })
@@ -17613,3 +19038,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(jsxRuntimeExports.js
   jsxRuntimeExports.jsx(ChaseApp, {}),
   jsxRuntimeExports.jsx(ChaseDashboardOverlay, {})
 ] }));
+export {
+  ChaseDetectProvider as C
+};

@@ -36,11 +36,18 @@ export type ChasePlacedRadio = {
 export type ChaseProvider = "file" | "youtube" | "soundcloud";
 export type ChaseTrackProvider = Exclude<ChaseProvider, "file">;
 export type ChasePlayback = {
-  phase: "loading" | "playing" | "blocked" | "error";
+  phase: "loading" | "playing" | "paused" | "blocked" | "error";
   monitor: boolean;
   stationId?: number;
   name: string;
   provider: ChaseProvider;
+};
+export type ChasePreviewPlayback = {
+  cartridgeId: string;
+  name: string;
+  duration: number;
+  startedAt: number;
+  phase: "loading" | "playing" | "error";
 };
 export type ChaseStationMode = "dj" | "autonomous";
 export type ChaseTrack = {
@@ -51,10 +58,15 @@ export type ChaseTrack = {
   duration: number;
 };
 export type ChaseNowPlaying = {
+  id?: string;
+  cartridgeId?: string;
+  trackId?: number;
   provider: ChaseProvider;
   title: string;
   duration: number;
   startedAt: number;
+  paused?: boolean;
+  offsetSeconds?: number;
 };
 export type ChaseCallState = {
   state: "idle" | "ringing" | "onair";
@@ -128,6 +140,7 @@ export type ChaseStation = {
   nowPlaying?: ChaseNowPlaying | null;
   queue?: ChaseTrack[];
   autoplay?: boolean;
+  musicVolume?: number;
   pendingCall?: {
     callId: number;
     callerName: string;
@@ -141,8 +154,9 @@ export type ChaseRequest = {
   id: number;
   stationId: number;
   senderName: string;
-  kind: "request" | "advertisement";
+  kind: "request" | "song" | "message" | "advertisement";
   message: string;
+  url?: string;
   status: "pending" | "accepted" | "dismissed";
   createdAt: number;
 };
@@ -214,6 +228,7 @@ export type ChaseSnapshot = {
     source: number;
     name: string;
     memberId?: number;
+    online?: boolean;
   }[];
   voiceReady: boolean;
   volume?: number;

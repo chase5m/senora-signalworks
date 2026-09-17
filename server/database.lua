@@ -42,9 +42,14 @@ function ChaseBootlegDatabase.ChaseRequests(stationId)
     ]], { stationId, ChaseBootlegConfig.Requests.retained })
     local requests = {}
     for _, row in ipairs(rows) do
+        local message, url = row.message, nil
+        if row.kind == 'song' then
+            url, message = row.message:match('^([^\n]+)\n(.*)$')
+            if not url or not ChaseBootlegDomain.ChaseMusicProvider(url) then message, url = row.message, nil end
+        end
         requests[#requests + 1] = {
             id = tonumber(row.id), stationId = tonumber(row.station_id), senderName = row.sender_name,
-            kind = row.kind, message = row.message, status = row.status, createdAt = tonumber(row.created_at)
+            kind = row.kind, message = message, url = url, status = row.status, createdAt = tonumber(row.created_at)
         }
     end
     return requests
@@ -55,6 +60,12 @@ function ChaseBootlegDatabase.ChasePendingCount(stationId)
 end
 
 function ChaseBootlegDatabase.ChaseUpdateStation(station, fields)
+    if fields.mode then
+        return MySQL.update.await([[
+            UPDATE chase_bootleg_stations
+            SET name = ?, tagline = ?, frequency = ?, power = ?, is_public = ?, show_title = ?, mode = ? WHERE id = ?
+        ]], { fields.name, fields.tagline, fields.frequency, fields.power, fields.isPublic and 1 or 0, fields.showTitle, fields.mode, station.id })
+    end
     return MySQL.update.await([[
         UPDATE chase_bootleg_stations
         SET name = ?, tagline = ?, frequency = ?, power = ?, is_public = ?, show_title = ? WHERE id = ?
@@ -77,6 +88,34 @@ end
 
 function ChaseBootlegDatabase.ChaseDeleteTrack(station, trackId)
     return MySQL.update.await('DELETE FROM chase_bootleg_tracks WHERE id = ? AND station_id = ?', { trackId, station.id })
+end
+
+function ChaseBootlegDatabase.ChaseMoveTracks(station, queue)
+    local queries = {}
+    for position, track in ipairs(queue) do
+        queries[#queries + 1] = { query = 'UPDATE chase_bootleg_tracks SET position = ? WHERE id = ? AND station_id = ?',
+            values = { position, track.id, station.id } }
+    end
+    return MySQL.transaction.await(queries)
+end
+
+function ChaseBootlegDatabase.ChaseInsertRequestTrack(station, requestId, track)
+    local success = MySQL.transaction.await({
+        {
+            query = [[INSERT INTO chase_bootleg_tracks (station_id, position, provider, url, title, duration, added_by)
+                SELECT station_id, ?, ?, ?, ?, ?, ? FROM chase_bootleg_requests WHERE id = ? AND station_id = ? AND status = 'pending']],
+            values = { track.position, track.provider, track.url, track.title, track.duration, track.addedBy, requestId, station.id }
+        },
+        {
+            query = "UPDATE chase_bootleg_requests SET status = 'accepted' WHERE id = ? AND station_id = ? AND status = 'pending' AND ROW_COUNT() = 1",
+            values = { requestId, station.id }
+        }
+    })
+    if not success then return nil end
+    local row = MySQL.single.await([[
+        SELECT id FROM chase_bootleg_tracks WHERE station_id = ? AND position = ? AND added_by = ? AND url = ? ORDER BY id DESC LIMIT 1
+    ]], { station.id, track.position, track.addedBy, track.url })
+    return row and tonumber(row.id) or nil
 end
 
 function ChaseBootlegDatabase.ChaseBeginOperation(identity, station, amount, kind)

@@ -1,11 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import {
-  ChaseDialog,
-  ChaseEmpty,
-  ChaseIcon,
-  ChaseSignal,
-  ChaseStatus,
-} from "./components";
+import { ChaseStationArt, ChaseReceptionLabel } from "./presentation";
+import { ChaseDetectProvider } from "./players";
+import { useEffect, useState } from "react";
+import { ChaseDialog, ChaseEmpty, ChaseIcon, ChaseStatus } from "./components";
 import { ChaseDeviceControls } from "./Devices";
 import { ChaseCallControls } from "./Call";
 import { ChaseFrequency, ChaseMoney } from "./transport";
@@ -80,6 +76,157 @@ export function ChaseTuneForm({
     </form>
   );
 }
+export function ChaseRequestForm({
+  snapshot,
+  station,
+  action,
+  busy,
+  onSent,
+  initialKind = "song",
+}: {
+  snapshot: ChaseSnapshot;
+  station: ChaseStation;
+  action: ChaseAction;
+  busy: boolean;
+  onSent?: () => void;
+  initialKind?: "song" | "message" | "advertisement";
+}) {
+  const [chaseKind, chaseSetKind] = useState(
+    snapshot.config.music?.enabled === false ? "message" : initialKind,
+  );
+  const [chaseMessage, chaseSetMessage] = useState("");
+  const [chaseUrl, chaseSetUrl] = useState("");
+  const [chaseError, chaseSetError] = useState("");
+  const chaseLimit = Math.min(snapshot.config.requestMaxLength, 240);
+  const chaseRemaining = Math.max(
+    0,
+    chaseLimit -
+      (chaseKind === "song" ? Array.from(chaseUrl.trim()).length + 1 : 0),
+  );
+  async function ChaseSendRequest(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    chaseSetError("");
+    const chaseProvider = ChaseDetectProvider(chaseUrl.trim());
+    if (
+      chaseKind === "song" &&
+      (!chaseProvider ||
+        snapshot.config.music?.enabled === false ||
+        snapshot.config.music?.providers?.[chaseProvider] === false)
+    ) {
+      chaseSetError("Enter a supported YouTube or SoundCloud track link.");
+      return;
+    }
+    if (Array.from(chaseMessage.trim()).length > chaseRemaining) {
+      chaseSetError("Shorten your message to fit the station's request limit.");
+      return;
+    }
+    const chaseSent = await action(
+      "request",
+      {
+        stationId: station.id,
+        kind: chaseKind,
+        url: chaseKind === "song" ? chaseUrl.trim() : undefined,
+        message: chaseMessage.trim(),
+      },
+      "Your message has been sent to the studio.",
+    );
+    if (chaseSent) {
+      chaseSetMessage("");
+      chaseSetUrl("");
+      onSent?.();
+    }
+  }
+  return (
+    <form className="chase-request-form" onSubmit={ChaseSendRequest}>
+      <div className="chase-request-kinds" aria-label="Message type">
+        {(
+          [
+            { id: "song", label: "Song request", icon: "music" },
+            { id: "message", label: "Message", icon: "message" },
+            { id: "advertisement", label: "Advertisement", icon: "advert" },
+          ] as const
+        ).map((chaseItem) => (
+          <button
+            key={chaseItem.id}
+            type="button"
+            disabled={
+              chaseItem.id === "song" &&
+              snapshot.config.music?.enabled === false
+            }
+            aria-pressed={chaseKind === chaseItem.id}
+            className={`chase-button ${chaseKind === chaseItem.id ? "chase-primary" : "chase-secondary"}`}
+            onClick={() => chaseSetKind(chaseItem.id)}
+          >
+            <ChaseIcon name={chaseItem.icon} />
+            {chaseItem.label}
+          </button>
+        ))}
+      </div>
+      {chaseKind === "song" && (
+        <label>
+          Track link
+          <div className="chase-track-link">
+            <ChaseIcon name="link" />
+            <input
+              type="url"
+              placeholder="YouTube or SoundCloud link"
+              value={chaseUrl}
+              onChange={(chaseEvent) => chaseSetUrl(chaseEvent.target.value)}
+              maxLength={chaseLimit - 1}
+              required
+            />
+          </div>
+        </label>
+      )}
+      <label>
+        Message{chaseKind === "song" ? " (optional)" : ""}
+        <textarea
+          value={chaseMessage}
+          onChange={(chaseEvent) =>
+            chaseSetMessage(
+              Array.from(chaseEvent.target.value)
+                .slice(0, chaseRemaining)
+                .join(""),
+            )
+          }
+          placeholder={
+            chaseKind === "advertisement"
+              ? "Tell the station about your business or event…"
+              : "Send a message to the crew…"
+          }
+          rows={4}
+          minLength={chaseKind === "song" ? undefined : 3}
+          required={chaseKind !== "song"}
+        />
+      </label>
+      <span className="chase-form-count">
+        {Array.from(chaseMessage).length} / {chaseRemaining}
+      </span>
+      {chaseError && (
+        <p className="chase-form-error" role="alert">
+          {chaseError}
+        </p>
+      )}
+      <button
+        className="chase-button chase-primary chase-full"
+        disabled={
+          busy ||
+          (chaseKind === "song"
+            ? !chaseUrl.trim()
+            : chaseMessage.trim().length < 3)
+        }
+      >
+        <ChaseIcon name={chaseKind === "song" ? "music" : "message"} />
+        {chaseKind === "song" ? "Send request" : "Send message"}
+      </button>
+      <p className="chase-form-note">
+        <ChaseIcon name="info" size={18} />
+        Requests are reviewed by the station crew.
+      </p>
+    </form>
+  );
+}
+
 export function ChaseRequestDialog({
   snapshot,
   station,
@@ -93,25 +240,6 @@ export function ChaseRequestDialog({
   busy: boolean;
   close: () => void;
 }) {
-  const [chaseMessage, chaseSetMessage] = useState("");
-  const [chaseKind, chaseSetKind] = useState("request");
-  async function ChaseSendRequest(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (
-      await action(
-        "request",
-        {
-          stationId: station.id,
-          kind: chaseKind,
-          message: chaseMessage.trim(),
-        },
-        "Your message has been sent to the studio.",
-      )
-    ) {
-      chaseSetMessage("");
-      close();
-    }
-  }
   return (
     <ChaseDialog
       title="Message studio"
@@ -119,57 +247,98 @@ export function ChaseRequestDialog({
       icon="message"
       close={close}
     >
-      <form onSubmit={ChaseSendRequest}>
-        <div className="chase-modal-body">
-          <label>
-            Message type
-            <select
-              aria-label="Message type"
-              value={chaseKind}
-              onChange={(chaseEvent) => chaseSetKind(chaseEvent.target.value)}
-            >
-              <option value="request">Request</option>
-              <option value="advertisement">Advertisement</option>
-            </select>
-          </label>
-          <label htmlFor="chase-request-message">
-            Message to the studio
-            <textarea
-              id="chase-request-message"
-              value={chaseMessage}
-              onChange={(chaseEvent) =>
-                chaseSetMessage(chaseEvent.target.value)
-              }
-              placeholder="Write a request or advertisement…"
-              maxLength={snapshot.config.requestMaxLength}
-              rows={4}
-              required
-            />
-          </label>
-          <span className="chase-field-hint">
-            {chaseMessage.length}/{snapshot.config.requestMaxLength} characters
-          </span>
-        </div>
-        <footer className="chase-modal-footer">
-          <button
-            type="button"
-            className="chase-button chase-secondary"
-            onClick={close}
-          >
-            Cancel
-          </button>
-          <button
-            className="chase-button chase-primary"
-            disabled={busy || !chaseMessage.trim()}
-          >
-            <ChaseIcon name="arrow" size={18} />
-            Send message
-          </button>
-        </footer>
-      </form>
+      <div className="chase-modal-body">
+        <ChaseRequestForm
+          snapshot={snapshot}
+          station={station}
+          action={action}
+          busy={busy}
+          onSent={close}
+        />
+      </div>
     </ChaseDialog>
   );
 }
+
+export function ChaseTipForm({
+  snapshot,
+  station,
+  action,
+  busy,
+  onSent,
+}: {
+  snapshot: ChaseSnapshot;
+  station: ChaseStation;
+  action: ChaseAction;
+  busy: boolean;
+  onSent?: () => void;
+}) {
+  const [chaseAmount, chaseSetAmount] = useState(
+    String(Math.min(100, snapshot.config.maxTip)),
+  );
+  const chaseOwn = station.canManage || station.id === snapshot.mine?.id;
+  async function ChaseSendTip(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (chaseOwn) return;
+    if (
+      await action(
+        "tip",
+        { stationId: station.id, amount: Number(chaseAmount) },
+        "Your tip has been delivered.",
+      )
+    )
+      onSent?.();
+  }
+  return (
+    <form className="chase-tip-form" onSubmit={ChaseSendTip}>
+      <h3>Support this station</h3>
+      <p>
+        {chaseOwn
+          ? "You cannot tip a station you own or operate."
+          : `Help keep ${station.name} on the air.`}
+      </p>
+      <div className="chase-tip-actions">
+        {[50, 100]
+          .filter((chaseValue) => chaseValue <= snapshot.config.maxTip)
+          .map((chaseValue) => (
+            <button
+              type="button"
+              key={chaseValue}
+              className={`chase-button chase-secondary ${Number(chaseAmount) === chaseValue ? "chase-selected" : ""}`}
+              onClick={() => chaseSetAmount(String(chaseValue))}
+              disabled={busy || chaseOwn}
+            >
+              {ChaseMoney(chaseValue, snapshot.config.currency)}
+            </button>
+          ))}
+        <input
+          aria-label="Tip amount"
+          type="number"
+          placeholder="Custom amount"
+          min={1}
+          max={snapshot.config.maxTip}
+          step={1}
+          value={chaseAmount}
+          onChange={(chaseEvent) => chaseSetAmount(chaseEvent.target.value)}
+          disabled={chaseOwn}
+          required
+        />
+        <button
+          className="chase-button chase-primary"
+          disabled={busy || chaseOwn || !chaseAmount}
+        >
+          <ChaseIcon name="heart" />
+          Send tip
+        </button>
+      </div>
+      <span className="chase-caption">
+        Up to {ChaseMoney(snapshot.config.maxTip, snapshot.config.currency)} per
+        tip.
+      </span>
+    </form>
+  );
+}
+
 export function ChaseTipDialog({
   snapshot,
   station,
@@ -183,66 +352,26 @@ export function ChaseTipDialog({
   busy: boolean;
   close: () => void;
 }) {
-  const [chaseTip, chaseSetTip] = useState("100");
-  async function ChaseSendTip(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (
-      await action(
-        "tip",
-        { stationId: station.id, amount: Number(chaseTip) },
-        "Your tip has been delivered.",
-      )
-    )
-      close();
-  }
   return (
     <ChaseDialog
       title="Support station"
       description={station.name}
-      icon="money"
+      icon="heart"
       close={close}
     >
-      <form onSubmit={ChaseSendTip}>
-        <div className="chase-modal-body">
-          <label htmlFor="chase-tip">
-            Support this station
-            <div className="chase-input-action">
-              <span>{snapshot.config.currency}</span>
-              <input
-                id="chase-tip"
-                type="number"
-                min="1"
-                max={snapshot.config.maxTip}
-                step="1"
-                required
-                value={chaseTip}
-                onChange={(chaseEvent) => chaseSetTip(chaseEvent.target.value)}
-              />
-            </div>
-          </label>
-          <p className="chase-field-hint">
-            Maximum{" "}
-            {ChaseMoney(snapshot.config.maxTip, snapshot.config.currency)} per
-            tip.
-          </p>
-        </div>
-        <footer className="chase-modal-footer">
-          <button
-            type="button"
-            className="chase-button chase-secondary"
-            onClick={close}
-          >
-            Cancel
-          </button>
-          <button className="chase-button chase-primary" disabled={busy}>
-            <ChaseIcon name="check" size={18} />
-            Send tip
-          </button>
-        </footer>
-      </form>
+      <div className="chase-modal-body">
+        <ChaseTipForm
+          snapshot={snapshot}
+          station={station}
+          action={action}
+          busy={busy}
+          onSent={close}
+        />
+      </div>
     </ChaseDialog>
   );
 }
+
 export function ChaseListen({
   snapshot,
   action,
@@ -257,9 +386,8 @@ export function ChaseListen({
   const [chaseFrequency, chaseSetFrequency] = useState(
     snapshot.stations.find(
       (chaseStation) => chaseStation.id === snapshot.tunedStationId,
-    )?.frequency ?? snapshot.config.frequencyMin,
+    )?.frequency || 987,
   );
-  const chaseTunedIdRef = useRef(snapshot.tunedStationId);
   const [chaseSelectedId, chaseSetSelectedId] = useState<number | null>(
     snapshot.tunedStationId ?? snapshot.stations[0]?.id ?? null,
   );
@@ -271,6 +399,9 @@ export function ChaseListen({
   const chaseSelected = snapshot.stations.find(
     (chaseStation) => chaseStation.id === chaseSelectedId,
   );
+  const chaseTuned = chaseSelected?.id === snapshot.tunedStationId;
+  const chaseOwn =
+    chaseSelected?.canManage || chaseSelected?.id === snapshot.mine?.id;
   const chaseStations = snapshot.stations.filter(
     (chaseStation) =>
       (chaseFilter === "all" || chaseStation.live) &&
@@ -278,12 +409,7 @@ export function ChaseListen({
         .toLowerCase()
         .includes(chaseSearch.toLowerCase()),
   );
-  const chaseTuned = Boolean(
-    chaseSelected && snapshot.tunedStationId === chaseSelected.id,
-  );
   useEffect(() => {
-    if (chaseTunedIdRef.current === snapshot.tunedStationId) return;
-    chaseTunedIdRef.current = snapshot.tunedStationId;
     const chaseStation = snapshot.stations.find(
       (chaseItem) => chaseItem.id === snapshot.tunedStationId,
     );
@@ -291,221 +417,201 @@ export function ChaseListen({
       chaseSetSelectedId(chaseStation.id);
       chaseSetFrequency(chaseStation.frequency);
     }
-  }, [snapshot.tunedStationId, snapshot.stations]);
+  }, [snapshot.tunedStationId]);
   return (
-    <div className="chase-listen-layout">
-      <section className="chase-tuner chase-card">
-        <div className="chase-panel-heading">
-          <div>
-            <ChaseIcon name="radio" />
-            <h2>Manual tuning</h2>
+    <div className="chase-discover">
+      <div className="chase-discover-columns">
+        <section className="chase-discover-directory">
+          <div className="chase-section-intro">
+            <h1>Find your frequency</h1>
+            <p>Live stations across San Andreas.</p>
           </div>
-          <ChaseSignal quality={quality} />
-        </div>
-        <div className="chase-tuner-body">
-          <div className="chase-frequency-display">
-            <span className="chase-eyebrow">FREQUENCY</span>
-            <div>
-              <strong>{ChaseFrequency(chaseFrequency)}</strong>
-              <span>MHz</span>
-            </div>
-          </div>
-          <ChaseTuneForm
-            snapshot={snapshot}
-            frequency={chaseFrequency}
-            setFrequency={chaseSetFrequency}
-            action={action}
-            busy={busy}
-          />
-        </div>
-        <ChaseDeviceControls snapshot={snapshot} action={action} busy={busy} />
-        <div className="chase-tuner-footer">
-          <span>
-            {ChaseFrequency(snapshot.config.frequencyMin)} –{" "}
-            {ChaseFrequency(snapshot.config.frequencyMax)} MHz
-          </span>
-          <span>Public and unlisted stations</span>
-        </div>
-      </section>
-      <section className="chase-directory chase-card">
-        <div className="chase-section-heading">
-          <div>
-            <h2>
-              Station directory{" "}
-              <span className="chase-count-pill">
-                {snapshot.stations.length}
-              </span>
-            </h2>
-            <p>Public broadcasts available in the city.</p>
-          </div>
-          <div className="chase-segmented" aria-label="Filter stations">
+          <div className="chase-discover-search">
+            <label className="chase-search">
+              <ChaseIcon name="search" />
+              <input
+                aria-label="Search stations"
+                placeholder="Search station name or frequency…"
+                value={chaseSearch}
+                onChange={(chaseEvent) =>
+                  chaseSetSearch(chaseEvent.target.value)
+                }
+              />
+            </label>
             <button
-              className={chaseFilter === "all" ? "chase-selected" : ""}
+              className={`chase-button ${chaseFilter === "live" ? "chase-primary" : "chase-secondary"}`}
+              aria-pressed={chaseFilter === "live"}
+              onClick={() => chaseSetFilter("live")}
+            >
+              Live now
+            </button>
+            <button
+              className={`chase-button ${chaseFilter === "all" ? "chase-primary" : "chase-secondary"}`}
               aria-pressed={chaseFilter === "all"}
               onClick={() => chaseSetFilter("all")}
             >
               All stations
             </button>
-            <button
-              className={chaseFilter === "live" ? "chase-selected" : ""}
-              aria-pressed={chaseFilter === "live"}
-              onClick={() => chaseSetFilter("live")}
-            >
-              On air
-            </button>
           </div>
-        </div>
-        <label className="chase-search">
-          <ChaseIcon name="search" size={19} />
-          <input
-            aria-label="Search stations"
-            placeholder="Search name or frequency"
-            value={chaseSearch}
-            onChange={(chaseEvent) => chaseSetSearch(chaseEvent.target.value)}
-          />
-        </label>
-        <div className="chase-table-heading">
-          <span>Station</span>
-          <span>Frequency</span>
-          <span>Status</span>
-        </div>
-        <div className="chase-station-list">
-          {chaseStations.length ? (
-            chaseStations.map((chaseStation) => (
-              <button
-                key={chaseStation.id}
-                className={`chase-station-row ${chaseSelected?.id === chaseStation.id ? "chase-station-selected" : ""}`}
-                onClick={() => {
-                  chaseSetSelectedId(chaseStation.id);
-                  chaseSetFrequency(chaseStation.frequency);
-                }}
-                aria-pressed={chaseSelected?.id === chaseStation.id}
-              >
-                <span className="chase-station-symbol">
-                  <ChaseIcon
-                    name={chaseStation.live ? "broadcast" : "radio"}
-                    size={22}
-                  />
-                </span>
-                <span className="chase-station-text">
-                  <strong>{chaseStation.name}</strong>
-                  <span>
-                    {chaseStation.showTitle ||
-                      chaseStation.tagline ||
-                      "No show scheduled"}
+          <div className="chase-broadcast-list">
+            {chaseStations.length ? (
+              chaseStations.map((chaseStation) => (
+                <button
+                  key={chaseStation.id}
+                  className={`chase-broadcast-card ${chaseSelectedId === chaseStation.id ? "chase-broadcast-selected" : ""}`}
+                  aria-pressed={chaseSelectedId === chaseStation.id}
+                  onClick={() => {
+                    chaseSetSelectedId(chaseStation.id);
+                    chaseSetFrequency(chaseStation.frequency);
+                  }}
+                >
+                  <ChaseStationArt station={chaseStation} />
+                  <div className="chase-broadcast-name">
+                    <h2>{chaseStation.name}</h2>
+                    <p>
+                      {chaseStation.tagline ||
+                        "Independent radio. San Andreas."}
+                    </p>
+                  </div>
+                  <div className="chase-broadcast-frequency">
+                    <strong>{ChaseFrequency(chaseStation.frequency)} FM</strong>
+                    <ChaseStatus live={chaseStation.live}>
+                      {chaseStation.live ? "Live now" : "Off air"}
+                    </ChaseStatus>
+                  </div>
+                  <span className="chase-list-strength">
+                    {snapshot.tunedStationId === chaseStation.id
+                      ? ChaseReceptionLabel(quality)
+                      : "—"}
                   </span>
+                </button>
+              ))
+            ) : (
+              <ChaseEmpty title="No stations found">
+                Try another name or frequency, or switch to all stations.
+              </ChaseEmpty>
+            )}
+          </div>
+        </section>
+        <aside className="chase-discover-detail">
+          {chaseSelected ? (
+            <>
+              <ChaseStationArt
+                station={chaseSelected}
+                className="chase-station-cover"
+              />
+              <h2>{chaseSelected.name}</h2>
+              <p>{chaseSelected.tagline || "Independent sound. Open roads."}</p>
+              <div className="chase-station-program">
+                <strong>
+                  {chaseSelected.showTitle || "No show scheduled"}
+                </strong>
+                <span>
+                  {chaseSelected.hostName
+                    ? `with ${chaseSelected.hostName}`
+                    : chaseSelected.live
+                      ? "Station broadcast"
+                      : "Currently off air"}
                 </span>
-                <span className="chase-row-frequency">
-                  {ChaseFrequency(chaseStation.frequency)}
-                  <small>FM</small>
-                </span>
-                <ChaseStatus live={chaseStation.live}>
-                  {chaseStation.live ? "ON AIR" : "OFF AIR"}
-                </ChaseStatus>
-                <ChaseIcon name="arrow" size={17} />
+              </div>
+              <div className="chase-list-now">
+                <span className="chase-eyebrow">NOW PLAYING</span>
+                <strong>
+                  {chaseSelected.nowPlaying?.title ||
+                    (chaseSelected.micLive
+                      ? "Live microphone"
+                      : "Nothing playing")}
+                </strong>
+              </div>
+              <button
+                className={`chase-button ${chaseTuned ? "chase-secondary" : "chase-primary"} chase-full`}
+                disabled={busy || (!chaseSelected.live && !chaseTuned)}
+                onClick={() =>
+                  void action(
+                    chaseTuned ? "untune" : "tune",
+                    chaseTuned ? {} : { stationId: chaseSelected.id },
+                    chaseTuned ? "Receiver disconnected." : "Receiver tuned.",
+                  )
+                }
+              >
+                <ChaseIcon name="broadcast" />
+                {chaseTuned ? "Disconnect receiver" : "Tune in"}
               </button>
-            ))
-          ) : (
-            <ChaseEmpty title="No stations found">
-              Try another search or tune to a frequency directly.
-            </ChaseEmpty>
-          )}
-        </div>
-      </section>
-      <aside className="chase-now-playing chase-card">
-        {chaseSelected ? (
-          <>
-            <div className="chase-panel-heading">
-              <div>
-                <ChaseIcon name="headphones" />
-                <h2>Station details</h2>
+              <div className="chase-station-actions">
+                <button
+                  className="chase-button chase-secondary"
+                  onClick={() => chaseSetDialog("message")}
+                >
+                  <ChaseIcon name="music" />
+                  Request a song
+                </button>
+                <button
+                  className="chase-button chase-secondary"
+                  disabled={chaseOwn}
+                  title={
+                    chaseOwn ? "You cannot tip your own station" : undefined
+                  }
+                  onClick={() => chaseSetDialog("tip")}
+                >
+                  <ChaseIcon name="heart" />
+                  Send a tip
+                </button>
               </div>
-              <ChaseStatus live={chaseSelected.live}>
-                {chaseSelected.live ? "ON AIR" : "OFF AIR"}
-              </ChaseStatus>
-            </div>
-            <div className="chase-selected-frequency">
-              <strong>{ChaseFrequency(chaseSelected.frequency)}</strong>
-              <span>FM</span>
-              <span className="chase-count-pill">
-                {chaseTuned ? "CONNECTED" : "SELECTED"}
-              </span>
-            </div>
-            <div className="chase-selected-show">
-              <span className="chase-eyebrow">CURRENT SHOW</span>
-              <h2>{chaseSelected.showTitle || chaseSelected.name}</h2>
-              <p>{chaseSelected.tagline || "No station description."}</p>
-            </div>
-            <dl className="chase-detail-list">
-              <div>
-                <dt>Station</dt>
-                <dd>{chaseSelected.name}</dd>
-              </div>
-              <div>
-                <dt>Host</dt>
-                <dd>
-                  {chaseSelected.hostName || "No host"}
-                  {chaseSelected.cohostNames.length
-                    ? ` +${chaseSelected.cohostNames.length} co-host${chaseSelected.cohostNames.length === 1 ? "" : "s"}`
-                    : ""}
-                </dd>
-              </div>
-              <div>
-                <dt>Listeners</dt>
-                <dd>{chaseSelected.listeners} tuned in</dd>
-              </div>
-            </dl>
-            <button
-              className={`chase-button ${chaseTuned ? "chase-secondary" : "chase-primary"} chase-full`}
-              disabled={busy || (!chaseSelected.live && !chaseTuned)}
-              onClick={() =>
-                void action(
-                  chaseTuned ? "untune" : "tune",
-                  chaseTuned ? {} : { stationId: chaseSelected.id },
-                  chaseTuned ? "Receiver disconnected." : "Receiver tuned.",
-                )
-              }
-            >
-              <ChaseIcon name={chaseTuned ? "stop" : "play"} size={17} />
-              {chaseTuned ? "Disconnect receiver" : "Listen in"}
-            </button>
-            {chaseSelected.id !== snapshot.mine?.id ? (
+              {chaseOwn && (
+                <p className="chase-caption">
+                  You own or operate this station. Tips are for other listeners.
+                </p>
+              )}
               <ChaseCallControls
                 snapshot={snapshot}
                 station={chaseSelected}
                 action={action}
                 busy={busy}
               />
-            ) : null}
-            <div className="chase-station-actions">
-              <button
-                className="chase-button chase-secondary"
-                onClick={() => chaseSetDialog("message")}
-              >
-                <ChaseIcon name="message" size={18} />
-                Message studio
-              </button>
-              {chaseSelected.id !== snapshot.mine?.id ? (
-                <button
-                  className="chase-button chase-secondary"
-                  onClick={() => chaseSetDialog("tip")}
-                >
-                  <ChaseIcon name="money" size={18} />
-                  Tip station
-                </button>
-              ) : null}
-            </div>
-            <p className="chase-caption">
-              Your receiver stays connected when this panel is closed.
-            </p>
-          </>
-        ) : (
-          <ChaseEmpty title="Select a station">
-            Choose a station from the directory to view its broadcast.
-          </ChaseEmpty>
-        )}
-      </aside>
-      {chaseDialog === "message" && chaseSelected ? (
+            </>
+          ) : (
+            <ChaseEmpty title="Select a station">
+              Choose a station to see its show and tune in.
+            </ChaseEmpty>
+          )}
+        </aside>
+      </div>
+      <section className="chase-discover-tuner">
+        <div>
+          <h3>Manual tuning</h3>
+          <p>Enter a frequency to tune directly.</p>
+        </div>
+        <ChaseTuneForm
+          snapshot={snapshot}
+          frequency={chaseFrequency}
+          setFrequency={chaseSetFrequency}
+          action={action}
+          busy={busy}
+          label="Tune"
+        />
+        <details className="chase-receiver-options">
+          <summary>
+            <ChaseIcon name="radio" />
+            <span>
+              {snapshot.devices?.active === "portable"
+                ? "Field Radio"
+                : snapshot.devices?.active === "vehicle"
+                  ? "Dash Receiver"
+                  : snapshot.devices?.active === "buds"
+                    ? "Signalbuds"
+                    : "No receiver equipped"}
+              <small>Manage receiver</small>
+            </span>
+            <ChaseIcon name="settings" size={18} />
+          </summary>
+          <ChaseDeviceControls
+            snapshot={snapshot}
+            action={action}
+            busy={busy}
+          />
+        </details>
+      </section>
+      {chaseDialog === "message" && chaseSelected && (
         <ChaseRequestDialog
           snapshot={snapshot}
           station={chaseSelected}
@@ -513,8 +619,8 @@ export function ChaseListen({
           busy={busy}
           close={() => chaseSetDialog(null)}
         />
-      ) : null}
-      {chaseDialog === "tip" && chaseSelected ? (
+      )}
+      {chaseDialog === "tip" && chaseSelected && (
         <ChaseTipDialog
           snapshot={snapshot}
           station={chaseSelected}
@@ -522,7 +628,7 @@ export function ChaseListen({
           busy={busy}
           close={() => chaseSetDialog(null)}
         />
-      ) : null}
+      )}
     </div>
   );
 }

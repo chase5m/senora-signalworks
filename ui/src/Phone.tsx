@@ -201,6 +201,9 @@ export function ChasePhoneApp({
                   snapshot={snapshot}
                   action={action}
                   busy={busy}
+                  speech={speech}
+                  talk={talk}
+                  talkKey={talkKey}
                 />
               )}
             </div>
@@ -996,10 +999,16 @@ function ChasePhoneStudio({
   snapshot,
   action,
   busy,
+  speech,
+  talk,
+  talkKey,
 }: {
   snapshot: ChaseSnapshot;
   action: ChaseAction;
   busy: boolean;
+  speech: ChaseSpeech | null;
+  talk: ChaseTalk;
+  talkKey?: string;
 }) {
   const [chaseOpen, chaseSetOpen] = useState<Record<string, boolean>>({
     music: true,
@@ -1045,6 +1054,9 @@ function ChasePhoneStudio({
         station={chaseMine}
         action={action}
         busy={busy}
+        speech={speech ?? undefined}
+        talk={talk}
+        talkKey={talkKey}
       />
       <ChasePhoneSection
         eyebrow="Playlist"

@@ -1,3 +1,4 @@
+import { C as ChaseDetectProvider } from "./index-11p8wxRP.js";
 let chaseSnapshot = {
   devices: {
     active: "buds",
@@ -56,7 +57,7 @@ let chaseSnapshot = {
   stations: [
     {
       id: 1,
-      name: "OFFLINE FM",
+      name: "Chase Radio",
       tagline: "For the ones still out.",
       frequency: 987,
       power: "low",
@@ -74,13 +75,22 @@ let chaseSnapshot = {
       vehicleNetId: 44,
       mode: "dj",
       cohostNames: [],
-      nowPlaying: null,
+      nowPlaying: {
+        id: "track:1",
+        trackId: 1,
+        provider: "youtube",
+        title: "Midnight Drive",
+        duration: 212,
+        startedAt: Math.floor(Date.now() / 1e3) - 84,
+        paused: false,
+        offsetSeconds: 84
+      },
       queue: [
         {
           id: 1,
           provider: "youtube",
           url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          title: "Late shift loop",
+          title: "Midnight Drive",
           duration: 212
         },
         {
@@ -92,6 +102,7 @@ let chaseSnapshot = {
         }
       ],
       autoplay: false,
+      musicVolume: 1,
       pendingCall: null,
       caller: null
     },
@@ -145,13 +156,23 @@ let chaseSnapshot = {
   tunedStationId: 2,
   requests: [
     {
+      id: 3,
+      stationId: 1,
+      senderName: "Cleo",
+      kind: "song",
+      message: "Midnight Drive for everyone heading home after a late shift.",
+      url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      status: "pending",
+      createdAt: Date.now() - 45e3
+    },
+    {
       id: 1,
       stationId: 1,
       senderName: "Jules",
       kind: "request",
       message: "Send some love to everyone finishing the late shift at Hayes tonight.",
       status: "pending",
-      createdAt: 1789402200
+      createdAt: Date.now() - 12e4
     },
     {
       id: 2,
@@ -160,27 +181,21 @@ let chaseSnapshot = {
       kind: "advertisement",
       message: "Bike meet at the canals. Roll through after midnight. Everyone welcome.",
       status: "pending",
-      createdAt: 1789402100
+      createdAt: Date.now() - 24e4
     }
   ],
   cartridges: [
     {
-      id: "ident",
-      name: "Station ident",
+      id: "station-ident",
+      name: "Senora ident",
       description: "Your signature on the air.",
-      duration: 8
+      duration: 5
     },
     {
-      id: "break",
-      name: "Back in a minute",
+      id: "intermission",
+      name: "Intermission",
       description: "A short intermission cue.",
-      duration: 12
-    },
-    {
-      id: "signoff",
-      name: "Until next time",
-      description: "Close the night with a sign-off.",
-      duration: 10
+      duration: 8
     }
   ],
   config: {
@@ -206,8 +221,8 @@ let chaseSnapshot = {
     talk: { command: "senoratalk", key: "CAPITAL" }
   },
   crew: [
-    { source: 14, name: "Cleo", memberId: 1 },
-    { source: 0, name: "Milo", memberId: 2 }
+    { source: 14, name: "Cleo", memberId: 1, online: true },
+    { source: 0, name: "Milo", memberId: 2, online: false }
   ],
   voiceReady: true,
   speech: {
@@ -270,6 +285,25 @@ function ChasePreviewStation() {
   if (!chaseSnapshot.mine)
     throw new Error("Create a station first.");
   return chaseSnapshot.mine;
+}
+function ChasePreviewTrack(data) {
+  const chaseUrl = String(data.url || "");
+  const chaseProvider = ChaseDetectProvider(chaseUrl);
+  const chaseMusic = chaseSnapshot.config.music;
+  if (!chaseProvider || !chaseMusic?.enabled || !chaseMusic.providers[chaseProvider])
+    throw new Error("Paste a supported YouTube or SoundCloud link.");
+  const chaseDuration = Number(data.duration);
+  if (!Number.isInteger(chaseDuration) || chaseDuration < chaseMusic.minDurationSeconds || chaseDuration > chaseMusic.maxDurationSeconds)
+    throw new Error("The track duration is outside this station's limits.");
+  if ((chaseSnapshot.mine?.queue?.length || 0) >= chaseMusic.maxQueue)
+    throw new Error("The music queue is full.");
+  return {
+    id: Date.now(),
+    provider: chaseProvider,
+    url: chaseUrl,
+    title: String(data.title || chaseUrl).slice(0, 120),
+    duration: chaseDuration
+  };
 }
 async function ChasePreviewPost(endpoint, payload) {
   await new Promise((chaseResolve) => window.setTimeout(chaseResolve, 300));
@@ -368,8 +402,27 @@ async function ChasePreviewPost(endpoint, payload) {
     if (!Number.isInteger(chaseAmount) || chaseAmount < 1 || chaseAmount > chaseSnapshot.config.maxTip)
       throw new Error("Enter a valid whole-number tip.");
   } else if (chaseAction === "request") {
-    if (!String(chaseData.message).trim())
-      throw new Error("Write a message first.");
+    const chaseKind = String(chaseData.kind);
+    if (!["request", "song", "message", "advertisement"].includes(chaseKind))
+      throw new Error("Choose a song, message or advertisement.");
+    const chaseMessage = String(chaseData.message || "").trim();
+    const chaseUrl = chaseKind === "song" ? String(chaseData.url || "") : void 0;
+    if (chaseUrl !== void 0 && !ChaseDetectProvider(chaseUrl))
+      throw new Error("Paste a supported YouTube or SoundCloud link.");
+    const chaseLength = Array.from(chaseMessage).length + (chaseUrl === void 0 ? 0 : Array.from(chaseUrl).length + 1);
+    if (chaseKind !== "song" && chaseLength < 3 || chaseLength > Math.min(240, chaseSnapshot.config.requestMaxLength))
+      throw new Error("The message and song link must fit within the request limit.");
+    if (chaseData.stationId === chaseSnapshot.mine?.id)
+      chaseSnapshot.requests.unshift({
+        id: Date.now(),
+        stationId: Number(chaseData.stationId),
+        senderName: chaseSnapshot.viewer.name,
+        kind: chaseKind,
+        message: chaseMessage,
+        url: chaseUrl,
+        status: "pending",
+        createdAt: Date.now()
+      });
   } else if (chaseAction === "callStation") {
     const chaseStation = chaseSnapshot.stations.find((chaseItem) => chaseItem.id === chaseData.stationId);
     const chaseHeardId = chaseData.placedNetId !== void 0 ? ChasePreviewPlaced(chaseData).stationId : chaseSnapshot.tunedStationId;
@@ -459,31 +512,90 @@ async function ChasePreviewPost(endpoint, payload) {
       if (chaseData.mode !== "dj" && chaseData.mode !== "autonomous")
         throw new Error("Unknown station mode.");
       chaseMine.mode = chaseData.mode;
-    } else if (chaseAction === "queueAdd") {
+    } else if (chaseAction === "queueAdd" || chaseAction === "queueRequest") {
       const chaseQueue = chaseMine.queue || [];
-      chaseQueue.push({
-        id: Date.now(),
-        provider: String(chaseData.url).includes("soundcloud") ? "soundcloud" : "youtube",
-        url: String(chaseData.url),
-        title: String(chaseData.title || chaseData.url),
-        duration: Number(chaseData.duration) || 0
-      });
+      const chaseRequest = chaseAction === "queueRequest" ? chaseSnapshot.requests.find((chaseItem) => chaseItem.id === chaseData.requestId && chaseItem.stationId === chaseMine.id && chaseItem.kind === "song" && chaseItem.status === "pending") : void 0;
+      if (chaseAction === "queueRequest" && !chaseRequest?.url)
+        throw new Error("That song request was already handled or is unavailable.");
+      chaseQueue.push(ChasePreviewTrack(chaseRequest ? { ...chaseData, url: chaseRequest.url } : chaseData));
+      if (chaseRequest)
+        chaseRequest.status = "accepted";
+      chaseMine.queue = chaseQueue;
+    } else if (chaseAction === "queueMove") {
+      const chaseQueue = [...chaseMine.queue || []];
+      const chaseIndex = chaseQueue.findIndex((chaseTrack2) => chaseTrack2.id === chaseData.trackId);
+      const chasePosition = Number(chaseData.position);
+      if (chaseIndex < 0 || !Number.isInteger(chasePosition) || chasePosition < 1 || chasePosition > chaseQueue.length)
+        throw new Error("Choose a position within the music queue.");
+      const [chaseTrack] = chaseQueue.splice(chaseIndex, 1);
+      chaseQueue.splice(chasePosition - 1, 0, chaseTrack);
       chaseMine.queue = chaseQueue;
     } else if (chaseAction === "queueRemove") {
       chaseMine.queue = (chaseMine.queue || []).filter((chaseTrack) => chaseTrack.id !== chaseData.trackId);
-    } else if (chaseAction === "playTrack" || chaseAction === "skipTrack") {
+    } else if (chaseAction === "playTrack" || chaseAction === "skipTrack" || chaseAction === "previousTrack") {
       if (!chaseMine.live)
         throw new Error("Start the broadcast first.");
       const chaseQueue = chaseMine.queue || [];
-      const chaseIndex = chaseAction === "playTrack" ? chaseQueue.findIndex((chaseTrack2) => chaseTrack2.id === chaseData.trackId) : chaseQueue.findIndex((chaseTrack2) => chaseTrack2.title === chaseMine.nowPlaying?.title) + 1;
+      let chaseIndex = chaseAction === "playTrack" ? chaseQueue.findIndex((chaseTrack2) => chaseTrack2.id === chaseData.trackId) : chaseQueue.findIndex((chaseTrack2) => chaseTrack2.id === chaseMine.nowPlaying?.trackId) + (chaseAction === "previousTrack" ? -1 : 1);
+      if (chaseAction === "previousTrack" && chaseIndex < 0)
+        chaseIndex = chaseMine.mode === "autonomous" ? chaseQueue.length - 1 : 0;
       const chaseTrack = chaseQueue[chaseMine.mode === "autonomous" && chaseQueue.length ? chaseIndex % chaseQueue.length : chaseIndex];
       chaseMine.nowPlaying = chaseTrack ? {
         provider: chaseTrack.provider,
+        id: `track:${chaseTrack.id}`,
+        trackId: chaseTrack.id,
         title: chaseTrack.title,
         duration: chaseTrack.duration,
-        startedAt: Math.floor(Date.now() / 1e3)
+        startedAt: Math.floor(Date.now() / 1e3),
+        paused: false,
+        offsetSeconds: 0
       } : null;
       chaseMine.autoplay = Boolean(chaseTrack);
+    } else if (chaseAction === "pauseTrack") {
+      if (!chaseMine.live || !chaseMine.nowPlaying?.trackId)
+        throw new Error("Play a queued music track first.");
+      const chasePlaying = chaseMine.nowPlaying;
+      if (chaseData.paused === true && !chasePlaying.paused)
+        chasePlaying.offsetSeconds = Math.max(0, Date.now() / 1e3 - chasePlaying.startedAt);
+      if (chaseData.paused === false && chasePlaying.paused)
+        chasePlaying.startedAt = Date.now() / 1e3 - (chasePlaying.offsetSeconds || 0);
+      chasePlaying.paused = chaseData.paused === true;
+    } else if (chaseAction === "musicVolume") {
+      const chaseVolume = Number(chaseData.volume);
+      if (!Number.isFinite(chaseVolume) || chaseVolume < 0 || chaseVolume > 1)
+        throw new Error("Choose a broadcast volume between zero and one.");
+      chaseMine.musicVolume = chaseVolume;
+    } else if (chaseAction === "playCartridge" || chaseAction === "previewCartridge") {
+      const chaseCartridge = chaseSnapshot.cartridges.find((chaseItem) => chaseItem.id === chaseData.cartridgeId);
+      if (!chaseCartridge)
+        throw new Error("Choose an installed cartridge.");
+      if (chaseAction === "previewCartridge") {
+        const chaseFiles = {
+          "station-ident": "audio/chase_bootleg_ident.wav",
+          intermission: "audio/chase_bootleg_intermission.wav"
+        };
+        window.postMessage({
+          type: "chase_bootleg:previewAudio",
+          url: chaseFiles[chaseCartridge.id],
+          title: chaseCartridge.name,
+          cartridgeId: chaseCartridge.id,
+          duration: chaseCartridge.duration,
+          stationId: chaseMine.id
+        }, "*");
+      } else {
+        if (!chaseMine.live)
+          throw new Error("Start the broadcast first.");
+        chaseMine.nowPlaying = {
+          id: chaseCartridge.id,
+          cartridgeId: chaseCartridge.id,
+          provider: "file",
+          title: chaseCartridge.name,
+          duration: chaseCartridge.duration,
+          startedAt: Date.now() / 1e3
+        };
+      }
+    } else if (chaseAction === "stopPreview") {
+      window.postMessage({ type: "chase_bootleg:previewStop" }, "*");
     } else if (chaseAction === "stopCartridge") {
       chaseMine.nowPlaying = null;
       chaseMine.autoplay = false;
@@ -502,7 +614,8 @@ async function ChasePreviewPost(endpoint, payload) {
       chaseSnapshot.crew.push({
         source: chaseSource,
         name: `Guest ${chaseSource}`,
-        memberId: chaseSource + 100
+        memberId: chaseSource + 100,
+        online: true
       });
     } else if (chaseAction === "crewRemove") {
       chaseSnapshot.crew = chaseSnapshot.crew.filter((chaseItem) => chaseData.memberId ? chaseItem.memberId !== chaseData.memberId : chaseItem.source !== chaseData.source);
@@ -511,7 +624,7 @@ async function ChasePreviewPost(endpoint, payload) {
       if (!Number.isInteger(chaseAmount) || chaseAmount < 1 || chaseAmount > (chaseMine.balance || 0))
         throw new Error("The withdrawal exceeds the available station balance.");
       chaseMine.balance = (chaseMine.balance || 0) - chaseAmount;
-    } else if (chaseAction !== "playCartridge") {
+    } else {
       throw new Error("This action is unavailable in the preview.");
     }
     chaseSnapshot.stations = chaseSnapshot.stations.map((chaseItem) => chaseItem.id === chaseMine.id ? { ...chaseMine } : chaseItem);

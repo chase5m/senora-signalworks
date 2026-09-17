@@ -1,0 +1,1106 @@
+:root {
+  --chase-amber: #ffbf47;
+  --chase-orange: #ffbf47;
+  --chase-heading: "Rajdhani", "Manrope Variable", sans-serif;
+  --chase-paper: #0c1214;
+  --chase-card: #11181a;
+  --chase-ink: #f3f4f3;
+  --chase-muted: #afb6be;
+  --chase-line: #303a3d;
+}
+.chase-overlay {
+  background: #0004;
+  padding: 24px;
+}
+.chase-preview {
+  background: #11191e url("/images/senora-van.jpg") center / cover;
+}
+.chase-app:not(.chase-receiver-app) {
+  grid-template-rows: minmax(0, 1fr);
+  width: min(1600px, 94vw);
+  height: min(1050px, 90vh);
+  grid-template-columns: 102px minmax(0, 1fr);
+  padding: 16px;
+  border: 1px solid #566064;
+  border-radius: 24px;
+  background: #182022 url("/images/senora-metal.png") repeat;
+  box-shadow:
+    0 25px 70px #000a,
+    inset 0 0 0 3px #111719,
+    inset 0 0 0 5px #354043;
+}
+.chase-app:not(.chase-receiver-app) .chase-workspace {
+  border: 1px solid #394348;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+  overflow: hidden;
+  background: #0c1214;
+}
+.chase-app:not(.chase-receiver-app) .chase-sidebar {
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid #394348;
+  border-right-color: #303a3d;
+  border-radius: 10px 0 0 10px;
+  padding: 0;
+  gap: 18px;
+  background: #0c1214;
+}
+.chase-app:not(.chase-receiver-app) .chase-brand {
+  height: 66px;
+  min-height: 66px;
+  color: var(--chase-amber);
+  border-bottom: 1px solid var(--chase-line);
+}
+.chase-app:not(.chase-receiver-app) .chase-sidebar nav {
+  flex-direction: column;
+  flex: none;
+  gap: 5px;
+  padding: 0 7px 0 0;
+}
+.chase-app:not(.chase-receiver-app) .chase-sidebar nav button {
+  flex-direction: column;
+  min-height: 90px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #bcc2ca;
+  border: 0;
+  border-left: 4px solid transparent;
+  border-radius: 0 7px 7px 0;
+}
+.chase-app:not(.chase-receiver-app) .chase-sidebar nav button svg {
+  width: 28px;
+  height: 28px;
+}
+.chase-app:not(.chase-receiver-app) .chase-sidebar nav .chase-nav-active {
+  color: var(--chase-amber);
+  background: #25241b;
+  border-left-color: var(--chase-amber);
+  box-shadow: none;
+}
+.chase-app:not(.chase-receiver-app) .chase-profile {
+  padding: 16px 7px;
+  font-size: 10px;
+  color: #929ca7;
+}
+.chase-app:not(.chase-receiver-app) .chase-topbar {
+  min-height: 66px;
+  height: 66px;
+  padding: 0 28px;
+  background: #0e1517;
+  border-color: var(--chase-line);
+}
+.chase-breadcrumb strong {
+  font-family: var(--chase-heading);
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+.chase-breadcrumb span {
+  font-family: var(--chase-mono);
+  color: #aeb7c2;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-size: 12px;
+}
+.chase-close-button {
+  padding: 8px;
+  background: #151d20;
+  color: #b2bbc4;
+  border-color: #465156;
+}
+.chase-close-button span {
+  display: none;
+}
+.chase-preview-badge {
+  font-size: 9px;
+  max-width: 180px;
+}
+.chase-status {
+  font-family: var(--chase-mono);
+  color: #a6aeb7;
+  font-size: 11px;
+}
+.chase-status-live {
+  color: #7ed677;
+}
+.chase-app:not(.chase-receiver-app) .chase-main {
+  padding: 25px 28px 20px;
+  background: #0c1214;
+  color: #f3f4f3;
+  font-size: 16px;
+}
+.chase-app:not(.chase-receiver-app) .chase-page-heading {
+  display: none;
+}
+.chase-view-fieldset {
+  min-width: 0;
+}
+.chase-app h1,
+.chase-app h2,
+.chase-app h3 {
+  font-family: var(--chase-heading);
+  letter-spacing: 0.25px;
+}
+.chase-app h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.chase-app h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.chase-app h3 {
+  font-size: 23px;
+  font-weight: 600;
+}
+.chase-app p {
+  color: #afb6be;
+  line-height: 1.6;
+}
+.chase-button {
+  min-height: 44px;
+  padding: 10px 17px;
+  border-radius: 6px;
+  font-size: 15px;
+  gap: 10px;
+}
+.chase-button.chase-primary {
+  color: #13181a;
+  background: #ffbf47;
+  border: 1px solid #f7d278;
+  box-shadow: inset 0 1px 0 #ffe6a5;
+  font-weight: 800;
+}
+.chase-button.chase-secondary {
+  background: #131b1e;
+  color: #e0e4e7;
+  border: 1px solid #424d52;
+  box-shadow: none;
+}
+.chase-button.chase-danger {
+  background: #32191a;
+  color: #ff7573;
+  border-color: #6b3232;
+}
+.chase-button:focus-visible,
+.chase-app input:focus-visible,
+.chase-app select:focus-visible,
+.chase-app textarea:focus-visible {
+  outline-color: var(--chase-amber);
+}
+.chase-app .chase-button:disabled {
+  opacity: 0.4;
+}
+.chase-app input,
+.chase-app textarea,
+.chase-app select {
+  background: #101719;
+  border-color: #424c52;
+  color: #f2f3f2;
+  border-radius: 6px;
+  font-size: 16px;
+}
+.chase-app input[type="range"] {
+  accent-color: var(--chase-amber);
+  background: transparent;
+}
+.chase-app input[type="checkbox"] {
+  accent-color: var(--chase-amber);
+}
+.chase-app .chase-eyebrow {
+  color: #aeb8c2;
+  letter-spacing: 1.5px;
+  font-size: 12px;
+}
+.chase-app .chase-caption {
+  color: #929da8;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.chase-app .chase-card {
+  background: #101719;
+  border-color: #354046;
+  border-radius: 6px;
+}
+.chase-app .chase-icon-button {
+  color: #c0c8ce;
+  background: #151e21;
+  border-color: #3a454a;
+}
+.chase-app .chase-count-pill {
+  color: #15191c;
+  background: var(--chase-amber);
+  border-radius: 7px;
+  font-weight: 800;
+}
+.chase-app:not(.chase-receiver-app) .chase-player {
+  margin: 0;
+  min-height: 70px;
+  padding: 14px 28px;
+  background: #0e1517;
+  border-color: var(--chase-line);
+  gap: 18px;
+}
+.chase-app:not(.chase-receiver-app) .chase-player-icon {
+  color: var(--chase-amber);
+  background: #172124;
+}
+.chase-player-station strong {
+  font-family: var(--chase-heading);
+  font-size: 21px;
+}
+.chase-player-station > span {
+  font-size: 12px;
+  color: #aab4bc;
+}
+.chase-player-volume input {
+  width: 160px;
+  accent-color: var(--chase-amber);
+}
+.chase-player-volume span {
+  color: #c1c8ce;
+  font-family: var(--chase-mono);
+  font-size: 13px;
+}
+.chase-player-fm {
+  color: #8a96a3;
+  font-family: var(--chase-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.chase-app .chase-speech-inline {
+  padding: 0 0 16px;
+  border-bottom: 1px solid var(--chase-line);
+  margin-bottom: 20px;
+}
+.chase-app .chase-speech-chip {
+  background: #131e20;
+  border-color: #344447;
+}
+.chase-app .chase-speech-talk {
+  color: var(--chase-amber);
+  background: #21211a;
+  border-color: #625332;
+}
+.chase-app .chase-speech-talk[aria-pressed="true"] {
+  background: var(--chase-amber);
+  color: #171a1b;
+}
+.chase-modal {
+  background: #0f171a;
+  border-color: #5b5545;
+  border-radius: 10px;
+  width: min(620px, calc(100vw - 48px));
+}
+.chase-modal-header {
+  background: #121c1f;
+  border-color: var(--chase-line);
+}
+.chase-modal-icon {
+  background: #29281e;
+  color: var(--chase-amber);
+}
+.chase-modal-body {
+  padding: 24px;
+}
+.chase-toast {
+  background: #15201d;
+  color: #eef4ef;
+  border-color: #566848;
+}
+.chase-equipment-meter {
+  display: block;
+  width: 100%;
+  height: 28px;
+}
+.chase-equipment-meter::-webkit-meter-bar {
+  border: 1px solid #3b484c;
+  border-radius: 5px;
+  background: #232c30;
+  box-shadow: inset 0 2px 4px #0007;
+}
+.chase-equipment-meter::-webkit-meter-optimum-value {
+  background: var(--chase-amber);
+  border-radius: 3px;
+}
+.chase-equipment-meter::-moz-meter-bar {
+  background: var(--chase-amber);
+}
+.chase-playback-progress {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font: 13px var(--chase-mono);
+  color: #b7c0c9;
+}
+.chase-playback-progress progress {
+  width: 100%;
+  flex: 1;
+  height: 6px;
+  appearance: none;
+  border: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.chase-playback-progress progress::-webkit-progress-bar {
+  background: #2e373c;
+}
+.chase-playback-progress progress::-webkit-progress-value {
+  background: var(--chase-amber);
+}
+.chase-playback-progress progress::-moz-progress-bar {
+  background: var(--chase-amber);
+}
+.chase-station-art,
+.chase-track-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.chase-section-intro {
+  margin-bottom: 20px;
+}
+.chase-section-intro p {
+  margin-top: 4px;
+  font-size: 15px;
+}
+.chase-discover-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.34fr) minmax(0, 1fr);
+  gap: 25px;
+}
+.chase-discover-directory {
+  min-width: 0;
+}
+.chase-discover-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.chase-discover-search .chase-search {
+  flex: 1;
+  margin: 0;
+  background: #101719;
+  border-color: #4a555a;
+}
+.chase-discover-search .chase-search input {
+  border: 0;
+  font-size: 14px;
+  background: transparent;
+}
+.chase-discover-search .chase-button {
+  white-space: nowrap;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+.chase-broadcast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chase-broadcast-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 104px;
+  width: 100%;
+  padding: 10px;
+  background: #11191c;
+  border: 1px solid #343f44;
+  border-radius: 7px;
+  text-align: left;
+  color: #eef2f5;
+}
+.chase-broadcast-card.chase-broadcast-selected {
+  border-color: var(--chase-amber);
+  background: #24241c;
+}
+.chase-broadcast-card > img {
+  width: 86px;
+  height: 82px;
+  flex-shrink: 0;
+}
+.chase-broadcast-name {
+  flex: 1;
+  min-width: 0;
+}
+.chase-broadcast-name h2 {
+  font-size: 26px;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+.chase-broadcast-name p {
+  font-size: 13px;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+}
+.chase-broadcast-frequency {
+  min-width: 97px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chase-broadcast-frequency > strong {
+  font-family: var(--chase-heading);
+  font-size: 24px;
+  white-space: nowrap;
+}
+.chase-broadcast-frequency .chase-status {
+  font:
+    12px "Manrope Variable",
+    sans-serif;
+}
+.chase-list-strength {
+  min-width: 69px;
+  border-left: 1px solid #404541;
+  padding-left: 16px;
+  color: var(--chase-amber);
+  font: 13px var(--chase-mono);
+}
+.chase-discover-detail {
+  border-left: 1px solid var(--chase-line);
+  padding-left: 25px;
+  min-width: 0;
+}
+.chase-discover-detail .chase-station-cover {
+  height: auto;
+  max-height: 260px;
+  aspect-ratio: 1.9;
+  margin-bottom: 13px;
+}
+.chase-discover-detail > h2 {
+  font-size: 34px;
+}
+.chase-discover-detail > p {
+  font-size: 16px;
+  margin-top: 3px;
+}
+.chase-station-program {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-top: 1px solid var(--chase-line);
+}
+.chase-station-program strong {
+  font: 600 21px var(--chase-heading);
+}
+.chase-station-program span {
+  font-size: 12px;
+  color: #9aa6af;
+}
+.chase-list-now {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 18px 0;
+}
+.chase-list-now .chase-eyebrow {
+  color: var(--chase-amber);
+}
+.chase-list-now strong {
+  font: 600 25px var(--chase-heading);
+  overflow-wrap: anywhere;
+}
+.chase-discover-detail > .chase-full {
+  min-height: 56px;
+  font-size: 18px;
+}
+.chase-discover-detail .chase-station-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+.chase-discover-detail .chase-station-actions .chase-button {
+  padding: 10px;
+  font-size: 13px;
+}
+.chase-discover-tuner {
+  display: grid;
+  grid-template-columns: 170px minmax(280px, 360px) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  padding: 20px 0 4px;
+  margin-top: 22px;
+  border-top: 1px solid var(--chase-line);
+}
+.chase-discover-tuner > div > p {
+  font-size: 12px;
+}
+.chase-discover-tuner .chase-tune-controls {
+  padding: 0;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+.chase-discover-tuner .chase-frequency-stepper {
+  min-width: 155px;
+  border: 1px solid #3c484d;
+  padding: 2px;
+  border-radius: 6px;
+}
+.chase-discover-tuner .chase-frequency-input {
+  color: var(--chase-amber);
+  font: 600 25px var(--chase-mono);
+  border: 0;
+  padding: 7px 0;
+}
+.chase-discover-tuner .chase-device-controls {
+  padding: 0 0 0 18px;
+  border: 0;
+  border-left: 1px solid var(--chase-line);
+  margin: 0;
+}
+.chase-discover-tuner .chase-device-controls .chase-panel-heading {
+  display: none;
+}
+.chase-discover-tuner .chase-device-switch {
+  gap: 6px;
+}
+.chase-discover-tuner .chase-device-switch .chase-button {
+  padding: 8px 10px;
+  font-size: 12px;
+}
+.chase-discover-tuner .chase-carry-controls {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.chase-discover-tuner .chase-text-button {
+  color: #abb5bc;
+  font-size: 11px;
+  margin-top: 9px;
+}
+.chase-discover-tuner .chase-count-pill {
+  font-size: 10px;
+}
+.chase-request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.chase-request-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e6e8e7;
+}
+.chase-request-kinds {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 9px;
+}
+.chase-request-kinds .chase-button {
+  font-size: 12px;
+  padding: 10px 9px;
+  gap: 8px;
+}
+.chase-track-link {
+  display: flex;
+  align-items: center;
+  border: 1px solid #434f54;
+  border-radius: 6px;
+  padding-left: 14px;
+}
+.chase-track-link svg {
+  color: #b2bcc5;
+  flex-shrink: 0;
+}
+.chase-track-link input {
+  border: 0;
+  font-family: var(--chase-mono);
+  font-size: 13px;
+}
+.chase-request-form textarea {
+  min-height: 126px;
+  font-family: var(--chase-mono);
+  font-size: 14px;
+  resize: vertical;
+}
+.chase-form-count {
+  text-align: right;
+  font: 12px var(--chase-mono);
+  color: #9da9b5;
+  margin-top: -10px;
+}
+.chase-form-error {
+  color: #ff8b7b !important;
+  font-size: 13px;
+}
+.chase-form-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+}
+.chase-form-note svg {
+  flex-shrink: 0;
+}
+.chase-tip-form {
+  border-top: 1px solid var(--chase-line);
+  padding-top: 18px;
+  margin-top: 22px;
+}
+.chase-tip-form > p {
+  font-size: 12px;
+  margin: 3px 0 14px;
+}
+.chase-tip-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.chase-tip-actions .chase-selected {
+  border-color: var(--chase-amber);
+  color: var(--chase-amber);
+}
+.chase-tip-actions input {
+  width: 100%;
+  min-width: 70px;
+  font-family: var(--chase-mono);
+}
+.chase-tip-actions .chase-button {
+  padding: 12px 14px;
+  white-space: nowrap;
+}
+.chase-tip-form .chase-caption {
+  display: block;
+  margin-top: 10px;
+}
+.chase-modal .chase-tip-form {
+  margin-top: 0;
+  padding-top: 0;
+  border: 0;
+}
+.chase-onair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.chase-tuned-panel {
+  min-width: 0;
+  padding-right: 28px;
+  border-right: 1px solid var(--chase-line);
+}
+.chase-send-panel {
+  min-width: 0;
+}
+.chase-onair .chase-section-intro h2 {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+.chase-tuned-identity {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  gap: 22px;
+  margin-top: 28px;
+}
+.chase-tuned-identity > img {
+  height: 335px;
+  object-fit: cover;
+}
+.chase-tuned-details > h2 {
+  font-size: 31px;
+}
+.chase-tuned-details > .chase-eyebrow {
+  margin-top: 4px;
+  display: block;
+  font-size: 10px;
+}
+.chase-dial-frequency {
+  color: var(--chase-amber);
+  font: 600 clamp(32px, 3.1vw, 62px) var(--chase-heading);
+  line-height: 1.3;
+  margin-top: 12px;
+  white-space: nowrap;
+}
+.chase-dial-frequency small {
+  color: #8a949e;
+  font: 600 25px var(--chase-heading);
+  padding-left: 8px;
+}
+.chase-tuned-details > .chase-status {
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.chase-tuned-show {
+  border-top: 1px solid var(--chase-line);
+  padding-top: 16px;
+  margin-top: 18px;
+}
+.chase-tuned-show h3 {
+  margin-top: 7px;
+  font-size: 23px;
+}
+.chase-tuned-show p {
+  font-size: 13px;
+  margin-top: 3px;
+}
+.chase-tuned-reception {
+  border-top: 1px solid var(--chase-line);
+  margin-top: 28px;
+  padding-top: 18px;
+}
+.chase-tuned-reception > div {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 12px 0;
+}
+.chase-tuned-reception strong {
+  color: var(--chase-amber);
+  font: 600 22px var(--chase-heading);
+}
+.chase-tuned-reception p {
+  font-size: 12px;
+}
+.chase-onair-controls {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--chase-line);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+}
+.chase-onair-controls > span {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--chase-mono);
+  color: var(--chase-amber);
+}
+.chase-onair-empty {
+  text-align: center;
+  padding: 65px 0;
+}
+.chase-onair-empty > .chase-button {
+  margin: 20px auto;
+}
+@media (max-width: 1350px) {
+  .chase-app:not(.chase-receiver-app) {
+    grid-template-columns: 86px minmax(0, 1fr);
+    padding: 12px;
+    width: 96vw;
+    height: 94vh;
+  }
+  .chase-app:not(.chase-receiver-app) .chase-main {
+    padding: 20px;
+  }
+  .chase-breadcrumb strong {
+    font-size: 21px;
+  }
+  .chase-breadcrumb span {
+    font-size: 10px;
+  }
+  .chase-discover-columns {
+    grid-template-columns: 1.25fr 1fr;
+    gap: 20px;
+  }
+  .chase-broadcast-card {
+    gap: 10px;
+  }
+  .chase-broadcast-card > img {
+    width: 64px;
+    height: 72px;
+  }
+  .chase-broadcast-name h2 {
+    font-size: 22px;
+  }
+  .chase-list-strength {
+    display: none;
+  }
+  .chase-discover-tuner {
+    grid-template-columns: 1fr 1.2fr;
+  }
+  .chase-discover-tuner > div:first-child {
+    display: none;
+  }
+  .chase-onair {
+    gap: 20px;
+  }
+  .chase-tuned-panel {
+    padding-right: 20px;
+  }
+  .chase-tuned-identity {
+    gap: 16px;
+    grid-template-columns: 0.8fr 1fr;
+  }
+  .chase-tuned-identity > img {
+    height: 285px;
+  }
+  .chase-tip-actions {
+    flex-wrap: wrap;
+  }
+  .chase-tip-actions input {
+    flex: 1;
+  }
+}
+@media (max-width: 1000px) {
+  .chase-breadcrumb span,
+  .chase-player-fm,
+  .chase-profile {
+    display: none;
+  }
+  .chase-app:not(.chase-receiver-app) .chase-topbar {
+    padding: 0 18px;
+  }
+  .chase-preview-badge {
+    max-width: 140px;
+    font-size: 8px;
+  }
+  .chase-discover-columns,
+  .chase-onair {
+    grid-template-columns: 1fr;
+  }
+  .chase-discover-detail {
+    padding: 24px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--chase-line);
+  }
+  .chase-discover-detail .chase-station-cover {
+    max-height: 240px;
+  }
+  .chase-tuned-panel {
+    padding: 0 0 24px;
+    border-right: 0;
+    border-bottom: 1px solid var(--chase-line);
+  }
+  .chase-onair-controls {
+    flex-wrap: wrap;
+  }
+  .chase-discover-tuner {
+    grid-template-columns: 1fr;
+  }
+  .chase-discover-tuner .chase-device-controls {
+    padding: 15px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--chase-line);
+  }
+}
+@media (max-width: 650px) {
+  .chase-overlay {
+    padding: 4px;
+  }
+  .chase-app:not(.chase-receiver-app) {
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    border-radius: 12px;
+    grid-template-columns: 62px minmax(0, 1fr);
+  }
+  .chase-app:not(.chase-receiver-app) .chase-sidebar nav button {
+    font-size: 11px;
+    min-height: 76px;
+  }
+  .chase-app:not(.chase-receiver-app) .chase-main {
+    padding: 15px;
+  }
+  .chase-breadcrumb strong {
+    font-size: 17px;
+  }
+  .chase-topbar .chase-status,
+  .chase-preview-badge,
+  .chase-refresh-button {
+    display: none;
+  }
+  .chase-app:not(.chase-receiver-app) .chase-player {
+    padding: 12px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .chase-player-volume {
+    margin-left: auto;
+  }
+  .chase-player-volume input {
+    width: 100px;
+  }
+  .chase-app h1 {
+    font-size: 32px;
+  }
+  .chase-discover-search {
+    flex-wrap: wrap;
+  }
+  .chase-discover-search .chase-search {
+    flex-basis: 100%;
+  }
+  .chase-broadcast-card {
+    flex-wrap: wrap;
+  }
+  .chase-broadcast-frequency {
+    padding-left: 74px;
+  }
+  .chase-tuned-identity {
+    grid-template-columns: 1fr;
+  }
+  .chase-tuned-identity > img {
+    height: 230px;
+  }
+  .chase-request-kinds {
+    grid-template-columns: 1fr;
+  }
+  .chase-modal-body {
+    padding: 16px;
+  }
+  .chase-onair-controls > span {
+    flex-basis: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chase-app *,
+  .chase-app *::before,
+  .chase-app *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+.chase-discover-detail .chase-station-cover {
+  height: clamp(150px, 19vh, 225px);
+  aspect-ratio: auto;
+}
+.chase-station-program {
+  padding-top: 11px;
+  margin-top: 11px;
+}
+.chase-list-now {
+  margin: 12px 0;
+}
+.chase-discover-detail .chase-call-controls {
+  min-height: 42px;
+  padding: 7px 10px;
+  margin-top: 0;
+}
+.chase-discover-detail .chase-call-controls .chase-button {
+  min-height: 32px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.chase-discover-tuner {
+  align-items: center;
+  grid-template-columns: 170px minmax(280px, 360px) minmax(0, 1fr);
+}
+.chase-receiver-options {
+  border-left: 1px solid var(--chase-line);
+  padding-left: 24px;
+  min-width: 0;
+}
+.chase-receiver-options summary {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  min-height: 50px;
+}
+.chase-receiver-options summary > span {
+  flex: 1;
+  font: 600 21px var(--chase-heading);
+}
+.chase-receiver-options summary small {
+  display: block;
+  color: var(--chase-muted);
+  font:
+    12px "Manrope Variable",
+    sans-serif;
+  margin-top: 3px;
+}
+.chase-receiver-options summary > svg:first-child {
+  color: var(--chase-amber);
+}
+.chase-receiver-options .chase-device-controls {
+  margin-top: 15px;
+  padding-left: 0;
+  border: 0;
+}
+@media (max-width: 1350px) {
+  .chase-discover-tuner {
+    grid-template-columns: 1fr 1.2fr;
+  }
+}
+@media (max-width: 1000px) {
+  .chase-discover-tuner {
+    grid-template-columns: 1fr;
+  }
+  .chase-receiver-options {
+    padding: 15px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--chase-line);
+  }
+}
+.chase-broadcast-name p {
+  font-size: 15px;
+}
+.chase-broadcast-frequency .chase-status {
+  font-size: 14px;
+}
+.chase-discover-search .chase-search input {
+  font-size: 15px;
+}
+.chase-discover-search .chase-button {
+  font-size: 14px;
+}
+.chase-discover-detail .chase-station-actions .chase-button {
+  font-size: 15px;
+}
+.chase-station-program span {
+  font-size: 13px;
+}
+.chase-discover-tuner > div > p {
+  font-size: 13px;
+}
+.chase-player-actions {
+  display: flex;
+  gap: 12px;
+}
+.chase-player-actions .chase-button {
+  font-size: 13px;
+  min-height: 40px;
+}
+.chase-dial-frequency {
+  font-size: clamp(54px, 4.5vw, 80px);
+}
+.chase-tuned-show {
+  margin-top: 12px;
+  padding-top: 12px;
+}
+.chase-tuned-reception {
+  margin-top: 20px;
+  padding-top: 14px;
+}
+.chase-tuned-panel .chase-call-controls {
+  padding: 7px 10px;
+}
+.chase-request-kinds .chase-button {
+  font-size: 14px;
+}
+@media (max-width: 1000px) {
+  .chase-player-actions {
+    flex-wrap: wrap;
+  }
+  .chase-player-actions .chase-button {
+    padding: 8px;
+  }
+}
+@media (max-width: 650px) {
+  .chase-player-actions {
+    width: 100%;
+  }
+}
+.chase-app .chase-studio .chase-studio-footer {
+  display: none;
+}
+.chase-app .chase-studio-requests > .chase-section-heading {
+  display: none;
+}
+.chase-app .chase-studio .chase-studio-request-row strong {
+  font-size: 19px;
+}
+.chase-app .chase-studio .chase-studio-request-row small,
+.chase-app .chase-studio .chase-studio-request-row > span:nth-child(2) > span {
+  font-size: 15px;
+}
+.chase-app .chase-equipment-meter::-webkit-meter-bar {
+  height: 100%;
+}

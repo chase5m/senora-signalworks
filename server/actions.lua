@@ -7,7 +7,7 @@ local actions = ChaseBootlegActions
 
 local function ChaseFieldText(value, minimum, maximum, label)
     local text = domain.ChaseText(value, minimum, maximum)
-    if not text then server.ChaseReject('invalid_text', ('%s must contain %s–%s characters without control characters or markup.'):format(label, minimum, maximum)) end
+    if not text then server.ChaseReject('invalid_text', ('%s must contain %s-%s characters without control characters or markup.'):format(label, minimum, maximum)) end
     return text
 end
 
@@ -115,6 +115,11 @@ function ChaseBootlegActions.ChaseUpdateStation(identity, data)
         frequency = ChaseFrequency(data.frequency, station.id), power = data.power, isPublic = data.isPublic,
         showTitle = ChaseFieldText(data.showTitle or '', 0, 64, 'Show title')
     }
+    if data.mode ~= nil then
+        if data.mode ~= 'dj' and data.mode ~= 'autonomous' then server.ChaseReject('invalid_mode', 'Choose the DJ-managed or autonomous mode.') end
+        if data.mode == 'autonomous' then ChaseRequireMusic() end
+        fields.mode = data.mode
+    end
     ChaseBootlegDatabase.ChaseUpdateStation(station, fields)
     server.ChaseRequireBroadcast(identity)
     for key, value in pairs(fields) do station[key] = value end
@@ -302,8 +307,22 @@ end
 
 function ChaseBootlegActions.ChaseRequest(identity, data)
     local station = ChaseSelectedStation(identity, data)
-    if data.kind ~= 'request' and data.kind ~= 'advertisement' then server.ChaseReject('invalid_request', 'Choose a request or advertisement.') end
-    local message = ChaseFieldText(data.message, 3, config.Requests.maxLength, 'Message')
+    if data.kind ~= 'request' and data.kind ~= 'advertisement' and data.kind ~= 'song' and data.kind ~= 'message' then
+        server.ChaseReject('invalid_request', 'Choose a song, message or advertisement.')
+    end
+    local limit = math.min(config.Requests.maxLength, 240)
+    local message = ChaseFieldText(data.message or '', data.kind == 'song' and 0 or 3, limit, 'Message')
+    if data.kind == 'song' then
+        local music = ChaseRequireMusic()
+        local provider = domain.ChaseMusicProvider(data.url)
+        if not provider or not music.providers or music.providers[provider] ~= true then
+            server.ChaseReject('invalid_link', 'Paste a supported YouTube or SoundCloud link.')
+        end
+        message = data.url .. '\n' .. message
+        if not utf8.len(message) or utf8.len(message) > limit then
+            server.ChaseReject('invalid_text', ('The song link and message must fit within %s characters.'):format(limit))
+        end
+    end
     server.ChaseRate(identity, 'requestMessage', config.Requests.cooldownSeconds * 1000)
     if ChaseBootlegDatabase.ChasePendingCount(station.id) >= config.Requests.maxPending then server.ChaseReject('queue_full', 'This station has too many pending requests.') end
     server.ChaseRequireCurrent(identity)
@@ -396,11 +415,32 @@ function ChaseBootlegActions.ChasePlayCartridge(identity, data)
         startedAt = os.time(), monitorIdentity = identity }
 end
 
+function ChaseBootlegActions.ChasePreviewCartridge(identity, data)
+    server.ChaseRequireBroadcast(identity)
+    local station = server.ChaseRequireStation(identity)
+    server.ChaseNearVan(identity, station, true)
+    for _, cartridge in ipairs(config.Cartridges) do
+        if cartridge.id == data.cartridgeId then
+            TriggerClientEvent('chase_bootleg:client:previewCartridge', identity.source, {
+                cartridgeId = cartridge.id, title = cartridge.name, url = cartridge.url,
+                duration = cartridge.duration, stationId = station.id
+            })
+            return
+        end
+    end
+    server.ChaseReject('cartridge_unavailable', 'Choose an installed cartridge.')
+end
+
+function ChaseBootlegActions.ChaseStopPreview(identity)
+    TriggerClientEvent('chase_bootleg:client:previewCartridge', identity.source, nil)
+end
+
 function ChaseBootlegActions.ChaseStopCartridge(identity)
     local station = server.ChaseRequireStation(identity)
     server.ChaseNearVan(identity, station, false)
     station.cartridge = nil
     station.autoplay = false
+    station.trackCursor = nil
 end
 
 function ChaseBootlegActions.ChaseSetMode(identity, data)
@@ -412,9 +452,7 @@ function ChaseBootlegActions.ChaseSetMode(identity, data)
     station.mode = data.mode
 end
 
-function ChaseBootlegActions.ChaseQueueAdd(identity, data)
-    server.ChaseRequireBroadcast(identity)
-    local station = server.ChaseRequireStation(identity)
+local function ChaseNewTrack(identity, station, data)
     local music = ChaseRequireMusic()
     local provider = domain.ChaseMusicProvider(data.url)
     if not provider or not music.providers or music.providers[provider] ~= true then
@@ -429,10 +467,50 @@ function ChaseBootlegActions.ChaseQueueAdd(identity, data)
     local last = station.queue[#station.queue]
     local track = { provider = provider, url = data.url, title = title, duration = data.duration, addedBy = identity.identifier,
         position = (last and last.position or 0) + 1 }
+    return track
+end
+
+function ChaseBootlegActions.ChaseQueueAdd(identity, data)
+    server.ChaseRequireBroadcast(identity)
+    local station = server.ChaseRequireStation(identity)
+    local track = ChaseNewTrack(identity, station, data)
     local trackId = ChaseBootlegDatabase.ChaseInsertTrack(station, track, track.position)
     if not domain.ChaseInteger(trackId, 1, 9007199254740991) then server.ChaseReject('queue_failed', 'The track could not be saved.') end
     track.id = trackId
     station.queue[#station.queue + 1] = track
+end
+
+function ChaseBootlegActions.ChaseQueueRequest(identity, data)
+    server.ChaseRequireBroadcast(identity)
+    local station = server.ChaseRequireStation(identity)
+    if not domain.ChaseInteger(data.requestId, 1, 9007199254740991) then server.ChaseReject('invalid_request', 'Choose a pending song request.') end
+    local row = MySQL.single.await("SELECT kind, message FROM chase_bootleg_requests WHERE id = ? AND station_id = ? AND status = 'pending'", { data.requestId, station.id })
+    server.ChaseRequireBroadcast(identity)
+    if not row or row.kind ~= 'song' then server.ChaseReject('request_unavailable', 'That song request was already handled or is unavailable.') end
+    local url = type(row.message) == 'string' and row.message:match('^([^\n]+)\n')
+    local track = ChaseNewTrack(identity, station, { url = url, title = data.title, duration = data.duration })
+    local trackId = ChaseBootlegDatabase.ChaseInsertRequestTrack(station, data.requestId, track)
+    if not domain.ChaseInteger(trackId, 1, 9007199254740991) then server.ChaseReject('queue_failed', 'The song request could not be queued.') end
+    track.id = trackId
+    station.queue[#station.queue + 1] = track
+end
+
+function ChaseBootlegActions.ChaseQueueMove(identity, data)
+    server.ChaseRequireBroadcast(identity)
+    local station = server.ChaseRequireStation(identity)
+    local track, index = ChaseTrack(station, data.trackId)
+    if not domain.ChaseInteger(data.position, 1, #station.queue) then server.ChaseReject('invalid_position', 'Choose a position within the music queue.') end
+    if index == data.position then return end
+    local queue = {}
+    for position, queued in ipairs(station.queue) do queue[position] = queued end
+    table.remove(queue, index)
+    table.insert(queue, data.position, track)
+    if not ChaseBootlegDatabase.ChaseMoveTracks(station, queue) then server.ChaseReject('queue_failed', 'The queue order could not be saved.') end
+    station.queue = queue
+    for position, queued in ipairs(queue) do
+        queued.position = position
+        if station.trackCursor and queued.id == station.trackCursor.trackId then station.trackCursor.index = position end
+    end
 end
 
 function ChaseBootlegActions.ChaseQueueRemove(identity, data)
@@ -440,7 +518,10 @@ function ChaseBootlegActions.ChaseQueueRemove(identity, data)
     local station = server.ChaseRequireStation(identity)
     local track, index = ChaseTrack(station, data.trackId)
     ChaseBootlegDatabase.ChaseDeleteTrack(station, track.id)
-    if station.queue[index] == track then table.remove(station.queue, index) end
+    if station.queue[index] == track then
+        table.remove(station.queue, index)
+        if station.trackCursor and index < station.trackCursor.index then station.trackCursor.index = station.trackCursor.index - 1 end
+    end
 end
 
 function ChaseBootlegActions.ChasePlayTrack(identity, data)
@@ -458,7 +539,39 @@ function ChaseBootlegActions.ChaseSkipTrack(identity)
     local station = ChaseRequireLiveConsole(identity)
     ChaseRequireMusic()
     local current = station.cartridge
-    if server.ChaseStartTrack(station, server.ChaseNextTrack(station, current and current.trackId), identity) then station.autoplay = true end
+    station.autoplay = server.ChaseStartTrack(station, server.ChaseNextTrack(station, current and current.trackId), identity)
+end
+
+function ChaseBootlegActions.ChasePreviousTrack(identity)
+    server.ChaseRequireBroadcast(identity)
+    local station = ChaseRequireLiveConsole(identity)
+    ChaseRequireMusic()
+    station.autoplay = server.ChaseStartTrack(station, server.ChasePreviousTrack(station), identity)
+end
+
+function ChaseBootlegActions.ChasePauseTrack(identity, data)
+    server.ChaseRequireBroadcast(identity)
+    local station = ChaseRequireLiveConsole(identity)
+    if type(data.paused) ~= 'boolean' then server.ChaseReject('invalid_playback', 'Choose whether to pause or resume playback.') end
+    local cartridge = station.cartridge
+    if not cartridge or not cartridge.trackId then server.ChaseReject('track_unavailable', 'Play a queued music track first.') end
+    if data.paused and not cartridge.pausedAt then
+        if os.time() >= cartridge.startedAt + cartridge.duration then server.ChaseReject('track_unavailable', 'That track has already ended.') end
+        cartridge.pausedAt = os.time()
+    elseif not data.paused and cartridge.pausedAt then
+        cartridge.startedAt = cartridge.startedAt + os.time() - cartridge.pausedAt
+        cartridge.pausedAt = nil
+    end
+end
+
+function ChaseBootlegActions.ChaseMusicVolume(identity, data)
+    server.ChaseRequireBroadcast(identity)
+    local station = server.ChaseRequireStation(identity)
+    server.ChaseNearVan(identity, station, true)
+    if type(data.volume) ~= 'number' or data.volume ~= data.volume or data.volume < 0 or data.volume > 1 then
+        server.ChaseReject('invalid_volume', 'Choose a broadcast volume between zero and one.')
+    end
+    station.musicVolume = data.volume
 end
 
 function ChaseBootlegActions.ChaseCallStation(identity, data)
@@ -586,9 +699,12 @@ ChaseBootlegActions.ChaseDispatch = {
     tip = actions.ChaseTip, withdraw = actions.ChaseWithdraw,
     crewAdd = actions.ChaseCrewAdd, crewRemove = actions.ChaseCrewRemove,
     playCartridge = actions.ChasePlayCartridge, stopCartridge = actions.ChaseStopCartridge,
+    previewCartridge = actions.ChasePreviewCartridge, stopPreview = actions.ChaseStopPreview,
     recharge = actions.ChaseRecharge, scan = actions.ChaseScan,
     setMode = actions.ChaseSetMode, queueAdd = actions.ChaseQueueAdd, queueRemove = actions.ChaseQueueRemove,
-    playTrack = actions.ChasePlayTrack, skipTrack = actions.ChaseSkipTrack,
+    playTrack = actions.ChasePlayTrack, skipTrack = actions.ChaseSkipTrack, previousTrack = actions.ChasePreviousTrack,
+    pauseTrack = actions.ChasePauseTrack, musicVolume = actions.ChaseMusicVolume,
+    queueMove = actions.ChaseQueueMove, queueRequest = actions.ChaseQueueRequest,
     callStation = actions.ChaseCallStation, answerCall = actions.ChaseAnswerCall, endCall = actions.ChaseEndCall
 }
 

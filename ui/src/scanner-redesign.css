@@ -1,0 +1,423 @@
+.chase-scanner-console {
+  --chase-scanner-line: #333c3f;
+  --chase-scanner-muted: #9ba4ab;
+  color: #f0f1ef;
+  min-width: 0;
+}
+.chase-scanner-panels {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+}
+.chase-app .chase-scanner-console h2,
+.chase-app .chase-scanner-console h3,
+.chase-app .chase-scanner-label {
+  margin: 0;
+  color: #f0f1ef;
+  font-family: var(--chase-heading, sans-serif);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.chase-scanner-direction > h2,
+.chase-scanner-label,
+.chase-scanner-signal h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+}
+.chase-app .chase-scanner-console p {
+  color: var(--chase-scanner-muted);
+  margin: 7px 0 0;
+  line-height: 1.5;
+  font-size: 15px;
+}
+.chase-scanner-direction {
+  min-width: 0;
+  padding: 0 25px 0 22px;
+  border-left: 1px solid #253034;
+}
+.chase-scanner-dial {
+  position: relative;
+  width: min(100%, 330px);
+  aspect-ratio: 1;
+  margin: 12px auto 0;
+}
+.chase-scanner-compass {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.chase-compass-boundary {
+  fill: #0b1215;
+  stroke: #5f6259;
+  stroke-width: 1;
+}
+.chase-compass-reference,
+.chase-compass-axis {
+  fill: none;
+  stroke: #263338;
+  stroke-width: 1;
+}
+.chase-compass-tick {
+  stroke: #6b787c;
+  stroke-width: 1;
+}
+.chase-compass-tick.major {
+  stroke: #b1b8b8;
+  stroke-width: 1.8;
+}
+.has-reading .chase-compass-tick.major {
+  stroke: var(--chase-amber, #ffbd45);
+}
+.chase-compass-cardinal {
+  fill: #f0f2ec;
+  font-family: var(--chase-heading, sans-serif);
+  font-size: 24px;
+  font-weight: 700;
+}
+.chase-compass-degree {
+  fill: #adb8bf;
+  font: 14px var(--chase-mono, monospace);
+}
+.chase-compass-bearing {
+  stroke: var(--chase-amber, #ffbd45);
+  fill: var(--chase-amber, #ffbd45);
+}
+.chase-compass-bearing line {
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+.chase-compass-bearing polygon {
+  stroke: none;
+}
+.chase-compass-pivot {
+  stroke: #ffe0a0;
+  stroke-width: 1.8;
+  fill: #0b1215;
+}
+.chase-compass-no-reading {
+  fill: #88979e;
+  font: 11px var(--chase-mono, monospace);
+  letter-spacing: 0.12em;
+}
+.chase-scanner-bearing-readout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 51px;
+}
+.chase-scanner-bearing-readout strong {
+  color: var(--chase-amber, #ffbd45);
+  font: 500 43px/1 var(--chase-mono, monospace);
+}
+.chase-scanner-bearing-readout > span {
+  padding-left: 22px;
+  border-left: 1px solid #7a8280;
+  font: 600 32px/1 var(--chase-heading, sans-serif);
+}
+.chase-scanner-console .chase-scanner-last-reading {
+  text-align: center;
+  margin-top: 5px;
+}
+.chase-scanner-console .chase-scanner-uncertainty {
+  text-align: center;
+  margin-top: 4px;
+  font-size: 11px;
+}
+.chase-scanner-controls {
+  min-width: 0;
+  border-left: 1px solid var(--chase-scanner-line);
+  padding: 0 0 4px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.chase-scanner-label {
+  display: block;
+}
+.chase-scanner-label > span {
+  text-transform: none;
+  letter-spacing: 0;
+}
+.chase-scanner-tuner {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  margin-top: 15px;
+}
+.chase-scanner-frequency-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+  height: 76px;
+  padding: 10px 16px;
+  border: 1px solid #424b4e;
+  border-radius: 7px;
+  background: #080d0f;
+}
+.chase-app .chase-scanner-frequency-field input {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  outline-offset: 5px;
+  color: var(--chase-amber, #ffbd45);
+  font: 500 50px/1 var(--chase-mono, monospace);
+}
+.chase-scanner-frequency-field input::-webkit-outer-spin-button,
+.chase-scanner-frequency-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.chase-scanner-frequency-field > span {
+  font: 600 22px var(--chase-heading, sans-serif);
+  color: #92989f;
+}
+.chase-scanner-step {
+  width: 48px;
+  height: 60px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #394346;
+  border-radius: 6px;
+  background: #171e21;
+  color: #f0f1ef;
+  cursor: pointer;
+}
+.chase-scanner-step:hover:not(:disabled) {
+  border-color: var(--chase-amber, #ffbd45);
+  color: var(--chase-amber, #ffbd45);
+}
+.chase-scanner-step:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.chase-scanner-signal {
+  margin-top: 33px;
+}
+.chase-scanner-signal-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 12px;
+}
+.chase-scanner-signal-row .chase-equipment-meter {
+  min-width: 0;
+  flex: 1;
+  width: 100%;
+  height: 28px;
+}
+.chase-scanner-signal-row > strong {
+  min-width: 100px;
+  color: var(--chase-amber, #ffbd45);
+  font: 500 18px var(--chase-mono, monospace);
+}
+.chase-app .chase-scanner-console .chase-scanner-message {
+  min-height: 39px;
+  margin-top: 9px;
+  font-size: 14px;
+}
+.chase-scanner-controls .chase-scanner-submit {
+  margin-top: 22px;
+  min-height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font: 600 23px var(--chase-heading, sans-serif);
+  color: #14100a;
+  background: var(--chase-amber, #ffbd45);
+  border: 1px solid #e3a638;
+}
+.chase-scanner-controls .chase-scanner-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.chase-scanner-console .chase-scanner-count {
+  font-size: 11px;
+  margin-top: 9px;
+}
+.chase-scanner-search-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #5b4b29;
+  border-radius: 6px;
+  margin-top: 14px;
+  color: var(--chase-amber, #ffbd45);
+}
+.chase-scanner-search-area > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.chase-scanner-search-area strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.chase-scanner-search-area span {
+  font-size: 12px;
+  color: var(--chase-scanner-muted);
+}
+.chase-scanner-history {
+  margin-top: 21px;
+  padding-top: 16px;
+  border-top: 1px solid var(--chase-scanner-line);
+}
+.chase-scanner-history > header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.chase-scanner-history > header p {
+  margin: 0;
+  font-size: 12px;
+}
+.chase-scanner-history-scroll {
+  overflow: auto;
+  max-height: 204px;
+  border: 1px solid #3a4346;
+  border-radius: 6px;
+}
+.chase-app .chase-scanner-history table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+  font: 15px var(--chase-mono, monospace);
+}
+.chase-scanner-history th {
+  position: sticky;
+  top: 0;
+  padding: 10px 19px;
+  background: #11181b;
+  color: #acb2b7;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.chase-scanner-history td {
+  border-top: 1px solid #30383b;
+  padding: 9px 19px;
+}
+.chase-scanner-history td small {
+  font-size: 12px;
+  color: var(--chase-scanner-muted);
+}
+.chase-scanner-history .chase-scanner-detected {
+  color: var(--chase-amber, #ffbd45);
+}
+.chase-scanner-history .chase-scanner-history-empty {
+  white-space: normal;
+  color: var(--chase-scanner-muted);
+  font-family: inherit;
+  line-height: 1.5;
+  padding: 20px;
+}
+.chase-scanner-guidance {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-top: 14px;
+  color: #899399;
+}
+.chase-scanner-guidance > svg {
+  flex-shrink: 0;
+}
+.chase-scanner-guidance p {
+  font-size: 12px;
+  margin: 0;
+}
+.chase-scanner-guidance > span {
+  margin-left: auto;
+  text-align: right;
+  font: 9px var(--chase-mono, monospace);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+@media (max-width: 1100px) {
+  .chase-scanner-panels {
+    gap: 20px;
+  }
+  .chase-scanner-direction {
+    padding: 0 8px 0 12px;
+  }
+  .chase-scanner-controls {
+    padding-left: 20px;
+  }
+  .chase-scanner-frequency-field {
+    padding: 10px;
+    height: 65px;
+  }
+  .chase-scanner-step {
+    width: 40px;
+    flex-basis: 40px;
+    height: 52px;
+  }
+  .chase-scanner-tuner {
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .chase-scanner-frequency-field {
+    flex-basis: 100%;
+  }
+  .chase-app .chase-scanner-frequency-field input {
+    font-size: 42px;
+  }
+  .chase-scanner-step {
+    flex: 1;
+  }
+  .chase-scanner-frequency-field > span {
+    font-size: 16px;
+  }
+  .chase-scanner-signal-row {
+    gap: 12px;
+  }
+  .chase-scanner-signal-row > strong {
+    min-width: 83px;
+    font-size: 14px;
+  }
+  .chase-scanner-guidance > span {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .chase-scanner-panels {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .chase-scanner-direction {
+    border-left: 0;
+    padding: 0;
+  }
+  .chase-scanner-controls {
+    border-left: 0;
+    border-top: 1px solid var(--chase-scanner-line);
+    padding: 20px 0 0;
+  }
+  .chase-scanner-dial {
+    width: 260px;
+  }
+  .chase-app .chase-scanner-frequency-field input {
+    font-size: 42px;
+  }
+  .chase-scanner-signal {
+    margin-top: 23px;
+  }
+  .chase-scanner-history th,
+  .chase-scanner-history td {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

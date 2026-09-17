@@ -36,6 +36,7 @@ import type {
   ChasePlacedRadio,
   ChaseSpeech,
   ChasePlayback,
+  ChasePreviewPlayback,
   ChaseCallState,
   ChaseIncomingCall,
 } from "./types";
@@ -77,6 +78,8 @@ export function ChaseApp() {
   const [chasePlayback, chaseSetPlayback] = useState<ChasePlayback | null>(
     null,
   );
+  const [chasePreviewPlayback, chaseSetPreviewPlayback] =
+    useState<ChasePreviewPlayback | null>(null);
   const [chaseSnapshot, chaseSetSnapshot] = useState<ChaseSnapshot | null>(
     null,
   );
@@ -106,6 +109,10 @@ export function ChaseApp() {
   const chasePlayerRef = useRef<ChasePlayer | null>(null);
   const chaseAudioIdentityRef = useRef<string | null>(null);
   const chaseMonitorRef = useRef(false);
+  const chasePausedRef = useRef(false);
+  const chaseMusicVolumeRef = useRef(1);
+  const chasePreviewAudioRef = useRef<HTMLAudioElement | null>(null);
+  const chasePreviewTimerRef = useRef<number | undefined>(undefined);
   const chaseViewRef = useRef<ChaseView>("listen");
   const chaseGenerationRef = useRef(0);
   const chasePanelRef = useRef<HTMLDivElement | null>(null);
@@ -123,12 +130,14 @@ export function ChaseApp() {
       if (chaseAudioRef.current) chaseAudioRef.current.volume = chaseLevel;
       chasePlayerRef.current?.setVolume(chaseLevel);
     });
-    chaseVolumeFaderRef.current.set(value);
+    chaseVolumeFaderRef.current.set(value * chaseMusicVolumeRef.current);
   }, []);
   const ChaseChangeVolume = useCallback(
     (value: number) => {
       chaseSetVolume(value);
       chaseVolumeRef.current = value;
+      if (chasePreviewAudioRef.current)
+        chasePreviewAudioRef.current.volume = value / 100;
       ChaseApplyOutputVolume(
         ChasePlaybackVolume(
           value,
@@ -155,8 +164,19 @@ export function ChaseApp() {
   const ChaseNotify = useCallback((message: string, tone: ChaseTone) => {
     chaseSetToast({ message, tone });
   }, []);
+  const ChaseStopPreviewAudio = useCallback(() => {
+    window.clearTimeout(chasePreviewTimerRef.current);
+    chasePreviewTimerRef.current = undefined;
+    chasePreviewAudioRef.current?.pause();
+    chasePreviewAudioRef.current = null;
+    chaseSetPreviewPlayback(null);
+  }, []);
+  useEffect(() => {
+    if (chaseView !== "studio") ChaseStopPreviewAudio();
+  }, [chaseView, ChaseStopPreviewAudio]);
   const ChaseStartPlayback = useCallback(
     async (audio: HTMLAudioElement) => {
+      if (chasePausedRef.current) return;
       try {
         if (
           chaseGraphRef.current &&
@@ -178,7 +198,7 @@ export function ChaseApp() {
             window.clearTimeout(chaseResumeTimeout);
           }
         }
-        if (chaseAudioRef.current !== audio) return;
+        if (chaseAudioRef.current !== audio || chasePausedRef.current) return;
         if (
           chaseGraphRef.current &&
           chaseContextRef.current?.state !== "running"
@@ -187,6 +207,10 @@ export function ChaseApp() {
             "Audio is paused. Click inside the receiver to enable sound.",
           );
         await audio.play();
+        if (chaseAudioRef.current !== audio || chasePausedRef.current) {
+          audio.pause();
+          return;
+        }
         if (chaseAudioRef.current === audio)
           chaseSetPlayback((chaseCurrent) =>
             chaseCurrent ? { ...chaseCurrent, phase: "playing" } : null,
@@ -199,7 +223,7 @@ export function ChaseApp() {
               : chaseCurrent,
           );
       } catch (chaseFailure) {
-        if (chaseAudioRef.current !== audio) return;
+        if (chaseAudioRef.current !== audio || chasePausedRef.current) return;
         const chaseLoadFailed =
           Boolean(audio.error) ||
           (chaseFailure instanceof DOMException &&
@@ -223,6 +247,8 @@ export function ChaseApp() {
     (data: unknown) => {
       const chaseData = ChaseNormalizeSnapshot(data);
       chaseSetSnapshot(chaseData);
+      if (!chaseData.mine || chaseData.viewer.canOperate === false)
+        ChaseStopPreviewAudio();
       if (chaseData.speech !== undefined)
         chaseSetSpeech(ChaseNormalizeSpeech(chaseData.speech));
       if (chaseData.config.speech) {
@@ -235,6 +261,8 @@ export function ChaseApp() {
         const chaseValue = Math.max(0, Math.min(100, chaseData.volume));
         chaseSetVolume(chaseValue);
         chaseVolumeRef.current = chaseValue;
+        if (chasePreviewAudioRef.current)
+          chasePreviewAudioRef.current.volume = chaseValue / 100;
         ChaseApplyOutputVolume(
           ChasePlaybackVolume(
             chaseValue,
@@ -245,7 +273,7 @@ export function ChaseApp() {
         );
       }
     },
-    [ChaseApplyOutputVolume],
+    [ChaseApplyOutputVolume, ChaseStopPreviewAudio],
   );
   const ChaseBootstrap = useCallback(async () => {
     const chaseGeneration = ++chaseGenerationRef.current;
@@ -266,6 +294,7 @@ export function ChaseApp() {
     }
   }, [ChaseApplySnapshot]);
   const ChaseClose = useCallback(async () => {
+    ChaseStopPreviewAudio();
     try {
       await ChasePost("close");
       chaseSetVisible(false);
@@ -273,7 +302,7 @@ export function ChaseApp() {
     } catch (chaseFailure) {
       ChaseNotify(ChaseError(chaseFailure), "error");
     }
-  }, [ChaseNotify]);
+  }, [ChaseNotify, ChaseStopPreviewAudio]);
   const ChaseAction = useCallback(
     async (
       action: string,
@@ -341,6 +370,7 @@ export function ChaseApp() {
       )
         return;
       if (chaseData.type === "chase_bootleg:visibility") {
+        if (chaseData.visible !== true) ChaseStopPreviewAudio();
         chaseSetVisible(chaseData.visible === true);
         const chasePlacedTarget =
           chaseData.receiver === "placed"
@@ -415,6 +445,8 @@ export function ChaseApp() {
         const chaseValue = Math.max(0, Math.min(100, chaseData.volume));
         chaseSetVolume(chaseValue);
         chaseVolumeRef.current = chaseValue;
+        if (chasePreviewAudioRef.current)
+          chasePreviewAudioRef.current.volume = chaseValue / 100;
         ChaseApplyOutputVolume(
           ChasePlaybackVolume(
             chaseValue,
@@ -423,6 +455,100 @@ export function ChaseApp() {
             chaseMonitorRef.current,
           ),
         );
+      } else if (chaseData.type === "chase_bootleg:previewStop") {
+        ChaseStopPreviewAudio();
+      } else if (
+        chaseData.type === "chase_bootleg:previewAudio" &&
+        !chasePhone
+      ) {
+        ChaseStopPreviewAudio();
+        try {
+          if (
+            typeof chaseData.url !== "string" ||
+            typeof chaseData.cartridgeId !== "string"
+          )
+            return;
+          const chaseUrl = new URL(chaseData.url, window.location.href);
+          const chaseDuration = Number(chaseData.duration);
+          if (
+            !["https:", "http:"].includes(chaseUrl.protocol) ||
+            !Number.isFinite(chaseDuration) ||
+            chaseDuration <= 0 ||
+            chaseDuration > 600
+          )
+            return;
+          const chaseAudio = new Audio(chaseUrl.href);
+          chasePreviewAudioRef.current = chaseAudio;
+          chaseAudio.volume = chaseVolumeRef.current / 100;
+          chaseSetPreviewPlayback({
+            cartridgeId: chaseData.cartridgeId,
+            name: String(chaseData.title || "Cartridge preview"),
+            duration: chaseDuration,
+            startedAt: Date.now() / 1000,
+            phase: "loading",
+          });
+          function ChasePreviewFailed() {
+            if (chasePreviewAudioRef.current !== chaseAudio) return;
+            window.clearTimeout(chasePreviewTimerRef.current);
+            chaseAudio.pause();
+            chasePreviewAudioRef.current = null;
+            chaseSetPreviewPlayback((chaseCurrent) =>
+              chaseCurrent ? { ...chaseCurrent, phase: "error" } : null,
+            );
+            ChaseNotify(
+              "The private preview could not play. Try Preview again.",
+              "error",
+            );
+          }
+          chasePreviewTimerRef.current = window.setTimeout(
+            ChasePreviewFailed,
+            15000,
+          );
+          chaseAudio.addEventListener(
+            "loadedmetadata",
+            () => {
+              if (chasePreviewAudioRef.current !== chaseAudio) return;
+              void chaseAudio
+                .play()
+                .then(() => {
+                  if (chasePreviewAudioRef.current !== chaseAudio) {
+                    chaseAudio.pause();
+                    return;
+                  }
+                  window.clearTimeout(chasePreviewTimerRef.current);
+                  chaseSetPreviewPlayback((chaseCurrent) =>
+                    chaseCurrent
+                      ? {
+                          ...chaseCurrent,
+                          startedAt: Date.now() / 1000,
+                          phase: "playing",
+                        }
+                      : null,
+                  );
+                  chasePreviewTimerRef.current = window.setTimeout(
+                    ChaseStopPreviewAudio,
+                    chaseDuration * 1000,
+                  );
+                })
+                .catch(ChasePreviewFailed);
+            },
+            { once: true },
+          );
+          chaseAudio.addEventListener(
+            "ended",
+            () => {
+              if (chasePreviewAudioRef.current === chaseAudio)
+                ChaseStopPreviewAudio();
+            },
+            { once: true },
+          );
+          chaseAudio.addEventListener("error", ChasePreviewFailed, {
+            once: true,
+          });
+        } catch {
+          ChaseStopPreviewAudio();
+          ChaseNotify("The cartridge preview address is invalid.", "error");
+        }
       } else if (chaseData.type === "chase_bootleg:audioStop") {
         ChaseStopAudio();
       } else if (chaseData.type === "chase_bootleg:incomingCall") {
@@ -470,6 +596,18 @@ export function ChaseApp() {
           ? Math.max(0, Math.min(1, chaseData.gain))
           : 1;
         const chaseMonitor = chaseData.monitor === true;
+        const chasePaused = chaseData.paused === true;
+        const chaseWasPaused = chasePausedRef.current;
+        chasePausedRef.current = chasePaused;
+        chaseMusicVolumeRef.current = Number.isFinite(chaseData.musicVolume)
+          ? Math.max(0, Math.min(1, chaseData.musicVolume))
+          : 1;
+        const chaseOffset =
+          chasePaused && Number.isFinite(chaseData.offsetSeconds)
+            ? Math.max(0, chaseData.offsetSeconds)
+            : chaseStartedSeconds !== null
+              ? Math.max(0, Date.now() / 1000 - chaseStartedSeconds)
+              : 0;
         const chaseTrackVolume = ChasePlaybackVolume(
           chaseVolumeRef.current,
           chaseQualityRef.current,
@@ -482,29 +620,53 @@ export function ChaseApp() {
         ) {
           chaseMonitorRef.current = chaseMonitor;
           chaseSetPlayback((chaseCurrent) =>
-            chaseCurrent ? { ...chaseCurrent, monitor: chaseMonitor } : null,
+            chaseCurrent
+              ? {
+                  ...chaseCurrent,
+                  monitor: chaseMonitor,
+                  phase: chasePaused
+                    ? "paused"
+                    : chaseWasPaused
+                      ? "loading"
+                      : chaseCurrent.phase,
+                }
+              : null,
           );
+          if (chasePaused) {
+            chasePlayerRef.current.pause();
+            chasePlayerRef.current.seek(chaseOffset);
+          } else if (chaseWasPaused) {
+            chasePlayerRef.current.seek(chaseOffset);
+            chasePlayerRef.current.play();
+          }
           ChaseApplyOutputVolume(chaseTrackVolume);
           return;
         }
         ChaseStopAudio();
-        const chaseOffset =
-          chaseStartedSeconds !== null
-            ? Math.max(0, Date.now() / 1000 - chaseStartedSeconds)
-            : 0;
         const chaseDuration = Number(chaseData.duration);
         if (chaseDuration > 0 && chaseOffset >= chaseDuration) return;
         const chasePlayer = ChaseCreatePlayer({
           provider: chaseData.provider,
           url: chaseData.url,
           onPlaying: () => {
+            if (
+              chasePlayerRef.current === chasePlayer &&
+              chasePausedRef.current
+            ) {
+              chasePlayer.pause();
+              return;
+            }
             if (chasePlayerRef.current === chasePlayer)
               chaseSetPlayback((chaseCurrent) =>
                 chaseCurrent ? { ...chaseCurrent, phase: "playing" } : null,
               );
           },
           onEnded: () => {
-            if (chasePlayerRef.current === chasePlayer) ChaseStopAudio();
+            if (
+              chasePlayerRef.current === chasePlayer &&
+              !chasePausedRef.current
+            )
+              ChaseStopAudio();
           },
           onError: (chaseMessage) => {
             if (chasePlayerRef.current !== chasePlayer) return;
@@ -518,7 +680,7 @@ export function ChaseApp() {
         chaseAudioIdentityRef.current = chaseIdentity;
         chaseMonitorRef.current = chaseMonitor;
         chaseSetPlayback({
-          phase: "loading",
+          phase: chasePaused ? "paused" : "loading",
           monitor: chaseMonitor,
           stationId: Number.isFinite(chaseData.stationId)
             ? chaseData.stationId
@@ -534,7 +696,7 @@ export function ChaseApp() {
         chasePlayer.setVolume(0);
         ChaseApplyOutputVolume(chaseTrackVolume);
         chasePlayer.seek(chaseOffset);
-        chasePlayer.play();
+        if (!chasePaused) chasePlayer.play();
       } else if (
         chaseData.type === "chase_bootleg:audio" &&
         typeof chaseData.url === "string" &&
@@ -565,6 +727,18 @@ export function ChaseApp() {
             ? Math.max(0, Math.min(1, chaseData.gain))
             : 1;
           const chaseMonitor = chaseData.monitor === true;
+          const chasePaused = chaseData.paused === true;
+          const chaseWasPaused = chasePausedRef.current;
+          chasePausedRef.current = chasePaused;
+          chaseMusicVolumeRef.current = Number.isFinite(chaseData.musicVolume)
+            ? Math.max(0, Math.min(1, chaseData.musicVolume))
+            : 1;
+          const chaseOffset =
+            chasePaused && Number.isFinite(chaseData.offsetSeconds)
+              ? Math.max(0, chaseData.offsetSeconds)
+              : chaseStartedSeconds !== null
+                ? Math.max(0, Date.now() / 1000 - chaseStartedSeconds)
+                : 0;
           const chaseAudioVolume = ChasePlaybackVolume(
             chaseVolumeRef.current,
             chaseQualityRef.current,
@@ -577,8 +751,25 @@ export function ChaseApp() {
           ) {
             chaseMonitorRef.current = chaseMonitor;
             chaseSetPlayback((chaseCurrent) =>
-              chaseCurrent ? { ...chaseCurrent, monitor: chaseMonitor } : null,
+              chaseCurrent
+                ? {
+                    ...chaseCurrent,
+                    monitor: chaseMonitor,
+                    phase: chasePaused
+                      ? "paused"
+                      : chaseWasPaused
+                        ? "loading"
+                        : chaseCurrent.phase,
+                  }
+                : null,
             );
+            if (chasePaused) {
+              chaseAudioRef.current.pause();
+              chaseAudioRef.current.currentTime = chaseOffset;
+            } else if (chaseWasPaused) {
+              chaseAudioRef.current.currentTime = chaseOffset;
+              void ChaseStartPlayback(chaseAudioRef.current);
+            }
             ChaseApplyOutputVolume(chaseAudioVolume);
             if (chaseGraphRef.current)
               ChaseApplyProfile(chaseGraphRef.current, chaseProfileRef.current);
@@ -590,7 +781,7 @@ export function ChaseApp() {
           chaseAudioIdentityRef.current = chaseIdentity;
           chaseMonitorRef.current = chaseMonitor;
           chaseSetPlayback({
-            phase: "loading",
+            phase: chasePaused ? "paused" : "loading",
             monitor: chaseMonitor,
             stationId: Number.isFinite(chaseData.stationId)
               ? chaseData.stationId
@@ -620,10 +811,6 @@ export function ChaseApp() {
           }
           chaseAudio.volume = 0;
           ChaseApplyOutputVolume(chaseAudioVolume);
-          const chaseOffset =
-            chaseStartedSeconds !== null
-              ? Math.max(0, Date.now() / 1000 - chaseStartedSeconds)
-              : 0;
           chaseAudio.addEventListener(
             "loadedmetadata",
             () => {
@@ -633,7 +820,7 @@ export function ChaseApp() {
                 return;
               }
               chaseAudio.currentTime = chaseOffset;
-              void ChaseStartPlayback(chaseAudio);
+              if (!chasePausedRef.current) void ChaseStartPlayback(chaseAudio);
             },
             { once: true },
           );
@@ -652,7 +839,11 @@ export function ChaseApp() {
           chaseAudio.addEventListener(
             "ended",
             () => {
-              if (chaseAudioRef.current === chaseAudio) ChaseStopAudio();
+              if (
+                chaseAudioRef.current === chaseAudio &&
+                !chasePausedRef.current
+              )
+                ChaseStopAudio();
             },
             { once: true },
           );
@@ -665,6 +856,7 @@ export function ChaseApp() {
     return () => {
       window.removeEventListener("message", ChaseReceiveMessage);
       ChaseStopAudio();
+      ChaseStopPreviewAudio();
       void chaseContextRef.current?.close();
       chaseContextRef.current = null;
     };
@@ -674,11 +866,12 @@ export function ChaseApp() {
     ChaseNotify,
     ChaseStopAudio,
     ChaseStartPlayback,
+    ChaseStopPreviewAudio,
   ]);
   useEffect(() => {
     if (chasePhone) return;
     function ChaseResumeAudio() {
-      if (!chaseAudioRef.current) return;
+      if (!chaseAudioRef.current || chasePausedRef.current) return;
       if (
         chaseAudioRef.current.paused ||
         (chaseGraphRef.current &&
@@ -828,20 +1021,20 @@ export function ChaseApp() {
           </div>
           <nav aria-label="Radio sections">
             <button
-              aria-label="Discover"
-              title="Discover"
+              aria-label="Listen"
+              title="Listen"
               className={
                 chaseCurrentView === "listen" ? "chase-nav-active" : ""
               }
               aria-current={chaseCurrentView === "listen" ? "page" : undefined}
               onClick={() => chaseSetView("listen")}
             >
-              <ChaseIcon name="radio" size={24} />
+              <ChaseIcon name="headphones" size={24} />
               <span>Listen</span>
             </button>
             <button
-              aria-label="Active frequencies"
-              title="Active frequencies"
+              aria-label="On air"
+              title="On air"
               className={
                 chaseCurrentView === "directory" ? "chase-nav-active" : ""
               }
@@ -850,7 +1043,7 @@ export function ChaseApp() {
               }
               onClick={() => chaseSetView("directory")}
             >
-              <ChaseIcon name="directory" size={24} />
+              <ChaseIcon name="mic" size={24} />
               <span>On air</span>
             </button>
             {chaseCanOperate ? (
@@ -898,7 +1091,13 @@ export function ChaseApp() {
           <header className="chase-topbar">
             <div className="chase-breadcrumb">
               <strong>SENORA SIGNALWORKS</strong>
-              <span>Broadcast network</span>
+              <span>
+                {chaseCurrentView === "studio"
+                  ? "Broadcast studio"
+                  : chaseCurrentView === "scanner"
+                    ? "Field operations"
+                    : "Broadcast network"}
+              </span>
             </div>
             <div>
               {chasePreview ? (
@@ -976,7 +1175,8 @@ export function ChaseApp() {
                 </button>
               </div>
             ) : null}
-            {chaseSpeechEnabled ? (
+            {chaseSpeechEnabled &&
+            (chaseReceiver || chaseCurrentView !== "studio") ? (
               <ChaseSpeechIndicator
                 speech={chaseSpeech}
                 talkKey={chaseTalkKey}
@@ -1005,6 +1205,9 @@ export function ChaseApp() {
                     action={ChaseAction}
                     busy={chaseBusy || chaseLoading}
                     refresh={() => void ChaseBootstrap()}
+                    quality={chaseQuality}
+                    onListen={() => chaseSetView("listen")}
+                    onMinimize={() => void ChaseClose()}
                   />
                 ) : chaseCurrentView === "listen" ? (
                   <ChaseListen
@@ -1019,6 +1222,17 @@ export function ChaseApp() {
                     action={ChaseAction}
                     busy={chaseBusy}
                     playback={chasePlayback}
+                    previewPlayback={chasePreviewPlayback}
+                    volume={chaseVolume}
+                    changeVolume={ChaseChangeVolume}
+                    saveVolume={() => void ChaseSaveVolume()}
+                    speech={
+                      chaseSpeechEnabled
+                        ? (chaseSpeech ?? undefined)
+                        : undefined
+                    }
+                    talk={ChaseTalk}
+                    talkKey={chaseTalkKey}
                   />
                 ) : (
                   <ChaseScanner
@@ -1046,18 +1260,24 @@ export function ChaseApp() {
             </span>
             <div className="chase-player-station">
               <strong>
-                {(chasePlayback?.monitor ? "Studio cue" : null) ||
+                {(chasePreviewPlayback
+                  ? "Private preview"
+                  : chasePlayback?.monitor
+                    ? "Private monitor"
+                    : null) ||
                   chaseTuned?.name ||
                   (chaseSnapshot?.tunedStationId
                     ? "Unlisted frequency"
                     : "Nothing tuned in")}
               </strong>
               <span>
-                {chasePlayback?.monitor
-                  ? `${chasePlayback.name} · ${chasePlayback.phase === "playing" ? (chaseVolume === 0 ? "Muted" : "Playing locally") : chasePlayback.phase === "loading" ? "Loading audio" : chasePlayback.phase === "blocked" ? "Click to enable audio" : "Audio unavailable"}`
-                  : chaseTuned
-                    ? `${ChaseFrequency(chaseTuned.frequency)} FM · ${chaseTuned.showTitle || "Independent radio"}`
-                    : "Select a station to connect."}
+                {chasePreviewPlayback
+                  ? `${chasePreviewPlayback.name} · ${chasePreviewPlayback.phase === "playing" ? "Playing locally" : chasePreviewPlayback.phase === "loading" ? "Loading audio" : "Audio unavailable"}`
+                  : chasePlayback?.monitor
+                    ? `${chasePlayback.name} · ${chasePlayback.phase === "playing" ? (chaseVolume === 0 ? "Muted" : "Playing locally") : chasePlayback.phase === "paused" ? "Paused" : chasePlayback.phase === "loading" ? "Loading audio" : chasePlayback.phase === "blocked" ? "Click to enable audio" : "Audio unavailable"}`
+                    : chaseTuned
+                      ? `${ChaseFrequency(chaseTuned.frequency)} FM · ${chaseTuned.showTitle || "Independent radio"}`
+                      : "Select a station to connect."}
               </span>
             </div>
             {chaseBusy ? (
@@ -1100,7 +1320,31 @@ export function ChaseApp() {
               />
               <span>{chaseVolume}%</span>
             </div>
-            <span className="chase-player-fm">LOCAL RECEIVER</span>
+            {chaseCurrentView === "directory" &&
+            chaseTuned &&
+            !chaseReceiver ? (
+              <div className="chase-player-actions">
+                <button
+                  className="chase-button chase-secondary"
+                  disabled={chaseBusy}
+                  onClick={() =>
+                    void ChaseAction("untune", {}, "Receiver disconnected.")
+                  }
+                >
+                  <ChaseIcon name="headphones" />
+                  Disconnect
+                </button>
+                <button
+                  className="chase-button chase-secondary"
+                  onClick={() => void ChaseClose()}
+                >
+                  <ChaseIcon name="minus" />
+                  Minimize
+                </button>
+              </div>
+            ) : (
+              <span className="chase-player-fm">LOCAL RECEIVER</span>
+            )}
           </footer>
         </div>
         <ChaseToast toast={chaseToast} dismiss={() => chaseSetToast(null)} />

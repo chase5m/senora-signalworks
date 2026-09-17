@@ -274,6 +274,11 @@ RegisterNetEvent('chase_bootleg:client:cartridge', function(cartridge)
         provider = cartridge.provider,
         title = cartridge.title,
         startedAt = cartridge.startedAt,
+        paused = cartridge.paused == true,
+        offsetSeconds = cartridge.offsetSeconds,
+        musicVolume = cartridge.musicVolume,
+        cartridgeId = cartridge.cartridgeId,
+        trackId = cartridge.trackId,
         duration = cartridge.duration,
         stationId = cartridge.stationId,
         quality = cartridge.quality,
@@ -282,6 +287,16 @@ RegisterNetEvent('chase_bootleg:client:cartridge', function(cartridge)
         monitor = chaseCartridgeMonitor,
         profile = profile,
     })
+end)
+
+RegisterNetEvent('chase_bootleg:client:previewCartridge', function(cartridge)
+    if source ~= 65535 then return end
+    if type(cartridge) ~= 'table' then
+        SendNUIMessage({ type = 'chase_bootleg:previewStop' })
+        return
+    end
+    SendNUIMessage({ type = 'chase_bootleg:previewAudio', url = cartridge.url, title = cartridge.title,
+        cartridgeId = cartridge.cartridgeId, duration = cartridge.duration, stationId = cartridge.stationId })
 end)
 
 AddEventHandler('chase_bootleg:pma:interrupted', function()

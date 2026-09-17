@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'Chase'
 description 'Senora Signalworks | Mobile broadcasting studios by Chase'
-version '0.3.11'
+version '0.4.0'
 
 ui_page 'web/index.html'
 

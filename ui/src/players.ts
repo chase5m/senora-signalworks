@@ -75,6 +75,7 @@ export type ChasePlayer = {
   setVolume(fraction: number): void;
   seek(seconds: number): void;
   play(): void;
+  pause(): void;
   destroy(): void;
 };
 export type ChasePlayerOptions = {
@@ -326,6 +327,7 @@ export function ChaseCreatePlayer(options: ChasePlayerOptions): ChasePlayer {
                   seek: (chaseSeconds) =>
                     chasePlayer.seekTo(chaseSeconds, true),
                   play: () => chasePlayer.playVideo(),
+                  pause: () => chasePlayer.pauseVideo(),
                   destroy: () => chasePlayer.destroy(),
                 },
                 () => chasePlayer.destroy(),
@@ -349,6 +351,7 @@ export function ChaseCreatePlayer(options: ChasePlayerOptions): ChasePlayer {
                 seek: (chaseSeconds) =>
                   chaseWidget.seekTo(Math.round(chaseSeconds * 1000)),
                 play: () => chaseWidget.play(),
+                pause: () => chaseWidget.pause(),
                 destroy: () => chaseWidget.pause(),
               },
               () => chaseWidget.pause(),
@@ -383,6 +386,10 @@ export function ChaseCreatePlayer(options: ChasePlayerOptions): ChasePlayer {
     play() {
       chaseWantPlay = true;
       chaseBackend?.play();
+    },
+    pause() {
+      chaseWantPlay = false;
+      chaseBackend?.pause();
     },
     destroy() {
       if (chaseDestroyed) return;

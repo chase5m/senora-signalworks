@@ -407,6 +407,21 @@ function ChaseBootlegServer.ChaseNextTrack(station, currentId)
     end
 end
 
+function ChaseBootlegServer.ChasePreviousTrack(station)
+    local queue, current = station.queue or {}, station.cartridge
+    local wanted = current and current.trackId or station.trackCursor and station.trackCursor.trackId
+    local index = station.trackCursor and math.min(station.trackCursor.index, #queue + 1) or 1
+    for position, track in ipairs(queue) do
+        if track.id == wanted then index = position break end
+    end
+    for step = 1, #queue do
+        local position = station.mode == 'autonomous' and (index - step - 1) % #queue + 1 or index - step
+        local track = queue[position]
+        if track and server.ChasePlayable(track) then return track end
+        if position < 1 then return server.ChasePlayable(queue[index]) and queue[index] or nil end
+    end
+end
+
 function ChaseBootlegServer.ChaseStartTrack(station, track, monitorIdentity)
     if not server.ChasePlayable(track) then station.cartridge = nil return false end
     station.cartridge = { id = 'track:' .. track.id, trackId = track.id, provider = track.provider, url = track.url, title = track.title,
@@ -519,10 +534,13 @@ end
 function ChaseBootlegServer.ChaseSendCartridge(playerSource, station, monitor)
     local cartridge = station and station.cartridge
     local reception = server.audible[playerSource]
-    if cartridge and os.time() < cartridge.startedAt + cartridge.duration then
+    if cartridge and (cartridge.pausedAt or os.time() < cartridge.startedAt + cartridge.duration) then
         TriggerClientEvent('chase_bootleg:client:cartridge', playerSource, {
             url = cartridge.url, provider = cartridge.provider or 'file', title = cartridge.title or '',
             startedAt = cartridge.startedAt, duration = cartridge.duration, stationId = station.id,
+            cartridgeId = not cartridge.trackId and cartridge.id or nil, trackId = cartridge.trackId,
+            paused = cartridge.pausedAt ~= nil, offsetSeconds = math.max(0, (cartridge.pausedAt or os.time()) - cartridge.startedAt),
+            musicVolume = station.musicVolume or 1.0,
             quality = monitor and 1.0 or reception and reception.quality or 1.0,
             gain = monitor and 1.0 or reception and reception.gain or 1.0,
             device = monitor and 'studio' or reception and reception.device, monitor = monitor == true,
@@ -540,7 +558,7 @@ function ChaseBootlegServer.ChaseSyncCartridges()
     local monitors = {}
     for _, station in pairs(server.stations) do
         local identity = station.cartridge and station.cartridge.monitorIdentity
-        if identity and station.live and os.time() < station.cartridge.startedAt + station.cartridge.duration
+        if identity and station.live and (station.cartridge.pausedAt or os.time() < station.cartridge.startedAt + station.cartridge.duration)
             and server.ChaseCurrent(identity) and ChaseBootlegFramework.ChaseCanBroadcast(identity)
             and domain.ChaseCanManage(station, identity.identifier) and server.ChaseStationary(station)
             and pcall(server.ChaseNearVan, identity, station, true) then monitors[identity.source] = station end
@@ -549,9 +567,9 @@ function ChaseBootlegServer.ChaseSyncCartridges()
         local reception = server.audible[playerSource]
         local station = monitors[playerSource] or reception and server.stations[reception.stationId]
         local cartridge = station and station.cartridge
-        local signature = cartridge and os.time() < cartridge.startedAt + cartridge.duration and ('%s:%s:%s:%s:%s:%s:%s'):format(
+        local signature = cartridge and (cartridge.pausedAt or os.time() < cartridge.startedAt + cartridge.duration) and ('%s:%s:%s:%s:%s:%s:%s:%s:%s'):format(
             station.id, cartridge.provider or 'file', cartridge.url, cartridge.title or '', cartridge.startedAt, cartridge.duration,
-            monitors[playerSource] and 'monitor' or 'receiver') or ''
+            monitors[playerSource] and 'monitor' or 'receiver', cartridge.pausedAt or '', station.musicVolume or 1.0) or ''
         if identity.cartridgeSignature ~= signature then
             server.ChaseSendCartridge(playerSource, station, monitors[playerSource] ~= nil)
             identity.cartridgeSignature = signature
@@ -682,12 +700,18 @@ function ChaseBootlegServer.ChaseSnapshot(identity)
         cartridges[#cartridges + 1] = { id = cartridge.id, name = cartridge.name, description = cartridge.description, duration = cartridge.duration }
     end
     if mine then
-        for identifier, member in pairs(mine.crew) do
-            local playerSource = 0
-            for sourceId, session in pairs(server.sessions) do
-                if session.identifier == identifier and server.ChaseCurrent(session) then playerSource = sourceId break end
+        local online = {}
+        for _, sourceId in ipairs(GetPlayers()) do
+            local playerSource = tonumber(sourceId)
+            if playerSource and not server.unloading[playerSource] then
+                local current = ChaseBootlegFramework.ChaseIdentity(playerSource)
+                if current and mine.crew[current.identifier] then online[current.identifier] = current end
             end
-            crew[#crew + 1] = { memberId = member.id, source = playerSource, name = member.name }
+        end
+        for identifier, member in pairs(mine.crew) do
+            local current = online[identifier]
+            local playerSource, name = current and current.source or 0, current and current.name or member.name
+            crew[#crew + 1] = { memberId = member.id, source = playerSource, name = name, online = playerSource > 0 }
         end
         table.sort(crew, function(first, second) return first.memberId < second.memberId end)
     end
