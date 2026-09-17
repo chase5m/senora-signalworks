@@ -1,0 +1,34 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="256"
+  height="256"
+  viewBox="0 0 256 256"
+  role="img"
+  aria-label="Senora Signalworks"
+>
+  <rect width="256" height="256" rx="58" fill="#101216" />
+  <g
+    fill="none"
+    stroke="#f4f6f9"
+    stroke-width="11"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path
+      d="m102 156 26-70 26 70m-38-30h24M89 80a55 55 0 0 0 0 57m78-57a55 55 0 0 1 0 57M67 58a86 86 0 0 0 0 101m122-101a86 86 0 0 1 0 101"
+    />
+    <circle cx="128" cy="74" r="9" fill="#f4f6f9" />
+  </g>
+  <text
+    x="128"
+    y="210"
+    text-anchor="middle"
+    font-family="Arial,sans-serif"
+    font-size="33"
+    font-weight="800"
+    letter-spacing="5"
+    fill="#f4f6f9"
+  >
+    SSW
+  </text>
+</svg>

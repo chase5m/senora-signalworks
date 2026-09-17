@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Senora Signalworks console display</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #111615;
+        color: #f3efe4;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 36px;
+        overflow: hidden;
+      }
+      header,
+      footer,
+      .status {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+      .status {
+        gap: 12px;
+        color: #979e97;
+        font-size: 17px;
+        letter-spacing: 2px;
+      }
+      .lamp {
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: #626860;
+      }
+      .live .lamp {
+        background: #f3a44b;
+        box-shadow: 0 0 20px #ed8d3480;
+      }
+      .live {
+        color: #f3a44b;
+      }
+      main {
+        padding: 30px 0 20px;
+      }
+      .name {
+        font-size: 21px;
+        color: #a1aaa2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .frequency {
+        font-size: 105px;
+        line-height: 1.15;
+        font-weight: 700;
+        letter-spacing: -5px;
+        font-variant-numeric: tabular-nums;
+      }
+      .unit {
+        font-size: 22px;
+        letter-spacing: 2px;
+        color: #8d968e;
+        margin-left: 16px;
+      }
+      .show {
+        font-size: 23px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      footer {
+        border-top: 1px solid #394039;
+        margin-top: 24px;
+        padding-top: 20px;
+        font-size: 17px;
+        color: #b8bbae;
+        letter-spacing: 1px;
+      }
+      .battery {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .track {
+        width: 100px;
+        height: 8px;
+        background: #343c34;
+      }
+      .fill {
+        height: 100%;
+        width: 100%;
+        background: #f3a44b;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">SENORA SIGNALWORKS</div>
+      <div class="status" id="chase-status">
+        <span class="lamp"></span><span id="chase-state">STANDBY</span>
+      </div>
+    </header>
+    <main>
+      <div class="name" id="chase-name">MOBILE BROADCAST SYSTEM</div>
+      <div class="frequency">
+        <span id="chase-frequency">&#8212;</span><span class="unit">FM</span>
+      </div>
+      <div class="show" id="chase-show">Your city. Your frequency.</div>
+    </main>
+    <footer>
+      <span id="chase-mode">TRANSMITTER OFF</span>
+      <div class="battery">
+        <span id="chase-battery">100%</span>
+        <div class="track"><div class="fill" id="chase-fill"></div></div>
+      </div>
+    </footer>
+    <script>
+      function ChaseBootlegUpdateDisplay(event) {
+        if (event.data?.type !== "chase_bootleg:rig") return;
+        const chaseState = event.data.data || {};
+        document.getElementById("chase-name").textContent =
+          chaseState.name || "SENORA STUDIO";
+        document.getElementById("chase-frequency").textContent =
+          Number.isFinite(chaseState.frequency)
+            ? (chaseState.frequency / 10).toFixed(1)
+            : "\u2014";
+        document.getElementById("chase-show").textContent =
+          chaseState.showTitle || "Your city. Your frequency.";
+        document.getElementById("chase-state").textContent = chaseState.micLive
+          ? "MIC LIVE"
+          : chaseState.live
+            ? "ON AIR"
+            : String(chaseState.stage || "STANDBY").toUpperCase();
+        document
+          .getElementById("chase-status")
+          .classList.toggle("live", chaseState.live === true);
+        document.getElementById("chase-mode").textContent = chaseState.live
+          ? String(chaseState.power || "LOCAL").toUpperCase() +
+            " / TRANSMITTING"
+          : "TRANSMITTER OFF";
+        const chaseBattery = Math.max(
+          0,
+          Math.min(100, Number(chaseState.battery) || 0),
+        );
+        document.getElementById("chase-battery").textContent =
+          Math.round(chaseBattery) + "%";
+        document.getElementById("chase-fill").style.width = chaseBattery + "%";
+      }
+      window.addEventListener("message", ChaseBootlegUpdateDisplay);
+    </script>
+  </body>
+</html>

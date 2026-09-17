@@ -1,0 +1,1099 @@
+.chase-phone {
+  --chase-phone-top: 56px;
+  --chase-phone-bottom: 22px;
+  --chase-phone-gutter: 20px;
+  --chase-phone-radius: 14px;
+  --chase-phone-shell: #0c0e11;
+  --chase-phone-card: #12151a;
+  --chase-phone-raised: #1a1e25;
+  --chase-phone-line: rgba(255, 255, 255, 0.08);
+  --chase-phone-line-strong: rgba(255, 255, 255, 0.16);
+  --chase-phone-ink: #f3f4f6;
+  --chase-phone-muted: #9aa3b0;
+  --chase-phone-white: #f1f3f5;
+  --chase-phone-green: #74ce9f;
+  --chase-phone-green-ink: #a2ddbf;
+  --chase-phone-green-bg: #10231c;
+  --chase-phone-green-line: #2f6a50;
+  --chase-mono: "Manrope Variable", "Segoe UI", sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--chase-phone-shell);
+  color: var(--chase-phone-ink);
+  font-family: "Manrope Variable", "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+  isolation: isolate;
+}
+.chase-phone *,
+.chase-phone *::before,
+.chase-phone *::after {
+  transition: none;
+  animation: none;
+  scrollbar-width: none;
+}
+.chase-phone *::-webkit-scrollbar {
+  display: none;
+}
+.chase-phone button {
+  transition: opacity 120ms ease;
+}
+.chase-phone button:not(:disabled):active,
+.chase-phone .chase-phone-station-row:active {
+  opacity: 0.6;
+}
+.chase-phone button:not(:disabled):hover {
+  filter: none;
+}
+.chase-phone .chase-speech-talk:active {
+  transform: none;
+}
+.chase-phone p {
+  color: var(--chase-phone-muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.chase-phone h2 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+.chase-phone h3 {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.chase-phone small {
+  font-size: 12px;
+  font-weight: 500;
+}
+.chase-phone label {
+  gap: 6px;
+  color: var(--chase-phone-ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+.chase-phone input,
+.chase-phone select,
+.chase-phone textarea {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--chase-phone-line-strong);
+  border-radius: 12px;
+  background: var(--chase-phone-shell);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.chase-phone input[type="range"],
+.chase-phone input[type="checkbox"] {
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+}
+.chase-phone .chase-eyebrow,
+.chase-phone-eyebrow {
+  display: block;
+  color: var(--chase-phone-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+.chase-phone .chase-button {
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.chase-phone .chase-primary {
+  color: #101217;
+  background: var(--chase-phone-white);
+  border-color: var(--chase-phone-white);
+}
+.chase-phone .chase-secondary,
+.chase-phone .chase-subtle {
+  color: var(--chase-phone-ink);
+  background: var(--chase-phone-raised);
+  border-color: var(--chase-phone-line-strong);
+}
+.chase-phone .chase-icon-button {
+  width: 44px;
+  height: 44px;
+  border-color: var(--chase-phone-line-strong);
+  border-radius: 12px;
+  background: var(--chase-phone-raised);
+  color: var(--chase-phone-ink);
+}
+.chase-phone .chase-text-button {
+  min-height: 44px;
+  padding: 6px 0;
+  color: var(--chase-phone-ink);
+  font-size: 15px;
+  font-weight: 600;
+}
+.chase-phone .chase-status {
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.chase-phone .chase-status-live {
+  color: var(--chase-phone-green-ink);
+}
+.chase-phone .chase-status-live i {
+  background: var(--chase-phone-green);
+}
+.chase-phone .chase-count-pill,
+.chase-phone-chip {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 5px 9px;
+  border: 1px solid var(--chase-phone-line-strong);
+  border-radius: 999px;
+  color: var(--chase-phone-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.chase-phone .chase-segmented {
+  gap: 2px;
+  padding: 3px;
+  border-color: var(--chase-phone-line-strong);
+  border-radius: 12px;
+  background: var(--chase-phone-shell);
+}
+.chase-phone .chase-segmented button {
+  flex: 1;
+  min-height: 44px;
+  padding: 6px 12px;
+  border-radius: 9px;
+  color: var(--chase-phone-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+.chase-phone .chase-segmented .chase-selected {
+  color: #101217;
+  background: var(--chase-phone-white);
+}
+.chase-phone .chase-caption,
+.chase-phone-hint {
+  display: block;
+  color: var(--chase-phone-muted);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.chase-phone-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: var(--chase-phone-top) var(--chase-phone-gutter) 12px;
+  border-bottom: 1px solid var(--chase-phone-line);
+  background: var(--chase-phone-shell);
+}
+.chase-phone-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 34px;
+}
+.chase-phone-title {
+  min-width: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chase-phone-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  min-height: 30px;
+  padding: 6px 11px;
+  border: 1px solid var(--chase-phone-line-strong);
+  border-radius: 999px;
+  background: var(--chase-phone-card);
+  color: var(--chase-phone-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.chase-phone-pill i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #707b8c;
+}
+.chase-phone-pill-tuned {
+  color: var(--chase-phone-ink);
+}
+.chase-phone-pill-tuned i {
+  background: var(--chase-phone-white);
+}
+.chase-phone-pill-onair {
+  color: var(--chase-phone-green-ink);
+  border-color: var(--chase-phone-green-line);
+  background: var(--chase-phone-green-bg);
+}
+.chase-phone-pill-onair i {
+  background: var(--chase-phone-green);
+}
+.chase-phone-header .chase-speech-inline {
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+.chase-phone-header .chase-speech-chip {
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+.chase-phone-header .chase-speech-chip > svg {
+  width: 18px;
+  height: 18px;
+}
+.chase-phone-header .chase-speech-chip strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+.chase-phone-header .chase-speech-chip span {
+  font-size: 12px;
+}
+.chase-phone-header .chase-speech-talk {
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.chase-phone-content {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 16px var(--chase-phone-gutter) 24px;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.chase-phone-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.chase-phone .chase-connection-error {
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: var(--chase-phone-radius);
+}
+.chase-phone .chase-loading {
+  padding: 56px 16px;
+}
+.chase-phone .chase-empty {
+  padding: 28px 12px;
+}
+.chase-phone .chase-empty h3 {
+  font-size: 15px;
+}
+.chase-phone-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--chase-phone-line);
+  border-radius: var(--chase-phone-radius);
+  background: var(--chase-phone-card);
+}
+.chase-phone-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 20px;
+}
+.chase-phone-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--chase-phone-line);
+  border-radius: 12px;
+  background: var(--chase-phone-card);
+  color: var(--chase-phone-ink);
+  font-size: 14px;
+}
+.chase-phone-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 4px 0 6px;
+}
+.chase-phone-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.chase-phone-brand-mark {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--chase-phone-white);
+  color: #101318;
+}
+.chase-phone-brand .chase-phone-eyebrow {
+  color: var(--chase-phone-ink);
+}
+.chase-phone-welcome {
+  overflow-wrap: anywhere;
+}
+.chase-phone-status {
+  align-items: stretch;
+  width: 100%;
+  gap: 4px;
+  text-align: left;
+}
+.chase-phone-status .chase-phone-card-head {
+  margin-bottom: 8px;
+}
+.chase-phone-status-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.chase-phone-status-line {
+  color: var(--chase-phone-muted);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.chase-phone-status-signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: var(--chase-phone-muted);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.chase-phone-status > .chase-phone-status-signal {
+  margin-top: 10px;
+}
+.chase-phone-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.chase-phone-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 14px;
+  border: 1px solid var(--chase-phone-line);
+  border-radius: var(--chase-phone-radius);
+  background: var(--chase-phone-card);
+  text-align: left;
+}
+.chase-phone-tile img,
+.chase-phone-tile-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+.chase-phone-tile-icon {
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--chase-phone-raised);
+  color: var(--chase-phone-ink);
+}
+.chase-phone-tile strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.chase-phone-tile span:not(.chase-phone-tile-icon) {
+  width: 100%;
+  color: var(--chase-phone-muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chase-phone-frequency {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.chase-phone-frequency strong {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.chase-phone-frequency span {
+  color: var(--chase-phone-muted);
+  font-size: 14px;
+}
+.chase-phone .chase-tune-controls {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+.chase-phone .chase-frequency-stepper {
+  gap: 4px;
+  padding: 2px;
+  border-color: var(--chase-phone-line-strong);
+  border-radius: 12px;
+}
+.chase-phone .chase-frequency-stepper .chase-icon-button {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 9px;
+}
+.chase-phone .chase-frequency-input {
+  flex: 1;
+  width: auto;
+  min-height: 40px;
+  padding: 4px;
+  border: 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.chase-phone-station-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+}
+.chase-phone-station-title h2 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.chase-phone-station-frequency {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-shrink: 0;
+  color: var(--chase-phone-ink);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.chase-phone-station-frequency small {
+  color: var(--chase-phone-muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+.chase-phone-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--chase-phone-line);
+  border-bottom: 1px solid var(--chase-phone-line);
+}
+.chase-phone-details > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 14px;
+}
+.chase-phone-details dt {
+  flex-shrink: 0;
+  color: var(--chase-phone-muted);
+}
+.chase-phone-details dd {
+  margin: 0;
+  color: var(--chase-phone-ink);
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.chase-phone-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+}
+.chase-phone .chase-call-controls {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  margin: 0;
+  padding: 12px;
+  border-color: var(--chase-phone-line-strong);
+  border-radius: 12px;
+  background: var(--chase-phone-raised);
+  font-size: 14px;
+}
+.chase-phone .chase-call-ringing {
+  border-color: #36596a;
+  background: #11202a;
+}
+.chase-phone .chase-call-onair {
+  border-color: var(--chase-phone-green-line);
+  background: var(--chase-phone-green-bg);
+}
+.chase-phone .chase-call-controls .chase-button {
+  min-height: 44px;
+}
+.chase-phone-search {
+  min-height: 46px;
+  padding: 0 14px;
+  border-color: var(--chase-phone-line-strong);
+  border-radius: 12px;
+}
+.chase-phone-search input {
+  min-height: 44px;
+  padding: 10px 0;
+  border: 0;
+  border-radius: 0;
+  font-size: 15px;
+}
+.chase-phone-list-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 2px 2px 0;
+}
+.chase-phone-list-head > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.chase-phone-station-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.chase-phone-station-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 8px 8px 8px 14px;
+  border: 1px solid var(--chase-phone-line);
+  border-radius: var(--chase-phone-radius);
+  background: var(--chase-phone-card);
+}
+.chase-phone-station-selected {
+  border-color: var(--chase-phone-line-strong);
+  background: var(--chase-phone-raised);
+}
+.chase-phone-station-main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  min-height: 44px;
+  padding: 2px 0;
+  background: transparent;
+  text-align: left;
+}
+.chase-phone-station-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.chase-phone-station-text strong {
+  color: var(--chase-phone-ink);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chase-phone-station-text > span {
+  color: var(--chase-phone-muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chase-phone-station-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.chase-phone-station-tune {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+.chase-phone-device {
+  gap: 12px;
+}
+.chase-phone-device-active {
+  border-color: var(--chase-phone-line-strong);
+}
+.chase-phone-device-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.chase-phone-device-art {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.chase-phone-device-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.chase-phone-device-text strong {
+  color: var(--chase-phone-ink);
+  font-size: 15px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.chase-phone-device-text span {
+  color: var(--chase-phone-muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.chase-phone-device-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chase-phone-device-actions .chase-button {
+  flex: 1 1 auto;
+  min-width: calc(50% - 4px);
+  padding: 10px 12px;
+  white-space: normal;
+}
+.chase-phone-carry {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--chase-phone-line);
+}
+.chase-phone-placed-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.chase-phone-placed-row img {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.chase-phone-placed-row .chase-button {
+  flex-shrink: 0;
+  padding: 10px 12px;
+}
+.chase-phone .chase-transmitter {
+  padding: 16px;
+  border-color: var(--chase-phone-line);
+  border-radius: var(--chase-phone-radius);
+  background: var(--chase-phone-card);
+}
+.chase-phone .chase-transmitter h2 {
+  margin: 12px 0 4px;
+}
+.chase-phone .chase-transmitter > .chase-button {
+  margin-top: 14px;
+}
+.chase-phone .chase-mic-control {
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-color: var(--chase-phone-line);
+}
+.chase-phone .chase-mic-actions {
+  flex: 1;
+  align-items: stretch;
+}
+.chase-phone .chase-mic-actions .chase-button {
+  min-height: 44px;
+}
+.chase-phone-section {
+  overflow: hidden;
+  border: 1px solid var(--chase-phone-line);
+  border-radius: var(--chase-phone-radius);
+  background: var(--chase-phone-card);
+}
+.chase-phone-section-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 60px;
+  padding: 12px 16px;
+  background: transparent;
+  text-align: left;
+}
+.chase-phone-section-title {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.chase-phone-section-title strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.chase-phone-section-caret {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: var(--chase-phone-raised);
+  color: var(--chase-phone-ink);
+}
+.chase-phone-section-open .chase-phone-section-caret {
+  transform: rotate(180deg);
+}
+.chase-phone-section-inner {
+  padding: 0 16px 16px;
+}
+.chase-phone-section-inner > .chase-card {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.chase-phone-section-inner .chase-section-heading {
+  margin-bottom: 12px;
+}
+.chase-phone-section-inner .chase-segmented {
+  width: 100%;
+}
+.chase-phone .chase-now-track,
+.chase-phone .chase-music-add,
+.chase-phone .chase-mode-control,
+.chase-phone .chase-request-card,
+.chase-phone .chase-queue-list article {
+  padding: 12px;
+  border-color: var(--chase-phone-line);
+  border-radius: 12px;
+}
+.chase-phone .chase-now-track,
+.chase-phone .chase-music-add,
+.chase-phone .chase-mode-control {
+  margin-bottom: 12px;
+}
+.chase-phone .chase-mode-control {
+  gap: 12px;
+}
+.chase-phone .chase-now-track {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.chase-phone .chase-now-actions {
+  flex-basis: 100%;
+}
+.chase-phone .chase-now-actions .chase-button {
+  min-height: 44px;
+}
+.chase-phone .chase-music-add .chase-input-action {
+  flex-direction: column;
+  align-items: stretch;
+}
+.chase-phone .chase-queue-list article {
+  gap: 10px;
+}
+.chase-phone .chase-queue-list article > div {
+  flex-basis: calc(100% - 38px);
+}
+.chase-phone .chase-queue-list article .chase-text-button {
+  min-height: 44px;
+  margin-left: auto;
+}
+.chase-phone .chase-inline-actions {
+  gap: 12px;
+}
+.chase-phone .chase-inline-actions .chase-text-button {
+  min-height: 44px;
+}
+.chase-phone .chase-content-card > .chase-caption {
+  margin-top: 14px;
+}
+.chase-phone-settings {
+  display: flex;
+  flex-direction: column;
+}
+.chase-phone-settings form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.chase-phone-settings .chase-checkbox-label input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.chase-phone .chase-create-station {
+  max-width: none;
+  border-color: var(--chase-phone-line);
+  border-radius: var(--chase-phone-radius);
+}
+.chase-phone .chase-create-intro,
+.chase-phone .chase-create-station > form {
+  padding: 16px;
+}
+.chase-phone-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+  padding: 10px var(--chase-phone-gutter);
+  border-top: 1px solid var(--chase-phone-line);
+  background: var(--chase-phone-card);
+}
+.chase-phone-mini-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+}
+.chase-phone-mini-device {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--chase-phone-line);
+  border-radius: 12px;
+  background: var(--chase-phone-shell);
+  color: var(--chase-phone-muted);
+}
+.chase-phone-mini-device img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.chase-phone-mini-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.chase-phone-mini-text strong {
+  color: var(--chase-phone-ink);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chase-phone-mini-text span {
+  color: var(--chase-phone-muted);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chase-phone-signal {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+  height: 16px;
+}
+.chase-phone-signal i {
+  width: 4px;
+  border-radius: 1px;
+  background: #333a45;
+}
+.chase-phone-signal i:nth-child(1) {
+  height: 6px;
+}
+.chase-phone-signal i:nth-child(2) {
+  height: 9px;
+}
+.chase-phone-signal i:nth-child(3) {
+  height: 12px;
+}
+.chase-phone-signal i:nth-child(4) {
+  height: 16px;
+}
+.chase-phone-signal .chase-phone-signal-on {
+  background: var(--chase-phone-white);
+}
+.chase-phone-mini-stop {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--chase-phone-line-strong);
+  border-radius: 12px;
+  background: var(--chase-phone-raised);
+  color: var(--chase-phone-ink);
+}
+.chase-phone-mini-volume {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
+  color: var(--chase-phone-muted);
+}
+.chase-phone-mini-volume input {
+  flex: 1;
+  height: 28px;
+  padding: 0;
+}
+.chase-phone-mini-volume span {
+  min-width: 36px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: right;
+}
+.chase-phone-nav {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+  padding: 6px 12px var(--chase-phone-bottom);
+  border-top: 1px solid var(--chase-phone-line);
+  background: var(--chase-phone-shell);
+}
+.chase-phone-nav button {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  min-height: 52px;
+  padding: 6px 2px;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--chase-phone-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.chase-phone-nav button span {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chase-phone-nav .chase-phone-nav-active {
+  background: var(--chase-phone-white);
+  color: #101318;
+}
+.chase-phone .chase-toast {
+  position: absolute;
+  z-index: 30;
+  left: var(--chase-phone-gutter);
+  right: var(--chase-phone-gutter);
+  bottom: calc(var(--chase-phone-bottom) + 172px);
+  width: auto;
+  max-width: none;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.chase-phone .chase-call-popup-layer {
+  position: absolute;
+  padding: var(--chase-phone-gutter);
+}
+.chase-phone .chase-call-popup {
+  border-radius: var(--chase-phone-radius);
+}
+.chase-phone .chase-call-popup-icon {
+  border-radius: 12px;
+  animation: none;
+  box-shadow: none;
+}
+.chase-phone .chase-call-popup-heading strong {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.chase-phone .chase-call-popup-timer {
+  font-size: 15px;
+  font-weight: 600;
+}
+.chase-phone .chase-call-popup-actions kbd {
+  font-size: 11px;
+  font-weight: 600;
+}
+.chase-phone .chase-modal-backdrop {
+  position: absolute;
+  padding: var(--chase-phone-gutter);
+}
+.chase-phone .chase-modal {
+  max-height: 100%;
+  border-radius: var(--chase-phone-radius);
+}
+.chase-phone .chase-modal-header,
+.chase-phone .chase-modal-body,
+.chase-phone .chase-modal-footer {
+  padding: 16px;
+}
+.chase-phone .chase-modal-header h2 {
+  font-size: 20px;
+}
+.chase-phone .chase-modal-icon {
+  border-radius: 12px;
+}
+.chase-phone .chase-modal-footer .chase-button {
+  min-height: 44px;
+}

@@ -1,0 +1,185 @@
+{
+  "created_by": "Chase",
+  "checked_date": "2026-09-17",
+  "release_version": "0.3.11",
+  "authoritative_baseline_version": "0.3.10",
+  "live_runtime_files_unchanged": 127,
+  "gameplay_lua_files_equivalent_after_comment_removal": 24,
+  "lua_syntax_files_unmodified_lua54": 39,
+  "configuration_differences": [
+    {
+      "field": "Debug",
+      "baseline": true,
+      "release": false
+    },
+    {
+      "field": "Framework",
+      "baseline": "qbox",
+      "release": "auto"
+    },
+    {
+      "field": "Keys.provider",
+      "baseline": "qbx_vehiclekeys",
+      "release": "auto"
+    }
+  ],
+  "streamed_assets_byte_identical": 21,
+  "baseline_ui_source_inputs_match": 41,
+  "baseline_ui_rebuilt_files_byte_identical": 24,
+  "ui_source_equivalence_checks": 22,
+  "ui_typecheck_and_build": "passed",
+  "lua_mock_suites": [
+    {
+      "suite": "backend-speech-tests",
+      "passed": 18,
+      "failed": 0
+    },
+    {
+      "suite": "backend-support-tests",
+      "passed": 16,
+      "failed": 0
+    },
+    {
+      "suite": "backend-tests",
+      "passed": 75,
+      "failed": 0
+    },
+    {
+      "suite": "dashboard-integration-tests",
+      "passed": 16,
+      "failed": 0
+    },
+    {
+      "suite": "dashboard-server-tests",
+      "passed": 21,
+      "failed": 0
+    },
+    {
+      "suite": "keys-contracts",
+      "passed": 11,
+      "failed": 0
+    },
+    {
+      "suite": "receivers-tests",
+      "passed": 49,
+      "failed": 0
+    },
+    {
+      "suite": "vehicle-adapter-tests",
+      "passed": 12,
+      "failed": 0
+    },
+    {
+      "suite": "access-shop-client",
+      "passed": 9,
+      "failed": 0
+    },
+    {
+      "suite": "dashboard-client",
+      "passed": 29,
+      "failed": 0
+    },
+    {
+      "suite": "dashboard-math",
+      "passed": 9,
+      "failed": 0
+    },
+    {
+      "suite": "receiver-acoustics",
+      "passed": 10,
+      "failed": 0
+    },
+    {
+      "suite": "receiver-audio",
+      "passed": 15,
+      "failed": 0
+    },
+    {
+      "suite": "receiver-client",
+      "passed": 45,
+      "failed": 0
+    },
+    {
+      "suite": "speech-client-entry",
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "suite": "speech-client",
+      "passed": 14,
+      "failed": 0
+    }
+  ],
+  "lua_mock_passed": 355,
+  "lua_mock_failed": 0,
+  "current_browser_suites": [
+    {
+      "script": "ui-dashboard-dui.mjs",
+      "exit_code": 0
+    },
+    {
+      "script": "ui-dashboard-editor.mjs",
+      "exit_code": 0
+    },
+    {
+      "script": "ui-field-hint.mjs",
+      "exit_code": 0
+    },
+    {
+      "script": "ui-audio-acoustics.mjs",
+      "exit_code": 0
+    },
+    {
+      "script": "ui-speech-browser.mjs",
+      "exit_code": 0
+    }
+  ],
+  "inherited_browser_failures": [
+    {
+      "suite": "ui-devices.mjs",
+      "baseline_failed_checks": [
+        "Receiver installation, equipment and carry remain available without a built-in shop",
+        "Nested message dialog keeps focus, Escape closes only dialog, and search filters stations",
+        "Physical DUI is passive, local, opaque and updates only from display messages",
+        "Audio volume uses reception, proximity gain and local volume without opening UI",
+        "Receiver mutations remain authoritative and Studio is hidden without broadcast permission",
+        "Audio profiles update without restarting the same cartridge and replace playback only for a new identity"
+      ],
+      "release_failed_checks": [
+        "Receiver installation, equipment and carry remain available without a built-in shop",
+        "Nested message dialog keeps focus, Escape closes only dialog, and search filters stations",
+        "Physical DUI is passive, local, opaque and updates only from display messages",
+        "Audio volume uses reception, proximity gain and local volume without opening UI",
+        "Receiver mutations remain authoritative and Studio is hidden without broadcast permission",
+        "Audio profiles update without restarting the same cartridge and replace playback only for a new identity"
+      ],
+      "same_failed_check_names": true
+    },
+    {
+      "suite": "ui-access-audio.mjs",
+      "baseline_failed_checks": [
+        "Real bundled cartridge plays for an untuned host and cue volume ignores receiver reception"
+      ],
+      "release_failed_checks": [
+        "Real bundled cartridge plays for an untuned host and cue volume ignores receiver reception"
+      ],
+      "same_failed_check_names": true
+    }
+  ],
+  "release_audit": {
+    "private_path_markers": [],
+    "credential_patterns": [],
+    "broken_local_document_links": [],
+    "python_sql_comments_outside_configuration": [],
+    "lua_files_without_comments_outside_configuration": 29,
+    "js_ts_files_without_comments": 23,
+    "voice_installer_python_ast_unchanged": true
+  },
+  "license": "Chase Free Source License 1.0, explicitly selected by the user; third-party licenses preserved separately.",
+  "limitations": [
+    "No deployment, runtime restart or new native acceptance test of 0.3.11.",
+    "Mocked and browser regression checks do not certify live multiplayer or database transport.",
+    "Seven legacy browser expectations fail on both baseline and release; they are not counted as passing.",
+    "Credential pattern scans are not a universal guarantee; reviewed files exclude private data and local audit directories."
+  ]
+}

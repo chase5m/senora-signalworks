@@ -1,0 +1,137 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Chase" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SSW Dash Receiver</title>
+    <link rel="stylesheet" href="receiver.css" />
+    <script defer src="receiver.js"></script>
+  </head>
+  <body data-enabled="false" data-interactive="false">
+    <main id="chase-receiver" aria-label="Senora dashboard radio">
+      <section id="chase-home" class="screen">
+        <header class="topbar">
+          <span class="band-label">FM RECEIVER</span
+          ><span id="chase-status" class="status">STANDBY</span
+          ><span class="volume-summary"
+            >VOL <output id="chase-volume-summary">65</output></span
+          >
+        </header>
+        <div class="receiver-main">
+          <div class="frequency">
+            <span id="chase-frequency">--.-</span><span class="band">FM</span>
+          </div>
+          <div class="station-display">
+            <span id="chase-station-caption" class="control-label"
+              >STATION</span
+            >
+            <div id="chase-label" class="station-label">Choose a station</div>
+            <div id="chase-quality" class="signal">SIGNAL --</div>
+          </div>
+        </div>
+        <nav class="toolbar" aria-label="Receiver controls">
+          <button id="chase-previous" aria-label="Previous station" disabled>
+            SEEK −
+          </button>
+          <button id="chase-next" aria-label="Next station" disabled>
+            SEEK +
+          </button>
+          <button id="chase-stations" disabled>Stations</button>
+          <button id="chase-tune-open" class="primary" disabled>Tune FM</button>
+          <button id="chase-settings-open" disabled>Device</button>
+        </nav>
+        <div class="idle-footer" aria-hidden="true">
+          <span>SENORA SIGNALWORKS</span><span>CR–01 / STEREO</span>
+        </div>
+      </section>
+      <section
+        id="chase-settings"
+        class="screen"
+        aria-label="Device controls"
+        hidden
+      >
+        <header class="page-header">
+          <h1>Device</h1>
+          <span>CR–01</span><button id="chase-settings-back">Back</button>
+        </header>
+        <div class="settings-main">
+          <div class="volume-panel">
+            <span class="control-label">CABIN VOLUME</span>
+            <div class="volume-controls">
+              <button id="chase-volume-down" aria-label="Lower volume" disabled>
+                −</button
+              ><output id="chase-volume" aria-label="Volume">65%</output
+              ><button id="chase-volume-up" aria-label="Raise volume" disabled>
+                +
+              </button>
+            </div>
+            <meter
+              id="chase-volume-meter"
+              min="0"
+              max="100"
+              value="65"
+              aria-label="Cabin volume level"
+            ></meter>
+          </div>
+          <div class="device-actions">
+            <button id="chase-power" class="primary" disabled>Turn on</button
+            ><button id="chase-move" aria-label="Move" disabled>
+              Reposition receiver</button
+            ><button id="chase-close" disabled>Close</button>
+          </div>
+        </div>
+      </section>
+      <section
+        id="chase-directory"
+        class="screen"
+        aria-label="Station directory"
+        hidden
+      >
+        <header class="page-header">
+          <h1>Stations</h1>
+          <span id="chase-station-count"></span
+          ><button id="chase-directory-back">Back</button>
+        </header>
+        <div id="chase-station-list" class="station-list"></div>
+        <nav class="directory-pagination" aria-label="Station pages">
+          <button id="chase-page-previous">Previous page</button
+          ><span id="chase-page-number"></span
+          ><button id="chase-page-next">Next page</button>
+        </nav>
+      </section>
+      <section
+        id="chase-keypad"
+        class="screen"
+        aria-label="Tune a frequency"
+        hidden
+      >
+        <div class="keypad-summary">
+          <div class="control-label">DIRECT TUNING</div>
+          <output id="chase-tune-value" class="tune-value" aria-live="polite"
+            >--.-</output
+          ><span id="chase-band-range" class="signal">88.0 – 108.0 FM</span
+          ><button id="chase-tune-submit" class="primary">Tune station</button
+          ><button id="chase-keypad-back">Back</button>
+        </div>
+        <div
+          id="chase-number-pad"
+          class="number-pad"
+          aria-label="Frequency keypad"
+        >
+          <button data-digit="1">1</button><button data-digit="2">2</button
+          ><button data-digit="3">3</button> <button data-digit="4">4</button
+          ><button data-digit="5">5</button><button data-digit="6">6</button>
+          <button data-digit="7">7</button><button data-digit="8">8</button
+          ><button data-digit="9">9</button>
+          <button id="chase-tune-clear" aria-label="Clear frequency">
+            Clear</button
+          ><button data-digit="0">0</button
+          ><button id="chase-tune-erase" aria-label="Erase digit">Erase</button>
+        </div>
+      </section>
+      <p id="chase-feedback" role="status" aria-live="polite" hidden></p>
+    </main>
+  </body>
+</html>
