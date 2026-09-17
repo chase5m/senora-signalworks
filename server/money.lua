@@ -58,7 +58,7 @@ function ChaseBootlegMoney.ChaseInitialize()
     for _, operation in ipairs(ChaseBootlegDatabase.ChaseUnresolvedOperations()) do
         blockedActors[operation.actor] = operation.id
         if operation.station_id then blockedStations[tonumber(operation.station_id)] = operation.id end
-        print(('[chase_bootleg] Unresolved payment %s (%s). Review docs/OPERATIONS.md before reconciling it.'):format(operation.id, operation.status))
+        print(('[chase_bootleg] Unresolved payment %s (%s). See https://docs.chasedev.dev/signalworks/station-operations before reconciling it.'):format(operation.id, operation.status))
     end
 end
 

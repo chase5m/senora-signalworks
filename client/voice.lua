@@ -321,7 +321,7 @@ CreateThread(function()
         local gated = current and ChaseBootlegCallVoice('ChaseBootlegSetTalking', chaseTalkPressed)
         if current and not gated and not chaseBridgeNotice then
             chaseBridgeNotice = true
-            print('[chase_bootleg] The installed pma-voice bridge cannot gate station push-to-talk. Reinstall it with install_voice_bridge.py (docs/VOICE.md) and restart pma-voice.')
+            print('[chase_bootleg] The installed pma-voice bridge cannot gate station push-to-talk. Reinstall it with install_voice_bridge.py (https://docs.chasedev.dev/signalworks/voice) and restart pma-voice.')
         end
         local ready = gated == true and ChaseBootlegConfig.Voice.enabled ~= false
         if ready ~= chaseBridgeReady then
